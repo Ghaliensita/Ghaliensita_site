@@ -842,15 +842,17 @@ a:hover {
   text-align: center;
   padding-right: 2rem;
   padding-left: 2rem;
-  padding-bottom: 2rem;
-  padding-top: 2rem;
+  padding-bottom: 3rem;
 }
 
 .portfoliotext{
   text-align: center;
-  padding-bottom: 2rem;
+  padding-bottom: 1rem;
 }
 
+.col-12-col-12-col-12{
+  margin: 2rem;
+}
 
 /*======================================
 //--//-->   COUNTER
