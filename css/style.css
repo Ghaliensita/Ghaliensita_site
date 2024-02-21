@@ -839,8 +839,11 @@ a:hover {
 }
 
 .portfoliocontent{
-  columns: 3;
-  padding: 5rem;
+  text-align: center;
+  padding-right: 2rem;
+  padding-left: 2rem;
+  padding-bottom: 2rem;
+  padding-top: 2rem;
 }
 
 .portfoliotext{
@@ -1024,11 +1027,12 @@ a:hover {
 .card-blog .post-date {
   color: #4e4e4e;
   display: inline-block;
-  float: right;
+  
 }
 
 /*======================================
 //--//-->   BLOG-SINGLE
+float: right;
 ======================================*/
 
 .post-box,
