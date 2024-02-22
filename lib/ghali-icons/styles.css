@@ -1,0 +1,160 @@
+@charset "UTF-8";
+
+@font-face {
+  font-family: "ghaliensitafont";
+  src:url("fonts/ghaliensitafont.eot");
+  src:url("fonts/ghaliensitafont.eot?#iefix") format("embedded-opentype"),
+    url("fonts/ghaliensitafont.woff") format("woff"),
+    url("fonts/ghaliensitafont.ttf") format("truetype"),
+    url("fonts/ghaliensitafont.svg#ghaliensitafont") format("svg");
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+[data-icon]:before {
+  font-family: "ghaliensitafont" !important;
+  content: attr(data-icon);
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+[class^="ico-"]:before,
+[class*=" ico-"]:before {
+  font-family: "ghaliensitafont" !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.ico-ghali-3d:before {
+  content: "\61";
+}
+.ico-ghali-ae:before {
+  content: "\62";
+}
+.ico-ghali-ai:before {
+  content: "\63";
+}
+.ico-ghali-animation:before {
+  content: "\64";
+}
+.ico-ghali-behance:before {
+  content: "\65";
+}
+.ico-ghali-bits:before {
+  content: "\66";
+}
+.ico-ghali-brush:before {
+  content: "\67";
+}
+.ico-ghali-calendar:before {
+  content: "\68";
+}
+.ico-ghali-call:before {
+  content: "\69";
+}
+.ico-ghali-check:before {
+  content: "\6a";
+}
+.ico-ghali-code:before {
+  content: "\6b";
+}
+.ico-ghali-config:before {
+  content: "\6c";
+}
+.ico-ghali-design:before {
+  content: "\6d";
+}
+.ico-ghali-email:before {
+  content: "\6e";
+}
+.ico-ghali-follow:before {
+  content: "\6f";
+}
+.ico-ghali-game:before {
+  content: "\70";
+}
+.ico-ghali-implarge:before {
+  content: "\71";
+}
+.ico-ghali-instagram:before {
+  content: "\72";
+}
+.ico-ghali-live:before {
+  content: "\73";
+}
+.ico-ghali-lr:before {
+  content: "\74";
+}
+.ico-ghali-motion:before {
+  content: "\75";
+}
+.ico-ghali-office:before {
+  content: "\76";
+}
+.ico-ghali-paid:before {
+  content: "\77";
+}
+.ico-ghali-pr:before {
+  content: "\78";
+}
+.ico-ghali-ps:before {
+  content: "\79";
+}
+.ico-ghali-pt:before {
+  content: "\7a";
+}
+.ico-ghali-sub:before {
+  content: "\41";
+}
+.ico-ghali-tags:before {
+  content: "\42";
+}
+.ico-ghali-tattoo:before {
+  content: "\43";
+}
+.ico-ghali-tattooexp:before {
+  content: "\44";
+}
+.ico-ghali-telegram:before {
+  content: "\45";
+}
+.ico-ghali-tip:before {
+  content: "\46";
+}
+.ico-ghali-twitch:before {
+  content: "\47";
+}
+.ico-ghali-twitterx:before {
+  content: "\48";
+}
+.ico-ghali-ubication:before {
+  content: "\49";
+}
+.ico-ghali-users:before {
+  content: "\4a";
+}
+.ico-ghali-video:before {
+  content: "\4b";
+}
+.ico-ghali-web:before {
+  content: "\4c";
+}
+.ico-ghali-whatsapp:before {
+  content: "\4d";
+}
+.ico-ghali-write:before {
+  content: "\4e";
+}

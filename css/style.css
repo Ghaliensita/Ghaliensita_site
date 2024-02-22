@@ -767,8 +767,8 @@ a:hover {
 
 .urgency{
   background-color: #171717;
-  padding-left: 7rem;
-  padding-right: 7rem;
+  padding-left: 5rem;
+  padding-right: 5rem;
   padding-top: 1rem;
   padding-bottom: 1rem;
   color: #fff;
@@ -777,7 +777,6 @@ a:hover {
 .urgencia{
   color: #f5f5f5;
   font-size: 25px;
-  font-weight: 600;
 }
 
 .methods{
@@ -853,6 +852,51 @@ a:hover {
 .col-12-col-12-col-12{
   margin: 2rem;
 }
+
+/*======================================
+//--//-->   SIZES ICO
+======================================*/
+
+.icon-05x {
+  font-size: -2em;
+}
+
+.icon-2x {
+  font-size: 2em;
+}
+
+.icon-3x {
+  font-size: 3em;
+}
+
+.icon-4x {
+  font-size: 4em;
+}
+
+.icon-5x {
+  font-size: 5em;
+}
+
+.icon-6x {
+  font-size: 6em;
+}
+
+.icon-7x {
+  font-size: 7em;
+}
+
+.icon-8x {
+  font-size: 8em;
+}
+
+.icon-9x {
+  font-size: 9em;
+}
+
+.icon-10x {
+  font-size: 10em;
+}
+
 
 /*======================================
 //--//-->   COUNTER
@@ -935,47 +979,6 @@ a:hover {
   font-size: 1.2rem;
 }
 
-/*======================================
-//--//-->   TESTIMONIALS
-======================================*/
-
-.testimonials .owl-carousel .owl-item img {
-  width: auto;
-}
-
-.testimonial-box {
-  color: #fff;
-  text-align: center;
-}
-
-.testimonial-box .author-test {
-  margin-top: 1rem;
-}
-
-.testimonial-box .author-test img {
-  margin: 0 auto;
-}
-
-.testimonial-box .author {
-  color: #fff;
-  text-transform: uppercase;
-  font-weight: 600;
-  margin: 1rem 0;
-  display: block;
-  font-size: 1.4rem;
-}
-
-.testimonial-box .comit {
-  font-size: 2rem;
-  color: #181818;
-  background-color: #fff;
-  width: 52px;
-  height: 52px;
-  display: block;
-  margin: 0 auto;
-  border-radius: 50%;
-  line-height: 1.6;
-}
 
 /*======================================
 //--//-->   BLOG
@@ -1140,6 +1143,10 @@ float: right;
 
 .contact-mf {
   margin-top: 4rem;
+}
+
+.ico-ghali-behance{
+  top: -5px;
 }
 
 /*======================================
