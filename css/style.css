@@ -758,7 +758,8 @@ a:hover {
   text-align: center;
   padding-bottom: 2rem;
   padding-top: 1.5rem;
-  padding-left: 6rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
 }
 
 .bagdes{
@@ -767,16 +768,17 @@ a:hover {
 
 .urgency{
   background-color: #171717;
-  padding-left: 5rem;
-  padding-right: 5rem;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
   color: #fff;
 }
 
 .urgencia{
   color: #f5f5f5;
   font-size: 25px;
+  text-align: center;
+}
+
+.urgenciaa{
+  text-align: center;
 }
 
 .methods{
@@ -789,6 +791,10 @@ a:hover {
   text-align: center;
   padding-top: 1rem;
   padding-bottom: 2rem;
+}
+
+.pago:hover{
+  color: #fff;
 }
 
 .precios{
@@ -811,6 +817,9 @@ a:hover {
 //--//-->   TATTOOS
 ======================================*/
 
+
+
+
 .tattoofeed{
   text-align: center;
   columns: 3;
@@ -818,6 +827,7 @@ a:hover {
   padding-right: 4rem;
   padding-top: 2rem;
   padding-bottom: 3rem;
+  flex-flow: row;
 }
 
 .tattoofeed2{
@@ -830,6 +840,7 @@ a:hover {
 }
 
 .tattoofeed3{
+  flex-flow: column;
   text-align: center;
   columns: 3;
   padding-left: 4rem;
@@ -839,12 +850,61 @@ a:hover {
 }
 
 .workastattooer{
+  text-align: center;
   padding-top: 2rem;
 }
 
 .footertattoo{
   background-color: #181818;
   padding-top: 4rem;
+}
+
+.tatuajesacolor{
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 500;
+  padding-bottom: 1rem;
+}
+
+.tatuajesacolor:hover{
+  color: #F40C5A;
+  font-weight: 700;
+}
+
+.tatuajesparatodos{
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 500;
+  padding-bottom: 3rem;
+}
+
+.tatuajesparatodos:hover{
+  color: #F40C5A;
+  font-weight: 700;
+}
+
+.quoteghalientattoo{
+  text-align: center;
+  justify-content: center;
+  height: 500;
+  margin-left: 5rem;
+  margin-right: 5rem;
+  padding-left: 7rem;
+  padding-right: 7rem;
+}
+
+.quoteghalientattoo:hover{
+  color: #F40C5A;
+  font-weight: 700;
+}
+
+.quotebyghalientattoo{
+  text-align: center;
+}
+
+.quotebyghalientattoo:hover{
+  color: #F40C5A;
+  font-weight: 500;
 }
 
 /*======================================
@@ -869,7 +929,20 @@ a:hover {
 
 .col-12-col-12-col-12{
   margin: 2rem;
+  justify-content: center;
+  text-align: center;
 }
+
+.imagesportfolioscalable{
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  margin: 0.5rem;
+  padding-left: 1%;
+  padding-right: 1rem;
+  max-height: 400px;
+}
+
 
 /*======================================
 //--//-->   SIZES ICO
@@ -940,11 +1013,14 @@ a:hover {
 }
 
 .skillsmore {
-  font-size: 1rem;
+  font-size: 20px;
   height: 40px;
   width: 40px;
   font-size: 1.7rem;
-  
+}
+
+.skillsmorecontent{
+  font-size: 1rem;
 }
 
 /*======================================
