@@ -133,8 +133,8 @@ a:hover {
 /*--/ Title A /--*/
 
 .title-box {
-  margin-bottom: 4rem;
-  margin-top: 4rem;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
 }
 
 .title-a {
@@ -145,6 +145,11 @@ a:hover {
 
 .subtitle-a {
   color: #4e4e4e;
+}
+
+.subtitle-a:hover{
+  height: 800;
+  color: #F40C5A;
 }
 
 .line-mf {
@@ -749,17 +754,24 @@ a:hover {
 .carousel-emotes{
   background-color: #171717;
   text-align: center;
-  columns: 2;
+  size-adjust: 50%;
+}
+
+.emotes-ind{
+  background-color: #fff;
+}
+
+#emotesinfox{
+  display: flexbox;
+  text-align: center;
 }
 
 .emotes-cont{
-  background-color: #171717;
   color: #fff;
   text-align: center;
-  padding-bottom: 2rem;
   padding-top: 1.5rem;
-  margin-left: 2rem;
-  margin-right: 2rem;
+  margin-left: 4rem;
+  margin-right: 4rem;
 }
 
 .bagdes{
@@ -769,6 +781,8 @@ a:hover {
 .urgency{
   background-color: #171717;
   color: #fff;
+  text-align: center;
+  padding-bottom: 1rem;
 }
 
 .urgencia{
@@ -789,7 +803,7 @@ a:hover {
   background-color: #171717;
   color: #fff;
   text-align: center;
-  padding-top: 1rem;
+  padding-top: 2rem;
   padding-bottom: 2rem;
 }
 
@@ -919,7 +933,6 @@ a:hover {
   text-align: center;
   padding-right: 2rem;
   padding-left: 2rem;
-  padding-bottom: 3rem;
 }
 
 .portfoliotext{
