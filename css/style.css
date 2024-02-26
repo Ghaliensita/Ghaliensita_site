@@ -832,7 +832,10 @@ a:hover {
 ======================================*/
 
 
-
+/*.containerttt {
+  display: flex;
+  justify-content: center;
+}*/
 
 .tattoofeed{
   text-align: center;
@@ -842,6 +845,8 @@ a:hover {
   padding-top: 2rem;
   padding-bottom: 3rem;
   flex-flow: row;
+  display: flexbox;
+  justify-content: center;  
 }
 
 .tattoofeed2{
@@ -861,6 +866,7 @@ a:hover {
   padding-right: 4rem;
   padding-top: 2rem;
   padding-bottom: 3rem;
+  display: flexbox;
 }
 
 .workastattooer{
@@ -905,6 +911,7 @@ a:hover {
   margin-right: 5rem;
   padding-left: 7rem;
   padding-right: 7rem;
+  display: flex;
 }
 
 .quoteghalientattoo:hover{
@@ -920,6 +927,7 @@ a:hover {
   color: #F40C5A;
   font-weight: 500;
 }
+
 
 /*======================================
 //--//-->   PORTFOLIO
