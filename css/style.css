@@ -895,16 +895,18 @@ a:hover {
   flex-flow: column;
   text-align: center;
   columns: 3;
-  padding-left: 4rem;
-  padding-right: 4rem;
-  padding-top: 2rem;
-  padding-bottom: 3rem;
-  display: flexbox;
+  padding-bottom: 2rem;
+  display: flex;
 }
+
 
 .workastattooer{
   text-align: center;
-  padding-top: 2rem;
+  padding-top: 4rem;
+  padding-bottom: 2rem;
+  margin-right: 1%;
+  margin-left: 1%;
+  font-size: 2rem;
 }
 
 .footertattoo{
@@ -919,10 +921,7 @@ a:hover {
   padding-bottom: 1rem;
 }
 
-.tatuajesacolor:hover{
-  color: #F40C5A;
-  font-weight: 700;
-}
+
 
 .tatuajesparatodos{
   text-align: center;
@@ -940,8 +939,8 @@ a:hover {
   text-align: center;
   justify-content: center;
   height: 500;
-  margin-left: 5rem;
-  margin-right: 5rem;
+  margin-left: 3rem;
+  margin-right: 3rem;
   padding-left: 7rem;
   padding-right: 7rem;
   display: flex;
@@ -1066,8 +1065,6 @@ a:hover {
   box-shadow: 0 0 0 10px #cde1f8;
 }
 
-#sobremi{
-}
 
 .skillsmore {
   font-size: 20px;
