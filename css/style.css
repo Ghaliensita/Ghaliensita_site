@@ -805,6 +805,8 @@ a:hover {
   text-align: center;
   padding-top: 2rem;
   padding-bottom: 2rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
 }
 
 .pago:hover{
@@ -826,6 +828,37 @@ a:hover {
 .trello{
   padding-bottom: 3rem;
 }
+
+/*======================================
+//--//-->   PAY METHODS
+======================================*/
+
+.donaciones{
+  background-color: #181818;
+  color: #fff;
+  padding-top: 2rem;
+  text-align: center;
+  padding-bottom: 4rem;
+  padding-top: 3rem;
+  margin-left: 3rem;
+  margin-right: 3rem;
+}
+
+.spacewhitepay{
+  background-color: #f5f5f5;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  text-align: center;
+  font-size: 25px;
+}
+
+.walletdirect:hover{
+  color: #F40C5A;
+  font-weight: 700;
+  font-size: 30px;
+}
+
+
 
 /*======================================
 //--//-->   TATTOOS
