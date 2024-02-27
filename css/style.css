@@ -909,6 +909,13 @@ a:hover {
   font-size: 2rem;
 }
 
+.credittattoo{
+  text-align: center;
+  font-size: 20px;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
 .footertattoo{
   background-color: #181818;
   padding-top: 4rem;
@@ -921,13 +928,11 @@ a:hover {
   padding-bottom: 1rem;
 }
 
-
-
 .tatuajesparatodos{
   text-align: center;
   font-size: 2rem;
   font-weight: 500;
-  padding-bottom: 3rem;
+  padding-bottom: 1rem;
 }
 
 .tatuajesparatodos:hover{
@@ -958,6 +963,11 @@ a:hover {
 .quotebyghalientattoo:hover{
   color: #F40C5A;
   font-weight: 500;
+}
+
+.socialstattoo{
+  text-align: center;
+  padding-bottom: 1rem;
 }
 
 
@@ -1051,6 +1061,32 @@ a:hover {
 
 .icon-10x {
   font-size: 10em;
+}
+
+.socialstattoo {
+  padding: 1.5rem 0;
+}
+
+.socialstattoo ul li {
+  display: inline-block;
+}
+
+.socialstattoo .ico-circle {
+  height: 40px;
+  width: 40px;
+  font-size: 1.7rem;
+  border-radius: 50%;
+  line-height: 1.4;
+  margin: 0 15px 0 0;
+  box-shadow: 0 0 0 3px #181818;
+  transition: all 500ms ease;
+}
+
+.socialstattoo .ico-circle:hover {
+  background-color: #F40C5A;
+  color: #fff;
+  box-shadow: 0 0 0 3px #f5f5f5;
+  transition: all 500ms ease;
 }
 
 /*======================================
