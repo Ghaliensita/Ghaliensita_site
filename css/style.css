@@ -1011,13 +1011,13 @@ a:hover {
 ======================================*/
 
 .utilitieslinks{
+  padding-top: 2rem;  
   text-align: center;
-  padding-top: 2rem;
 }
 
 .utilitieslinksa {
-  padding: 1.5rem 0;
-  text-align: center;
+  text-align: center;  
+  padding-bottom: 2rem;
 }
 
 .utilitieslinksa ul li {
@@ -1045,8 +1045,9 @@ a:hover {
 .utilitylinks{
   background-color: #171717;
   text-align: center;
-  padding-bottom: 3rem;
+  padding-bottom: 2rem;
 }
+
 
 /*======================================
 //--//-->   SIZES ICO
