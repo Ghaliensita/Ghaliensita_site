@@ -981,6 +981,11 @@ a:hover {
 
 .portfolio{
   padding-top: 2rem;
+  text-align: center;
+  padding-bottom: 2rem;
+  margin-right: 2%;
+  margin-left: 2%;
+  font-size: 1rem;
 }
 
 .portfoliocontent{
@@ -1014,6 +1019,13 @@ a:hover {
   height: 800;
   font-size: 2rem;
 }
+
+.editionportfolio{
+  text-align: center;
+  padding-bottom: 2rem;
+}
+
+
 
 /*======================================
 //--//-->   DOWNLOADINGS
