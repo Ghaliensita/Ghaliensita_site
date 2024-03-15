@@ -1011,8 +1011,43 @@ a:hover {
 }
 
 .artist3d:hover{
-  height: 700;
+  height: 800;
   font-size: 2rem;
+}
+
+/*======================================
+//--//-->   DOWNLOADINGS
+======================================*/
+
+.download-les{
+  text-align: center;
+  padding-bottom: 3rem;
+  padding-top: 2rem;
+}
+
+.assetimg{
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.assets-rs{
+  padding-left: 4rem;
+  padding-right: 4rem;
+  padding-bottom: 3rem;
+  text-align: center;
+}
+
+.block{
+  background-color: steelblue;
+  width: 31.33%;
+  height: 150px;
+  float: left;
+  margin: 1%;
+  display: grid;
+}
+
+.button-dassets{
+  padding-top: 1rem;
 }
 
 /*======================================
@@ -1514,6 +1549,12 @@ footer .credits a {
   background-color: #fff;
   color: #fff;
   border-color: #f5f5f5;
+}
+
+.button-rs {
+  background-color: #181818;
+  color: #fff;
+  border-color: #cde1f8;
 }
 
 .button-big {
