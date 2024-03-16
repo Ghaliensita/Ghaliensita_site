@@ -825,6 +825,14 @@ a:hover {
   columns: 2;
 }
 
+.morecommissions{
+  padding-top: 1rem;
+  padding-bottom: 4rem;
+  text-align: center;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
 .trello{
   padding-bottom: 3rem;
 }
