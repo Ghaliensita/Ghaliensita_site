@@ -1070,6 +1070,10 @@ a:hover {
   padding-top: 1rem;
 }
 
+.procreatebrushs:hover{
+  color: #F40C5A;
+}
+
 /*======================================
 //--//-->   UTILITIES
 ======================================*/
@@ -1110,6 +1114,11 @@ a:hover {
   background-color: #171717;
   text-align: center;
   padding-bottom: 2rem;
+}
+
+.creatorcode{
+  text-align: center;
+  padding-bottom: 3rem;
 }
 
 
