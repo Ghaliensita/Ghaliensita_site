@@ -593,6 +593,44 @@ a:hover {
   opacity: 0.9;
 }
 
+
+/* Dropdown menu */
+
+#mainNav ul ul {
+  display:none;
+  position:absolute;
+  top:100%;
+  left:0;
+  padding:0;
+ }
+ 
+ /* Items dropdown menu */
+ 
+ #mainNav ul ul li {
+  float:none;
+  width:150px
+ }
+ 
+ /* Links items dropdown menu */
+ 
+ #mainNav ul ul a {
+  line-height:120%;
+  padding:10px 15px;
+ }
+
+  #mainNav ul ul a:hover {
+  color: #F40C5A;
+ }
+ /* Hover items dropdown menu */
+ 
+ #mainNav ul li:hover > ul {
+  display:block;
+  color: #F40C5A;
+ }
+
+
+
+
 /*======================================
 //--//-->   INTRO
 ======================================*/
