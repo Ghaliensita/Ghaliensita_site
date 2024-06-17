@@ -630,6 +630,24 @@ a:hover {
 
 
 
+ .navbar-nav .nav-item .dropdown-menu {
+  position: static;
+  float: none;
+}
+.navbar-nav .nav-item:hover .dropdown-menu {
+  display: block;
+}
+/* Ajustes para evitar solapamiento */
+.navbar-nav .nav-item {
+  position: relative;
+}
+.navbar-nav .nav-item .nav-link {
+  white-space: nowrap;
+}
+
+
+
+
 
 /*======================================
 //--//-->   INTRO
