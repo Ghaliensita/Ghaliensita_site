@@ -32,12 +32,12 @@
   <!--/ Nav Start /-->
   <nav class="navbar navbar-b navbar-trans navbar-expand-md fixed-top" id="mainNav">
     <div class="container">
-      <a class="navbar-brand js-scroll" href="index.html">Ghalien</a>
+      <a class="navbar-brand js-scroll" href="index.html">
+        <img src="images/Ghali-GhaliLogo.svg" style="max-width: 50%;" alt="Ghalien Icon"> Ghalien
+      </a>
       <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarDefault"
         aria-controls="navbarDefault" aria-expanded="false" aria-label="Toggle navigation">
-        <span></span>
-        <span></span>
-        <span></span>
+        <span class="navbar-toggler-icon"></span>
       </button>
       <div class="navbar-collapse collapse justify-content-end" id="navbarDefault">
         <ul class="navbar-nav">
@@ -45,36 +45,39 @@
             <a class="nav-link js-scroll" href="index.html">Inicio</a>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle js-scroll" href="aboutme.html">Sobre mí</a>
-            <ul>
-              <li><a class="dropdown-item  nav-link js-scroll" href="utility.html">Mis redes</a></li>
-            </ul>
-            </li>
+            <a class="nav-link dropdown-toggle js-scroll" href="" id="aboutDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Quién soy</a>
+            <div class="dropdown-menu" aria-labelledby="aboutDropdown">
+              <a class="dropdown-item js-scroll" href="aboutme.html">Sobre mí</a>
+              <a class="dropdown-item js-scroll" href="utility.html">Mis redes</a>
+              <a class="dropdown-item js-scroll" href="paymethods.html">Pagos</a>
+            </div>
+          </li>
           <li class="nav-item">
             <a class="nav-link js-scroll" href="tattoo.html">Tatuajes</a>
           </li>
           <li class="nav-item">
             <a class="nav-link js-scroll" href="commissions.html">Comisiones</a>
           </li>
-          
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle js-scroll" href="portfolio.html">Portafolio</a>
-            
-           <ul>
-          <li><a class="dropdown-item nav-link js-scroll" href="3d.html">3D</a></li>
-          <li><a class="dropdown-item nav-link js-scroll" href="paymethods.html">Pagos</a></li>
-          <li><a class="dropdown-item nav-link js-scroll" href="edition.html">Edición</a></li>
-          <li><a class="dropdown-item nav-link js-scroll" href="assets.html">Mis Assets</a></li>
-            </ul> 
+            <a class="nav-link dropdown-toggle js-scroll" href="" id="portfolioDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Portafolio</a>
+            <div class="dropdown-menu" aria-labelledby="portfolioDropdown">
+              <a class="dropdown-item js-scroll" href="3dprinting.html">Impresión 3D</a>
+              <a class="dropdown-item js-scroll" href="3d.html">Arte 3D</a>
+              <a class="dropdown-item js-scroll" href="edition.html">Edición</a>
+              <a class="dropdown-item js-scroll" href="portfolio.html">Más trabajo</a>
+              <a class="dropdown-item js-scroll" href="assets.html">Mis Assets</a>
+            </div>
           </li>
-  
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle js-scroll" href="contact.html">Contacto</a>
-            <ul>
-              <li><a class="dropdown-item  nav-link js-scroll" href="onsale.html">Ventas</a></li>
-            </ul>
+            <a class="nav-link dropdown-toggle js-scroll" href="" id="contactDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Contacto</a>
+            <div class="dropdown-menu" aria-labelledby="contactDropdown">
+              <a class="dropdown-item js-scroll" href="contact.html">Contáctame</a>
+              <a class="dropdown-item js-scroll" href="onsale.html">Ventas</a>
+            </div>
           </li>
-        
         </ul>
       </div>
     </div>
@@ -109,6 +112,8 @@
      <li><a href="https://instagram.com/ghalientattoo"><span class="ico-circle"><i class="ico-ghali-instagram icon-alx"></i></span></a></li>
      <li><a href="https://t.me/ghalientattoos"><span class="ico-circle"><i class="ico-ghali-telegram icon-alx"></i></span></a></li>
      <li><a href="paymethods.html"><span class="ico-circle"><i class="ico-ghali-paid icon-alz"></i></span></a></li>
+     <li><a href="https://www.google.com/maps/place/GHALIEN+TATTOO/@6.2386923,-75.6003722,12z/data=!4m6!3m5!1s0x2b20ca8c8aff6253:0x760e4095567c7dfc!8m2!3d6.247907!4d-75.5814894!16s%2Fg%2F11jzvcygyk?hl=es-419&entry=ttu"><span class="ico-circle"><i class="ico-ghali-ubication icon-alx"></i></span></a></li>
+     <li><a href="https://wa.me/message/CM6P2Q2TNB6LA1"><span class="ico-circle"><i class="ico-ghali-whatsapp icon-alx"></i></span></a></li>
      <li><a href="tattoocalendar.html"><span class="ico-circle"><i class="ico-ghali-calendar2 icon-alz"></i></span></a></li>
      <li><a href="https://www.tiktok.com/@ghalientattoo"><span class="ico-circle"><i class="ico-ghali-tiktok icon-alx"></i></span></a></li>
      <li><a href="https://www.youtube.com/@GhalienTattoo"><span class="ico-circle"><i class="ico-ghali-youtube icon-alz"></i></span></a></li>
@@ -128,7 +133,7 @@
 
   <p class="h4 quoteghalientattoo">"Tatuar es más que plasmar arte en la piel; es eternizar sueños y emociones. Es dejar un legado de belleza y recuerdos inolvidables"</p>
   <p class="quotebyghalientattoo"><em>―Stephany Ghalien, Colombia</em></p>
-    
+
 
   <!--Section Panels Start-->
 
@@ -437,6 +442,15 @@
 
 <!--Section Panels End-->
 
+    
+<!-- Tattoo prices Start -->
+<div class="tattoosprices">
+  <p style="font-size: 20px;">Tatuajes a partir de</p>
+  <p class="cientocincuentamil"><strong>$150.000</strong></p>
+  <p style="font-size: 15px;">Tatuajes pequeños de hasta 10cm x 10cm</p>
+  </div>
+<!-- Tattoo prices End -->
+
   <p class="tatuajesparatodos" style="padding-bottom: 4rem; padding-top: 2rem;"><a href="https://www.instagram.com/ghalientattoo/">¿Qué esperas para cotizar tu próximo tatuaje?</a></p>
 
   <script type='text/javascript'>
@@ -450,7 +464,7 @@
         <div class="row">
           <div class="col-sm-12">
             <div class="copyright-box">
-              <p class="copyright">&copy; Copyright <strong>StephGhalien</strong>. All Rights Reserved</p>
+              <p class="copyright">&copy; Copyright <strong>Ghaliensita</strong>. All Rights Reserved</p>
               <div class="credits">
               </div>
             </div>

@@ -32,12 +32,12 @@
   <!--/ Nav Start /-->
   <nav class="navbar navbar-b navbar-trans navbar-expand-md fixed-top" id="mainNav">
     <div class="container">
-      <a class="navbar-brand js-scroll" href="index.html">Ghalien</a>
+      <a class="navbar-brand js-scroll" href="index.html">
+        <img src="images/Ghali-GhaliLogo.svg" style="max-width: 50%;" alt="Ghalien Icon"> Ghalien
+      </a>
       <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarDefault"
         aria-controls="navbarDefault" aria-expanded="false" aria-label="Toggle navigation">
-        <span></span>
-        <span></span>
-        <span></span>
+        <span class="navbar-toggler-icon"></span>
       </button>
       <div class="navbar-collapse collapse justify-content-end" id="navbarDefault">
         <ul class="navbar-nav">
@@ -45,36 +45,39 @@
             <a class="nav-link js-scroll" href="index.html">Inicio</a>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle js-scroll" href="aboutme.html">Sobre mí</a>
-            <ul>
-              <li><a class="dropdown-item  nav-link js-scroll" href="utility.html">Mis redes</a></li>
-            </ul>
-            </li>
+            <a class="nav-link dropdown-toggle js-scroll" href="" id="aboutDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Quién soy</a>
+            <div class="dropdown-menu" aria-labelledby="aboutDropdown">
+              <a class="dropdown-item js-scroll" href="aboutme.html">Sobre mí</a>
+              <a class="dropdown-item js-scroll" href="utility.html">Mis redes</a>
+              <a class="dropdown-item js-scroll" href="paymethods.html">Pagos</a>
+            </div>
+          </li>
           <li class="nav-item">
             <a class="nav-link js-scroll" href="tattoo.html">Tatuajes</a>
           </li>
           <li class="nav-item">
             <a class="nav-link js-scroll" href="commissions.html">Comisiones</a>
           </li>
-          
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle js-scroll" href="portfolio.html">Portafolio</a>
-            
-           <ul>
-          <li><a class="dropdown-item nav-link js-scroll" href="3d.html">3D</a></li>
-          <li><a class="dropdown-item nav-link js-scroll" href="paymethods.html">Pagos</a></li>
-          <li><a class="dropdown-item nav-link js-scroll" href="edition.html">Edición</a></li>
-          <li><a class="dropdown-item nav-link js-scroll" href="assets.html">Mis Assets</a></li>
-            </ul> 
+            <a class="nav-link dropdown-toggle js-scroll" href="" id="portfolioDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Portafolio</a>
+            <div class="dropdown-menu" aria-labelledby="portfolioDropdown">
+              <a class="dropdown-item js-scroll" href="3dprinting.html">Impresión 3D</a>
+              <a class="dropdown-item js-scroll" href="3d.html">Arte 3D</a>
+              <a class="dropdown-item js-scroll" href="edition.html">Edición</a>
+              <a class="dropdown-item js-scroll" href="portfolio.html">Más trabajo</a>
+              <a class="dropdown-item js-scroll" href="assets.html">Mis Assets</a>
+            </div>
           </li>
-  
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle js-scroll" href="contact.html">Contacto</a>
-            <ul>
-              <li><a class="dropdown-item  nav-link js-scroll" href="onsale.html">Ventas</a></li>
-            </ul>
+            <a class="nav-link dropdown-toggle js-scroll" href="" id="contactDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Contacto</a>
+            <div class="dropdown-menu" aria-labelledby="contactDropdown">
+              <a class="dropdown-item js-scroll" href="contact.html">Contáctame</a>
+              <a class="dropdown-item js-scroll" href="onsale.html">Ventas</a>
+            </div>
           </li>
-        
         </ul>
       </div>
     </div>
@@ -98,7 +101,7 @@
   
 
  <!--/ Section Portfolio /-->
- <div class="portfolio">
+ <div class="portfolio" style="margin-bottom: -2rem;">
   <p class="text-center">Algunos de mis assets para descarga, pinceles, objs y más</p>
   <p class="h4" style="text-align: center;">Éstos son algunos de los recursos que puedes adquirir de manera gratuita en mi web</p>
 </div>
@@ -129,7 +132,7 @@
       <div class="row">
         <div class="col-sm-12">
           <div class="copyright-box">
-            <p class="copyright">&copy; Copyright <strong>StephGhalien</strong>. All Rights Reserved</p>
+            <p class="copyright">&copy; Copyright <strong>Ghaliensita</strong>. All Rights Reserved</p>
             <div class="credits">
             </div>
           </div>

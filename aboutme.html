@@ -32,12 +32,12 @@
   <!--/ Nav Start /-->
   <nav class="navbar navbar-b navbar-trans navbar-expand-md fixed-top" id="mainNav">
     <div class="container">
-      <a class="navbar-brand js-scroll" href="index.html">Ghalien</a>
+      <a class="navbar-brand js-scroll" href="index.html">
+        <img src="images/Ghali-GhaliLogo.svg" style="max-width: 50%;" alt="Ghalien Icon"> Ghalien
+      </a>
       <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarDefault"
         aria-controls="navbarDefault" aria-expanded="false" aria-label="Toggle navigation">
-        <span></span>
-        <span></span>
-        <span></span>
+        <span class="navbar-toggler-icon"></span>
       </button>
       <div class="navbar-collapse collapse justify-content-end" id="navbarDefault">
         <ul class="navbar-nav">
@@ -45,36 +45,39 @@
             <a class="nav-link js-scroll" href="index.html">Inicio</a>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle js-scroll" href="aboutme.html">Sobre mí</a>
-            <ul>
-              <li><a class="dropdown-item  nav-link js-scroll" href="utility.html">Mis redes</a></li>
-            </ul>
-            </li>
+            <a class="nav-link dropdown-toggle js-scroll" href="" id="aboutDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Quién soy</a>
+            <div class="dropdown-menu" aria-labelledby="aboutDropdown">
+              <a class="dropdown-item js-scroll" href="aboutme.html">Sobre mí</a>
+              <a class="dropdown-item js-scroll" href="utility.html">Mis redes</a>
+              <a class="dropdown-item js-scroll" href="paymethods.html">Pagos</a>
+            </div>
+          </li>
           <li class="nav-item">
             <a class="nav-link js-scroll" href="tattoo.html">Tatuajes</a>
           </li>
           <li class="nav-item">
             <a class="nav-link js-scroll" href="commissions.html">Comisiones</a>
           </li>
-          
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle js-scroll" href="portfolio.html">Portafolio</a>
-            
-           <ul>
-          <li><a class="dropdown-item nav-link js-scroll" href="3d.html">3D</a></li>
-          <li><a class="dropdown-item nav-link js-scroll" href="paymethods.html">Pagos</a></li>
-          <li><a class="dropdown-item nav-link js-scroll" href="edition.html">Edición</a></li>
-          <li><a class="dropdown-item nav-link js-scroll" href="assets.html">Mis Assets</a></li>
-            </ul> 
+            <a class="nav-link dropdown-toggle js-scroll" href="" id="portfolioDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Portafolio</a>
+            <div class="dropdown-menu" aria-labelledby="portfolioDropdown">
+              <a class="dropdown-item js-scroll" href="3dprinting.html">Impresión 3D</a>
+              <a class="dropdown-item js-scroll" href="3d.html">Arte 3D</a>
+              <a class="dropdown-item js-scroll" href="edition.html">Edición</a>
+              <a class="dropdown-item js-scroll" href="portfolio.html">Más trabajo</a>
+              <a class="dropdown-item js-scroll" href="assets.html">Mis Assets</a>
+            </div>
           </li>
-  
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle js-scroll" href="contact.html">Contacto</a>
-            <ul>
-              <li><a class="dropdown-item  nav-link js-scroll" href="onsale.html">Ventas</a></li>
-            </ul>
+            <a class="nav-link dropdown-toggle js-scroll" href="" id="contactDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Contacto</a>
+            <div class="dropdown-menu" aria-labelledby="contactDropdown">
+              <a class="dropdown-item js-scroll" href="contact.html">Contáctame</a>
+              <a class="dropdown-item js-scroll" href="onsale.html">Ventas</a>
+            </div>
           </li>
-        
         </ul>
       </div>
     </div>
@@ -144,7 +147,7 @@
                         <div class="progress-bar" role="progressbar" style="width: 45%" aria-valuenow="45" aria-valuemin="0"
                           aria-valuemax="100"></div>
                       </div>
-                       <span>3D</span> <span class="pull-right">45%</span>
+                       <span>Modelado y esculpido 3D</span> <span class="pull-right">45%</span>
                         <div class="progress">
                             <div class="progress-bar" role="progressbar" style="width: 45%" aria-valuenow="45" aria-valuemin="0"
                             aria-valuemax="100"></div>
@@ -195,16 +198,17 @@
                         </h5>
                       </div>
                       <p class="lead" id="sobremi">
-                        Soy una persona sencilla, enérgica y proactiva con la mejor disposición para el conocimiento, poseo la capacidad de adaptarme rápidamente ante cualquier situación, software o aprendizaje.
+                        Soy una persona enérgica y adaptable, con amplios conocimientos en diseño y medios digitales. Me apasionan el <strong>modelado y esculpido 3D</strong>, <strong>la impresión 3D</strong> y el <strong>desarrollo web</strong>, donde destaco por mis habilidades y creatividad.
                       </p>
                       <p class="lead" id="sobremi">                    
-                        Domino amplios conocimientos en diseño, audiovisual y mi enfoque principal es medios digitales y el arte final. También cuento con conocimientos para creación de contenido y más.
+                        Además, tengo experiencia en redes y comunicaciones, lo que me 
+                        permite relacionarme fácilmente con las personas y trabajar 
+                        eficazmente en equipo.
                       </p>
                       <p class="lead" id="sobremi">                   
-                        Puedo relacionarme fácilmente con las personas y tengo una amplia experiencia en el campo de redes y comunicaciones.
-                      </p>
+                        </p>
                       <p class="lead" id="sobremi">                   
-                        Cuento con la capacidad de hablar 2 idiomas actualmente: <p class="h5">Español (Nativo), Inglés (Intermedio).</p>
+                        Cuento con la capacidad de hablar 2 idiomas actualmente: <p class="h5">Español (Nativo), Inglés (B1).</p>
                       </p>
                       <p class="lead" id="sobremi">                   
                         Me he certificado en diferentes áreas: <strong>Certificado en HTML y CSS</strong> (2017), <strong>Certificado de Animado en 3D</strong> (2018), <strong>Certificado de Diseño para la Producción Digital en Cine y Videojuegos</strong> (2021), <strong>Certificado de Desarrollo de Videojuegos</strong> (Nivel 1: 2022 y Nivel 2: 2023)
@@ -236,7 +240,7 @@
             <div class="row">
               <div class="col-sm-12">
                 <div class="copyright-box">
-                  <p class="copyright">&copy; Copyright <strong>StephGhalien</strong>. All Rights Reserved</p>
+                  <p class="copyright">&copy; Copyright <strong>Ghaliensita</strong>. All Rights Reserved</p>
                   <div class="credits">
                   </div>
                 </div>

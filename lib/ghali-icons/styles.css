@@ -203,3 +203,24 @@
 .ico-ghali-calendar2:before {
   content: "\32";
 }
+.ico-ghali-makerworld:before {
+  content: "\33";
+}
+.ico-ghali-myminifactory:before {
+  content: "\34";
+}
+.ico-ghali-pinshape:before {
+  content: "\35";
+}
+.ico-ghali-thingiverse:before {
+  content: "\36";
+}
+.ico-ghali-printables:before {
+  content: "\37";
+}
+.ico-ghali-cults3d:before {
+  content: "\38";
+}
+.ico-ghali-ghalilogo:before {
+  content: "\39";
+}
