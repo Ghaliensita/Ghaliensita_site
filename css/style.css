@@ -1213,6 +1213,7 @@ a:hover {
 
 .icon-alz {
   vertical-align: middle;
+  top: 8px;
 }
 
 .icon-alx {
@@ -1220,6 +1221,17 @@ a:hover {
   position: relative;
 }
 
+.icon-aly {
+  vertical-align: middle;
+  position: relative;
+  top: 3px;
+}
+
+.icon-alyy {
+  vertical-align: middle;
+  position: relative;
+  bottom: -10px;
+}
 .icon-05x {
   font-size: -2em;
   vertical-align: middle;
