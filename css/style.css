@@ -1200,6 +1200,12 @@ a:hover {
   padding-right: 2rem;
 }
 
+.imgghali{
+  text-align: center;
+  padding-bottom: 3rem;
+  align-content: center;
+}
+
 
 /*======================================
 //--//-->   SIZES ICO
@@ -1438,6 +1444,54 @@ a:hover {
 .widget-tags ul li a {
   color: #fff;
 }
+
+/*======================================
+//--//-->   PRINT MATERIALS
+======================================*/
+
+/* Reset de estilo básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* Estilo del contenedor de imágenes */
+.imagenesmateriales {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+/* Estilo de cada columna */
+.columna {
+  flex: 1;
+  margin: 10px;
+  max-width: calc(25% - 20px); /* 25% del ancho menos el margen */
+}
+
+.columna img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+}
+
+/* Estilos responsivos para pantallas pequeñas */
+@media (max-width: 768px) {
+  .columna {
+      max-width: calc(50% - 20px); /* 50% del ancho para pantallas medianas */
+  }
+}
+
+@media (max-width: 480px) {
+  .columna {
+      max-width: 100%; /* 100% del ancho para pantallas pequeñas */
+  }
+}
+
 
 /*======================================
 //--//-->   CONTACT
