@@ -83,7 +83,7 @@
 .ico-ghali-follow:before {
   content: "\6f";
 }
-.ico-ghali-game:before {
+.ico-ghali-implarge-1:before {
   content: "\70";
 }
 .ico-ghali-implarge:before {
@@ -158,9 +158,6 @@
 .ico-ghali-write:before {
   content: "\4e";
 }
-.ico-ghali-youtube:before {
-  content: "\4f";
-}
 .ico-ghali-tiktok:before {
   content: "\50";
 }
@@ -223,4 +220,25 @@
 }
 .ico-ghali-ghalilogo:before {
   content: "\39";
+}
+.ico-ghali-youtube:before {
+  content: "\4f";
+}
+.ico-ghali-linkedin:before {
+  content: "\21";
+}
+.ico-ghali-configs:before {
+  content: "\22";
+}
+.ico-ghali-3dprint2:before {
+  content: "\23";
+}
+.ico-ghali-3dprint:before {
+  content: "\24";
+}
+.ico-ghali-filament:before {
+  content: "\25";
+}
+.ico-ghali-facebook:before {
+  content: "\26";
 }
