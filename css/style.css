@@ -1054,6 +1054,15 @@ a:hover {
   margin-left: 20%;
   margin-right: 20%;
   background-color: #F40C5A;
+  border-radius: 20px;
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  padding: 10px 70px;
+  border: none; 
+  cursor: pointer; 
+  margin: 0 auto; 
+  width: fit-content; 
 }
 
 .cientocincuentamil:hover{
@@ -1529,6 +1538,22 @@ a:hover {
       max-width: 100%; /* 100% del ancho para pantallas pequeñas */
   }
 }
+
+.cotizacongeatech {
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  background-color: #00C5FA;
+  color: #303030;
+  font-size: 24px;
+  border-radius: 20px;
+  padding: 10px 20px;
+  border: none; 
+  cursor: pointer; 
+  margin: 0 auto; 
+  width: fit-content; 
+}
+
 
 .communityTelegram{
   text-align: center;
