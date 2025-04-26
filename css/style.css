@@ -1616,6 +1616,26 @@ a:hover {
   width: fit-content; 
 }
 
+.supportme {
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  background-color: #00C5FA;
+  color: #303030;
+  font-size: 24px;
+  border-radius: 20px;
+  padding: 10px 20px;
+  border: none; 
+  cursor: pointer; 
+  margin: 0 auto; 
+  width: fit-content; 
+}
+
+.supportme:hover{
+   background-color: #F40C5A;
+  color: white
+}
+
 
 .communityTelegram{
   text-align: center;
