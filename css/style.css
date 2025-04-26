@@ -1631,11 +1631,20 @@ a:hover {
   width: fit-content; 
 }
 
-.supportme:hover{
-   background-color: #F40C5A;
-  color: white
+.supportme a{
+   background-color: #00C5FA;
+  color: #303030;
 }
 
+.supportme:hover{
+   background-color: #F40C5A;
+  color: white;
+}
+
+.supportme a:hover{
+   background-color: #F40C5A;
+  color: white;
+}
 
 .communityTelegram{
   text-align: center;
