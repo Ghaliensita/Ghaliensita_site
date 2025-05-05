@@ -1616,25 +1616,51 @@ a:hover {
   width: fit-content; 
 }
 
+.supportme-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem; /* Espacio entre botones por defecto */
+}
+
 .supportme {
-  display: flex; 
-  justify-content: center; 
-  align-items: center; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: #00C5FA;
   color: #303030;
   font-size: 24px;
   border-radius: 20px;
   padding: 10px 20px;
-  border: none; 
-  cursor: pointer; 
-  margin: 0 auto; 
-  width: fit-content; 
+  border: none;
+  cursor: pointer;
+  margin: 0 auto;
+  width: fit-content;
 }
 
-.supportme a{
-   background-color: #00C5FA;
+/* Enlace dentro del botón (si aplica) */
+.supportme a {
+  background-color: #00C5FA;
   color: #303030;
+  text-decoration: none;
 }
+
+/* Hover general */
+.supportme:hover,
+.supportme a:hover {
+  background-color: #F40C5A;
+  color: white;
+}
+
+/* Responsive: apilar botones en móviles */
+@media (max-width: 768px) {
+  .supportme-container {
+    flex-direction: column;
+    gap: 3rem; /* Espaciado vertical entre botones */
+    align-items: center;
+  }
+}
+
 
 .supportme:hover{
    background-color: #F40C5A;
