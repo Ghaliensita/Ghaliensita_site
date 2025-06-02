@@ -117,3 +117,100 @@
 })(jQuery);
 
 
+
+
+  const menuToggle = document.getElementById('mobile-menu');
+  const navLinks = document.querySelector('.nav-links');
+  const dropdowns = document.querySelectorAll('.dropdown');
+
+  menuToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+  });
+
+  // Para activar dropdown en móviles al hacer click
+  dropdowns.forEach(drop => {
+    drop.addEventListener('click', () => {
+      drop.classList.toggle('active');
+    });
+  });
+
+
+  const slides = document.querySelector('.slides');
+const slideCount = document.querySelectorAll('.slide').length;
+let index = 0;
+
+document.querySelector('.next').addEventListener('click', () => {
+  index = (index + 1) % slideCount;
+  updateSlide();
+});
+
+document.querySelector('.prev').addEventListener('click', () => {
+  index = (index - 1 + slideCount) % slideCount;
+  updateSlide();
+});
+
+function updateSlide() {
+  slides.style.transform = `translateX(${-index * 100}%)`;
+}
+
+// Opcional: Autoplay
+setInterval(() => {
+  index = (index + 1) % slideCount;
+  updateSlide();
+}, 5000);
+
+
+
+  const startDate = new Date('2016-10-23'); // Fecha inicial: 23 de octubre de 2016
+  const today = new Date('2025-05-31'); // Fecha actual: 31 de mayo de 2025
+
+  let yearsPassed = today.getFullYear() - startDate.getFullYear();
+
+  // Ajustar si el mes y el día actuales no han pasado todavía
+  const monthDiff = today.getMonth() - startDate.getMonth();
+  const dayDiff = today.getDate() - startDate.getDate();
+
+  if (monthDiff < 0 || (monthDiff === 0 && dayDiff < 0)) {
+    yearsPassed--;
+  }
+
+  // Mostrar el resultado en el HTML
+  document.getElementById('years').textContent = yearsPassed;
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const track = document.querySelector('.carousel-track');
+  const container = document.querySelector('.carousel-container');
+
+  let position = 0;
+  let baseSpeed = 0.5; // Velocidad normal (ajústala a gusto)
+  let speed = baseSpeed;
+
+  function animate() {
+    const trackWidth = track.scrollWidth;
+    const containerWidth = container.clientWidth;
+
+    position += speed;
+
+    if (position >= trackWidth) {
+      position = -containerWidth; // Reinicia al llegar al final
+    }
+
+    track.style.transform = `translateX(-${position}px)`;
+
+    requestAnimationFrame(animate);
+  }
+
+  animate();
+
+  // Evento para reducir velocidad al pasar mouse
+  container.addEventListener('mouseenter', () => {
+    speed = baseSpeed / 3; // Más lento
+  });
+
+  container.addEventListener('mouseleave', () => {
+    speed = baseSpeed; // Velocidad normal
+  });
+});
+
+

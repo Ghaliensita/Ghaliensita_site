@@ -26,11 +26,16 @@
   <script src="https://cdn.jsdelivr.net/npm/swiffy-slider@1.6.0/dist/js/swiffy-slider.min.js" crossorigin="anonymous" defer></script>
   <link href="https://cdn.jsdelivr.net/npm/swiffy-slider@1.6.0/dist/css/swiffy-slider.min.css" rel="stylesheet" crossorigin="anonymous">
   <link href="https://cdn.jsdelivr.net/npm/swiffy-slider@1.6.0/dist/js/swiffy-slider-extensions.min.js">
-  <!-- https://swiffyslider.com/configuration/?slider-item-show=slider-item-show6&slider-item-show2-sm=slider-item-show2-sm&slider-item-reveal=slider-item-reveal&slider-item-ratio=slider-item-ratio&slider-item-ratio-value=slider-item-ratio-1x1&slider-nav-style=slider-nav-caret&slider-nav-sm=slider-nav-sm&slider-nav-arrows=slider-nav-outside&slider-nav-touch=slider-nav-touch&slider-nav-autoplay=slider-nav-autoplay&data-slider-nav-autoplay-interval=2000&slider-indicators-style=slider-indicators-round&slider-indicators-dark=slider-indicators-dark&slider-indicators-outside=slider-indicators-outside&slider-indicators-highlight=slider-indicators-highlight&slider-indicators-sm=slider-indicators-sm&slider-nav-animation=slider-nav-animation&slider-nav-animation-style=slider-nav-animation-scale&slider-item-helper=slider-item-helper&slider-nav-mousedrag=slider-nav-mousedrag&preview-style=preview-images -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"></script>
 
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
@@ -44,53 +49,51 @@
 
 <body>
   <!--/ Nav Start /-->
-  <nav class="navbar navbar-b navbar-trans navbar-expand-md fixed-top" id="mainNav">
-    <div class="container">
-      <a class="navbar-brand js-scroll" href="index.html">
-        <img src="images/Ghali-GhaliLogo.svg" style="max-width: 50%;" alt="Ghalien Icon"> Ghalien
-      </a>
-      <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarDefault"
-        aria-controls="navbarDefault" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="navbar-collapse collapse justify-content-end" id="navbarDefault">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link js-scroll" href="index.html">Inicio</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle js-scroll" href="" id="aboutDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Quién soy</a>
-            <div class="dropdown-menu" aria-labelledby="aboutDropdown">
-              <a class="dropdown-item js-scroll" href="aboutme.html">Sobre mí</a>
-              <a class="dropdown-item js-scroll" href="utility.html">Mis redes</a>
-              <a class="dropdown-item js-scroll" href="paymethods.html">Pagos</a>
-              <a class="dropdown-item js-scroll" href="goal.html">Goal</a>
-            </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll" href="tattoo.html">GHALIENTATTOO</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll" href="geatech.html">GEA TECH</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle js-scroll" href="" id="portfolioDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Portafolio</a>
-            <div class="dropdown-menu" aria-labelledby="portfolioDropdown">
-              <a class="dropdown-item js-scroll" href="commissions.html">Comisiones</a>
-              <a class="dropdown-item js-scroll" href="3d.html">Arte 3D</a>
-              <a class="dropdown-item js-scroll" href="edition.html">Edición</a>
-              <a class="dropdown-item js-scroll" href="portfolio.html">Más trabajo</a>
-              <a class="dropdown-item js-scroll" href="assets.html">Mis Assets</a>
-            </div>
-          </li>
-            </div>
-          </li>
-        </ul>
-      </div>
+<nav class="navbar navbar-b navbar-trans navbar-expand-md fixed-top" id="mainNav">
+  <div class="container">
+    <a class="navbar-brand js-scroll" href="index.html">
+      <img src="images/Ghali-GhaliLogo.svg" style="max-width: 50%;" alt="Ghalien Icon"> Ghalien
+    </a>
+    <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarDefault"
+      aria-controls="navbarDefault" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="navbar-collapse collapse justify-content-end" id="navbarDefault">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link js-scroll" href="index.html">Inicio</a></li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle js-scroll" href="#" id="geatechDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Gea Tech</a>
+          <div class="dropdown-menu" aria-labelledby="geatechDropdown">
+            <a class="dropdown-item js-scroll" href="geatech.html">Sobre GEA TECH</a>
+            <a class="dropdown-item js-scroll" href="services.html">Servicios</a>
+            <a class="dropdown-item js-scroll" href="quoteprice.html">Cotización</a>
+          </div>
+        </li>
+        <li class="nav-item"><a class="nav-link js-scroll" href="tattoo.html">Ghalien Tattoo</a></li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle js-scroll" href="#" id="aboutDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Sobre mí</a>
+          <div class="dropdown-menu" aria-labelledby="aboutDropdown">
+            <a class="dropdown-item js-scroll" href="aboutme.html">¿Quién es Ghalien?</a>
+            <a class="dropdown-item js-scroll" href="paymethods.html">Pagos y donaciones</a>
+            <a class="dropdown-item js-scroll" href="goal.html">Meta activa</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle js-scroll" href="#" id="contactDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Contacto</a>
+          <div class="dropdown-menu" aria-labelledby="contactDropdown">
+            <a class="dropdown-item js-scroll" href="utility.html">Redes sociales</a>
+          </div>
+        </li>
+      </ul>
     </div>
-  </nav>
+    <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarDefault"
+    aria-controls="navbarDefault" aria-expanded="false" aria-label="Toggle navigation" style="color: white;">
+    <svg width="30" height="30" viewBox="0 0 30 30">
+    <path stroke="currentColor" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"/>
+  </svg>
+</button>
+  </div>
+</nav>
   <!--/ Nav End /-->
 
   <!--/ Intro Skew Star /-->
@@ -101,7 +104,7 @@
         <div class="container">
           <!--<p class="display-6 color-d">Hello, world!</p>-->
           <h1 class="intro-title mb-4">Stephany Ghalien</h1>
-          <p class="intro-subtitle"><span class="text-slider-items">Tattoo artist, 3D > Artist and prints, Deportist > Archer, Graphic designer, Streamer / Content creator, Game dev and Web dev, Technical support for computers, Commissions > Illustrations emotes, and more...</span><strong class="text-slider"></strong></p>
+          <p class="intro-subtitle"><span class="text-slider-items">Welcome to Ghalien-verse, 3D printing / 3D modeling, Tattoo artist, Streamer / Content creator, Game dev / Web dev, and more...</span><strong class="text-slider"></strong></p>
           <!-- <p class="pt-3"><a class="btn btn-primary btn js-scroll px-4" href="#about" role="button">Learn More</a></p> -->
         </div>
       </div>
@@ -109,109 +112,36 @@
   </div>
   <!--/ Intro Skew End /-->
 
-
-
-  <!--/ Section Services Star /-->
-  <section id="service" class="services-mf route">
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-12">
-          <div class="title-box text-center">
-            <h3 class="title-a">
-              <p></p>              
-              Servicios
-            </h3>
-            <p class="subtitle-a">
-              Éstos son algunos de los diferentes servicios que puedo ofrecerte, en su mayoría digitales.
-            </p>
-            <div class="line-mf"></div>
-          </div>
-        </div>
+  <!--/ Vision Start /-->
+<section id="geatech-vision" class="vision-section">
+  <div class="geatechinfo" style="background: linear-gradient(135deg, #f40c5981, #1b1b1b);">
+  <div class="container">
+    <div class="content-wrapper">
+      <div class="text-content">
+        <h2>✨ GEA TECH: Evolución, creatividad y transformación</h2>
+        <p>
+          En <strong>GEA TECH</strong>, no solo creamos, sino que transformamos realidades. Somos aliados en la evolución hacia un futuro donde el arte, la tecnología y la creatividad se fusionan para dejar huella. Creemos en el poder del diseño, la impresión 3D, el modelado y la creación digital como herramientas para sanar, inspirar y revolucionar.
+        </p>
+        <p>
+          Te invitamos a sumergirte en este <strong>Ghalienverse</strong>, donde cada proyecto es un viaje que conecta ideas y personas, creando recuerdos inolvidables y soluciones innovadoras. Con nuestros servicios personalizados, te acompañamos en cada paso, fortaleciendo tus habilidades y potenciando tu visión.
+        </p>
+        <p>
+          Únete a <strong>GEA TECH</strong> y sé parte de esta revolución creativa. Juntos, hacemos del arte un motor de cambio, construyendo un futuro más humano, colaborativo y brillante.
+        </p>
+        <a href="quoteprice.html" class="cta-button">¡Quiero ser parte del cambio!</a>
       </div>
-      <div class="row">
-        <div class="col-md-4">
-          <div class="service-box">
-            <div class="service-ico">
-              <span class="ico-circle"><i class="ico-ghali-design icon-alyy"></i></span>
-            </div>
-            <div class="service-content">
-              <h2 class="s-title">Diseño gráfico</h2>
-              <p class="s-description text-center">
-                Freelance desde 2015. 
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="service-box">
-            <div class="service-ico">
-              <span class="ico-circle"><i class="ico-ghali-tattoo icon-aly"></i></span>
-            </div>
-            <div class="service-content">
-              <h2 class="s-title">Tatuajes</h2>
-              <p class="s-description text-center">
-                Tatuadora desde 2017 con pasión.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="service-box">
-            <div class="service-ico">
-              <span class="ico-circle"><i class="ico-ghali-game icon-aly"></i></span>
-            </div>
-            <div class="service-content">
-              <h2 class="s-title">Videojuegos</h2>
-              <p class="s-description text-center">
-                Desarrollo de videojuegos desde 2022.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="service-box">
-            <div class="service-ico">
-              <span class="ico-circle"><i class="ico-ghali-video icon-aly>"></i></span>
-            </div>
-            <div class="service-content">
-              <h2 class="s-title">Video</h2>
-              <p class="s-description text-center">
-                Edición de video, motion graphics.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="service-box">
-            <div class="service-ico">
-              <span class="ico-circle"><i class="ico-ghali-brush icon-aly"></i></span>
-            </div>
-            <div class="service-content">
-              <h2 class="s-title">Emotes</h2>
-              <p class="s-description text-center">
-                Arte e impresión 3D, emotes y más.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="service-box">
-            <div class="service-ico">
-              <span class="ico-circle"><i class="ico-ghali-web icon-aly"></i></span>
-            </div>
-            <div class="service-content">
-              <h2 class="s-title">Web</h2>
-              <p class="s-description text-center">
-                Creación de páginas web.
-              </p>
-            </div>
-          </div>
-        </div>
+      <div class="image-content">
+        <img src="img/gea-tech.jpg" alt="GEA TECH choise">
       </div>
     </div>
-  </section>
-  <!--/ Section Services End /-->
+    </div>
+  </div>
+</section>
 
+  <!--/ Vision End /-->
+
+
+<!--/ Section  Stats Start /-->
   <div class="section-counter paralax-mf bg-image" style="background-image: url(img/counters-bg.jpg)">
     <div class="overlay-mf"></div>
     <div class="container">
@@ -222,7 +152,7 @@
               <span class="ico-circle"><i class="ico-ghali-check icon-aly"></i></span>
             </div>
             <div class="counter-num">
-              <p class="counter">311</p>
+              <p class="counter">325</p>
               <span class="counter-text">+ TRABAJOS COMPLETADOS</span>
             </div>
           </div>
@@ -233,7 +163,7 @@
               <span class="ico-circle"><i class="ico-ghali-calendar icon-aly"></i></span>
             </div>
             <div class="counter-num">
-              <p class="counter">9</p>
+              <p class="counter">10</p>
               <span class="counter-text">+ AÑOS DISEÑANDO</span>
             </div>
           </div>
@@ -244,7 +174,7 @@
               <span class="ico-circle"><i class="ico-ghali-tattooexp icon-aly"></i></span>
             </div>
             <div class="counter-num">
-              <p class="counter">8</p>
+              <p class="counter">8</span></p>
               <span class="counter-text">+ AÑOS TATUANDO</span>
             </div>
           </div>
@@ -255,266 +185,114 @@
               <span class="ico-circle"><i class="ico-ghali-users icon-aly"></i></span>
             </div>
             <div class="counter-num">
-              <p class="counter">241</p>
+              <p class="counter">247</p>
               <span class="counter-text">+ CLIENTES TOTALES</span>
             </div>
           </div>
         </div>
 
-      </div>
-    <p style="text-align: center; color: white; padding-top: 3rem;">...Más de 9 años de experiencia...</p>      
+      </div>   
     </div>   
   </div>
-
+<!--/ Section  Stats End /-->
 
 <!--/ Section companies Star /-->
-
-<div class="spacewithoutnothing" style="margin-top: 3rem;">
-  <p style="text-align: center; font-weight: 700; font-size: 2rem; color: black;">Algunos de nuestros clientes</p>
-  <p class="subtitle-a" style="text-align: center; padding-bottom: 1rem;">Empresas para las que he hecho algún(os) diseño(s), video, página web, 3D o más:</p>
+<div class="companiescarousel">
+  <p style="text-align: center; font-size: 24px; color: rgb(158, 158, 158);">Algunos de los clientes para los que hemos colaborado</p>
+<div class="carousel-container">
+  <div class="carousel-track">
+    <div><img src="images/Ghali-Ari3D.svg" alt="Ari3Ddiv"></div>      
+    <div><img src="images/Ghali-Serempre.svg" alt="Serempre"></div>      
+    <div><img src="images/Ghali-Cetiia.svg" alt="CETIIA"></div> 
+    <div><img src="images/Ghali-ACOPI.svg" alt="ACOPI"></div>      
+    <div><img src="images/Ghali-24HN.svg" alt="24HN"></div> 
+    <div><img src="images/Ghali-AFM.svg" alt="AFM Holding"></div>      
+    <div><img src="images/Ghali-ADINTELO.svg" alt="ADINTELO"></div> 
+    <div><img src="images/Ghali-Tu Fiesta HLM.svg" alt="Tu Fiesta HLM"></div>      
+    <div><img src="images/Ghali-Rehumanizar.svg" alt="Rehumanizar"></div> 
+    <div><img src="images/Ghali-Cooperen.svg" alt="Cooperen"></div>      
+    <div><img src="images/Ghali-VIDACOOP.svg" alt="VIDACOOP"></div>    
+    <div><img src="images/Ghali-Refrilogística.svg" alt="Refrilogística"></div>
+    <div><img src="images/Ghali-Aburrá.svg" alt="Aburrá LTDA"></div>
+    <div><img src="images/Ghali-Ahumados Toto.svg" alt="Ahumados Toto"></div>
+    <div><img src="images/Ghali-FEC.svg" alt="FEC"></div>
+    <div><img src="images/Ghali-CAC Marketing y Publicidad.svg" alt="CAC Marketing y Publicidad"></div>
+  </div>
 </div>
-<div class="swiffy-slider slider-item-show6 slider-item-show2-sm slider-item-reveal slider-item-ratio slider-item-ratio-1x1 slider-nav-caret slider-nav-sm slider-nav-outside slider-nav-touch slider-nav-autoplay slider-indicators-round slider-indicators-dark slider-indicators-outside slider-indicators-highlight slider-indicators-sm slider-nav-animation slider-nav-animation-scale slider-item-helper slider-nav-mousedrag" data-slider-nav-autoplay-interval="2600" style="max-width: 1300px; align-self: center; margin: auto;">
-  <ul class="slider-container" style="cursor: grabbing;">
-      <li class="slide-visible">
-          <div id="slide1"><img src="images/Ghali-Ari3D.svg" loading="lazy" alt="Ari3D"></div>
-      </li>    
-      <li class="slide-visible">
-          <div id="slide1"><img src="images/Ghali-Serempre.svg" loading="lazy" alt="Serempre"></div>
-      </li>
-      <li class="slide-visible">
-          <div id="slide2"><img src="images/Ghali-GB Lab.svg" loading="lazy" alt="GB Lab: Genéricos de Belleza"></div>
-      </li>
-      <li class="slide-visible">
-          <div id="slide3"><img src="images/Ghali-Cetiia.svg" loading="lazy" alt="CETIIA"></div>
-      </li>
-      <li class="slide-visible">
-          <div id="slide4"><img src="images/Ghali-ACOPI.svg" loading="lazy" alt="ACOPI"></div>
-      </li>
-      <li class="slide-visible">
-          <div id="slide5"><img src="images/Ghali-24HN.svg" loading="lazy" alt="24HN"></div>
-      </li>
-      <li class="slide-visible">
-          <div id="slide6"><img src="images/Ghali-AFM.svg" loading="lazy" alt="AFM Holding"></div>
-      </li>
-      <li class="slide-visible">
-          <div id="slide7"><img src="images/Ghali-ADINTELO.svg" loading="lazy" alt="ADINTELO"></div>
-      </li>
-      <li class="slide-visible">
-          <div id="slide8"><img src="images/Ghali-Tu Fiesta HLM.svg" loading="lazy" alt="Tu Fiesta HLM"></div>
-      </li>
-      <li class="">
-          <div id="slide9"><img src="images/Ghali-Rehumanizar.svg" loading="lazy" alt="Fundación Rehumanizar Sueños del Alma"></div>
-      </li>
-      <li class="">
-          <div id="slide10"><img src="images/Ghali-Cooperen.svg" loading="lazy" alt="Cooperen"></div>
-      </li>
-       <li class="">
-          <div id="slide11"><img src="images/Ghali-VIDACOOP.svg" loading="lazy" alt="VIDACOOP"></div>
-      </li>
-      <li class="">
-          <div id="slide12"><img src="images/Ghali-Refrilogística.svg" loading="lazy" alt="Refrilogística"></div>
-      </li>
-      <li class="">
-          <div id="slide13"><img src="images/Ghali-Aburrá.svg" loading="lazy" alt="Aburrá LTDA"></div>
-      </li>
-      <li class="">
-          <div id="slide14"><img src="images/Ghali-Ahumados Toto.svg" loading="lazy" alt="Ahumados Toto"></div>
-      </li>
-      <li class="">
-          <div id="slide15"><img src="images/Ghali-FEC.svg" alt="FEC"></div>
-      </li>
-      <li class="">
-          <div id="slide16"><img src="images/Ghali-CAC Marketing y Publicidad.svg" alt="CAC Marketing y Publicidad"></div>
-      </li>
-  </ul>
 
-  <button type="button" class="slider-nav"></button>
-  <button type="button" class="slider-nav slider-nav-next"></button>
 
-  <ul class="slider-indicators">
-      <li class="active"></li>
-      <li class=""></li>
-      <li class=""></li>
-      <li class=""></li>
-      <li class=""></li>
-      <li class=""></li>
-      <li class=""></li>
-      <li class=""></li>
-      <li class=""></li>
-  </ul>
+  <p style="text-align: center; padding-bottom: 1rem; padding-top: 2rem; font-size: 16px; color: rgb(158, 158, 158);">Más de mis trabajos para empresas en <a href="https://www.behance.net/stephghalien"><strong>Behance</strong>.</a></p>
 </div>
 <!--/ Section companies End /-->
 
-<hr style="margin-top: 4rem; margin-left: 5rem; margin-right: 5rem;">
 
-<!--/ Section Portfolio Star /-->
-  <section id="work" class="portfolio-mf sect-pt4 route">
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-12">
-          <div class="title-box text-center">
-            <h3 class="title-a">
-              <a href="https://www.behance.net/stephghalien">Portafolio</a>
-            </h3>
-            <p class="subtitle-a">
-              Aquí encontrarás algunos proyectos en los que he participado tanto nacional como internacionalmente.
-            </p>
-            <div class="line-mf"></div>
-          </div>
-        </div>
+  <!--/ Reviews End /-->
+<section id="reseñas" class="reviews-section">
+  <div class="container">
+    <h2>Lo que opinan nuestros clientes</h2>
+    <p>Algunas de las mejores experiencias con GEA TECH y GHALIEN TATTOO</p>
+
+    <div class="reviews-grid">
+      <div class="review-card" style="background: linear-gradient(135deg, #f40c5981, #1b1b1b);">
+        <p>“Excelente calidad en el servicio y productos 👌…”</p>
+        <h4>- Daniel Coronado</h4>
+        <span>⭐⭐⭐⭐⭐</span>
       </div>
-      <div class="row">
-        <div class="col-md-4">
-          <div class="work-box">
-            <a href="img/work-1.jpg" data-lightbox="gallery-mf">
-              <div class="work-img">
-                <img src="img/work-1.jpg" alt="" class="img-fluid">
-              </div>
-              <div class="work-content">
-                <div class="row">
-                  <div class="col-sm-8">
-                    <h2 class="w-title">Feria de flores para empresa nacional</h2>
-                    <div class="w-more">
-                      <span class="w-ctegory">Aburrá</span>
-                    </div>
-                  </div>
-                  <div class="col-sm-4">
-                    <div class="w-like">
-                      <span class="ion-ios-plus-outline"></span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="work-box">
-            <a href="img/work-2.jpg" data-lightbox="gallery-mf">
-              <div class="work-img">
-                <img src="img/work-2.jpg" alt="" class="img-fluid">
-              </div>
-              <div class="work-content">
-                <div class="row">
-                  <div class="col-sm-8">
-                    <h2 class="w-title">Scorpion robot 3D</h2>
-                    <div class="w-more">
-                      <span class="w-ctegory">3D</span>
-                    </div>
-                  </div>
-                  <div class="col-sm-4">
-                    <div class="w-like">
-                      <span class="ion-ios-plus-outline"></span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="work-box">
-            <a href="img/work-3.jpg" data-lightbox="gallery-mf">
-              <div class="work-img">
-                <img src="img/work-3.jpg" alt="" class="img-fluid">
-              </div>
-              <div class="work-content">
-                <div class="row">
-                  <div class="col-sm-8">
-                    <h2 class="w-title">"Polla futbolera" para empresa</h2>
-                    <div class="w-more">
-                      <span class="w-ctegory">VidaCoop</span>
-                    </div>
-                  </div>
-                  <div class="col-sm-4">
-                    <div class="w-like">
-                      <span class="ion-ios-plus-outline"></span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="work-box">
-            <a href="img/work-4.jpg" data-lightbox="gallery-mf">
-              <div class="work-img">
-                <img src="img/work-4.jpg" alt="" class="img-fluid">
-              </div>
-              <div class="work-content">
-                <div class="row">
-                  <div class="col-sm-8">
-                    <h2 class="w-title">Plegable de 'Genset'</h2>
-                    <div class="w-more">
-                      <span class="w-ctegory">Refrilogística</span>
-                    </div>
-                  </div>
-                  <div class="col-sm-4">
-                    <div class="w-like">
-                      <span class="ion-ios-plus-outline"></span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="work-box">
-            <a href="img/work-5.jpg" data-lightbox="gallery-mf">
-              <div class="work-img">
-                <img src="img/work-5.jpg" alt="" class="img-fluid">
-              </div>
-              <div class="work-content">
-                <div class="row">
-                  <div class="col-sm-8">
-                    <h2 class="w-title">Campaña de regreso a casa</h2>
-                    <div class="w-more">
-                      <span class="w-ctegory">Para estudiantes del Cesár y Valledupar atrapados en medio de la pandemia Covid - Salvar Vidas Ya</span>
-                    </div>
-                  </div>
-                  <div class="col-sm-4">
-                    <div class="w-like">
-                      <span class="ion-ios-plus-outline"></span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="work-box">
-            <a href="img/work-6.jpg" data-lightbox="gallery-mf">
-              <div class="work-img">
-                <img src="img/work-6.jpg" alt="" class="img-fluid">
-              </div>
-              <div class="work-content">
-                <div class="row">
-                  <div class="col-sm-8">
-                    <h2 class="w-title">Piezas gráficas para empresas varias</h2>
-                    <div class="w-more">
-                      <span class="w-ctegory">Ahumados Toto, Vitarrico, FEC</span>
-                    </div>
-                  </div>
-                  <div class="col-sm-4">
-                    <div class="w-like">
-                      <span class="ion-ios-plus-outline"></span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-        </div>
-        
+      <div class="review-card" style="background: linear-gradient(135deg, #f40c5981, #1b1b1b);">
+        <p>“Aparte de que plasma en tú piel una excelente calidad de diseños, según tus gustos; TeTransmite una super energía , que te duermes en las sesiones 🤗,ella si le pone pasión,a cada raya que deja  en tí. Super Recomendadisimaaa!
+        Dios te acompañe siempre.…”</p>
+        <h4>- Anny Castrillón</h4>
+        <span>⭐⭐⭐⭐⭐</span>
       </div>
+      <div class="review-card" style="background: linear-gradient(135deg, #f40c5981, #1b1b1b);">
+        <p>“Excelente servicio, gran atencion, buena persona la que atiende, recomendadisimo.”</p>
+        <h4>- Gabriel Lencina</h4>
+        <span>⭐⭐⭐⭐⭐</span>
+      </div>
+      <!-- Puedes agregar más reseñas seleccionadas aquí -->
     </div>
-  </section>
-  <!--/ Section Portfolio End /-->
+  </div>
+</section>
+  <!--/ Reviews End /-->
 
-  <p class="text-center" style="padding-bottom: 1rem;">Más de mis trabajos para empresas en <a href="https://www.behance.net/stephghalien"><strong>Behance</strong></a></p>
+<!-- FAQ Start -->
+<section id="faq" class="faq-section">
+  <div class="container">
+    <h2 class="faq-title">Preguntas frecuentes</h2>
+    <div class="faq-container">
+      <details>
+        <summary>¿Qué servicios ofrece GEA TECH?</summary>
+        <p>En <strong>GEA TECH</strong> ofrecemos diseño y creación de páginas web, modelado 3D, impresión 3D (FDM y SLA), y asesoría en desarrollo de proyectos digitales y físicos. Nos adaptamos a tus necesidades para hacer realidad tu idea.</p>
+      </details>
+
+      <details>
+        <summary>¿Puedo solicitar un presupuesto?</summary>
+        <p>¡Por supuesto! Escríbenos a <strong>WhatsApp: +57 350 513 6986</strong> o envíanos un correo. Cuéntanos tu idea y te responderemos lo antes posible con una propuesta personalizada.</p>
+      </details>
+
+      <details>
+        <summary>¿Cuánto tiempo tarda en completarse un proyecto?</summary>
+        <p>El tiempo depende del tipo y complejidad del proyecto. Desde unas horas para impresiones 3D sencillas hasta semanas para desarrollos web completos o modelos 3D detallados. Te daremos una estimación una vez conozcamos los detalles.</p>
+      </details>
+
+      <details>
+        <summary>¿En qué ciudades están disponibles sus servicios?</summary>
+        <p>Trabajamos a nivel nacional (Colombia) e internacional. Los servicios digitales (páginas web, modelado) están disponibles globalmente, y para impresiones 3D podemos coordinar envíos a todo el país desde Medellín, Colombia.</p>
+      </details>
+
+      <details>
+        <summary>¿Ofrecen asesoría para emprendedores?</summary>
+        <p>¡Claro que sí! En <strong>GEA TECH</strong> ayudamos a emprendedores a dar forma a sus proyectos, ya sea creando una página web, desarrollando prototipos con impresión 3D o creando diseños para sus productos. Contáctanos y con gusto te orientaremos.</p>
+      </details>
+
+      <details>
+        <summary>¿Cuáles son los métodos de pago y entrega?</summary>
+        <p>En <strong>GEA TECH</strong> nos adaptamos a tu comodidad. Puedes realizar pagos por transferencia bancaria (Contamos con QR Nequi), pago en línea o PayPal (en caso de ser internacional). Para impresiones 3D, realizamos envíos seguros y coordinados. Si prefieres, puedes recoger personalmente tu pedido o podemos entregarlo directamente en tu domicilio. ¡Hablamos para coordinar lo mejor para ti!</p>
+      </details>
+    </div>
+  </div>
+</section>
+<!-- FAQ End -->
 
 
   <script type='text/javascript'>
@@ -522,21 +300,60 @@
   </script>
   
   <!--Footer Start-->
-  <section class="footertattoo">
-    <footer>
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-12">
-            <div class="copyright-box">
-              <p class="copyright">&copy; Copyright <strong>Ghaliensita</strong>. All Rights Reserved</p>
-              <div class="credits">
-              </div>
-            </div>
+<section class="footerghalien">
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+
+          <!-- SEO website -->
+          <nav class="footer-links">
+            <a href="index.html">INICIO</a> |
+            <a href="geatech.html">GEA TECH</a> |
+            <a href="services.html">SERVICIOS</a> |
+            <a href="quoteprice.html">COTIZACIÓN</a> |
+            <a href="tattoo.html">GHALIEN TATTOO</a> |       
+            <a href="aboutme.html">SOBRE MÍ</a> |   
+            <a href="paymethods.html">MÉTODOS DE PAGO</a> |                                
+            <a href="goal.html">META ACTIVA</a> |
+            <a href="utility.html">MIS REDES</a> 
+
+          </nav>
+
+          <!-- Social media -->
+          <div class="social-icons">
+            <a href="https://www.instagram.com/gea.tech" target="_blank" aria-label="Instagram">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.tiktok.com/@gea.tech" target="_blank" aria-label="TikTok">
+              <i class="fab fa-tiktok"></i>
+            </a>
+            <a href="https://www.youtube.com/@StephGhalien" target="_blank" aria-label="YouTube">
+              <i class="fab fa-youtube"></i>
+            </a> |
+            <a href="https://www.youtube.com/@Ghaliensita" target="_blank" aria-label="YouTube">
+              <i class="fab fa-youtube"></i>
+            </a>   
+            </a>
+            <a href="https://www.tiktok.com/@ghaliensita" target="_blank" aria-label="TikTok">
+              <i class="fab fa-tiktok"></i>
+            </a>             
+            <a href="https://www.instagram.com/ghaliensita" target="_blank" aria-label="Instagram">
+              <i class="fab fa-instagram"></i>
+
+        
           </div>
+
+          <!-- Copyright -->
+          <div class="copyright-box">
+            <p class="copyright">&copy; Copyright <strong>Ghaliensita</strong>. All Rights Reserved</p>
+          </div>
+
         </div>
       </div>
-    </footer>
-  </section>
+    </div>
+  </footer>
+</section>
   <!--Footer End-->
 
   <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>

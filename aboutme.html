@@ -22,6 +22,7 @@
   <link href="lib/ghali-icons/styles.css" rel="stylesheet">
   <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
   <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <!-- Main Stylesheet File -->
   <link href="css/style.css" rel="stylesheet">
@@ -30,53 +31,51 @@
 
 <body>
   <!--/ Nav Start /-->
-  <nav class="navbar navbar-b navbar-trans navbar-expand-md fixed-top" id="mainNav">
-    <div class="container">
-      <a class="navbar-brand js-scroll" href="index.html">
-        <img src="images/Ghali-GhaliLogo.svg" style="max-width: 50%;" alt="Ghalien Icon"> Ghalien
-      </a>
-      <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarDefault"
-        aria-controls="navbarDefault" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="navbar-collapse collapse justify-content-end" id="navbarDefault">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link js-scroll" href="index.html">Inicio</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle js-scroll" href="" id="aboutDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Quién soy</a>
-            <div class="dropdown-menu" aria-labelledby="aboutDropdown">
-              <a class="dropdown-item js-scroll" href="aboutme.html">Sobre mí</a>
-              <a class="dropdown-item js-scroll" href="utility.html">Mis redes</a>
-              <a class="dropdown-item js-scroll" href="paymethods.html">Pagos</a>
-              <a class="dropdown-item js-scroll" href="goal.html">Goal</a>
-            </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll" href="tattoo.html">GHALIENTATTOO</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll" href="geatech.html">GEA TECH</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle js-scroll" href="" id="portfolioDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Portafolio</a>
-            <div class="dropdown-menu" aria-labelledby="portfolioDropdown">
-              <a class="dropdown-item js-scroll" href="commissions.html">Comisiones</a>
-              <a class="dropdown-item js-scroll" href="3d.html">Arte 3D</a>
-              <a class="dropdown-item js-scroll" href="edition.html">Edición</a>
-              <a class="dropdown-item js-scroll" href="portfolio.html">Más trabajo</a>
-              <a class="dropdown-item js-scroll" href="assets.html">Mis Assets</a>
-            </div>
-          </li>
-            </div>
-          </li>
-        </ul>
-      </div>
+<nav class="navbar navbar-b navbar-trans navbar-expand-md fixed-top" id="mainNav">
+  <div class="container">
+    <a class="navbar-brand js-scroll" href="index.html">
+      <img src="images/Ghali-GhaliLogo.svg" style="max-width: 50%;" alt="Ghalien Icon"> Ghalien
+    </a>
+    <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarDefault"
+      aria-controls="navbarDefault" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="navbar-collapse collapse justify-content-end" id="navbarDefault">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link js-scroll" href="index.html">Inicio</a></li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle js-scroll" href="#" id="geatechDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Gea Tech</a>
+          <div class="dropdown-menu" aria-labelledby="geatechDropdown">
+            <a class="dropdown-item js-scroll" href="geatech.html">Sobre GEA TECH</a>
+            <a class="dropdown-item js-scroll" href="services.html">Servicios</a>
+            <a class="dropdown-item js-scroll" href="quoteprice.html">Cotización</a>
+          </div>
+        </li>
+        <li class="nav-item"><a class="nav-link js-scroll" href="tattoo.html">Ghalien Tattoo</a></li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle js-scroll" href="#" id="aboutDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Sobre mí</a>
+          <div class="dropdown-menu" aria-labelledby="aboutDropdown">
+            <a class="dropdown-item js-scroll" href="aboutme.html">¿Quién es Ghalien?</a>
+            <a class="dropdown-item js-scroll" href="paymethods.html">Pagos y donaciones</a>
+            <a class="dropdown-item js-scroll" href="goal.html">Meta activa</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle js-scroll" href="#" id="contactDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Contacto</a>
+          <div class="dropdown-menu" aria-labelledby="contactDropdown">
+            <a class="dropdown-item js-scroll" href="utility.html">Redes sociales</a>
+          </div>
+        </li>
+      </ul>
     </div>
-  </nav>
+    <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarDefault"
+    aria-controls="navbarDefault" aria-expanded="false" aria-label="Toggle navigation" style="color: white;">
+    <svg width="30" height="30" viewBox="0 0 30 30">
+    <path stroke="currentColor" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"/>
+  </svg>
+</button>
+  </div>
+</nav>
   <!--/ Nav End /-->
 
   <!--/ Intro Skew Star /-->
@@ -88,7 +87,7 @@
           <h2 class="intro-title mb-4">Sobre mí</h2>
           <ol class="breadcrumb d-flex justify-content-center">
             <li class="breadcrumb-item">
-              <a href="#">Stephany Ghalien, conocida como "Ghalien", "Ghaliensita"</a>
+              <a href="aboutme.html">Stephany Ghalien, conocida como "Ghali", "Ghalien", "Ghaliensita", "Gea tech", "Ghalien tattoo"</a>
             </li>
         </div>
       </div>
@@ -113,7 +112,7 @@
                       <div class="col-sm-6 col-md-7">
                         <div class="about-info">
                           <p><span class="title-s">Nombre: </span> <span>Stephany Ghalien</span></p>
-                          <p><span class="title-s">Perfil: </span> <span>Modelado e impresión de objetos 3D. Páginas web. Diseño gráfico.</span></p>
+                          <p><span class="title-s">Perfil: </span> <span>Modelado e impresión de objetos 3D. Páginas web. Tatuajes.</span></p>
                           <p><span class="title-s">Correo para comisiones: (como diseñadora, 3d y más)</span> <span><a href="mailto:gea.techlab@gmail.com">gea.techlab@gmail.com</a></span></p>
                           <p><span class="title-s">Correo colaborativo: (como figura pública)</span> <span>ghaliensita.contacto@gmail.com</span></p>
                         </div>
@@ -141,14 +140,14 @@
                         <div class="progress-bar" role="progressbar" style="width: 45%" aria-valuenow="45" aria-valuemin="0"
                           aria-valuemax="100"></div>
                       </div>
-                       <span>Modelado y esculpido 3D</span> <span class="pull-right">45%</span>
+                       <span>Modelado y esculpido 3D</span> <span class="pull-right">55%</span>
                         <div class="progress">
-                            <div class="progress-bar" role="progressbar" style="width: 45%" aria-valuenow="45" aria-valuemin="0"
+                            <div class="progress-bar" role="progressbar" style="width: 55%" aria-valuenow="55" aria-valuemin="0"
                             aria-valuemax="100"></div>
                       </div>
-                        <span>Impresión 3D</span> <span class="pull-right">25%</span>
+                        <span>Impresión 3D</span> <span class="pull-right">35%</span>
                         <div class="progress">
-                            <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0"
+                            <div class="progress-bar" role="progressbar" style="width: 35%" aria-valuenow="35" aria-valuemin="0"
                             aria-valuemax="100"></div>
                       </div>
                         <span>Motion graphics</span> <span class="pull-right">30%</span>
@@ -161,24 +160,9 @@
                             <div class="progress-bar" role="progressbar" style="width: 40%" aria-valuenow="40" aria-valuemin="0"
                             aria-valuemax="100"></div>
                       </div>
-                          <span>Ofimática</span> <span class="pull-right">50%</span>
-                            <div class="progress">
-                            <div class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0"
-                            aria-valuemax="100"></div>  
-                      </div>
-                          <span>Escritura</span> <span class="pull-right">60%</span>
+                           <span>Desarrollo web</span> <span class="pull-right">50%</span>
                               <div class="progress">
-                              <div class="progress-bar" role="progressbar" style="width: 60%" aria-valuenow="60" aria-valuemin="0"
-                              aria-valuemax="100"></div>                              
-                       </div>
-                           <span>Impresión gran formato</span> <span class="pull-right">37%</span>
-                              <div class="progress">
-                              <div class="progress-bar" role="progressbar" style="width: 37%" aria-valuenow="37" aria-valuemin="0"
-                              aria-valuemax="100"></div>       
-                        </div>
-                           <span>Desarrollo web</span> <span class="pull-right">40%</span>
-                              <div class="progress">
-                              <div class="progress-bar" role="progressbar" style="width: 40%" aria-valuenow="40" aria-valuemin="0"
+                              <div class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0"
                               aria-valuemax="100"></div>                  
                                 
                       </div>
@@ -227,23 +211,62 @@
         document.oncontextmenu = function(){return false}
       </script>
       
-      <!--Footer Start-->
-      <section class="footertattoo">
-        <footer>
-          <div class="container">
-            <div class="row">
-              <div class="col-sm-12">
-                <div class="copyright-box">
-                  <p class="copyright">&copy; Copyright <strong>Ghaliensita</strong>. All Rights Reserved</p>
-                  <div class="credits">
-                  </div>
-                </div>
-              </div>
-            </div>
+  <!--Footer Start-->
+<section class="footerghalien">
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+
+          <!-- SEO website -->
+          <nav class="footer-links">
+            <a href="index.html">INICIO</a> |
+            <a href="geatech.html">GEA TECH</a> |
+            <a href="services.html">SERVICIOS</a> |
+            <a href="quoteprice.html">COTIZACIÓN</a> |
+            <a href="tattoo.html">GHALIEN TATTOO</a> |       
+            <a href="aboutme.html">SOBRE MÍ</a> |   
+            <a href="paymethods.html">MÉTODOS DE PAGO</a> |                                
+            <a href="goal.html">META ACTIVA</a> |
+            <a href="utility.html">MIS REDES</a> 
+
+          </nav>
+
+          <!-- Social media -->
+          <div class="social-icons">
+            <a href="https://www.instagram.com/gea.tech" target="_blank" aria-label="Instagram">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.tiktok.com/@gea.tech" target="_blank" aria-label="TikTok">
+              <i class="fab fa-tiktok"></i>
+            </a>
+            <a href="https://www.youtube.com/@StephGhalien" target="_blank" aria-label="YouTube">
+              <i class="fab fa-youtube"></i>
+            </a> |
+            <a href="https://www.youtube.com/@Ghaliensita" target="_blank" aria-label="YouTube">
+              <i class="fab fa-youtube"></i>
+            </a>   
+            </a>
+            <a href="https://www.tiktok.com/@ghaliensita" target="_blank" aria-label="TikTok">
+              <i class="fab fa-tiktok"></i>
+            </a>             
+            <a href="https://www.instagram.com/ghaliensita" target="_blank" aria-label="Instagram">
+              <i class="fab fa-instagram"></i>
+
+        
           </div>
-        </footer>
-      </section>
-      <!--Footer End-->
+
+          <!-- Copyright -->
+          <div class="copyright-box">
+            <p class="copyright">&copy; Copyright <strong>Ghaliensita</strong>. All Rights Reserved</p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </footer>
+</section>
+  <!--Footer End-->
 
   <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
   <div id="preloader"></div>
