@@ -524,15 +524,23 @@ a:hover {
 }
 
 /* Evita que los dropdown empujen el contenido del navbar al abrirse en móvil */
-@media (max-width: 991.98px) { /* Correspondiente a navbar-expand-lg */
+@media (max-width: 991.98px) {
   .dropdown-menu {
-    position: absolute; /* Posiciona sobre los demás elementos */
-    background-color: #fff; /* Fondo blanco para legibilidad */
-    width: auto; /* Ajusta el ancho automáticamente */
+    display: block !important;
+    position: static !important;
+    transform: none !important;
+    background-color: #1b1b1b !important;
+    border-radius: 10px;
+    padding: 0;
+    box-shadow: none;
+    margin: 0;
+  }
+
+  .dropdown-menu .dropdown-item {
     text-align: center;
-    align-items: center;
   }
 }
+
 
 /* Si usas el SVG personalizado en el botón hamburguesa, ajústalo correctamente */
 .navbar-toggler svg {

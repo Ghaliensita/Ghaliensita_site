@@ -222,32 +222,3 @@ window.addEventListener("scroll", function() {
     navbar.classList.remove("scrolled");
   }
 });
-
-
-
-  document.addEventListener("DOMContentLoaded", function () {
-    const navLinks = document.querySelectorAll('.nav-link');
-    const dropdownItems = document.querySelectorAll('.dropdown-menu .dropdown-item');
-    const navbarCollapse = document.getElementById('navbarDefault');
-
-    // Cierra el menú solo si se hace clic en un enlace que **no sea dropdown**
-    navLinks.forEach(function (link) {
-      link.addEventListener('click', function () {
-        const isDropdownToggle = this.classList.contains('dropdown-toggle');
-        if (!isDropdownToggle && navbarCollapse.classList.contains('show')) {
-          const bsCollapse = new bootstrap.Collapse(navbarCollapse, {
-            toggle: false
-          });
-          bsCollapse.hide();
-        }
-      });
-    });
-
-    // Evita que los clics en items dentro del dropdown cierren el menú
-    dropdownItems.forEach(function (item) {
-      item.addEventListener('click', function (e) {
-        e.stopPropagation(); // Previene que el clic burbujee y cierre el navbar
-      });
-    });
-  });
-
