@@ -439,6 +439,7 @@ a:hover {
   margin: 0 auto; 
   flex-wrap: wrap;
   z-index: 1050;
+
 }
 
 .navbar-logo img {
@@ -528,6 +529,8 @@ a:hover {
     position: absolute; /* Posiciona sobre los demás elementos */
     background-color: #fff; /* Fondo blanco para legibilidad */
     width: auto; /* Ajusta el ancho automáticamente */
+    text-align: center;
+    align-items: center;
   }
 }
 
@@ -623,11 +626,11 @@ a:hover {
 }
 
 .content-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 40px;
-  flex-wrap: wrap; 
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 40px ;
+  flex-wrap: wrap !important; 
 }
 
 .text-content {
@@ -668,11 +671,12 @@ a:hover {
 }
 
 .image-content img {
-  width: 100%;
+  max-width: 100%;
   height: auto;
   border-radius: 15px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
   object-fit: cover;
+  display: block;
 }
 
 @media (max-width: 768px) {
@@ -776,7 +780,8 @@ a:hover {
 
 .carousel-container {
   width: 90%;
-  max-width: 1200px;
+  max-width: 100%;
+  overflow-x: auto;
   margin: 0 auto;
   overflow: hidden;
   background-color: rgba(104, 104, 104, 0);
@@ -788,8 +793,8 @@ a:hover {
 
 .carousel-track {
   display: flex;
-  width: max-content;
-  
+  flex-wrap: nowrap;
+  gap: 1rem;
   animation: scroll 6s linear infinite alternate; 
 }
 
