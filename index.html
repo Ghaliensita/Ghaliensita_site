@@ -381,5 +381,34 @@
   <!-- Template Main Javascript File -->
   <script src="js/main.js"></script>
 
+  <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const navbarCollapse = document.getElementById("navbarDefault");
+
+    // Cierra navbar si se hace clic en un link directo (no dropdown)
+    document.querySelectorAll('.nav-link').forEach(function (link) {
+      link.addEventListener('click', function (e) {
+        const isDropdown = this.classList.contains('dropdown-toggle');
+        const isMobile = window.innerWidth < 992; // Bootstrap lg breakpoint
+
+        if (!isDropdown && isMobile) {
+          const collapse = bootstrap.Collapse.getInstance(navbarCollapse) || new bootstrap.Collapse(navbarCollapse, {
+            toggle: false
+          });
+          collapse.hide();
+        }
+      });
+    });
+
+    // Previene que el menú se cierre al tocar items del dropdown
+    document.querySelectorAll('.dropdown-menu .dropdown-item').forEach(function (item) {
+      item.addEventListener('click', function (e) {
+        e.stopPropagation(); // Detiene que se propague y cierre el navbar
+      });
+    });
+  });
+</script>
+
+
 </body>
 </html>
