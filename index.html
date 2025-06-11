@@ -426,6 +426,40 @@ window.addEventListener("load", startCounters);
 </script>
   <!--Counter End--> 
 
+   <!--Companies carousel End-->  
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const track = document.querySelector(".carousel-track");
+  const container = document.querySelector(".carousel-container");
+
+  const speed = 0.5; // píxeles por frame (~60fps). Ajusta para más/menos velocidad.
+  let posX = 0;
+
+  function animateCarousel() {
+    const maxScroll = track.scrollWidth - container.offsetWidth;
+
+    if (posX <= -maxScroll) {
+      // Fade out, reset position, fade in
+      track.classList.add("carousel-fade");
+      setTimeout(() => {
+        posX = 0;
+        track.style.transform = `translateX(${posX}px)`;
+        track.classList.remove("carousel-fade");
+      }, 500); // Duración del fade
+    } else {
+      posX -= speed;
+      track.style.transform = `translateX(${posX}px)`;
+    }
+
+    requestAnimationFrame(animateCarousel);
+  }
+
+  requestAnimationFrame(animateCarousel);
+});
+</script>
+
+   <!--Companies carousel End-->  
+
   <!-- JavaScript Libraries -->
   <script src="lib/jquery/jquery.min.js"></script>
   <script src="lib/jquery/jquery-migrate.min.js"></script>

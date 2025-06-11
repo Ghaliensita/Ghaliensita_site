@@ -784,20 +784,19 @@ a:hover {
 
 .companiescarousel{
   text-align: center;
-  padding: 5rem;
+  padding: 4rem;
   font-size: 34px;
 }
 
 .carousel-container {
   width: 90%;
   max-width: 100%;
-  overflow-x: auto;
-  margin: 0 auto;
   overflow: hidden;
+  margin: 0 auto;
   background-color: rgba(104, 104, 104, 0);
-  border-radius: 2¿50px;
+  border-radius: 25px;
   padding: 15px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  position: relative;
   mask-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 12.5%, rgb(0, 0, 0) 87.5%, rgba(0, 0, 0, 0) 100%);
 }
 
@@ -805,7 +804,12 @@ a:hover {
   display: flex;
   flex-wrap: nowrap;
   gap: 1rem;
-  animation: scroll 6s linear infinite alternate; 
+  transition: opacity 0.5s ease;
+  will-change: transform, opacity;
+}
+
+.carousel-fade {
+  opacity: 0;
 }
 
 .carousel-track img {
@@ -818,7 +822,7 @@ a:hover {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(calc(-100% + 100vw)); 
+    transform: translateX(-100%);
   }
 }
 
