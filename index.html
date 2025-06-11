@@ -153,8 +153,8 @@
               <span class="ico-circle"><i class="ico-ghali-check icon-aly"></i></span>
             </div>
             <div class="counter-num">
-              <p class="counter">325</p>
-              <span class="counter-text">+ TRABAJOS COMPLETADOS</span>
+              <p class="counter" id="trabajos">0</p>
+              <span class="counter-text">TRABAJOS COMPLETADOS</span>
             </div>
           </div>
         </div>
@@ -164,8 +164,8 @@
               <span class="ico-circle"><i class="ico-ghali-calendar icon-aly"></i></span>
             </div>
             <div class="counter-num">
-              <p class="counter">10</p>
-              <span class="counter-text">+ AÑOS DISEÑANDO</span>
+              <p class="counter" id="disenando">0</p>
+              <span class="counter-text">AÑOS DISEÑANDO</span>
             </div>
           </div>
         </div>
@@ -175,8 +175,8 @@
               <span class="ico-circle"><i class="ico-ghali-tattooexp icon-aly"></i></span>
             </div>
             <div class="counter-num">
-              <p class="counter">8</span></p>
-              <span class="counter-text">+ AÑOS TATUANDO</span>
+              <p class="counter" id="tatuando">0</p>
+              <span class="counter-text">AÑOS TATUANDO</span>
             </div>
           </div>
         </div>
@@ -186,12 +186,12 @@
               <span class="ico-circle"><i class="ico-ghali-users icon-aly"></i></span>
             </div>
             <div class="counter-num">
-              <p class="counter">247</p>
-              <span class="counter-text">+ CLIENTES TOTALES</span>
+              <p class="counter" id="clientes">0</p>
+              <span class="counter-text">CLIENTES TOTALES</span>
             </div>
           </div>
         </div>
-
+        <p style="text-align: center; padding-top: 1rem; color: gray; padding-left: 2rem; padding-right: 2rem;"><em>Sin contar tatuajes realizados o piezas impresas en 3D.</em></p>
       </div>   
     </div>   
   </div>
@@ -363,6 +363,68 @@
 
   <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
   <div id="preloader"></div>
+
+  <!--Counter Start-->  
+<script>
+function animateCounter(id, endValue, duration = 2000) {
+  const element = document.getElementById(id);
+  let startValue = 0;
+  const increment = endValue / (duration / 16); // 60fps approx
+  const startTime = performance.now();
+
+  function update(currentTime) {
+    const elapsed = currentTime - startTime;
+    let currentValue = Math.min(Math.floor(startValue + increment * (elapsed / 16)), endValue);
+    element.textContent =  "+" + currentValue.toLocaleString("es-ES");
+    if (currentValue < endValue) {
+      requestAnimationFrame(update);
+    }
+  }
+
+  requestAnimationFrame(update);
+}
+
+// Solo iniciar si el elemento está visible
+function isInViewport(el) {
+  const rect = el.getBoundingClientRect();
+  return (
+    rect.top >= 0 &&
+    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight)
+  );
+}
+
+let countersStarted = false;
+
+function startCounters() {
+  if (countersStarted) return;
+
+  const trabajosEl = document.getElementById("trabajos");
+  const clientesEl = document.getElementById("clientes");
+
+  if (isInViewport(trabajosEl)) {
+    countersStarted = true;
+
+    fetch("https://sheetdb.io/api/v1/gvl6na6phf41h")
+      .then(response => response.json())
+      .then(data => {
+        const trabajos = parseInt(data[0].TRABAJOS);
+        const clientes = parseInt(data[0].CLIENTES);
+        
+        animateCounter("disenando", data[0]["AÑOS DISEÑANDO"]);
+        animateCounter("tatuando", data[0]["AÑOS TATUANDO"]);
+
+        animateCounter("trabajos", trabajos);
+        animateCounter("clientes", clientes);
+      })
+      .catch(error => console.error("Error al cargar los datos:", error));
+  }
+}
+
+// Ejecutar cuando se haga scroll o al cargar
+window.addEventListener("scroll", startCounters);
+window.addEventListener("load", startCounters);
+</script>
+  <!--Counter End--> 
 
   <!-- JavaScript Libraries -->
   <script src="lib/jquery/jquery.min.js"></script>
