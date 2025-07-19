@@ -222,3 +222,13 @@ window.addEventListener("scroll", function() {
     navbar.classList.remove("scrolled");
   }
 });
+
+
+
+
+
+ function toggleCartSidebar(event) {
+  if (event) event.preventDefault(); // Evita redirección
+  document.getElementById("cart-sidebar").classList.toggle("open");
+}
+
