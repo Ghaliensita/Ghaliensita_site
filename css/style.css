@@ -1058,6 +1058,17 @@ a:hover {
   }
 }
 
+/*======================================
+//--//-->   FAQ
+======================================*/
+
+.commissions {
+  text-align: center;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  font-size: 25px;
+  color: #fff;
+}
 
 /*======================================
 //--//-->   FAQ
@@ -1151,6 +1162,8 @@ a:hover {
 
 .urgenciaa{
   text-align: center;
+  padding: 3rem;
+  padding-bottom: 5rem;
 }
 
 .methods{
