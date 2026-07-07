@@ -627,7 +627,7 @@ a:hover {
   color: #fff;
 }
 /*======================================
-//--//-->   VISION GEATECH
+//--//-->   VISION GHALI LAB
 ======================================*/
 
 .vision-section {
@@ -709,7 +709,7 @@ a:hover {
   }
 }
 
-.geatechinfo {
+.ghalilabinfo {
   text-align: center;
   padding-top: 3rem;
   padding-bottom: 3rem;
@@ -723,27 +723,27 @@ a:hover {
   line-height: 1.6;     
 }
 
-.geatechinfo h3 {
+.ghalilabinfo h3 {
   color: white; 
   font-weight: 700;
   margin-bottom: 10px;
   text-align: center;
 }
 
-.geatechinfo p {
+.ghalilabinfo p {
   font-size: 1rem;     
   color: white;        
 }
 
 @media (max-width: 768px) {
-  .geatechinfo {
+  .ghalilabinfo {
     padding: 15px;
     font-size: 0.95rem;  
   }
 }
 
 @media (max-width: 480px) {
-  .geatechinfo {
+  .ghalilabinfo {
     padding: 10px;
     font-size: 0.9rem;   
   }
@@ -910,7 +910,7 @@ a:hover {
 }
 
 /*======================================
-//--//-->   GEA TECH
+//--//-->   GHALI LAB
 ======================================*/
 
 .ghalien-gallery {
@@ -2028,7 +2028,7 @@ a:hover {
   }
 }
 
-.cotizacongeatech {
+.cotizaconghalilab {
   display: flex; 
   justify-content: center; 
   align-items: center; 
