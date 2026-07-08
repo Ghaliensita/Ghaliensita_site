@@ -87,11 +87,7 @@ a:hover {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
-
-  /* Degradado inferior para transicionar hacia #1b1b1b */
-  position: relative; /* Importante para el pseudo-elemento */
-
-  /* Añadimos un pseudo-elemento para el degradado */
+  position: relative;
 }
 
 .bg-image::after {
@@ -524,9 +520,10 @@ a:hover {
   background-color: #1b1b1b !important;
 }
 
-/* Evita que los dropdown empujen el contenido del navbar al abrirse en móvil */
+/* Evita que los dropdown del NAVBAR empujen el contenido al abrirse en móvil */
+/* IMPORTANTE: scoped a #mainNav para que NO afecte otros dropdowns como el de "Ordenar por" */
 @media (max-width: 991.98px) {
-  .dropdown-menu {
+  #mainNav .dropdown-menu {
     display: block !important;
     position: static !important;
     transform: none !important;
@@ -538,19 +535,44 @@ a:hover {
     text-align: center;
   }
 
-  .dropdown-menu .dropdown-item {
+  #mainNav .dropdown-menu .dropdown-item {
     text-align: center;
+  }
+}
+
+/* ===== Dropdown "Ordenar por" (tienda) — funcional y centrado en TODAS las pantallas ===== */
+#sortDropdownContainer {
+  position: relative;
+}
+
+#sortDropdownContainer .dropdown-menu {
+  text-align: center;
+}
+
+#sortDropdownContainer .dropdown-item {
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  /* En mobile abandonamos el posicionamiento automático (Popper), que es lo que
+     se rompía, y dejamos que el menú fluya normalmente debajo del botón,
+     a todo el ancho y centrado. */
+  #sortDropdownContainer .dropdown-menu {
+    position: static !important;
+    transform: none !important;
+    inset: auto !important;
+    width: 100%;
+    margin-top: 0.5rem !important;
   }
 }
 
 
 /* Si usas el SVG personalizado en el botón hamburguesa, ajústalo correctamente */
 .navbar-toggler svg {
-  color: white; /* O el color que prefieras */
+  color: white;
   vertical-align: middle;
 }
 
-/* Opcional: Cambiar el color del icono hamburguesa por defecto de Bootstrap */
 .navbar-toggler-icon {
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='white' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
 }
@@ -1248,7 +1270,7 @@ a:hover {
   width: 100%;
   max-width: 600px;
   margin: 0 auto;
-  padding-top: 6.25%; /* 16:9 ratio -> 9/16 = 0.5625 */
+  padding-top: 6.25%;
   overflow: hidden;
   padding-bottom: 2rem;
 }
@@ -1427,12 +1449,12 @@ a:hover {
 .gallery-grid {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center; /* Esto centra todas las imágenes, incluso en filas incompletas */
+  justify-content: center;
   gap: 20px;
 }
 
 .gallery-grid a {
-  flex: 1 1 calc(25% - 20px); /* Cambia 25% a 33.3% o 50% según el tamaño de pantalla deseado */
+  flex: 1 1 calc(25% - 20px);
   max-width: 250px;
   box-sizing: border-box;
 }
@@ -2137,7 +2159,6 @@ a:hover {
   opacity: 1;
 }
 
-/* Hover para iniciar slideshow */
 .product-images:hover img {
   animation: slideshow 3s infinite;
 }
@@ -2149,7 +2170,6 @@ a:hover {
   100% { opacity: 1; }
 }
 
-/* Para que cada imagen entre en su momento (escalonado) */
 .product-images:hover img:nth-child(1) {
   animation-delay: 0s;
 }
