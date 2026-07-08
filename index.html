@@ -481,5 +481,59 @@ document.addEventListener("DOMContentLoaded", function () {
 
   <!-- Template Main Javascript File -->
   <script src="js/main.js"></script>
+
+
+<script>
+    // 1. Deshabilitar clic derecho en toda la página (refuerza tu medida actual)
+    document.addEventListener('contextmenu', function(e) {
+        // Puedes personalizar el mensaje si lo deseas
+        // alert("Función deshabilitada para proteger el contenido.");
+        e.preventDefault();
+        return false;
+    });
+
+    // 2. Deshabilitar combinaciones de teclas comunes para "Inspeccionar Elemento"
+    document.addEventListener('keydown', function(e) {
+        // Tecla F12
+        if (e.key === 'F12') {
+            e.preventDefault();
+            return false;
+        }
+        // Ctrl+Shift+I (Windows/Linux) o Cmd+Opt+I (Mac)
+        if ((e.ctrlKey || e.metaKey) && e.shiftKey && (e.key === 'I' || e.key === 'i')) {
+            e.preventDefault();
+            return false;
+        }
+        // Ctrl+Shift+J (Windows/Linux) o Cmd+Opt+J (Mac) - Consola
+        if ((e.ctrlKey || e.metaKey) && e.shiftKey && (e.key === 'J' || e.key === 'j')) {
+            e.preventDefault();
+            return false;
+        }
+        // Ctrl+U (Windows/Linux) o Cmd+U (Mac) - Ver código fuente
+        if ((e.ctrlKey || e.metaKey) && (e.key === 'U' || e.key === 'u')) {
+            e.preventDefault();
+            return false;
+        }
+        // Ctrl+Shift+C (Windows/Linux) o Cmd+Shift+C (Mac) - Inspeccionar elemento
+        if ((e.ctrlKey || e.metaKey) && e.shiftKey && (e.key === 'C' || e.key === 'c')) {
+            e.preventDefault();
+            return false;
+        }
+    });
+
+    // 3. Prevenir el arrastre de imágenes (protección adicional)
+    document.querySelectorAll('img').forEach(img => {
+        img.addEventListener('dragstart', function(e) {
+            e.preventDefault();
+            return false;
+        });
+    });
+
+    // 4. (Opcional) Advertencia en la consola para disuadir a curiosos
+    console.log('%c🔒 Contenido protegido', 'font-size: 20px; font-weight: bold; color: #F40C5A;');
+    console.log('%cSi tienes alguna pregunta o necesitas acceso, contáctame a través de mis redes oficiales.', 'font-size: 14px;');
+</script>
+
+
 </body>
 </html>
