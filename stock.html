@@ -115,6 +115,10 @@
         flex: 1 1 100%;
         min-width: unset;
       }
+
+      #filter-buttons {
+        justify-content: center;
+      }
       
       .filters-wrapper .sort-group {
         flex: 1 1 100%;
@@ -129,6 +133,15 @@
       .filters-wrapper .sort-group .dropdown-toggle {
         width: 100%;
         justify-content: center;
+      }
+
+      #sortDropdownContainer .dropdown-menu {
+        position: static !important;
+        transform: none !important;
+        inset: auto !important;
+        width: 100%;
+        margin-top: 0.5rem !important;
+        text-align: center;
       }
     }
 
@@ -225,6 +238,45 @@
       justify-content: space-between;
       align-items: center;
       margin-bottom: 0.5rem;
+    }
+
+    /* ===== GALERÍA / ZOOM DE IMAGEN DE PRODUCTO ===== */
+    .product-img-wrapper {
+      position: relative;
+      display: block;
+      overflow: hidden;
+      border-radius: 8px;
+      cursor: zoom-in;
+    }
+
+    .product-img-wrapper .card-img-top {
+      transition: transform 0.35s ease;
+    }
+
+    .product-img-wrapper:hover .card-img-top {
+      transform: scale(1.06);
+    }
+
+    .product-img-wrapper .gallery-badge {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      background: rgba(0, 0, 0, 0.65);
+      color: #fff;
+      font-size: 0.7rem;
+      font-weight: 600;
+      padding: 3px 9px;
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      pointer-events: none;
+      backdrop-filter: blur(2px);
+    }
+
+    /* Ajuste fino del lightbox para que combine con el tema oscuro del sitio */
+    .lb-data .lb-caption {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     }
   </style>
 </head>
@@ -518,7 +570,9 @@
         
         <div class="col product-item accesorios" data-price="40000">
           <div class="card h-100 bg-white text-dark position-relative p-2" style="border-radius: 12px; border: 1px solid #e0e0e0; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
-            <img src="images/ghali shop/horns.jpg" class="card-img-top" alt="Cuernitos Lisos" style="border-radius: 8px; aspect-ratio: 1 / 1; object-fit: cover;">
+            <a href="images/ghali shop/horns.jpg" class="product-img-wrapper" data-title="Cuernitos Lisos" data-extra-images="images/ghali shop/horns-client.jpg">
+              <img src="images/ghali shop/horns.jpg" class="card-img-top" alt="Cuernitos Lisos" style="border-radius: 8px; aspect-ratio: 1 / 1; object-fit: cover;">
+            </a>
             <div class="card-body px-1 pt-3 pb-2 d-flex flex-column justify-content-between">
               <div>
                 <h5 class="card-title fs-6 fw-normal mb-1 text-secondary">Cuernitos Lisos</h5>
@@ -538,7 +592,9 @@
 
         <div class="col product-item accesorios" data-price="40000">
           <div class="card h-100 bg-white text-dark position-relative p-2" style="border-radius: 12px; border: 1px solid #e0e0e0; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
-            <img src="images/ghali shop/horns2.jpg" class="card-img-top" alt="Cuernitos Rugosos" style="border-radius: 8px; aspect-ratio: 1 / 1; object-fit: cover;">
+            <a href="images/ghali shop/horns2.jpg" class="product-img-wrapper" data-title="Cuernitos Rugosos" data-extra-images="">
+              <img src="images/ghali shop/horns2.jpg" class="card-img-top" alt="Cuernitos Rugosos" style="border-radius: 8px; aspect-ratio: 1 / 1; object-fit: cover;">
+            </a>
             <div class="card-body px-1 pt-3 pb-2 d-flex flex-column justify-content-between">
               <div>
                 <h5 class="card-title fs-6 fw-normal mb-1 text-secondary">Cuernitos Rugosos</h5>
@@ -558,7 +614,9 @@
 
         <div class="col product-item accesorios" data-price="40000">
           <div class="card h-100 bg-white text-dark position-relative p-2" style="border-radius: 12px; border: 1px solid #e0e0e0; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
-            <img src="images/ghali shop/cat ears.jpg" class="card-img-top" alt="Orejas de Gato" style="border-radius: 8px; aspect-ratio: 1 / 1; object-fit: cover;">
+            <a href="images/ghali shop/cat ears.jpg" class="product-img-wrapper" data-title="Orejas de Gato" data-extra-images="">
+              <img src="images/ghali shop/cat ears.jpg" class="card-img-top" alt="Orejas de Gato" style="border-radius: 8px; aspect-ratio: 1 / 1; object-fit: cover;">
+            </a>
             <div class="card-body px-1 pt-3 pb-2 d-flex flex-column justify-content-between">
               <div>
                 <h5 class="card-title fs-6 fw-normal mb-1 text-secondary">Orejas de Gato</h5>
@@ -578,7 +636,9 @@
 
         <div class="col product-item accesorios" data-price="40000">
           <div class="card h-100 bg-white text-dark position-relative p-2" style="border-radius: 12px; border: 1px solid #e0e0e0; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
-            <img src="images/ghali shop/kuromi ears.jpg" class="card-img-top" alt="Orejas Kuromi" style="border-radius: 8px; aspect-ratio: 1 / 1; object-fit: cover;">
+            <a href="images/ghali shop/kuromi ears.jpg" class="product-img-wrapper" data-title="Orejas de Kuromi" data-extra-images="images/ghali shop/kuromiearsclient.jpg">
+              <img src="images/ghali shop/kuromi ears.jpg" class="card-img-top" alt="Orejas Kuromi" style="border-radius: 8px; aspect-ratio: 1 / 1; object-fit: cover;">
+            </a>
             <div class="card-body px-1 pt-3 pb-2 d-flex flex-column justify-content-between">
               <div>
                 <h5 class="card-title fs-6 fw-normal mb-1 text-secondary">Orejas de Kuromi</h5>
@@ -598,7 +658,9 @@
 
         <div class="col product-item accesorios" data-price="40000">
           <div class="card h-100 bg-white text-dark position-relative p-2" style="border-radius: 12px; border: 1px solid #e0e0e0; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
-            <img src="images/ghali shop/bighorns.jpg" class="card-img-top" alt="Cuernos Grandes" style="border-radius: 8px; aspect-ratio: 1 / 1; object-fit: cover;">
+            <a href="images/ghali shop/bighorns.jpg" class="product-img-wrapper" data-title="Cuernos Grandes" data-extra-images="">
+              <img src="images/ghali shop/bighorns.jpg" class="card-img-top" alt="Cuernos Grandes" style="border-radius: 8px; aspect-ratio: 1 / 1; object-fit: cover;">
+            </a>
             <div class="card-body px-1 pt-3 pb-2 d-flex flex-column justify-content-between">
               <div>
                 <h5 class="card-title fs-6 fw-normal mb-1 text-secondary">Cuernos Grandes</h5>
@@ -618,7 +680,9 @@
 
         <div class="col product-item accesorios" data-price="70000">
           <div class="card h-100 bg-white text-dark position-relative p-2" style="border-radius: 12px; border: 1px solid #e0e0e0; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
-            <img src="images/ghali shop/bat-ears.jpg" class="card-img-top" alt="Cuernos Grandes" style="border-radius: 8px; aspect-ratio: 1 / 1; object-fit: cover;">
+            <a href="images/ghali shop/bat-ears.jpg" class="product-img-wrapper" data-title="Orejas de murciélago" data-extra-images="">
+              <img src="images/ghali shop/bat-ears.jpg" class="card-img-top" alt="Cuernos Grandes" style="border-radius: 8px; aspect-ratio: 1 / 1; object-fit: cover;">
+            </a>
             <div class="card-body px-1 pt-3 pb-2 d-flex flex-column justify-content-between">
               <div>
                 <h5 class="card-title fs-6 fw-normal mb-1 text-secondary">Orejas de murciélago</h5>
@@ -638,7 +702,9 @@
 
         <div class="col product-item llaveros" data-price="30000">
           <div class="card h-100 bg-white text-dark position-relative p-2" style="border-radius: 12px; border: 1px solid #e0e0e0; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
-            <img src="images/ghali shop/biker keyring personalized.jpg" class="card-img-top" alt="Llavero Biker Personalizado" style="border-radius: 8px; aspect-ratio: 1 / 1; object-fit: cover;">
+            <a href="images/ghali shop/biker keyring personalized.jpg" class="product-img-wrapper" data-title="Llavero Biker Personalizado" data-extra-images="">
+              <img src="images/ghali shop/biker keyring personalized.jpg" class="card-img-top" alt="Llavero Biker Personalizado" style="border-radius: 8px; aspect-ratio: 1 / 1; object-fit: cover;">
+            </a>
             <div class="card-body px-1 pt-3 pb-2 d-flex flex-column justify-content-between">
               <div>
                 <h5 class="card-title fs-6 fw-normal mb-1 text-secondary">Llavero Biker Personalizado</h5>
@@ -658,7 +724,9 @@
 
         <div class="col product-item flexi" data-price="10000">
           <div class="card h-100 bg-white text-dark position-relative p-2" style="border-radius: 12px; border: 1px solid #e0e0e0; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
-            <img src="images/ghali shop/articulated-fish.jpg" class="card-img-top" alt="Animalito articulado" style="border-radius: 8px; aspect-ratio: 1 / 1; object-fit: cover;">
+            <a href="images/ghali shop/articulated-fish.jpg" class="product-img-wrapper" data-title="Pez articulado" data-extra-images="">
+              <img src="images/ghali shop/articulated-fish.jpg" class="card-img-top" alt="Animalito articulado" style="border-radius: 8px; aspect-ratio: 1 / 1; object-fit: cover;">
+            </a>
             <div class="card-body px-1 pt-3 pb-2 d-flex flex-column justify-content-between">
               <div>
                 <h5 class="card-title fs-6 fw-normal mb-1 text-secondary">Pez articulado</h5>
@@ -678,7 +746,9 @@
 
         <div class="col product-item clicker" data-price="25000">
           <div class="card h-100 bg-white text-dark position-relative p-2" style="border-radius: 12px; border: 1px solid #e0e0e0; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
-            <img src="images/ghali shop/clicker-archery.jpg" class="card-img-top" alt="Clicker diana de arquería" style="border-radius: 8px; aspect-ratio: 1 / 1; object-fit: cover;">
+            <a href="images/ghali shop/clicker-archery.jpg" class="product-img-wrapper" data-title="Clicker diana de arquería" data-extra-images="">
+              <img src="images/ghali shop/clicker-archery.jpg" class="card-img-top" alt="Clicker diana de arquería" style="border-radius: 8px; aspect-ratio: 1 / 1; object-fit: cover;">
+            </a>
             <div class="card-body px-1 pt-3 pb-2 d-flex flex-column justify-content-between">
               <div>
                 <h5 class="card-title fs-6 fw-normal mb-1 text-secondary">Clicker diana de arquería</h5>
@@ -698,7 +768,9 @@
 
         <div class="col product-item llaveros" data-price="25000">
           <div class="card h-100 bg-white text-dark position-relative p-2" style="border-radius: 12px; border: 1px solid #e0e0e0; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
-            <img src="images/ghali shop/drdemon-keyring-personalized.jpg" class="card-img-top" alt="Llavero Personalizado" style="border-radius: 8px; aspect-ratio: 1 / 1; object-fit: cover;">
+            <a href="images/ghali shop/drdemon-keyring-personalized.jpg" class="product-img-wrapper" data-title="Llaveros Personalizado" data-extra-images="">
+              <img src="images/ghali shop/drdemon-keyring-personalized.jpg" class="card-img-top" alt="Llavero Personalizado" style="border-radius: 8px; aspect-ratio: 1 / 1; object-fit: cover;">
+            </a>
             <div class="card-body px-1 pt-3 pb-2 d-flex flex-column justify-content-between">
               <div>
                 <h5 class="card-title fs-6 fw-normal mb-1 text-secondary">Llaveros Personalizado</h5>
@@ -718,7 +790,9 @@
 
         <div class="col product-item clicker" data-price="25000">
           <div class="card h-100 bg-white text-dark position-relative p-2" style="border-radius: 12px; border: 1px solid #e0e0e0; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
-            <img src="images/ghali shop/clicker-succulentus.jpg" class="card-img-top" alt="Clicker materita con carita" style="border-radius: 8px; aspect-ratio: 1 / 1; object-fit: cover;">
+            <a href="images/ghali shop/clicker-succulentus.jpg" class="product-img-wrapper" data-title="Clicker materita con carita" data-extra-images="">
+              <img src="images/ghali shop/clicker-succulentus.jpg" class="card-img-top" alt="Clicker materita con carita" style="border-radius: 8px; aspect-ratio: 1 / 1; object-fit: cover;">
+            </a>
             <div class="card-body px-1 pt-3 pb-2 d-flex flex-column justify-content-between">
               <div>
                 <h5 class="card-title fs-6 fw-normal mb-1 text-secondary">Clicker materita con carita</h5>
@@ -738,7 +812,9 @@
 
         <div class="col product-item fidget" data-price="10000">
           <div class="card h-100 bg-white text-dark position-relative p-2" style="border-radius: 12px; border: 1px solid #e0e0e0; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
-            <img src="images/ghali shop/fidget-shaker-gym.jpg" class="card-img-top" alt="Fidget shaker gym" style="border-radius: 8px; aspect-ratio: 1 / 1; object-fit: cover;">
+            <a href="images/ghali shop/fidget-shaker-gym.jpg" class="product-img-wrapper" data-title="Fidget shaker gym" data-extra-images="">
+              <img src="images/ghali shop/fidget-shaker-gym.jpg" class="card-img-top" alt="Fidget shaker gym" style="border-radius: 8px; aspect-ratio: 1 / 1; object-fit: cover;">
+            </a>
             <div class="card-body px-1 pt-3 pb-2 d-flex flex-column justify-content-between">
               <div>
                 <h5 class="card-title fs-6 fw-normal mb-1 text-secondary">Fidget shaker gym</h5>
@@ -758,7 +834,9 @@
 
         <div class="col product-item services" data-price="Cotizar">
           <div class="card h-100 bg-white text-dark position-relative p-2" style="border-radius: 12px; border: 1px solid #e0e0e0; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
-            <img src="images/ghali shop/ghalilab.jpg" class="card-img-top" alt="By ghalilab" style="border-radius: 8px; aspect-ratio: 1 / 1; object-fit: cover;">
+            <a href="images/ghali shop/ghalilab.jpg" class="product-img-wrapper" data-title="Creación de página web" data-extra-images="">
+              <img src="images/ghali shop/ghalilab.jpg" class="card-img-top" alt="By ghalilab" style="border-radius: 8px; aspect-ratio: 1 / 1; object-fit: cover;">
+            </a>
             <div class="card-body px-1 pt-3 pb-2 d-flex flex-column justify-content-between">
               <div>
                 <h5 class="card-title fs-6 fw-normal mb-1 text-secondary">Creación de página web</h5>
@@ -779,7 +857,9 @@
 
         <div class="col product-item services" data-price="Cotizar">
           <div class="card h-100 bg-white text-dark position-relative p-2" style="border-radius: 12px; border: 1px solid #e0e0e0; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
-            <img src="images/ghali shop/ghalilab.jpg" class="card-img-top" alt="By ghalilab" style="border-radius: 8px; aspect-ratio: 1 / 1; object-fit: cover;">
+            <a href="images/ghali shop/ghalilab.jpg" class="product-img-wrapper" data-title="Modelado y/o impresión 3D" data-extra-images="">
+              <img src="images/ghali shop/ghalilab.jpg" class="card-img-top" alt="By ghalilab" style="border-radius: 8px; aspect-ratio: 1 / 1; object-fit: cover;">
+            </a>
             <div class="card-body px-1 pt-3 pb-2 d-flex flex-column justify-content-between">
               <div>
                 <h5 class="card-title fs-6 fw-normal mb-1 text-secondary">Modelado y/o impresión 3D</h5>
@@ -799,7 +879,9 @@
 
         <div class="col product-item services" data-price="Cotizar">
           <div class="card h-100 bg-white text-dark position-relative p-2" style="border-radius: 12px; border: 1px solid #e0e0e0; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
-            <img src="images/ghali shop/led-circle.jpg" class="card-img-top" alt="By ghalilab" style="border-radius: 8px; aspect-ratio: 1 / 1; object-fit: cover;">
+            <a href="images/ghali shop/led-circle.jpg" class="product-img-wrapper" data-title="Aviso led" data-extra-images="">
+              <img src="images/ghali shop/led-circle.jpg" class="card-img-top" alt="By ghalilab" style="border-radius: 8px; aspect-ratio: 1 / 1; object-fit: cover;">
+            </a>
             <div class="card-body px-1 pt-3 pb-2 d-flex flex-column justify-content-between">
               <div>
                 <h5 class="card-title fs-6 fw-normal mb-1 text-secondary">Aviso led</h5>
@@ -819,7 +901,9 @@
 
         <div class="col product-item clicker" data-price="25000">
           <div class="card h-100 bg-white text-dark position-relative p-2" style="border-radius: 12px; border: 1px solid #e0e0e0; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
-            <img src="images/ghali shop/clicker-repo.jpg" class="card-img-top" alt="By ghalilab" style="border-radius: 8px; aspect-ratio: 1 / 1; object-fit: cover;">
+            <a href="images/ghali shop/clicker-repo.jpg" class="product-img-wrapper" data-title="Clicker R.E.P.O." data-extra-images="images/ghali shop/clicker-repo2.jpg, images/ghali shop/clicker-repo3.jpg">
+              <img src="images/ghali shop/clicker-repo.jpg" class="card-img-top" alt="By ghalilab" style="border-radius: 8px; aspect-ratio: 1 / 1; object-fit: cover;">
+            </a>
             <div class="card-body px-1 pt-3 pb-2 d-flex flex-column justify-content-between">
               <div>
                 <h5 class="card-title fs-6 fw-normal mb-1 text-secondary">Clicker R.E.P.O.</h5>
@@ -839,7 +923,9 @@
 
         <div class="col product-item clicker" data-price="40000">
           <div class="card h-100 bg-white text-dark position-relative p-2" style="border-radius: 12px; border: 1px solid #e0e0e0; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
-            <img src="images/ghali shop/clicker-rose-bck.jpg" class="card-img-top" alt="By ghalilab" style="border-radius: 8px; aspect-ratio: 1 / 1; object-fit: cover;">
+            <a href="images/ghali shop/clicker-rose-bck.jpg" class="product-img-wrapper" data-title="Clicker ramo de flores" data-extra-images="images/ghali shop/clicker-rose-bck3.jpg , images/ghali shop/clicker-rose-bck5.jpg, images/ghali shop/clicker-rose-bck2.jpg, images/ghali shop/clicker-rose-bck4.jpg">
+              <img src="images/ghali shop/clicker-rose-bck.jpg" class="card-img-top" alt="By ghalilab" style="border-radius: 8px; aspect-ratio: 1 / 1; object-fit: cover;">
+            </a>
             <div class="card-body px-1 pt-3 pb-2 d-flex flex-column justify-content-between">
               <div>
                 <h5 class="card-title fs-6 fw-normal mb-1 text-secondary">Clicker ramo de flores</h5>
@@ -859,7 +945,9 @@
 
         <div class="col product-item variety" data-price="70000">
           <div class="card h-100 bg-white text-dark position-relative p-2" style="border-radius: 12px; border: 1px solid #e0e0e0; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
-            <img src="images/ghali shop/mask-hannya.jpg" class="card-img-top" alt="By ghalilab" style="border-radius: 8px; aspect-ratio: 1 / 1; object-fit: cover;">
+            <a href="images/ghali shop/mask-hannya.jpg" class="product-img-wrapper" data-title="Máscara: Hannya" data-extra-images="images/ghali shop/mask-hannya2.jpg">
+              <img src="images/ghali shop/mask-hannya.jpg" class="card-img-top" alt="By ghalilab" style="border-radius: 8px; aspect-ratio: 1 / 1; object-fit: cover;">
+            </a>
             <div class="card-body px-1 pt-3 pb-2 d-flex flex-column justify-content-between">
               <div>
                 <h5 class="card-title fs-6 fw-normal mb-1 text-secondary">Máscara: Hannya</h5>
@@ -879,7 +967,9 @@
 
         <div class="col product-item nfc llaveros" data-price="30000">
           <div class="card h-100 bg-white text-dark position-relative p-2" style="border-radius: 12px; border: 1px solid #e0e0e0; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
-            <img src="images/ghali shop/nfc-keyring.jpg" class="card-img-top" alt="By ghalilab" style="border-radius: 8px; aspect-ratio: 1 / 1; object-fit: cover;">
+            <a href="images/ghali shop/nfc-keyring.jpg" class="product-img-wrapper" data-title="NFC personalizado" data-extra-images="images/ghali shop/nfc-keyring2.jpg">
+              <img src="images/ghali shop/nfc-keyring.jpg" class="card-img-top" alt="By ghalilab" style="border-radius: 8px; aspect-ratio: 1 / 1; object-fit: cover;">
+            </a>
             <div class="card-body px-1 pt-3 pb-2 d-flex flex-column justify-content-between">
               <div>
                 <h5 class="card-title fs-6 fw-normal mb-1 text-secondary">NFC personalizado</h5>
@@ -899,7 +989,9 @@
 
         <div class="col product-item fidget" data-price="15000">
           <div class="card h-100 bg-white text-dark position-relative p-2" style="border-radius: 12px; border: 1px solid #e0e0e0; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
-            <img src="images/ghali shop/fidget-makercoin.jpg" class="card-img-top" alt="By ghalilab" style="border-radius: 8px; aspect-ratio: 1 / 1; object-fit: cover;">
+            <a href="images/ghali shop/fidget-makercoin.jpg" class="product-img-wrapper" data-title="Fidget antiestrés" data-extra-images="">
+              <img src="images/ghali shop/fidget-makercoin.jpg" class="card-img-top" alt="By ghalilab" style="border-radius: 8px; aspect-ratio: 1 / 1; object-fit: cover;">
+            </a>
             <div class="card-body px-1 pt-3 pb-2 d-flex flex-column justify-content-between">
               <div>
                 <h5 class="card-title fs-6 fw-normal mb-1 text-secondary">Fidget antiestrés</h5>
@@ -1021,6 +1113,9 @@
       // Generar los enlaces de WhatsApp con el mensaje de cada producto
       buildWhatsAppLinks();
 
+      // Generar las galerías (zoom + múltiples fotos) de cada producto
+      initProductGalleries();
+
       // SOLUCIÓN: Cerrar dropdown al hacer clic fuera
       document.addEventListener('click', function(e) {
         const container = document.getElementById('sortDropdownContainer');
@@ -1058,6 +1153,43 @@
         btn.setAttribute('href', enlace);
         btn.setAttribute('target', '_blank');
         btn.setAttribute('rel', 'noopener noreferrer');
+      });
+    }
+
+    // ============================================
+    // GALERÍA DE IMÁGENES POR PRODUCTO (Lightbox2)
+    // Cada .product-img-wrapper puede traer un atributo
+    // data-extra-images="ruta1.jpg, ruta2.jpg, ..." (máx. 4 extra = 5 en total)
+    // Si no tiene extras, solo se amplía la foto principal.
+    // ============================================
+    function initProductGalleries() {
+      document.querySelectorAll('.product-img-wrapper').forEach((mainLink, idx) => {
+        const galleryId = `product-gallery-${idx}`;
+        const title = mainLink.getAttribute('data-title') || '';
+
+        mainLink.setAttribute('data-lightbox', galleryId);
+        mainLink.setAttribute('data-title', title);
+
+        const extraRaw = mainLink.getAttribute('data-extra-images') || '';
+        const extraImages = extraRaw.split(',').map(s => s.trim()).filter(Boolean).slice(0, 4);
+
+        extraImages.forEach(src => {
+          const a = document.createElement('a');
+          a.href = src;
+          a.setAttribute('data-lightbox', galleryId);
+          a.setAttribute('data-title', title);
+          a.style.display = 'none';
+          mainLink.insertAdjacentElement('afterend', a);
+        });
+
+        // Insignia con el total de fotos si hay más de 1
+        const totalImages = extraImages.length + 1;
+        if (totalImages > 1) {
+          const badge = document.createElement('span');
+          badge.className = 'gallery-badge';
+          badge.innerHTML = `<i class="fa-solid fa-images"></i> ${totalImages}`;
+          mainLink.appendChild(badge);
+        }
       });
     }
 
