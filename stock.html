@@ -24,20 +24,172 @@
   <script src="https://cdn.jsdelivr.net/npm/swiffy-slider@1.6.0/dist/js/swiffy-slider.min.js" crossorigin="anonymous" defer></script>
   <link href="https://cdn.jsdelivr.net/npm/swiffy-slider@1.6.0/dist/css/swiffy-slider.min.css" rel="stylesheet" crossorigin="anonymous">
   <link href="https://cdn.jsdelivr.net/npm/swiffy-slider@1.6.0/dist/js/swiffy-slider-extensions.min.js">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
 
   <link href="css/style.css" rel="stylesheet">
 
   <style>
-    /* Estilos para asegurar que no haya saltos extraños en escritorio */
     @media (min-width: 768px) {
       .dropdown-hover .dropdown-menu {
         margin-top: 0;
       }
-      /* Hover puro con CSS para evitar conflictos con Bootstrap JS */
       .dropdown-hover:hover > .dropdown-menu {
         display: block;
       }
+    }
+
+    .fa-cart-shopping,
+    .fa-solid.fa-cart-shopping {
+      display: inline-block !important;
+      font-family: "Font Awesome 6 Free" !important;
+      font-weight: 900 !important;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      font-style: normal;
+      font-variant: normal;
+      text-rendering: auto;
+      line-height: 1;
+      color: #000;
+    }
+
+    .fa-cart-shopping,
+    .fa-solid.fa-cart-shopping:hover {
+      color: #F40C5A;
+    }
+
+    .fa-cart-shopping.fallback::before {
+      content: "🛒";
+      font-family: Arial, sans-serif;
+      color: #000;
+    }
+
+    .fab {
+      display: inline-block !important;
+      font-family: "Font Awesome 6 Brands" !important;
+      font-weight: 400 !important;
+    }
+
+    #filter-buttons .filter-btn {
+      white-space: nowrap;
+    }
+
+    @media (max-width: 576px) {
+      #filter-buttons .filter-btn {
+        font-size: 0.75rem;
+        padding: 0.25rem 0.6rem;
+        flex: 1 1 auto;
+      }
+      
+      #sortDropdownBtn {
+        font-size: 0.8rem;
+        padding: 0.3rem 0.7rem;
+        width: 100%;
+        justify-content: center;
+      }
+    }
+
+    /* Filtros wrapper */
+    .filters-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .filters-wrapper .filter-group {
+      flex: 1;
+      min-width: 200px;
+    }
+
+    .filters-wrapper .sort-group {
+      flex-shrink: 0;
+      min-width: 180px;
+    }
+
+    @media (max-width: 768px) {
+      .filters-wrapper .filter-group {
+        flex: 1 1 100%;
+        min-width: unset;
+      }
+      
+      .filters-wrapper .sort-group {
+        flex: 1 1 100%;
+        width: 100%;
+        min-width: unset;
+      }
+      
+      .filters-wrapper .sort-group .dropdown {
+        width: 100%;
+      }
+      
+      .filters-wrapper .sort-group .dropdown-toggle {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+
+    /* Grid responsive */
+    #inventory-grid {
+      display: flex;
+      flex-wrap: wrap;
+      margin: 0 -0.5rem;
+    }
+
+    #inventory-grid .col {
+      flex: 0 0 auto;
+      padding: 0 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    @media (min-width: 992px) {
+      #inventory-grid .col {
+        width: 25%;
+      }
+    }
+
+    @media (min-width: 768px) and (max-width: 991.98px) {
+      #inventory-grid .col {
+        width: 33.333%;
+      }
+    }
+
+    @media (min-width: 576px) and (max-width: 767.98px) {
+      #inventory-grid .col {
+        width: 50%;
+      }
+    }
+
+    @media (max-width: 575.98px) {
+      #inventory-grid .col {
+        width: 100%;
+      }
+    }
+
+    .product-item.hidden {
+      display: none !important;
+    }
+
+    .sort-option.active {
+      color: #F40C5A !important;
+      background-color: rgba(244, 12, 90, 0.1);
+    }
+
+    .sort-option.active::after {
+      content: " ✓";
+      color: #F40C5A;
+    }
+
+    .social-icons .fab {
+      font-size: 24px;
+      color: #fff;
+    }
+
+    .social-icons .fab:hover {
+      color: #F40C5A;
     }
   </style>
 </head>
@@ -103,6 +255,7 @@
       </div>
     </div>
   </nav>
+
   <div class="intro intro-single route bg-image" style="background-image: url(img/overlay-bg-3.jpg)">
     <div class="overlay-mf"></div>
     <div class="intro-content display-table">
@@ -113,6 +266,7 @@
       </div>
     </div>
   </div>
+
   <section id="inventario" class="services-section py-5" style="background: linear-gradient(135deg, #f40c5981, #1b1b1b); color: #fff;">
     <div class="container">
       
@@ -124,20 +278,22 @@
         </div>
       </div>
 
-      <div class="row g-3 align-items-center mb-4">
-        <div class="col-md-8 col-12 d-flex flex-wrap gap-2" id="filter-buttons">
-          <button class="btn px-3 py-1 fw-medium filter-btn active" data-filter="all" style="background-color: #ffda44; color: #000; border-radius: 8px; border: none;">Ver todos</button>
-          <button class="btn btn-outline-light px-3 py-1 text-white filter-btn" data-filter="accesorios" style="border-radius: 8px; border-color: #ccc; font-size: 0.9rem;">Accesorios cascos</button>
-          <button class="btn btn-outline-light px-3 py-1 text-white filter-btn" data-filter="llaveros" style="border-radius: 8px; border-color: #ccc; font-size: 0.9rem;">Llaveros</button>
-          <button class="btn btn-outline-light px-3 py-1 text-white filter-btn" data-filter="flexi" style="border-radius: 8px; border-color: #ccc; font-size: 0.9rem;">Flexi</button>
-          <button class="btn btn-outline-light px-3 py-1 text-white filter-btn" data-filter="clicker" style="border-radius: 8px; border-color: #ccc; font-size: 0.9rem;">Clicker</button>          
-          <button class="btn btn-outline-light px-3 py-1 text-white filter-btn" data-filter="fidget" style="border-radius: 8px; border-color: #ccc; font-size: 0.9rem;">Fidget</button>
-          <button class="btn btn-outline-light px-3 py-1 text-white filter-btn" data-filter="services" style="border-radius: 8px; border-color: #ccc; font-size: 0.9rem;">Servicios</button>
-          <button class="btn btn-outline-light px-3 py-1 text-white filter-btn" data-filter="variety" style="border-radius: 8px; border-color: #ccc; font-size: 0.9rem;">Variedad</button>
-                  
+      <div class="filters-wrapper">
+        <div class="filter-group">
+          <div id="filter-buttons" class="d-flex flex-wrap gap-2">
+            <button class="btn px-3 py-1 fw-medium filter-btn active" data-filter="all" style="background-color: #ffda44; color: #000; border-radius: 8px; border: none;">Ver todos</button>
+            <button class="btn btn-outline-light px-3 py-1 text-white filter-btn" data-filter="accesorios" style="border-radius: 8px; border-color: #ccc; font-size: 0.9rem;">Accesorios cascos</button>
+            <button class="btn btn-outline-light px-3 py-1 text-white filter-btn" data-filter="llaveros" style="border-radius: 8px; border-color: #ccc; font-size: 0.9rem;">Llaveros</button>
+            <button class="btn btn-outline-light px-3 py-1 text-white filter-btn" data-filter="flexi" style="border-radius: 8px; border-color: #ccc; font-size: 0.9rem;">Flexi</button>
+            <button class="btn btn-outline-light px-3 py-1 text-white filter-btn" data-filter="clicker" style="border-radius: 8px; border-color: #ccc; font-size: 0.9rem;">Clicker</button>          
+            <button class="btn btn-outline-light px-3 py-1 text-white filter-btn" data-filter="fidget" style="border-radius: 8px; border-color: #ccc; font-size: 0.9rem;">Fidget</button>
+            <button class="btn btn-outline-light px-3 py-1 text-white filter-btn" data-filter="services" style="border-radius: 8px; border-color: #ccc; font-size: 0.9rem;">Servicios</button>
+            <button class="btn btn-outline-light px-3 py-1 text-white filter-btn" data-filter="variety" style="border-radius: 8px; border-color: #ccc; font-size: 0.9rem;">Variedad</button>
+          </div>
         </div>
-        <div class="col-md-4 col-12 d-flex justify-content-md-end justify-content-start">
-          <div class="dropdown dropdown-hover" id="sortDropdownContainer">
+        
+        <div class="sort-group">
+          <div class="dropdown" id="sortDropdownContainer">
             <button class="btn btn-light bg-white border dropdown-toggle text-dark d-flex align-items-center gap-2" type="button" id="sortDropdownBtn" data-bs-toggle="dropdown" aria-expanded="false" style="border-radius: 8px; font-size: 0.9rem;">
               <i class="fa-solid fa-arrow-down-short-wide"></i> <span id="sort-label">Ordenar por</span>
             </button>
@@ -149,7 +305,7 @@
         </div>
       </div>
 
-      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-3" id="inventory-grid">
+      <div id="inventory-grid" class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-3">
         
         <div class="col product-item accesorios" data-price="40000">
           <div class="card h-100 bg-white text-dark position-relative p-2" style="border-radius: 12px; border: 1px solid #e0e0e0; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
@@ -443,7 +599,6 @@
 
       </div>
 
-      </div>
       <div class="row mt-5 text-center">
         <div class="col-12">
           <a href="https://wa.me/message/CM6P2Q2TNB6LA1" class="btn btn-lg px-5 py-3 fw-bold text-white" style="background: linear-gradient(135deg, #f40c59, #b9134b); border-radius: 50px; border: none; box-shadow: 0 4px 15px rgba(244,12,89,0.3);">
@@ -454,6 +609,7 @@
 
     </div>
   </section>
+
   <section class="footerghalien">
     <footer>
       <div class="container">
@@ -489,9 +645,9 @@
       </div>
     </footer>
   </section>
+
   <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
   <div id="preloader"></div>
-
 
   <script src="lib/jquery/jquery.min.js"></script>
   <script src="lib/jquery/jquery-migrate.min.js"></script>
@@ -518,20 +674,48 @@
     let currentSortLabel = localStorage.getItem('ghali_sort_label') || 'Ordenar por';
 
     document.addEventListener("DOMContentLoaded", () => {
-      // 1. Restaurar Filtro Activo
+      // Restaurar Filtro Activo
       const activeBtn = document.querySelector(`.filter-btn[data-filter="${currentFilter}"]`);
       if (activeBtn) setFilterButtonStyles(activeBtn);
 
-      // 2. Restaurar Etiqueta del Ordenador
+      // Restaurar Etiqueta del Ordenador
       const sortLabel = document.getElementById('sort-label');
       if (sortLabel) sortLabel.innerText = currentSortLabel;
 
-      // 3. Marcar visualmente la opción seleccionada en el dropdown
+      // Marcar visualmente la opción seleccionada en el dropdown
       updateActiveSortOption();
 
-      // 4. Aplicar lógicas iniciales de ordenamiento y filtrado
+      // Aplicar lógicas iniciales de ordenamiento y filtrado
       if (currentSort) sortItems(currentSort);
       applyFilterAndSort();
+
+      // SOLUCIÓN: Cerrar dropdown al hacer clic fuera
+      document.addEventListener('click', function(e) {
+        const container = document.getElementById('sortDropdownContainer');
+        const btn = document.getElementById('sortDropdownBtn');
+        
+        if (container && btn && !container.contains(e.target)) {
+          const instance = bootstrap.Dropdown.getInstance(btn);
+          if (instance) {
+            instance.hide();
+          }
+        }
+      });
+
+      // SOLUCIÓN: Cerrar dropdown al seleccionar una opción
+      document.querySelectorAll('.sort-option').forEach(option => {
+        option.addEventListener('click', function() {
+          setTimeout(() => {
+            const btn = document.getElementById('sortDropdownBtn');
+            if (btn) {
+              const instance = bootstrap.Dropdown.getInstance(btn);
+              if (instance) {
+                instance.hide();
+              }
+            }
+          }, 100);
+        });
+      });
     });
 
     function setFilterButtonStyles(button) {
@@ -549,7 +733,7 @@
       }
     }
 
-    // ---- FUNCIONALIDAD 1: FILTRADO POR CATEGORÍAS ----
+    // ---- FILTRADO ----
     document.querySelectorAll('.filter-btn').forEach(button => {
       button.addEventListener('click', function() {
         setFilterButtonStyles(this);
@@ -559,7 +743,7 @@
       });
     });
 
-    // ---- FUNCIONALIDAD 2: ORDENAMIENTO POR PRECIO ----
+    // ---- ORDENAMIENTO ----
     document.querySelectorAll('.sort-option').forEach(option => {
       option.addEventListener('click', function(e) {
         e.preventDefault();
@@ -572,14 +756,7 @@
         localStorage.setItem('ghali_sort_label', currentSortLabel);
         
         sortItems(currentSort);
-        updateActiveSortOption(); // Actualizar check visual
-        
-        // Cerrar el menú usando la API nativa de Bootstrap 5
-        const dropdownBtn = document.getElementById('sortDropdownBtn');
-        if (dropdownBtn) {
-          const dropdownInstance = bootstrap.Dropdown.getInstance(dropdownBtn);
-          if (dropdownInstance) dropdownInstance.hide();
-        }
+        updateActiveSortOption();
       });
     });
 
@@ -595,8 +772,11 @@
 
     function sortItems(type) {
       const items = Array.from(document.querySelectorAll('.product-item'));
+      
+      const visibleItems = items.filter(item => item.style.display !== 'none');
+      const hiddenItems = items.filter(item => item.style.display === 'none');
 
-      items.sort((a, b) => {
+      visibleItems.sort((a, b) => {
         const priceA = parseInt(a.getAttribute('data-price')) || 0;
         const priceB = parseInt(b.getAttribute('data-price')) || 0;
 
@@ -608,62 +788,83 @@
         return 0;
       });
 
-      // Reinsertar elementos ordenados
-      items.forEach(item => grid.appendChild(item));
+      visibleItems.forEach(item => grid.appendChild(item));
+      hiddenItems.forEach(item => grid.appendChild(item));
     }
 
     function applyFilterAndSort() {
       const items = document.querySelectorAll('.product-item');
       items.forEach(item => {
-        // Importante: usar '' en lugar de 'block' para no romper el flexbox de Bootstrap
         if (currentFilter === 'all' || item.classList.contains(currentFilter)) {
           item.style.display = '';
+          item.classList.remove('hidden');
         } else {
           item.style.display = 'none';
+          item.classList.add('hidden');
         }
       });
-    }
-  </script>
 
-<script>
-    // 1. Deshabilitar clic derecho en toda la página (refuerza tu medida actual)
+      if (currentSort) {
+        const visibleItems = [];
+        const hiddenItems = [];
+        
+        items.forEach(item => {
+          if (item.style.display !== 'none') {
+            visibleItems.push(item);
+          } else {
+            hiddenItems.push(item);
+          }
+        });
+
+        visibleItems.sort((a, b) => {
+          const priceA = parseInt(a.getAttribute('data-price')) || 0;
+          const priceB = parseInt(b.getAttribute('data-price')) || 0;
+
+          if (currentSort === 'low-high') {
+            return priceA - priceB;
+          } else if (currentSort === 'high-low') {
+            return priceB - priceA;
+          }
+          return 0;
+        });
+
+        visibleItems.forEach(item => grid.appendChild(item));
+        hiddenItems.forEach(item => grid.appendChild(item));
+      }
+    }
+
+    // PROTECCIÓN DE SEGURIDAD ADICIONAL
+    // 1. Deshabilitar clic derecho
     document.addEventListener('contextmenu', function(e) {
-        // Puedes personalizar el mensaje si lo deseas
-        // alert("Función deshabilitada para proteger el contenido.");
         e.preventDefault();
         return false;
     });
 
-    // 2. Deshabilitar combinaciones de teclas comunes para "Inspeccionar Elemento"
+    // 2. Deshabilitar combinaciones de teclas
     document.addEventListener('keydown', function(e) {
-        // Tecla F12
         if (e.key === 'F12') {
             e.preventDefault();
             return false;
         }
-        // Ctrl+Shift+I (Windows/Linux) o Cmd+Opt+I (Mac)
         if ((e.ctrlKey || e.metaKey) && e.shiftKey && (e.key === 'I' || e.key === 'i')) {
             e.preventDefault();
             return false;
         }
-        // Ctrl+Shift+J (Windows/Linux) o Cmd+Opt+J (Mac) - Consola
         if ((e.ctrlKey || e.metaKey) && e.shiftKey && (e.key === 'J' || e.key === 'j')) {
             e.preventDefault();
             return false;
         }
-        // Ctrl+U (Windows/Linux) o Cmd+U (Mac) - Ver código fuente
         if ((e.ctrlKey || e.metaKey) && (e.key === 'U' || e.key === 'u')) {
             e.preventDefault();
             return false;
         }
-        // Ctrl+Shift+C (Windows/Linux) o Cmd+Shift+C (Mac) - Inspeccionar elemento
         if ((e.ctrlKey || e.metaKey) && e.shiftKey && (e.key === 'C' || e.key === 'c')) {
             e.preventDefault();
             return false;
         }
     });
 
-    // 3. Prevenir el arrastre de imágenes (protección adicional)
+    // 3. Prevenir arrastre de imágenes
     document.querySelectorAll('img').forEach(img => {
         img.addEventListener('dragstart', function(e) {
             e.preventDefault();
@@ -671,10 +872,9 @@
         });
     });
 
-    // 4. (Opcional) Advertencia en la consola para disuadir a curiosos
     console.log('%c🔒 Contenido protegido', 'font-size: 20px; font-weight: bold; color: #F40C5A;');
     console.log('%cSi tienes alguna pregunta o necesitas acceso, contáctame a través de mis redes oficiales.', 'font-size: 14px;');
-</script>
+  </script>
 
 </body>
 </html>
