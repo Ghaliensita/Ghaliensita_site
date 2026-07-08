@@ -24,7 +24,7 @@
   <script src="https://cdn.jsdelivr.net/npm/swiffy-slider@1.6.0/dist/js/swiffy-slider.min.js" crossorigin="anonymous" defer></script>
   <link href="https://cdn.jsdelivr.net/npm/swiffy-slider@1.6.0/dist/css/swiffy-slider.min.css" rel="stylesheet" crossorigin="anonymous">
   <link href="https://cdn.jsdelivr.net/npm/swiffy-slider@1.6.0/dist/js/swiffy-slider-extensions.min.js">
-  
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
@@ -191,6 +191,41 @@
     .social-icons .fab:hover {
       color: #F40C5A;
     }
+
+    /* ===== BOTÓN "Compra desde WhatsApp" ===== */
+    .btn-whatsapp {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      background-color: #25D366;
+      color: #fff !important;
+      font-weight: 600;
+      padding: 8px 10px;
+      border-radius: 8px;
+      text-decoration: none !important;
+      font-size: 0.85rem;
+      border: none;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .btn-whatsapp:hover {
+      background-color: #1DA851;
+      color: #fff !important;
+      transform: translateY(-2px);
+    }
+
+    .btn-whatsapp i {
+      font-size: 1.05rem;
+    }
+
+    .product-price-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.5rem;
+    }
   </style>
 </head>
 
@@ -277,6 +312,177 @@
           <br> <strong style="background-color: #00c4f8; padding-left: 15px; padding-right: 15px; padding-top: 1px; padding-bottom: 2px; color: #1b1b1b; border-radius: 10px;">Envíos a todo Colombia</strong> </p>
         </div>
       </div>
+      
+<!-- MINI ICONO DE COLORES DE IMPRESIÓN -->
+    <div class="colors-available">
+      <span class="colors-label">🎨 Colores disponibles:</span>
+      <div class="color-swatch">
+        <span class="color-dot" style="background: #FFFFFF;" title="Blanco"></span>
+        <span class="color-dot" style="background: #000000;" title="Negro"></span>
+        <span class="color-dot" style="background: #884c20;" title="Bronce"></span>
+        <span class="color-dot" style="background: #FF6B00;" title="Naranja"></span>
+        <span class="color-dot" style="background: #d3bb36;" title="Amarillo translúcido"></span>
+        <span class="color-dot" style="background: #59db59;" title="Verde translúcido"></span>
+        <span class="color-dot" style="background: #3E8AB8;" title="Cian"></span>
+        <span class="color-dot" style="background: #2a2add;" title="Indigo"></span>
+        <span class="color-dot" style="background: #10245f;" title="Azul rey"></span>  
+        <span class="color-dot" style="background: #8B00FF;" title="Morado"></span>
+        <span class="color-dot" style="background: #d12020;" title="Rojo"></span>
+        <span class="color-dot" style="background: #E67B9F;" title="Rosa"></span>
+        <span class="color-dot" style="background: linear-gradient(135deg, #0d083a, #0d083a, #d12020);" title="Bicolor azul/rojo"></span>      
+        <span class="color-dot color-dot-gradient" title="Colores personalizados">+</span>
+      </div>
+      <span class="colors-note">*Colores sujetos a disponibilidad <br>Colores pueden cambiar tono en la realidad</span>
+    </div>
+  </div>
+</div>
+
+<style>
+  /* ========================================
+     MINI ICONO DE COLORES DE IMPRESIÓN
+     ======================================== */
+  .colors-available {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem 1rem;
+    margin-top: 0.75rem;
+    padding: 0.5rem 0;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 0.6rem 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .colors-label {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.75);
+    letter-spacing: 0.3px;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+  }
+
+  .color-swatch {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.3rem;
+  }
+
+  .color-dot {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.25);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+    position: relative;
+  }
+
+  .color-dot:hover {
+    transform: scale(1.25);
+    border-color: #ffffff;
+    box-shadow: 0 0 12px rgba(255, 255, 255, 0.3);
+    z-index: 2;
+  }
+
+  /* Efecto de brillo al pasar el mouse */
+  .color-dot::after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 4px;
+    width: 8px;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .color-dot:hover::after {
+    opacity: 1;
+  }
+
+  /* Punto especial para colores personalizados */
+  .color-dot-gradient {
+    background: linear-gradient(135deg, #FF0000, #FFD700, #00FF00, #0000FF, #8B00FF) !important;
+    font-size: 12px;
+    font-weight: bold;
+    color: white;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+    border-color: rgba(255, 255, 255, 0.4);
+  }
+
+  .color-dot-gradient:hover {
+    transform: scale(1.25) rotate(180deg);
+    border-color: #ffffff;
+  }
+
+  .colors-note {
+    font-size: 0.7rem;
+    color: rgba(255, 255, 255, 0.4);
+    font-style: italic;
+    margin-left: 0.25rem;
+  }
+
+  /* Animación de entrada */
+  .colors-available {
+    animation: fadeInColors 0.6s ease-out;
+  }
+
+  @keyframes fadeInColors {
+    0% {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Responsive */
+  @media (max-width: 576px) {
+    .colors-available {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.4rem;
+      padding: 0.5rem 0.8rem;
+    }
+
+    .color-dot {
+      width: 20px;
+      height: 20px;
+    }
+
+    .colors-label {
+      font-size: 0.75rem;
+    }
+
+    .color-swatch {
+      gap: 0.25rem;
+    }
+
+    .color-dot-gradient {
+      font-size: 10px;
+    }
+  }
+
+  @media (max-width: 400px) {
+    .color-dot {
+      width: 18px;
+      height: 18px;
+    }
+  }
+</style>
 
       <div class="filters-wrapper">
         <div class="filter-group">
@@ -315,9 +521,13 @@
                 <h5 class="card-title fs-6 fw-normal mb-1 text-secondary">Cuernitos Lisos</h5>
                 <p class="card-text small text-muted mb-3" style="line-height: 1.3;">Accesorios perfectos para personalizar tu casco con estilo único (no incluye casco).</p>
               </div>
-              <div class="d-flex justify-content-between align-items-center mt-auto">
-                <span class="fw-bold fs-6">$ 40.000</span>
-                <a href="https://wa.me/message/CM6P2Q2TNB6LA1" class="text-dark fs-5 d-flex align-items-center justify-content-center" style="text-decoration: none;"><i class="fa-solid fa-cart-shopping"></i></a>
+              <div class="mt-auto">
+                <div class="product-price-row">
+                  <span class="fw-bold fs-6">$ 40.000</span>
+                </div>
+                <a href="#" class="btn-whatsapp js-wa-btn" data-msg="Hola, ¿Cómo estás? En tu web vi algo que me interesó: quiero cotizar los Cuernitos Lisos">
+                  <i class="fa-brands fa-whatsapp"></i> Compra desde WhatsApp
+                </a>
               </div>
             </div>
           </div>
@@ -331,9 +541,13 @@
                 <h5 class="card-title fs-6 fw-normal mb-1 text-secondary">Cuernitos Rugosos</h5>
                 <p class="card-text small text-muted mb-3" style="line-height: 1.3;">Variante con texturas detalladas para un look más agresivo (no incluye casco).</p>
               </div>
-              <div class="d-flex justify-content-between align-items-center mt-auto">
-                <span class="fw-bold fs-6">$ 40.000</span>
-                <a href="https://wa.me/message/CM6P2Q2TNB6LA1" class="text-dark fs-5"><i class="fa-solid fa-cart-shopping"></i></a>
+              <div class="mt-auto">
+                <div class="product-price-row">
+                  <span class="fw-bold fs-6">$ 40.000</span>
+                </div>
+                <a href="#" class="btn-whatsapp js-wa-btn" data-msg="Hola, ¿Cómo estás? En tu web vi algo que me interesó: quiero cotizar los Cuernitos Rugosos">
+                  <i class="fa-brands fa-whatsapp"></i> Compra desde WhatsApp
+                </a>
               </div>
             </div>
           </div>
@@ -347,9 +561,13 @@
                 <h5 class="card-title fs-6 fw-normal mb-1 text-secondary">Orejas de Gato</h5>
                 <p class="card-text small text-muted mb-3" style="line-height: 1.3;">Orejas de gato a 2 colores (no incluye casco).</p>
               </div>
-              <div class="d-flex justify-content-between align-items-center mt-auto">
-                <span class="fw-bold fs-6">$ 40.000</span>
-                <a href="https://wa.me/message/CM6P2Q2TNB6LA1" class="text-dark fs-5"><i class="fa-solid fa-cart-shopping"></i></a>
+              <div class="mt-auto">
+                <div class="product-price-row">
+                  <span class="fw-bold fs-6">$ 40.000</span>
+                </div>
+                <a href="#" class="btn-whatsapp js-wa-btn" data-msg="Hola, ¿Cómo estás? En tu web vi algo que me interesó: quiero cotizar las Orejas de Gato">
+                  <i class="fa-brands fa-whatsapp"></i> Compra desde WhatsApp
+                </a>
               </div>
             </div>
           </div>
@@ -363,9 +581,13 @@
                 <h5 class="card-title fs-6 fw-normal mb-1 text-secondary">Orejas de Kuromi</h5>
                 <p class="card-text small text-muted mb-3" style="line-height: 1.3;">Diseño inspirado en Kuromi (no incluye casco).</p>
               </div>
-              <div class="d-flex justify-content-between align-items-center mt-auto">
-                <span class="fw-bold fs-6">$ 40.000</span>
-                <a href="https://wa.me/message/CM6P2Q2TNB6LA1" class="text-dark fs-5"><i class="fa-solid fa-cart-shopping"></i></a>
+              <div class="mt-auto">
+                <div class="product-price-row">
+                  <span class="fw-bold fs-6">$ 40.000</span>
+                </div>
+                <a href="#" class="btn-whatsapp js-wa-btn" data-msg="Hola, ¿Cómo estás? En tu web vi algo que me interesó: quiero cotizar las Orejas de Kuromi">
+                  <i class="fa-brands fa-whatsapp"></i> Compra desde WhatsApp
+                </a>
               </div>
             </div>
           </div>
@@ -379,9 +601,13 @@
                 <h5 class="card-title fs-6 fw-normal mb-1 text-secondary">Cuernos Grandes</h5>
                 <p class="card-text small text-muted mb-3" style="line-height: 1.3;">Cuernos de gran tamaño para un estilo imponente (no incluye casco).</p>
               </div>
-              <div class="d-flex justify-content-between align-items-center mt-auto">
-                <span class="fw-bold fs-6">$ 40.000</span>
-                <a href="https://wa.me/message/CM6P2Q2TNB6LA1" class="text-dark fs-5"><i class="fa-solid fa-cart-shopping"></i></a>
+              <div class="mt-auto">
+                <div class="product-price-row">
+                  <span class="fw-bold fs-6">$ 40.000</span>
+                </div>
+                <a href="#" class="btn-whatsapp js-wa-btn" data-msg="Hola, ¿Cómo estás? En tu web vi algo que me interesó: quiero cotizar los Cuernos Grandes">
+                  <i class="fa-brands fa-whatsapp"></i> Compra desde WhatsApp
+                </a>
               </div>
             </div>
           </div>
@@ -395,9 +621,13 @@
                 <h5 class="card-title fs-6 fw-normal mb-1 text-secondary">Orejas de murciélago</h5>
                 <p class="card-text small text-muted mb-3" style="line-height: 1.3;">Orejas de murciélago aerodinámico (no incluye casco).</p>
               </div>
-              <div class="d-flex justify-content-between align-items-center mt-auto">
-                <span class="fw-bold fs-6">$ 70.000</span>
-                <a href="https://wa.me/message/CM6P2Q2TNB6LA1" class="text-dark fs-5"><i class="fa-solid fa-cart-shopping"></i></a>
+              <div class="mt-auto">
+                <div class="product-price-row">
+                  <span class="fw-bold fs-6">$ 70.000</span>
+                </div>
+                <a href="#" class="btn-whatsapp js-wa-btn" data-msg="Hola, ¿Cómo estás? En tu web vi algo que me interesó: quiero cotizar las Orejas de Murciélago">
+                  <i class="fa-brands fa-whatsapp"></i> Compra desde WhatsApp
+                </a>
               </div>
             </div>
           </div>
@@ -411,15 +641,18 @@
                 <h5 class="card-title fs-6 fw-normal mb-1 text-secondary">Llavero Biker Personalizado</h5>
                 <p class="card-text small text-muted mb-3" style="line-height: 1.3;">Trae: Casco, placa con nombre personalizado e icono con moto con los colores deseados.</p>
               </div>
-              <div class="d-flex justify-content-between align-items-center mt-auto">
-                <span class="fw-bold fs-6">$ 30.000</span>
-                <a href="https://wa.me/message/CM6P2Q2TNB6LA1" class="text-dark fs-5"><i class="fa-solid fa-cart-shopping"></i></a>
+              <div class="mt-auto">
+                <div class="product-price-row">
+                  <span class="fw-bold fs-6">$ 30.000</span>
+                </div>
+                <a href="#" class="btn-whatsapp js-wa-btn" data-msg="Hola, ¿Cómo estás? En tu web vi algo que me interesó: quiero cotizar un Llavero Biker Personalizado">
+                  <i class="fa-brands fa-whatsapp"></i> Compra desde WhatsApp
+                </a>
               </div>
             </div>
           </div>
         </div>
 
-        
         <div class="col product-item flexi" data-price="10000">
           <div class="card h-100 bg-white text-dark position-relative p-2" style="border-radius: 12px; border: 1px solid #e0e0e0; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
             <img src="images/ghali shop/articulated-fish.jpg" class="card-img-top" alt="Animalito articulado" style="border-radius: 8px; aspect-ratio: 1 / 1; object-fit: cover;">
@@ -428,9 +661,13 @@
                 <h5 class="card-title fs-6 fw-normal mb-1 text-secondary">Pez articulado</h5>
                 <p class="card-text small text-muted mb-3" style="line-height: 1.3;">Pecesito articulado.</p>
               </div>
-              <div class="d-flex justify-content-between align-items-center mt-auto">
-                <span class="fw-bold fs-6">$ 10.000</span>
-                <a href="https://wa.me/message/CM6P2Q2TNB6LA1" class="text-dark fs-5"><i class="fa-solid fa-cart-shopping"></i></a>
+              <div class="mt-auto">
+                <div class="product-price-row">
+                  <span class="fw-bold fs-6">$ 10.000</span>
+                </div>
+                <a href="#" class="btn-whatsapp js-wa-btn" data-msg="Hola, ¿Cómo estás? En tu web vi algo que me interesó: quiero cotizar el Pez Articulado">
+                  <i class="fa-brands fa-whatsapp"></i> Compra desde WhatsApp
+                </a>
               </div>
             </div>
           </div>
@@ -444,9 +681,13 @@
                 <h5 class="card-title fs-6 fw-normal mb-1 text-secondary">Clicker diana de arquería</h5>
                 <p class="card-text small text-muted mb-3" style="line-height: 1.3;">Clicker antiestrés: Diana de arquería/tiro con arco.</p>
               </div>
-              <div class="d-flex justify-content-between align-items-center mt-auto">
-                <span class="fw-bold fs-6">$ 25.000</span>
-                <a href="https://wa.me/message/CM6P2Q2TNB6LA1" class="text-dark fs-5"><i class="fa-solid fa-cart-shopping"></i></a>
+              <div class="mt-auto">
+                <div class="product-price-row">
+                  <span class="fw-bold fs-6">$ 25.000</span>
+                </div>
+                <a href="#" class="btn-whatsapp js-wa-btn" data-msg="Hola, ¿Cómo estás? En tu web vi algo que me interesó: quiero cotizar el Clicker de Diana de Arquería">
+                  <i class="fa-brands fa-whatsapp"></i> Compra desde WhatsApp
+                </a>
               </div>
             </div>
           </div>
@@ -460,9 +701,13 @@
                 <h5 class="card-title fs-6 fw-normal mb-1 text-secondary">Llaveros Personalizado</h5>
                 <p class="card-text small text-muted mb-3" style="line-height: 1.3;">Llavero personalizado con nombre, marca o palabra favorita.</p>
               </div>
-              <div class="d-flex justify-content-between align-items-center mt-auto">
-                <span class="fw-bold fs-6">$ 25.000</span>
-                <a href="https://wa.me/message/CM6P2Q2TNB6LA1" class="text-dark fs-5"><i class="fa-solid fa-cart-shopping"></i></a>
+              <div class="mt-auto">
+                <div class="product-price-row">
+                  <span class="fw-bold fs-6">$ 25.000</span>
+                </div>
+                <a href="#" class="btn-whatsapp js-wa-btn" data-msg="Hola, ¿Cómo estás? En tu web vi algo que me interesó: quiero cotizar un Llavero Personalizado">
+                  <i class="fa-brands fa-whatsapp"></i> Compra desde WhatsApp
+                </a>
               </div>
             </div>
           </div>
@@ -476,9 +721,13 @@
                 <h5 class="card-title fs-6 fw-normal mb-1 text-secondary">Clicker materita con carita</h5>
                 <p class="card-text small text-muted mb-3" style="line-height: 1.3;">Clicker antiestrés: Planta suculenta con diseño de carita.</p>
               </div>
-              <div class="d-flex justify-content-between align-items-center mt-auto">
-                <span class="fw-bold fs-6">$ 25.000</span>
-                <a href="https://wa.me/message/CM6P2Q2TNB6LA1" class="text-dark fs-5"><i class="fa-solid fa-cart-shopping"></i></a>
+              <div class="mt-auto">
+                <div class="product-price-row">
+                  <span class="fw-bold fs-6">$ 25.000</span>
+                </div>
+                <a href="#" class="btn-whatsapp js-wa-btn" data-msg="Hola, ¿Cómo estás? En tu web vi algo que me interesó: quiero cotizar el Clicker Materita con Carita">
+                  <i class="fa-brands fa-whatsapp"></i> Compra desde WhatsApp
+                </a>
               </div>
             </div>
           </div>
@@ -492,9 +741,13 @@
                 <h5 class="card-title fs-6 fw-normal mb-1 text-secondary">Fidget shaker gym</h5>
                 <p class="card-text small text-muted mb-3" style="line-height: 1.3;">Fidget shaker: Objeto de relajación para reducir el estrés y la ansiedad. Para amantes del fitness.</p>
               </div>
-              <div class="d-flex justify-content-between align-items-center mt-auto">
-                <span class="fw-bold fs-6">$ 10.000</span>
-                <a href="https://wa.me/message/CM6P2Q2TNB6LA1" class="text-dark fs-5"><i class="fa-solid fa-cart-shopping"></i></a>
+              <div class="mt-auto">
+                <div class="product-price-row">
+                  <span class="fw-bold fs-6">$ 10.000</span>
+                </div>
+                <a href="#" class="btn-whatsapp js-wa-btn" data-msg="Hola, ¿Cómo estás? En tu web vi algo que me interesó: quiero cotizar el Fidget Shaker Gym">
+                  <i class="fa-brands fa-whatsapp"></i> Compra desde WhatsApp
+                </a>
               </div>
             </div>
           </div>
@@ -508,9 +761,13 @@
                 <h5 class="card-title fs-6 fw-normal mb-1 text-secondary">Creación de página web</h5>
                 <p class="card-text small text-muted mb-3" style="line-height: 1.3;">Creamos tu página web o aplicativo a la medida.</p>
               </div>
-              <div class="d-flex justify-content-between align-items-center mt-auto">
-                <span class="fw-bold fs-6">Cotizar</span>
-                <a href="https://wa.me/message/CM6P2Q2TNB6LA1" class="text-dark fs-5"><i class="fa-solid fa-cart-shopping"></i></a>
+              <div class="mt-auto">
+                <div class="product-price-row">
+                  <span class="fw-bold fs-6">Cotizar</span>
+                </div>
+                <a href="#" class="btn-whatsapp js-wa-btn" data-msg="Hola, ¿Cómo estás? En tu web vi algo que me interesó: quiero cotizar una página web">
+                  <i class="fa-brands fa-whatsapp"></i> Compra desde WhatsApp
+                </a>
               </div>
             </div>
           </div>
@@ -525,9 +782,13 @@
                 <h5 class="card-title fs-6 fw-normal mb-1 text-secondary">Modelado y/o impresión 3D</h5>
                 <p class="card-text small text-muted mb-3" style="line-height: 1.3;">Modelos 3D y/o impresión 3D (Según necesidad). Desde personajes hasta objetos decorativos.</p>
               </div>
-              <div class="d-flex justify-content-between align-items-center mt-auto">
-                <span class="fw-bold fs-6">Cotizar</span>
-                <a href="https://wa.me/message/CM6P2Q2TNB6LA1" class="text-dark fs-5"><i class="fa-solid fa-cart-shopping"></i></a>
+              <div class="mt-auto">
+                <div class="product-price-row">
+                  <span class="fw-bold fs-6">Cotizar</span>
+                </div>
+                <a href="#" class="btn-whatsapp js-wa-btn" data-msg="Hola, ¿Cómo estás? En tu web vi algo que me interesó: quiero cotizar un modelado y/o impresión 3D">
+                  <i class="fa-brands fa-whatsapp"></i> Compra desde WhatsApp
+                </a>
               </div>
             </div>
           </div>
@@ -541,9 +802,13 @@
                 <h5 class="card-title fs-6 fw-normal mb-1 text-secondary">Aviso led</h5>
                 <p class="card-text small text-muted mb-3" style="line-height: 1.3;">Aviso circular, rectangular o letras de molde para marcas.</p>
               </div>
-              <div class="d-flex justify-content-between align-items-center mt-auto">
-                <span class="fw-bold fs-6">Cotizar</span>
-                <a href="https://wa.me/message/CM6P2Q2TNB6LA1" class="text-dark fs-5"><i class="fa-solid fa-cart-shopping"></i></a>
+              <div class="mt-auto">
+                <div class="product-price-row">
+                  <span class="fw-bold fs-6">Cotizar</span>
+                </div>
+                <a href="#" class="btn-whatsapp js-wa-btn" data-msg="Hola, ¿Cómo estás? En tu web vi algo que me interesó: quiero cotizar un Aviso LED">
+                  <i class="fa-brands fa-whatsapp"></i> Compra desde WhatsApp
+                </a>
               </div>
             </div>
           </div>
@@ -557,9 +822,13 @@
                 <h5 class="card-title fs-6 fw-normal mb-1 text-secondary">Clicker R.E.P.O.</h5>
                 <p class="card-text small text-muted mb-3" style="line-height: 1.3;">Clicker antiestrés inspirado en el videojuego R.E.P.O.</p>
               </div>
-              <div class="d-flex justify-content-between align-items-center mt-auto">
-                <span class="fw-bold fs-6">$ 25.000</span>
-                <a href="https://wa.me/message/CM6P2Q2TNB6LA1" class="text-dark fs-5"><i class="fa-solid fa-cart-shopping"></i></a>
+              <div class="mt-auto">
+                <div class="product-price-row">
+                  <span class="fw-bold fs-6">$ 25.000</span>
+                </div>
+                <a href="#" class="btn-whatsapp js-wa-btn" data-msg="Hola, ¿Cómo estás? En tu web vi algo que me interesó: quiero cotizar el Clicker R.E.P.O.">
+                  <i class="fa-brands fa-whatsapp"></i> Compra desde WhatsApp
+                </a>
               </div>
             </div>
           </div>
@@ -573,9 +842,13 @@
                 <h5 class="card-title fs-6 fw-normal mb-1 text-secondary">Clicker ramo de flores</h5>
                 <p class="card-text small text-muted mb-3" style="line-height: 1.3;">Clicker antiestrés: Ramo de flores (rosas o tulipanes) para obsequiar.</p>
               </div>
-              <div class="d-flex justify-content-between align-items-center mt-auto">
-                <span class="fw-bold fs-6">$ 40.000</span>
-                <a href="https://wa.me/message/CM6P2Q2TNB6LA1" class="text-dark fs-5"><i class="fa-solid fa-cart-shopping"></i></a>
+              <div class="mt-auto">
+                <div class="product-price-row">
+                  <span class="fw-bold fs-6">$ 40.000</span>
+                </div>
+                <a href="#" class="btn-whatsapp js-wa-btn" data-msg="Hola, ¿Cómo estás? En tu web vi algo que me interesó: quiero cotizar el Clicker Ramo de Flores">
+                  <i class="fa-brands fa-whatsapp"></i> Compra desde WhatsApp
+                </a>
               </div>
             </div>
           </div>
@@ -589,13 +862,21 @@
                 <h5 class="card-title fs-6 fw-normal mb-1 text-secondary">Máscara: Hannya</h5>
                 <p class="card-text small text-muted mb-3" style="line-height: 1.3;">Máscara de estilo japonés para eventos y cosplay. Bronce.</p>
               </div>
-              <div class="d-flex justify-content-between align-items-center mt-auto">
-                <span class="fw-bold fs-6">$ 70.000</span>
-                <a href="https://wa.me/message/CM6P2Q2TNB6LA1" class="text-dark fs-5"><i class="fa-solid fa-cart-shopping"></i></a>
+              <div class="mt-auto">
+                <div class="product-price-row">
+                  <span class="fw-bold fs-6">$ 70.000</span>
+                </div>
+                <a href="#" class="btn-whatsapp js-wa-btn" data-msg="Hola, ¿Cómo estás? En tu web vi algo que me interesó: quiero cotizar la Máscara Hannya">
+                  <i class="fa-brands fa-whatsapp"></i> Compra desde WhatsApp
+                </a>
               </div>
             </div>
           </div>
         </div>
+
+
+
+
 
       </div>
 
@@ -666,6 +947,13 @@
   <script>
     document.oncontextmenu = function(){return false};
 
+    // ============================================
+    // CONFIGURACIÓN DE WHATSAPP
+    // Reemplaza el número por el tuyo: código de país + número,
+    // SIN "+" y SIN espacios. Ejemplo Colombia: 573505136986
+    // ============================================
+    const WHATSAPP_NUMBER = "573505136986";
+
     const grid = document.getElementById('inventory-grid');
 
     // Cargar configuraciones guardadas
@@ -688,6 +976,9 @@
       // Aplicar lógicas iniciales de ordenamiento y filtrado
       if (currentSort) sortItems(currentSort);
       applyFilterAndSort();
+
+      // Generar los enlaces de WhatsApp con el mensaje de cada producto
+      buildWhatsAppLinks();
 
       // SOLUCIÓN: Cerrar dropdown al hacer clic fuera
       document.addEventListener('click', function(e) {
@@ -717,6 +1008,17 @@
         });
       });
     });
+
+    // Construye el enlace de WhatsApp de cada botón usando su data-msg
+    function buildWhatsAppLinks() {
+      document.querySelectorAll('.js-wa-btn').forEach(btn => {
+        const mensaje = btn.getAttribute('data-msg') || 'Hola, ¿Cómo estás? En tu web vi algo que me interesó: quiero más información';
+        const enlace = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(mensaje)}`;
+        btn.setAttribute('href', enlace);
+        btn.setAttribute('target', '_blank');
+        btn.setAttribute('rel', 'noopener noreferrer');
+      });
+    }
 
     function setFilterButtonStyles(button) {
       document.querySelectorAll('.filter-btn').forEach(btn => {
