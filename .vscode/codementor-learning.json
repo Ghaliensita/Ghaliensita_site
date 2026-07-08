@@ -26,5 +26,12 @@
     "mastered_explicitly": false,
     "first_seen": "2026-07-08T01:40:10.826Z",
     "last_seen": "2026-07-08T01:40:10.838Z"
+  },
+  "HTML-001": {
+    "occurrences": 5,
+    "confidence": 1,
+    "mastered_explicitly": false,
+    "first_seen": "2026-07-08T06:32:16.609Z",
+    "last_seen": "2026-07-08T06:32:16.628Z"
   }
 }
