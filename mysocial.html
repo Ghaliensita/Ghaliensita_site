@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <title>Stephany Ghalien - Social media</title>
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <meta name=”keywords” content=”ghalien, ghaliensita, ghalienzta, stephany ghalien, creadora de contenido, content creator, streamer, tattoo, tatuadora a domicilio, tatuajes, tattoos, tattooer, tattooer delivery, tatuajes pequeños, small tattoos, man tattoo, tatuaje hombre, woman tattoo, mujer tatuaje, emotes, emotes twitch, emotes whatsapp, commissions, comisiones, diseño gráfico, diseñadora gráfica, graphic design, graphic designer, illustration, ilustraciones, twitch, youtube, behance, dev, game dev, developer, video, video editing, edition, graphic pieces, 3d, 3d modeling, modelos 3d, impresión 3d, 3d print, 3d prints, 3d print model, 3d service, GHALI LAB, ghali shop, ghali Colombia, ghali, Steph ghalien, impresión gran formato” />
+  <meta name="keywords" content="ghalien, ghaliensita, ghalienzta, stephany ghalien, creadora de contenido, content creator, streamer, tattoo, tatuadora a domicilio, tatuajes, tattoos, tattooer, tattooer delivery, tatuajes pequeños, small tattoos, man tattoo, tatuaje hombre, woman tattoo, mujer tatuaje, emotes, emotes twitch, emotes whatsapp, commissions, comisiones, diseño gráfico, diseñadora gráfica, graphic design, graphic designer, illustration, ilustraciones, twitch, youtube, behance, dev, game dev, developer, video, video editing, edition, graphic pieces, 3d, 3d modeling, modelos 3d, impresión 3d, 3d print, 3d prints, 3d print model, 3d service, GHALI LAB, ghali shop, ghali Colombia, ghali, Steph ghalien, impresión gran formato" />
   <meta content="" name="description">
 
   <!-- Favicons -->
@@ -32,6 +32,176 @@
 
   <!-- Main Stylesheet File -->
   <link href="css/style.css" rel="stylesheet">
+
+  <style>
+    /* ===== Tarjeta de perfil (hero) tipo "link in bio" ===== */
+    .hero-avatar {
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid #F40C5A;
+      box-shadow: 0 0 0 6px rgba(244, 12, 90, 0.15);
+      margin: 0 auto 1rem auto;
+      display: block;
+    }
+
+    .hero-tagline {
+      color: rgba(255, 255, 255, 0.75);
+      font-size: 1.05rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .quick-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 1rem;
+    }
+
+    .quick-links a {
+      width: 46px;
+      height: 46px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      font-size: 1.2rem;
+      color: #fff !important;
+      transition: all 0.3s ease;
+    }
+
+    .quick-links a:hover {
+      background: #F40C5A;
+      border-color: #F40C5A;
+      transform: translateY(-4px);
+    }
+
+    @media (max-width: 576px) {
+      .hero-avatar {
+        width: 100px;
+        height: 100px;
+      }
+      .quick-links a {
+        width: 42px;
+        height: 42px;
+        font-size: 1.05rem;
+      }
+    }
+
+    /* ===== Encabezado de sección con avatar circular a la izquierda ===== */
+    .social-section .container {
+      max-width: 780px;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      margin-bottom: 1.75rem;
+      text-align: left;
+    }
+
+    .section-avatar {
+      width: 200px;
+      height: 200px;
+      min-width: 200px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #F40C5A;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+    }
+
+    .section-header-text h2 {
+      text-align: left;
+      font-size: 1.7rem;
+      margin-bottom: 0.35rem;
+    }
+
+    .section-header-text p {
+      text-align: left;
+      font-size: 1rem;
+      margin-bottom: 0;
+      color: rgba(255, 255, 255, 0.75);
+    }
+
+    @media (max-width: 576px) {
+      .section-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.75rem;
+      }
+      .section-header-text h2,
+      .section-header-text p {
+        text-align: center;
+      }
+      .section-avatar {
+        width: 72px;
+        height: 72px;
+        min-width: 72px;
+      }
+    }
+
+    /* ===== Grilla estilo feed de Instagram ===== */
+    .ig-feed-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      max-width: 560px;
+      margin: 1.75rem auto;
+    }
+
+    .ig-feed-item {
+      display: block;
+      position: relative;
+      aspect-ratio: 1 / 1;
+      overflow: hidden;
+      border-radius: 12px;
+    }
+
+    .ig-feed-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.35s ease;
+    }
+
+    .ig-feed-item:hover img {
+      transform: scale(1.08);
+    }
+
+    .ig-feed-item::after {
+      content: "\f16d";
+      font-family: "Font Awesome 6 Brands";
+      font-weight: 400;
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(244, 12, 90, 0.55);
+      color: #fff;
+      font-size: 1.6rem;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .ig-feed-item:hover::after {
+      opacity: 1;
+    }
+
+    @media (max-width: 480px) {
+      .ig-feed-grid {
+        gap: 6px;
+      }
+      .ig-feed-item {
+        border-radius: 8px;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -89,7 +259,7 @@
             Contacto
           </a>
           <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="contactDropdown">
-            <li><a class="dropdown-item js-scroll" href="utility.html">Redes sociales</a></li>
+            <li><a class="dropdown-item js-scroll" href="mysocial.html">Redes sociales</a></li>
           </ul>
         </li>
       </ul>
@@ -99,27 +269,40 @@
   <!--/ Nav End /-->
 
   
-   <!--/ Intro Skew Start /-->
+   <!--/ Intro / Tarjeta de perfil Start /-->
    <div class="intro intro-single route bg-image" style="background-image: url(img/overlay-bg.jpg)">
     <div class="overlay-mf"></div>
     <div class="intro-content display-table">
       <div class="table-cell">
         <div class="container">
-          <h2 class="intro-title mb-4">Conectemos juntos</h2>
-          <p class="intro-subtitle"><span class="text-slider-items">Aquí mis redes sociales, proyectos maker, mi portafolio como artista, merchandising internacional/streamer merch, wishlist variadas</span><strong class="text-slider"></strong></p>
-          <ol class="breadcrumb d-flex justify-content-center">
+          <img src="img/Ghaliensita.jpg" alt="Stephany Ghalien" class="hero-avatar">
+          <h2 class="intro-title mb-2">Stephany Ghalien</h2>
+          <p class="hero-tagline">Bienvenid@s a mi metaverso 🌐 — Ghaliensita / Ghali Lab</p>
+          <div class="quick-links">
+            <a href="https://www.instagram.com/ghaliensita" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.x.com/ghaliensita" target="_blank" aria-label="X"><i class="ico-ghali-twitterx"></i></a>
+            <a href="https://www.tiktok.com/@ghaliensita" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+            <a href="https://www.youtube.com/@Ghaliensita" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="https://www.twitch.tv/ghaliensita" target="_blank" aria-label="Twitch"><i class="fab fa-twitch"></i></a>
+            <a href="https://www.reddit.com/user/Ghaliensita/" target="_blank" aria-label="Reddit"><i class="fab fa-reddit-alien"></i></a>
+          </div>
+          <ol class="breadcrumb d-flex justify-content-center"></ol>
         </div>
       </div>
     </div>
   </div>
-  <!--/ Intro Skew End /-->
+  <!--/ Intro / Tarjeta de perfil End /-->
 
     <!--/ Utilities Start /-->
 <section id="redes-sociales-ghaliensita" class="social-section">
   <div class="container">
-    <h2>¡Conecta con Ghalien!</h2>
-    <p>Encuéntrame en mis redes y mantente al día con proyectos, avances y novedades. ¡No te pierdas nada!<br>
-    Estas son las redes de mi perfil principal <strong>Ghaliensita</strong>.</p>
+    <div class="section-header">
+      <img src="img/Ghaliensita.jpg" alt="Ghaliensita" class="section-avatar">
+      <div class="section-header-text">
+        <h2>¡Conecta con Ghalien!</h2>
+        <p>Encuéntrame en mis redes y mantente al día con proyectos, avances y novedades. Estas son las redes de mi perfil principal <strong>Ghaliensita</strong>.</p>
+      </div>
+    </div>
     <div class="social-cards">
       <a href="https://www.instagram.com/ghaliensita/" target="_blank" class="social-card instagram">
         <i class="fab fa-instagram"></i>
@@ -141,6 +324,10 @@
         <i class="fab fa-twitch"></i>
         <span>Twitch</span>
       </a>
+      <a href="https://www.reddit.com/user/Ghaliensita/" target="_blank" class="social-card instagram">
+        <i class="fab fa-reddit-alien"></i>
+        <span>Reddit</span>
+      </a>
     </div>
     <a href="https://discord.gg/EBuXnyaC9e" target="_blank" class="cta-button">Únete a la comunidad en Discord</a>
   </div>
@@ -148,79 +335,15 @@
   <!--/ Utilities End /-->
 
 
-
-<div class="imgghali">
-  <img src="img/Ghaliensita.jpg" alt="Ghaliensita">
-</div>
-
-<section id="redes-sociales-ghalientattoo" class="social-section">
-  <div class="container">
-    <h2>¡Cotiza tu tatuaje con Ghalientattoo!</h2>
-    <p>¿Te quieres tatuar pero aún no sabes qué?<br>
-    Estas son mis redes como <strong>Ghalien Tattoo</strong>.</p>
-    <div class="social-cards">
-      <a href="https://www.instagram.com/ghalientattoo/" target="_blank" class="social-card instagram">
-        <i class="fab fa-instagram"></i>
-        <span>Instagram</span>
-      </a>
-      <a href="https://www.tiktok.com/@ghalientattoo" target="_blank" class="social-card instagram">
-        <i class="fab fa-tiktok"></i>
-        <span>TikTok</span>
-      </a>
-      <a href="https://www.youtube.com/@Ghalientattoo" target="_blank" class="social-card instagram">
-        <i class="fab fa-youtube"></i>
-        <span>YouTube</span>
-      </a>
-      <a href="https://g.page/r/Cfx9fFaVQA52EAI/review" target="_blank" class="social-card instagram">
-        <i class="ico-ghali-ubication"></i>
-        <span>Google Maps</span>
-      </a>      
-    </div>
-    <a href="https://wa.me/message/CM6P2Q2TNB6LA1" target="_blank" class="cta-button">Cotiza aquí tu próximo tatuaje</a>
-  </div>
-</section>
-
-<div class="imgghali">
-  <img src="img/GhalienTattoo.jpg" alt="Ghalien Tattoo">
-</div>
-
-<section id="redes-sociales-stephghalien" class="social-section">
-  <div class="container">
-    <h2>¡Mis comisiones y diseños como StephGhalien!</h2>
-    <p>Aquí podrás ver algo de mis diseños, 3D y más.<br>
-    Estas son mis redes como <strong>Steph Ghalien</strong>.</p>
-    <div class="social-cards">
-      <a href="https://www.instagram.com/stephghalien/" target="_blank" class="social-card instagram">
-        <i class="fab fa-instagram"></i>
-        <span>Instagram</span>
-      </a>
-      <a href="https://www.youtube.com/@StephGhalien" target="_blank" class="social-card instagram">
-        <i class="fab fa-youtube"></i>
-        <span>YouTube</span>
-      </a>
-      <a href="https://www.behance.net/stephghalien" target="_blank" class="social-card instagram">
-        <i class="fab fa-behance"></i>
-        <span>Behance</span>
-      </a>
-      <a href="https://stephghalien.artstation.com/" target="_blank" class="social-card instagram">
-        <i class="fab fa-artstation"></i>
-        <span>ArtStation</span>
-      </a>      
-    </div>
-    <a href="quoteprice.html" target="_blank" class="cta-button">¿Quieres cotizar tu próximo modelo 3D?</a>
-  </div>
-</section>
-
-
-<div class="imgghali">
-  <img src="img/StephGhalien.jpg" alt="StephGhalien">
-</div>
-
 <section id="redes-sociales-ghalilab" class="social-section">
   <div class="container">
-    <h2>¡Modelos 3D, impresiones 3D y páginas web en GHALI LAB!</h2>
-    <p>Aquí podrás ver algo de mis diseños, 3D y más. Desde STL gratis a proyectos.<br>
-    Estas son mis redes como <strong>GHALI LAB</strong>.</p>
+    <div class="section-header">
+      <img src="img/3D.jpg" alt="GHALI LAB" class="section-avatar">
+      <div class="section-header-text">
+        <h2>¡GHALI LAB!</h2>
+        <p>Modelos e impresiones 3D, páginas web y más. Desde STL gratis hasta proyectos a la medida.</p>
+      </div>
+    </div>
     <div class="social-cards">
       <a href="https://www.instagram.com/ghalilab" target="_blank" class="social-card instagram">
         <i class="fab fa-instagram"></i>
@@ -263,30 +386,98 @@
   </div>
 </section>
 
-<div class="imgghali">
-  <img src="img/3D.jpg" alt="GHALI LAB">
-</div>
 
-
-<section id="redes-sociales-merchandiseghali" class="social-section">
+<section id="redes-sociales-ghalientattoo" class="social-section">
   <div class="container">
-    <h2>¡Tenemos Merchandise!</h2>
-    <p>Aquí encontrarás merchandise con mis diseños,<br>
-    ¡Y podrás adquirlos <strong>internacionalmente</strong>!</p>
-    <div class="social-cards">
-      <a href="https://ghaliensita-shop.fourthwall.com/" target="_blank" class="social-card instagram">
-        <i class="ico-ghali-se"></i>
-        <span>SE Merch</span>
-      </a>     
+    <div class="section-header">
+      <img src="img/GhalienTattoo.jpg" alt="Ghalien Tattoo" class="section-avatar">
+      <div class="section-header-text">
+        <h2>¡Cotiza tu tatuaje con Ghalientattoo!</h2>
+        <p>¿Te quieres tatuar pero aún no sabes qué? Estas son mis redes como <strong>Ghalien Tattoo</strong>.</p>
+      </div>
     </div>
-    <a href="https://store.streamelements.com/stephghalien" target="_blank" class="cta-button">Si tienes suscripción en Twitch, tienes un descuento aquí</a>
+    <div class="social-cards">
+      <a href="https://www.instagram.com/ghalientattoo/" target="_blank" class="social-card instagram">
+        <i class="fab fa-instagram"></i>
+        <span>Instagram</span>
+      </a>
+      <a href="https://www.tiktok.com/@ghalientattoo" target="_blank" class="social-card instagram">
+        <i class="fab fa-tiktok"></i>
+        <span>TikTok</span>
+      </a>
+      <a href="https://www.youtube.com/@Ghalientattoo" target="_blank" class="social-card instagram">
+        <i class="fab fa-youtube"></i>
+        <span>YouTube</span>
+      </a>
+      <a href="https://g.page/r/Cfx9fFaVQA52EAI/review" target="_blank" class="social-card instagram">
+        <i class="ico-ghali-ubication"></i>
+        <span>Google Maps</span>
+      </a>      
+    </div>
+    <a href="https://wa.me/message/CM6P2Q2TNB6LA1" target="_blank" class="cta-button">Cotiza aquí tu próximo tatuaje</a>
   </div>
 </section>
 
-<div class="imgghali">
-  <img src="img/Merch.jpg" alt="Merchandise">
-</div>
+<section id="redes-sociales-stephghalien" class="social-section">
+  <div class="container">
+    <div class="section-header">
+      <img src="img/StephGhalien.jpg" alt="Steph Ghalien" class="section-avatar">
+      <div class="section-header-text">
+        <h2>¡Mis comisiones y diseños como StephGhalien!</h2>
+        <p>Aquí podrás ver algo de mis diseños, 3D y más. Estas son mis redes como <strong>Steph Ghalien</strong>.</p>
+      </div>
+    </div>
+    <div class="social-cards">
+      <a href="https://www.instagram.com/stephghalien/" target="_blank" class="social-card instagram">
+        <i class="fab fa-instagram"></i>
+        <span>Instagram</span>
+      </a>
+      <a href="https://www.youtube.com/@StephGhalien" target="_blank" class="social-card instagram">
+        <i class="fab fa-youtube"></i>
+        <span>YouTube</span>
+      </a>
+      <a href="https://www.behance.net/stephghalien" target="_blank" class="social-card instagram">
+        <i class="fab fa-behance"></i>
+        <span>Behance</span>
+      </a>
+      <a href="https://stephghalien.artstation.com/" target="_blank" class="social-card instagram">
+        <i class="fab fa-artstation"></i>
+        <span>ArtStation</span>
+      </a>      
+    </div>
+    <a href="quoteprice.html" target="_blank" class="cta-button">¿Quieres cotizar tu próximo modelo 3D?</a>
+  </div>
+</section>
 
+
+<!--/ Apóyame / Donaciones Start /-->
+<section id="apoyame" class="social-section">
+  <div class="container">
+    <h2>¡Apóyame!</h2>
+    <p>Si quieres apoyar mi contenido y mis proyectos, aquí tienes varias formas de hacerlo.<br>
+    ¡Gracias infinitas por tu cariño! 💖</p>
+    <div class="social-cards">
+      <a href="https://streamelements.com/ghaliensita/tip" target="_blank" class="social-card instagram">
+        <i class="fab fa-paypal"></i>
+        <span>PayPal Tips</span>
+      </a>
+      <a href="https://ko-fi.com/ghaliensita" target="_blank" class="social-card instagram">
+        <i class="fa-solid fa-mug-hot"></i>
+        <span>Ko-fi</span>
+      </a>
+      <a href="https://www.patreon.com/ghaliensita/membership" target="_blank" class="social-card instagram">
+        <i class="fab fa-patreon"></i>
+        <span>Patreon</span>
+      </a>
+      <a href="https://buymeacoffee.com/ghaliensita" target="_blank" class="social-card instagram">
+        <i class="fa-solid fa-mug-saucer"></i>
+        <span>Buy Me A Coffee</span>
+      </a>
+    </div>
+    <a href="paymethods.html" class="cta-button">Ver todos los métodos de pago y donación</a>
+  </div>
+</section>
+<!--/ Apóyame / Donaciones End /-->
 
 <section id="redes-sociales-wishlistghali" class="social-section">
   <div class="container">
@@ -314,6 +505,40 @@
     <a href="https://store.epicgames.com/es-ES/" target="_blank" class="cta-button">Código de creador en EPIC GAMES: <strong>GHALIENSITA</strong></a>
   </div>
 </section>
+
+<section id="redes-sociales-merchandiseghali" class="social-section">
+  <div class="container">
+    <div class="section-header" style="justify-content: center;">
+      <img src="img/Merch.jpg" alt="Merchandise" class="section-avatar">
+      <div class="section-header-text">
+        <h2>¡Tenemos Merchandise!</h2>
+        <p>Aquí encontrarás merchandise con mis diseños, ¡y podrás adquirirlos <strong>internacionalmente</strong>!</p>
+      </div>
+    </div>
+    <div class="social-cards">
+      <a href="https://ghaliensita-shop.fourthwall.com/" target="_blank" class="social-card instagram">
+        <i class="ico-ghali-se"></i>
+        <span>SE Merch</span>
+      </a>     
+    </div>
+    <a href="https://store.streamelements.com/stephghalien" target="_blank" class="cta-button">Si tienes suscripción en Twitch, tienes un descuento aquí</a>
+  </div>
+</section>
+
+<!--/ Preguntas anónimas Start /-->
+<section id="preguntas-anonimas" class="social-section">
+  <div class="container">
+    <h2>¿Tienes una pregunta para mí?</h2>
+    <p>Déjame una pregunta anónima y la responderé en mis redes o en stream.</p>
+    <div class="social-cards">
+      <a href="https://tellonym.me/Ghaliensita" target="_blank" class="social-card instagram">
+        <i class="fa-solid fa-comment-dots"></i>
+        <span>Tellonym</span>
+      </a>
+    </div>
+  </div>
+</section>
+<!--/ Preguntas anónimas End /-->
 
 
 <div class="creatorcode">
@@ -357,7 +582,7 @@
             <a href="aboutme.html">SOBRE MÍ</a> |   
             <a href="paymethods.html">MÉTODOS DE PAGO</a> |                                
             <a href="goal.html">META ACTIVA</a> |
-            <a href="utility.html">MIS REDES</a> 
+            <a href="mysocial.html">MIS REDES</a> 
 
           </nav>
 
@@ -374,15 +599,13 @@
             </a> |
             <a href="https://www.youtube.com/@Ghaliensita" target="_blank" aria-label="YouTube">
               <i class="fab fa-youtube"></i>
-            </a>   
             </a>
             <a href="https://www.tiktok.com/@ghaliensita" target="_blank" aria-label="TikTok">
               <i class="fab fa-tiktok"></i>
             </a>             
             <a href="https://www.instagram.com/ghaliensita" target="_blank" aria-label="Instagram">
               <i class="fab fa-instagram"></i>
-
-        
+            </a>
           </div>
 
           <!-- Copyright -->
