@@ -1,20 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="utf-8">
-  <title>Stephany Ghalien</title>
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <meta name="keywords" content=”ghalien, ghaliensita, ghalienzta, stephany ghalien, creadora de contenido, content creator, streamer, tattoo, tatuadora a domicilio, tatuajes, tattoos, tattooer, tattooer delivery, tatuajes pequeños, small tattoos, man tattoo, tatuaje hombre, woman tattoo, mujer tatuaje, emotes, emotes twitch, emotes whatsapp, commissions, comisiones, diseño gráfico, diseñadora gráfica, graphic design, graphic designer, illustration, ilustraciones, twitch, youtube, behance, dev, game dev, developer, video, video editing, edition, graphic pieces, 3d, 3d modeling, modelos 3d, impresión 3d, 3d print, 3d prints, 3d print model, 3d service, GHALI LAB, ghali shop, ghali Colombia, ghali, Steph ghalien, impresión gran formato” />
-  <meta content="" name="description">
+
+  <title>Stephany Ghalien | GHALI LAB · Tattoo · Diseño · 3D</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="keywords" content="ghalien, ghaliensita, stephany ghalien, ghali lab, impresión 3d, modelado 3d, diseño gráfico, páginas web, tatuajes, ghalien tattoo, content creator, streamer, comisiones, diseño web, Colombia">
+
+  <meta name="description" content="Stephany Ghalien: creatividad, impresión 3D, modelado, desarrollo web, diseño, tatuajes, contenido y tecnología creativa. Conoce GHALI LAB y Ghalien Tattoo.">
+
+  <!-- Optimización API del contador -->
+  <link rel="preconnect" href="https://sheetdb.io" crossorigin>
+  <link rel="dns-prefetch" href="https://sheetdb.io">
 
   <!-- Favicons -->
   <link href="img/favicon.png" rel="icon">
   <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
 
-   <!-- Bootstrap 5 -->
+  <!-- Bootstrap 5 -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
 
   <!-- Libraries CSS Files -->
   <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
@@ -25,341 +32,774 @@
   <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
   <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
 
-  <script src="https://cdn.jsdelivr.net/npm/swiffy-slider@1.6.0/dist/js/swiffy-slider.min.js" crossorigin="anonymous" defer></script>
-  <link href="https://cdn.jsdelivr.net/npm/swiffy-slider@1.6.0/dist/css/swiffy-slider.min.css" rel="stylesheet" crossorigin="anonymous">
-  <link href="https://cdn.jsdelivr.net/npm/swiffy-slider@1.6.0/dist/js/swiffy-slider-extensions.min.js">
+  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-  <!-- Main Stylesheet File -->
+  <!-- Main Stylesheet -->
   <link href="css/style.css" rel="stylesheet">
+
+  <!-- Carga anticipada de estadísticas -->
+  <script>
+    window.GhaliStats = (function () {
+      var API = "https://sheetdb.io/api/v1/gvl6na6phf41h";
+      var CACHE_KEY = "ghali_stats_v1";
+      var TTL = 6 * 60 * 60 * 1000;
+      var promise = null;
+
+      function load() {
+        if (promise) return promise;
+
+        try {
+          var raw = sessionStorage.getItem(CACHE_KEY);
+
+          if (raw) {
+            var cached = JSON.parse(raw);
+
+            if (cached && (Date.now() - cached.t) < TTL) {
+              promise = Promise.resolve(cached.d);
+              return promise;
+            }
+          }
+        } catch (error) {}
+
+        promise = fetch(API)
+          .then(function (response) {
+            if (!response.ok) {
+              throw new Error("No fue posible cargar las estadísticas.");
+            }
+
+            return response.json();
+          })
+          .then(function (data) {
+            var stats = data[0];
+
+            try {
+              sessionStorage.setItem(
+                CACHE_KEY,
+                JSON.stringify({
+                  t: Date.now(),
+                  d: stats
+                })
+              );
+            } catch (error) {}
+
+            return stats;
+          });
+
+        return promise;
+      }
+
+      load();
+
+      return {
+        load: load
+      };
+    })();
+  </script>
 </head>
 
 <body>
-  <!--/ Nav Start /-->
+
+<!-- Nav Start -->
 <nav class="navbar navbar-b navbar-trans navbar-expand-lg fixed-top" id="mainNav">
   <div class="container">
+
     <a class="navbar-brand js-scroll" href="index.html">
-      <img src="images/Ghali-GhaliLogo.svg" style="max-width: 50%;" alt="Ghalien Icon"> Ghalien
+      <img src="images/Ghali-GhaliLogo.svg" style="max-width: 50%;" alt="Logotipo de Ghalien">
+      Ghalien
     </a>
-    
 
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarDefault"
-      aria-controls="navbarDefault" aria-expanded="false" aria-label="Toggle navigation">
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarDefault"
+      aria-controls="navbarDefault"
+      aria-expanded="false"
+      aria-label="Abrir menú de navegación"
+    >
       <span class="navbar-toggler-icon"></span>
-
     </button>
-    
+
     <div class="collapse navbar-collapse justify-content-end" id="navbarDefault">
       <ul class="navbar-nav">
+
         <li class="nav-item">
-          <a class="nav-link js-scroll" href="index.html">Inicio</a>
+          <a class="nav-link js-scroll" href="index.html" aria-current="page">
+            Inicio
+          </a>
         </li>
 
         <li class="nav-item">
-          <a class="nav-link js-scroll" href="stock.html">Tienda</a>
+          <a class="nav-link js-scroll" href="stock.html">
+            Tienda
+          </a>
         </li>
 
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle js-scroll" href="#" id="ghalilabDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <a
+            class="nav-link dropdown-toggle js-scroll"
+            href="#"
+            id="ghalilabDropdown"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
             GHALI LAB
           </a>
+
           <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="ghalilabDropdown">
             <li><a class="dropdown-item js-scroll" href="ghalilab.html">Sobre GHALI LAB</a></li>
             <li><a class="dropdown-item js-scroll" href="services.html">Servicios</a></li>
-            <li><a class="dropdown-item js-scroll" href="commissions.html">Comisiones</a></li>            
+            <li><a class="dropdown-item js-scroll" href="commissions.html">Comisiones</a></li>
             <li><a class="dropdown-item js-scroll" href="quoteprice.html">Cotización</a></li>
           </ul>
         </li>
 
         <li class="nav-item">
-          <a class="nav-link js-scroll" href="tattoo.html">Ghalien Tattoo</a>
+          <a class="nav-link js-scroll" href="tattoo.html">
+            Ghalien Tattoo
+          </a>
         </li>
 
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle js-scroll" href="#" id="aboutDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <a
+            class="nav-link dropdown-toggle js-scroll"
+            href="#"
+            id="aboutDropdown"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
             Sobre mí
           </a>
+
           <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="aboutDropdown">
             <li><a class="dropdown-item js-scroll" href="aboutme.html">¿Quién es Ghalien?</a></li>
             <li><a class="dropdown-item js-scroll" href="paymethods.html">Pagos y donaciones</a></li>
-            
           </ul>
         </li>
 
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle js-scroll" href="#" id="contactDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <a
+            class="nav-link dropdown-toggle js-scroll"
+            href="#"
+            id="contactDropdown"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
             Contacto
           </a>
+
           <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="contactDropdown">
             <li><a class="dropdown-item js-scroll" href="mysocial.html">Redes sociales</a></li>
           </ul>
         </li>
+
       </ul>
     </div>
   </div>
 </nav>
-  <!--/ Nav End /-->
+<!-- Nav End -->
 
-  <!--/ Intro Skew Star /-->
-  <div id="home" class="intro route bg-image" style="background-image: url(img/intro-bg---Copy.jpg)">
-    <div class="overlay-itro"></div>
-    <div class="intro-content display-table">
-      <div class="table-cell">
-        <div class="container">
-          <!--<p class="display-6 color-d">Hello, world!</p>-->
-          <h1 class="intro-title mb-4">Stephany Ghalien</h1>
-          <p class="intro-subtitle"><span class="text-slider-items">Welcome to Ghalien-verse, 3D printing / 3D modeling, Tattoo artist, Streamer / Content creator, Game dev / Web dev, and more...</span><strong class="text-slider"></strong></p>
-          <!-- <p class="pt-3"><a class="btn btn-primary btn js-scroll px-4" href="#about" role="button">Learn More</a></p> -->
+
+<!-- Hero Start -->
+<header
+  id="home"
+  class="intro route bg-image home-hero"
+  style="background-image: url(img/intro-bg---Copy.jpg)"
+>
+  <div class="overlay-itro"></div>
+
+  <div class="intro-content display-table">
+    <div class="table-cell">
+      <div class="container">
+
+        <div class="home-hero-content">
+
+          <span class="home-hero-kicker">
+            GHALIEN-VERSE
+          </span>
+
+          <h1>Stephany Ghalien</h1>
+
+          <p class="home-hero-description">
+            Diseño, tecnología, arte y creatividad en constante evolución.
+            Un espacio donde las ideas se convierten en objetos, experiencias,
+            proyectos digitales y recuerdos.
+          </p>
+
+          <div class="home-hero-tags">
+            <span>Impresión 3D</span>
+            <span>Modelado 3D</span>
+            <span>Desarrollo web</span>
+            <span>Tattoo</span>
+            <span>Contenido</span>
+          </div>
+
+          <div class="home-hero-actions">
+            <a href="#universos" class="ghlab-button ghlab-button-primary js-scroll">
+              Explorar el universo
+            </a>
+
+            <a href="quoteprice.html" class="ghlab-button ghlab-button-secondary">
+              Cotizar proyecto
+            </a>
+          </div>
+
         </div>
+
       </div>
     </div>
   </div>
-  <!--/ Intro Skew End /-->
+</header>
+<!-- Hero End -->
 
-  <!--/ Vision Start /-->
-<section id="ghalilab-vision" class="vision-section">
-  <div class="ghalilabinfo" style="background: linear-gradient(135deg, #f40c5981, #1b1b1b);">
-  <div class="container">
-    <div class="content-wrapper">
-      <div class="text-content">
-        <h2>✨ GHALI LAB: Evolución, creatividad y transformación</h2>
-        <p style="padding-right: 1rem;">
-          En <strong>GHALI LAB</strong>, no solo creamos, sino que transformamos realidades. Somos aliados en la evolución hacia un futuro donde el arte, la tecnología y la creatividad se fusionan para dejar huella. Creemos en el poder del diseño, la impresión 3D, el modelado y la creación digital como herramientas para sanar, inspirar y revolucionar.
+
+<main class="ghlab-page home-page">
+
+  <!-- Universes Start -->
+  <section class="ghlab-section home-universes-section" id="universos">
+
+    <div class="ghlab-section-head">
+      <span class="ghlab-kicker">Universos creativos</span>
+
+      <h2>Más de una forma de crear</h2>
+
+      <p>
+        Cada proyecto necesita una herramienta diferente. Explora las áreas
+        en las que la creatividad, la tecnología y el arte se encuentran.
+      </p>
+    </div>
+
+    <div class="home-universes-grid">
+
+      <a href="ghalilab.html" class="home-universe-card">
+        <div class="home-universe-icon">
+          <i class="fa-solid fa-cube"></i>
+        </div>
+
+        <span class="home-universe-label">Creative Tech</span>
+
+        <h3>GHALI LAB</h3>
+
+        <p>
+          Modelado 3D, impresión 3D, prototipos, tecnología creativa y soluciones hechas a medida.
         </p>
-        <p style="padding-right: 1rem;">
-          Te invitamos a sumergirte en este <strong>Ghalien-verse</strong>, donde cada proyecto es un viaje que conecta ideas y personas, creando recuerdos inolvidables y soluciones innovadoras. Con nuestros servicios personalizados, te acompañamos en cada paso, fortaleciendo tus habilidades y potenciando tu visión.
+
+        <span class="home-universe-link">
+          Explorar GHALI LAB
+          <i class="fa-solid fa-arrow-right"></i>
+        </span>
+      </a>
+
+      <a href="tattoo.html" class="home-universe-card">
+        <div class="home-universe-icon">
+          <i class="ico-ghali-tattoo"></i>
+        </div>
+
+        <span class="home-universe-label">Arte en la piel</span>
+
+        <h3>Ghalien Tattoo</h3>
+
+        <p>
+          Tatuajes personalizados, pensados para convertir recuerdos, símbolos e historias en piezas permanentes.
         </p>
-        <p style="padding-right: 1rem;">
-          Únete a <strong>GHALI LAB</strong> y sé parte de esta revolución creativa. Juntos, hacemos del arte un motor de cambio, construyendo un futuro más humano, colaborativo y brillante.
+
+        <span class="home-universe-link">
+          Ver portfolio tattoo
+          <i class="fa-solid fa-arrow-right"></i>
+        </span>
+      </a>
+
+      <a href="stock.html" class="home-universe-card">
+        <div class="home-universe-icon">
+          <i class="fa-solid fa-bag-shopping"></i>
+        </div>
+
+        <span class="home-universe-label">Objetos únicos</span>
+
+        <h3>Tienda</h3>
+
+        <p>
+          Accesorios, llaveros, clickers, fidgets y piezas impresas en 3D listas para personalizar.
         </p>
-        <a href="ghalilab.html" class="cta-button" style="padding: 1rem;">¡Quiero ser parte del cambio!</a>
+
+        <span class="home-universe-link">
+          Ir a la tienda
+          <i class="fa-solid fa-arrow-right"></i>
+        </span>
+      </a>
+
+      <a href="commissions.html" class="home-universe-card">
+        <div class="home-universe-icon">
+          <i class="fa-solid fa-palette"></i>
+        </div>
+
+        <span class="home-universe-label">Diseño visual</span>
+
+        <h3>Comisiones</h3>
+
+        <p>
+          Emotes, overlays, logos, transiciones, assets y diseño personalizado para creadores y marcas.
+        </p>
+
+        <span class="home-universe-link">
+          Ver comisiones
+          <i class="fa-solid fa-arrow-right"></i>
+        </span>
+      </a>
+
+    </div>
+
+  </section>
+  <!-- Universes End -->
+
+
+  <!-- GHALI LAB Vision Start -->
+  <section class="ghlab-section home-lab-section">
+
+    <div class="home-lab-card">
+
+      <div class="home-lab-content">
+        <span class="ghlab-kicker">GHALI LAB</span>
+
+        <h2>Creatividad que transforma ideas en realidad</h2>
+
+        <p>
+          En <strong>GHALI LAB</strong> no solo creamos objetos o diseños:
+          construimos soluciones que conectan arte, tecnología y propósito.
+        </p>
+
+        <p>
+          Desde impresión y modelado 3D hasta páginas web y prototipos,
+          acompañamos ideas que necesitan una forma, una función o una identidad.
+        </p>
+
+        <div class="home-lab-features">
+          <div>
+            <i class="fa-solid fa-check"></i>
+            Modelado e impresión 3D
+          </div>
+
+          <div>
+            <i class="fa-solid fa-check"></i>
+            Páginas web y experiencias digitales
+          </div>
+
+          <div>
+            <i class="fa-solid fa-check"></i>
+            Prototipos y piezas personalizadas
+          </div>
+
+          <div>
+            <i class="fa-solid fa-check"></i>
+            Asesoría para proyectos creativos
+          </div>
+        </div>
+
+        <div class="home-lab-actions">
+          <a href="ghalilab.html" class="ghlab-button ghlab-button-primary">
+            Conocer GHALI LAB
+          </a>
+
+          <a href="services.html" class="ghlab-button ghlab-button-secondary">
+            Ver servicios
+          </a>
+        </div>
       </div>
-      <div class="image-content" style="padding: 1rem;">
-        <img src="img/ghalilab-pic.jpg" alt="GHALI LAB choise">
+
+      <div class="home-lab-image">
+        <img
+          src="img/ghalilab-pic.jpg"
+          alt="Proyecto creativo de GHALI LAB"
+          loading="lazy"
+        >
+      </div>
+
+    </div>
+
+  </section>
+  <!-- GHALI LAB Vision End -->
+
+
+  <!-- Stats Start -->
+  <section
+    class="home-stats-section"
+    id="stats-section"
+    style="background-image: url(img/counters-bg.jpg)"
+  >
+    <div class="home-stats-overlay"></div>
+
+    <div class="container position-relative">
+
+      <div class="home-stats-head">
+        <span class="ghlab-kicker">Experiencia</span>
+        <h2>Proyectos, creatividad y trayectoria</h2>
+      </div>
+
+      <div class="home-stats-grid">
+
+        <article class="home-stat-card">
+          <div class="home-stat-icon">
+            <i class="ico-ghali-check icon-aly"></i>
+          </div>
+
+          <p class="counter home-stat-number" id="trabajos">+0</p>
+          <span>Trabajos completados</span>
+        </article>
+
+        <article class="home-stat-card">
+          <div class="home-stat-icon">
+            <i class="ico-ghali-calendar icon-aly"></i>
+          </div>
+
+          <p class="counter home-stat-number" id="disenando">+0</p>
+          <span>Años diseñando</span>
+        </article>
+
+        <article class="home-stat-card">
+          <div class="home-stat-icon">
+            <i class="ico-ghali-tattooexp icon-aly"></i>
+          </div>
+
+          <p class="counter home-stat-number" id="tatuando">+0</p>
+          <span>Años tatuando</span>
+        </article>
+
+        <article class="home-stat-card">
+          <div class="home-stat-icon">
+            <i class="ico-ghali-users icon-aly"></i>
+          </div>
+
+          <p class="counter home-stat-number" id="clientes">+0</p>
+          <span>Clientes totales</span>
+        </article>
+
+      </div>
+
+      <p class="home-stats-note">
+        <i class="fa-solid fa-circle-info"></i>
+        Estadísticas sin contar tatuajes realizados o piezas impresas en 3D.
+      </p>
+
+    </div>
+  </section>
+  <!-- Stats End -->
+
+
+  <!-- Clients Start -->
+  <section class="ghlab-section home-clients-section">
+
+    <div class="ghlab-section-head">
+      <span class="ghlab-kicker">Colaboraciones</span>
+
+      <h2>Marcas y clientes con quienes hemos trabajado</h2>
+
+      <p>
+        Algunos proyectos, organizaciones y empresas que han confiado
+        en GHALI LAB y Steph Ghalien.
+      </p>
+    </div>
+
+    <div class="home-marquee-viewport">
+      <div class="home-marquee-track">
+
+        <div class="home-marquee-list">
+          <div><img src="images/Ghali-GHALI LAB.svg" alt="GHALI LAB"></div>
+          <div><img src="images/Ghali-METRICAZAGENCY.svg" alt="Metricaz Agency"></div>
+          <div><img src="images/Ghali-SMSCARBON.svg" alt="SMS Carbon SAS"></div>
+          <div><img src="images/Ghali-FUNDACIONSANCHARBEL.svg" alt="Fundación San Charbel"></div>
+          <div><img src="images/Ghali-Ari3D.svg" alt="Ari3D"></div>
+          <div><img src="images/Ghali-Serempre.svg" alt="Serempre"></div>
+          <div><img src="images/Ghali-Cetiia.svg" alt="CETIIA"></div>
+          <div><img src="images/Ghali-ACOPI.svg" alt="ACOPI"></div>
+          <div><img src="images/Ghali-24HN.svg" alt="24HN"></div>
+          <div><img src="images/Ghali-SalvarVidasYa.svg" alt="Salvar Vidas Ya"></div>
+          <div><img src="images/Ghali-AFM.svg" alt="AFM Holding"></div>
+          <div><img src="images/Ghali-ADINTELO.svg" alt="ADINTELO"></div>
+          <div><img src="images/Ghali-Tu Fiesta HLM.svg" alt="Tu Fiesta HLM"></div>
+          <div><img src="images/Ghali-Rehumanizar.svg" alt="Rehumanizar"></div>
+          <div><img src="images/Ghali-Cooperen.svg" alt="Cooperen"></div>
+          <div><img src="images/Ghali-VIDACOOP.svg" alt="VIDACOOP"></div>
+          <div><img src="images/Ghali-Refrilogística.svg" alt="Refrilogística"></div>
+          <div><img src="images/Ghali-Aburrá.svg" alt="Aburrá LTDA"></div>
+          <div><img src="images/Ghali-Ahumados Toto.svg" alt="Ahumados Toto"></div>
+          <div><img src="images/Ghali-FEC.svg" alt="FEC"></div>
+          <div><img src="images/Ghali-CAC Marketing y Publicidad.svg" alt="CAC Marketing y Publicidad"></div>
+        </div>
+
+        <div class="home-marquee-list" aria-hidden="true">
+          <div><img src="images/Ghali-GHALI LAB.svg" alt=""></div>
+          <div><img src="images/Ghali-METRICAZAGENCY.svg" alt=""></div>
+          <div><img src="images/Ghali-SMSCARBON.svg" alt=""></div>
+          <div><img src="images/Ghali-FUNDACIONSANCHARBEL.svg" alt=""></div>
+          <div><img src="images/Ghali-Ari3D.svg" alt=""></div>
+          <div><img src="images/Ghali-Serempre.svg" alt=""></div>
+          <div><img src="images/Ghali-Cetiia.svg" alt=""></div>
+          <div><img src="images/Ghali-ACOPI.svg" alt=""></div>
+          <div><img src="images/Ghali-24HN.svg" alt=""></div>
+          <div><img src="images/Ghali-SalvarVidasYa.svg" alt=""></div>
+          <div><img src="images/Ghali-AFM.svg" alt=""></div>
+          <div><img src="images/Ghali-ADINTELO.svg" alt=""></div>
+          <div><img src="images/Ghali-Tu Fiesta HLM.svg" alt=""></div>
+          <div><img src="images/Ghali-Rehumanizar.svg" alt=""></div>
+          <div><img src="images/Ghali-Cooperen.svg" alt=""></div>
+          <div><img src="images/Ghali-VIDACOOP.svg" alt=""></div>
+          <div><img src="images/Ghali-Refrilogística.svg" alt=""></div>
+          <div><img src="images/Ghali-Aburrá.svg" alt=""></div>
+          <div><img src="images/Ghali-Ahumados Toto.svg" alt=""></div>
+          <div><img src="images/Ghali-FEC.svg" alt=""></div>
+          <div><img src="images/Ghali-CAC Marketing y Publicidad.svg" alt=""></div>
+        </div>
+
       </div>
     </div>
+
+    <div class="home-clients-bottom">
+      <p>
+        Más trabajos empresariales y creativos disponibles en Behance.
+      </p>
+
+      <a href="https://www.behance.net/stephghalien" target="_blank" rel="noopener" class="home-text-link">
+        Ver Behance
+        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+      </a>
     </div>
-  </div>
-</section>
-  <!--/ Vision End /-->
+
+  </section>
+  <!-- Clients End -->
 
 
-<!--/ Section  Stats Start /-->
-  <div class="section-counter paralax-mf bg-image" style="background-image: url(img/counters-bg.jpg)">
-    <div class="overlay-mf"></div>
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-3 col-lg-3">
-          <div class="counter-box">
-            <div class="counter-ico">
-              <span class="ico-circle"><i class="ico-ghali-check icon-aly"></i></span>
-            </div>
-            <div class="counter-num">
-              <p class="counter" id="trabajos">0</p>
-              <span class="counter-text">TRABAJOS COMPLETADOS</span>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-3 col-lg-3">
-          <div class="counter-box pt-4 pt-md-0">
-            <div class="counter-ico">
-              <span class="ico-circle"><i class="ico-ghali-calendar icon-aly"></i></span>
-            </div>
-            <div class="counter-num">
-              <p class="counter" id="disenando">0</p>
-              <span class="counter-text">AÑOS DISEÑANDO</span>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-3 col-lg-3">
-          <div class="counter-box pt-4 pt-md-0">
-            <div class="counter-ico">
-              <span class="ico-circle"><i class="ico-ghali-tattooexp icon-aly"></i></span>
-            </div>
-            <div class="counter-num">
-              <p class="counter" id="tatuando">0</p>
-              <span class="counter-text">AÑOS TATUANDO</span>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-3 col-lg-3">
-          <div class="counter-box pt-4 pt-md-0">
-            <div class="counter-ico">
-              <span class="ico-circle"><i class="ico-ghali-users icon-aly"></i></span>
-            </div>
-            <div class="counter-num">
-              <p class="counter" id="clientes">0</p>
-              <span class="counter-text">CLIENTES TOTALES</span>
-            </div>
-          </div>
-        </div>
-        <p style="text-align: center; padding-top: 1rem; color: gray; padding-left: 2rem; padding-right: 2rem;"><em>Sin contar tatuajes realizados o piezas impresas en 3D.</em></p>
-      </div>   
-    </div>   
-  </div>
-<!--/ Section  Stats End /-->
+  <!-- Reviews Start -->
+  <section class="ghlab-section home-reviews-section">
 
-<!--/ Section companies Star /-->
-<div class="companiescarousel">
-  <p style="text-align: center; font-size: 24px; color: rgb(158, 158, 158);">Algunos de los clientes para los que hemos colaborado</p>
-<div class="carousel-container">
-  <div class="carousel-track">
-    <div><img src="images/Ghali-GHALI LAB.svg" alt="GHALI LAB"></div>    
-    <div><img src="images/Ghali-METRICAZAGENCY.svg" alt="METRICAZ AGENCY"></div>
-    <div><img src="images/Ghali-SMSCARBON.svg" alt="SMS CARBON SAS"></div>
-    <div><img src="images/Ghali-FUNDACIONSANCHARBEL.svg" alt="FUNDACIÓN SAN CHARBEL"></div>         
-    <div><img src="images/Ghali-Ari3D.svg" alt="Ari3D"></div>      
-    <div><img src="images/Ghali-Serempre.svg" alt="Serempre"></div>      
-    <div><img src="images/Ghali-Cetiia.svg" alt="CETIIA"></div> 
-    <div><img src="images/Ghali-ACOPI.svg" alt="ACOPI"></div>      
-    <div><img src="images/Ghali-24HN.svg" alt="24HN"></div> 
-    <div><img src="images/Ghali-SalvarVidasYa.svg" alt="Salvar Vidas Ya"></div>     
-    <div><img src="images/Ghali-AFM.svg" alt="AFM Holding"></div>      
-    <div><img src="images/Ghali-ADINTELO.svg" alt="ADINTELO"></div> 
-    <div><img src="images/Ghali-Tu Fiesta HLM.svg" alt="Tu Fiesta HLM"></div>      
-    <div><img src="images/Ghali-Rehumanizar.svg" alt="Rehumanizar"></div> 
-    <div><img src="images/Ghali-Cooperen.svg" alt="Cooperen"></div>      
-    <div><img src="images/Ghali-VIDACOOP.svg" alt="VIDACOOP"></div>    
-    <div><img src="images/Ghali-Refrilogística.svg" alt="Refrilogística"></div>
-    <div><img src="images/Ghali-Aburrá.svg" alt="Aburrá LTDA"></div>
-    <div><img src="images/Ghali-Ahumados Toto.svg" alt="Ahumados Toto"></div>
-    <div><img src="images/Ghali-FEC.svg" alt="FEC"></div>
-    <div><img src="images/Ghali-CAC Marketing y Publicidad.svg" alt="CAC Marketing y Publicidad"></div>
-  </div>
-</div>
+    <div class="ghlab-section-head">
+      <span class="ghlab-kicker">Reseñas</span>
 
+      <h2>Lo que opinan nuestros clientes</h2>
 
-  <p style="text-align: center; padding-bottom: 1rem; padding-top: 2rem; font-size: 16px; color: rgb(158, 158, 158);">Más de mis trabajos para empresas en <a href="https://www.behance.net/stephghalien"><strong>Behance</strong>.</a></p>
-</div>
-<!--/ Section companies End /-->
-
-
-  <!--/ Reviews End /-->
-<section id="reseñas" class="reviews-section">
-  <div class="container">
-    <h2>Lo que opinan nuestros clientes</h2>
-    <p>Algunas de las mejores experiencias con GHALI LAB y GHALIEN TATTOO</p>
-
-    <div class="reviews-grid">
-      <div class="review-card" style="background: linear-gradient(135deg, #f40c5981, #1b1b1b);">
-        <p>“Excelente calidad en el servicio y productos 👌…”</p>
-        <h4>- Daniel Coronado</h4>
-        <span>⭐⭐⭐⭐⭐</span>
-      </div>
-      <div class="review-card" style="background: linear-gradient(135deg, #f40c5981, #1b1b1b);">
-        <p>“Comprometida con el encargo desde el minuto 1, me pregunto de que tamaño queria la impresion en 3d, me mostro diferentes diseños ademas de que termino la impresion en menos de un dia, llego en buenas condiciones y sin ningun error.”</p>
-        <h4>- Miguel Herrera</h4>
-        <span>⭐⭐⭐⭐⭐</span>
-      </div>      
-      <div class="review-card" style="background: linear-gradient(135deg, #f40c5981, #1b1b1b);">
-        <p>“Aparte de que plasma en tú piel una excelente calidad de diseños, según tus gustos; TeTransmite una super energía , que te duermes en las sesiones 🤗,ella si le pone pasión,a cada raya que deja  en tí. Super Recomendadisimaaa!
-        Dios te acompañe siempre.…”</p>
-        <h4>- Anny Castrillón</h4>
-        <span>⭐⭐⭐⭐⭐</span>
-      </div>
-      <div class="review-card" style="background: linear-gradient(135deg, #f40c5981, #1b1b1b);">
-        <p>“Excelente servicio, gran atencion, buena persona la que atiende, recomendadisimo.”</p>
-        <h4>- Gabriel Lencina</h4>
-        <span>⭐⭐⭐⭐⭐</span>
-      </div>
+      <p>
+        Algunas experiencias compartidas por clientes de GHALI LAB y Ghalien Tattoo.
+      </p>
     </div>
-  </div>
-</section>
-  <!--/ Reviews End /-->
 
-<!-- FAQ Start -->
-<section id="faq" class="faq-section">
-  <div class="container">
-    <h2 class="faq-title">Preguntas frecuentes</h2>
-    <div class="faq-container">
+    <div class="home-reviews-grid">
+
+      <article class="home-review-card">
+        <div class="home-review-stars">★★★★★</div>
+
+        <p>
+          “Excelente calidad en el servicio y productos.”
+        </p>
+
+        <div class="home-review-author">
+          Daniel Coronado
+        </div>
+      </article>
+
+      <article class="home-review-card">
+        <div class="home-review-stars">★★★★★</div>
+
+        <p>
+          “Comprometida con el encargo desde el minuto uno. Me mostró diferentes diseños, terminó la impresión en menos de un día y llegó en excelentes condiciones.”
+        </p>
+
+        <div class="home-review-author">
+          Miguel Herrera
+        </div>
+      </article>
+
+      <article class="home-review-card">
+        <div class="home-review-stars">★★★★★</div>
+
+        <p>
+          “Excelente calidad de diseños según tus gustos. Transmite una energía increíble y pone pasión en cada línea que deja en tu piel.”
+        </p>
+
+        <div class="home-review-author">
+          Anny Castrillón
+        </div>
+      </article>
+
+      <article class="home-review-card">
+        <div class="home-review-stars">★★★★★</div>
+
+        <p>
+          “Excelente servicio, gran atención y muy buena persona. Recomendadísimo.”
+        </p>
+
+        <div class="home-review-author">
+          Gabriel Lencina
+        </div>
+      </article>
+
+    </div>
+
+  </section>
+  <!-- Reviews End -->
+
+
+  <!-- FAQ Start -->
+  <section class="ghlab-section home-faq-section" id="faq">
+
+    <div class="ghlab-section-head">
+      <span class="ghlab-kicker">FAQ</span>
+
+      <h2>Preguntas frecuentes</h2>
+
+      <p>
+        Información rápida sobre servicios, tiempos, ubicaciones y métodos de pago.
+      </p>
+    </div>
+
+    <div class="home-faq-container">
+
       <details>
         <summary>¿Qué servicios ofrece GHALI LAB?</summary>
-        <p>En <strong>GHALI LAB</strong> ofrecemos diseño y creación de páginas web, modelado 3D, impresión 3D (FDM y SLA), y asesoría en desarrollo de proyectos digitales y físicos. Nos adaptamos a tus necesidades para hacer realidad tu idea.</p>
+        <p>
+          Ofrecemos diseño y creación de páginas web, modelado 3D,
+          impresión 3D FDM y SLA, prototipos, asesoría para proyectos,
+          activos gráficos y soluciones digitales o físicas personalizadas.
+        </p>
       </details>
 
       <details>
         <summary>¿Puedo solicitar un presupuesto?</summary>
-        <p>¡Por supuesto! Escríbenos a <strong>WhatsApp: +57 350 513 6986</strong> o envíanos un correo. Cuéntanos tu idea y te responderemos lo antes posible con una propuesta personalizada.</p>
+        <p>
+          Sí. Puedes escribirnos por WhatsApp al
+          <strong>+57 350 513 6986</strong>, usar la página de cotización
+          o enviarnos tu idea por redes sociales.
+        </p>
       </details>
 
       <details>
-        <summary>¿Cuánto tiempo tarda en completarse un proyecto?</summary>
-        <p>El tiempo depende del tipo y complejidad del proyecto. Desde unas horas para impresiones 3D sencillas hasta semanas para desarrollos web completos o modelos 3D detallados. Te daremos una estimación una vez conozcamos los detalles.</p>
+        <summary>¿Cuánto tiempo tarda un proyecto?</summary>
+        <p>
+          Depende de la complejidad. Algunas impresiones 3D sencillas pueden
+          tomar horas, mientras que páginas web, modelos detallados o piezas
+          personalizadas pueden necesitar varios días o semanas.
+        </p>
       </details>
 
       <details>
-        <summary>¿En qué ciudades están disponibles sus servicios?</summary>
-        <p>Trabajamos a nivel nacional (Colombia) e internacional. Los servicios digitales (páginas web, modelado) están disponibles globalmente, y para impresiones 3D podemos coordinar envíos a todo el país desde Medellín, Colombia.</p>
+        <summary>¿Trabajan en toda Colombia?</summary>
+        <p>
+          Sí. Los servicios digitales están disponibles de manera nacional
+          e internacional. Para productos e impresiones 3D coordinamos envíos
+          seguros desde Medellín, Colombia.
+        </p>
       </details>
 
       <details>
         <summary>¿Ofrecen asesoría para emprendedores?</summary>
-        <p>¡Claro que sí! En <strong>GHALI LAB</strong> ayudamos a emprendedores a dar forma a sus proyectos, ya sea creando una página web, desarrollando prototipos con impresión 3D o creando diseños para sus productos. Contáctanos y con gusto te orientaremos.</p>
+        <p>
+          Claro. Podemos ayudarte a definir una página web, desarrollar
+          prototipos, crear piezas 3D o darle identidad visual a tu proyecto.
+        </p>
       </details>
 
       <details>
-        <summary>¿Cuáles son los métodos de pago y entrega?</summary>
-        <p>En <strong>GHALI LAB</strong> nos adaptamos a tu comodidad. Puedes realizar pagos por transferencia bancaria (Contamos con QR Nequi), pago en línea o PayPal (en caso de ser internacional). Para impresiones 3D, realizamos envíos seguros y coordinados. Si prefieres, puedes recoger personalmente tu pedido o podemos entregarlo directamente en tu domicilio. ¡Hablamos para coordinar lo mejor para ti!</p>
+        <summary>¿Qué métodos de pago aceptan?</summary>
+        <p>
+          Se aceptan transferencias, Nequi, pagos en línea y PayPal para
+          algunos pagos internacionales. Puedes consultar todos los métodos
+          disponibles en la sección de pagos y donaciones.
+        </p>
       </details>
+
     </div>
-  </div>
-</section>
-<!-- FAQ End -->
+
+  </section>
+  <!-- FAQ End -->
 
 
-  <script type='text/javascript'>
-    document.oncontextmenu = function(){return false}
-  </script>
-  
-  <!--Footer Start-->
+  <!-- Final CTA Start -->
+  <section class="ghlab-section home-final-section">
+
+    <div class="home-final-card">
+
+      <span class="ghlab-kicker">
+        Construyamos algo juntos
+      </span>
+
+      <h2>Tu idea puede ser el próximo proyecto</h2>
+
+      <p>
+        Ya sea una página web, un objeto impreso en 3D, una identidad visual,
+        una comisión creativa o un tatuaje, podemos convertir tu idea en algo real.
+      </p>
+
+      <div class="ghlab-final-actions">
+        <a href="quoteprice.html" class="ghlab-button ghlab-button-primary">
+          Cotizar proyecto
+        </a>
+
+        <a href="mysocial.html" class="ghlab-button ghlab-button-secondary">
+          Contactar por redes
+        </a>
+      </div>
+
+    </div>
+
+  </section>
+  <!-- Final CTA End -->
+
+</main>
+
+
+<!-- Footer Start -->
 <section class="footerghalien">
   <footer>
     <div class="container">
       <div class="row">
         <div class="col-sm-12">
 
-          <!-- SEO website -->
           <nav class="footer-links">
             <a href="index.html">INICIO</a> |
-            <a href="stock.html">TIENDA</a> |   
+            <a href="stock.html">TIENDA</a> |
             <a href="ghalilab.html">GHALI LAB</a> |
             <a href="services.html">SERVICIOS</a> |
             <a href="quoteprice.html">COTIZACIÓN</a> |
-            <a href="tattoo.html">GHALIEN TATTOO</a> |       
-            <a href="aboutme.html">SOBRE MÍ</a> |   
-            <a href="paymethods.html">MÉTODOS DE PAGO</a> |                                
-            
-            <a href="mysocial.html">MIS REDES</a> 
-
+            <a href="tattoo.html">GHALIEN TATTOO</a> |
+            <a href="aboutme.html">SOBRE MÍ</a> |
+            <a href="paymethods.html">MÉTODOS DE PAGO</a> |
+            <a href="mysocial.html">MIS REDES</a>
           </nav>
 
-          <!-- Social media -->
           <div class="social-icons">
-            <a href="https://www.instagram.com/ghalilab" target="_blank" aria-label="Instagram">
+            <a href="https://www.instagram.com/ghalilab" target="_blank" rel="noopener" aria-label="Instagram GHALI LAB">
               <i class="fab fa-instagram"></i>
             </a>
-            <a href="https://www.tiktok.com/@ghalilab" target="_blank" aria-label="TikTok">
-              <i class="fab fa-tiktok"></i>
-            </a>
-            <a href="https://www.youtube.com/@StephGhalien" target="_blank" aria-label="YouTube">
-              <i class="fab fa-youtube"></i>
-            </a> |
-            <a href="https://www.youtube.com/@Ghaliensita" target="_blank" aria-label="YouTube">
-              <i class="fab fa-youtube"></i>
-            </a>   
-            </a>
-            <a href="https://www.tiktok.com/@ghaliensita" target="_blank" aria-label="TikTok">
-              <i class="fab fa-tiktok"></i>
-            </a>             
-            <a href="https://www.instagram.com/ghaliensita" target="_blank" aria-label="Instagram">
-              <i class="fab fa-instagram"></i>
 
-        
+            <a href="https://www.tiktok.com/@ghalilab" target="_blank" rel="noopener" aria-label="TikTok GHALI LAB">
+              <i class="fab fa-tiktok"></i>
+            </a>
+
+            <a href="https://www.youtube.com/@StephGhalien" target="_blank" rel="noopener" aria-label="YouTube Steph Ghalien">
+              <i class="fab fa-youtube"></i>
+            </a>
+
+            <span>|</span>
+
+            <a href="https://www.youtube.com/@Ghaliensita" target="_blank" rel="noopener" aria-label="YouTube Ghaliensita">
+              <i class="fab fa-youtube"></i>
+            </a>
+
+            <a href="https://www.tiktok.com/@ghaliensita" target="_blank" rel="noopener" aria-label="TikTok Ghaliensita">
+              <i class="fab fa-tiktok"></i>
+            </a>
+
+            <a href="https://www.instagram.com/ghaliensita" target="_blank" rel="noopener" aria-label="Instagram Ghaliensita">
+              <i class="fab fa-instagram"></i>
+            </a>
           </div>
 
-          <!-- Copyright -->
           <div class="copyright-box">
-            <p class="copyright">&copy; Copyright <strong>Ghaliensita</strong>. All Rights Reserved</p>
+            <p class="copyright">
+              &copy; Copyright <strong>Ghaliensita</strong>. All Rights Reserved
+            </p>
           </div>
 
         </div>
@@ -367,176 +807,181 @@
     </div>
   </footer>
 </section>
-  <!--Footer End-->
+<!-- Footer End -->
 
-  <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
-  <div id="preloader"></div>
 
-  <!--Counter Start-->  
+<a href="#" class="back-to-top" aria-label="Volver arriba">
+  <i class="fa fa-chevron-up"></i>
+</a>
+
+<div id="preloader"></div>
+
+
+<!-- Counter Start -->
 <script>
-function animateCounter(id, endValue, duration = 2000) {
-  const element = document.getElementById(id);
-  let startValue = 0;
-  const increment = endValue / (duration / 16); // 60fps approx
-  const startTime = performance.now();
+(function () {
+  "use strict";
 
-  function update(currentTime) {
-    const elapsed = currentTime - startTime;
-    let currentValue = Math.min(Math.floor(startValue + increment * (elapsed / 16)), endValue);
-    element.textContent =  "+" + currentValue.toLocaleString("es-ES");
-    if (currentValue < endValue) {
-      requestAnimationFrame(update);
-    }
+  var DURATION = 1100;
+
+  function easeOutCubic(t) {
+    return 1 - Math.pow(1 - t, 3);
   }
 
-  requestAnimationFrame(update);
-}
+  function animateCounter(id, endValue, duration) {
+    var element = document.getElementById(id);
 
-// Solo iniciar si el elemento está visible
-function isInViewport(el) {
-  const rect = el.getBoundingClientRect();
-  return (
-    rect.top >= 0 &&
-    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight)
+    if (!element) return;
+
+    endValue = parseInt(endValue, 10);
+
+    if (isNaN(endValue)) {
+      element.textContent = "+0";
+      return;
+    }
+
+    duration = duration || DURATION;
+
+    if (
+      window.matchMedia &&
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    ) {
+      element.textContent = "+" + endValue.toLocaleString("es-ES");
+      return;
+    }
+
+    var startTime = null;
+
+    function step(timestamp) {
+      if (startTime === null) startTime = timestamp;
+
+      var progress = Math.min((timestamp - startTime) / duration, 1);
+
+      var currentValue = Math.round(
+        endValue * easeOutCubic(progress)
+      );
+
+      element.textContent =
+        "+" + currentValue.toLocaleString("es-ES");
+
+      if (progress < 1) {
+        requestAnimationFrame(step);
+      }
+    }
+
+    requestAnimationFrame(step);
+  }
+
+  function render(stats) {
+    animateCounter("trabajos", stats.TRABAJOS);
+    animateCounter("clientes", stats.CLIENTES);
+    animateCounter("disenando", stats["AÑOS DISEÑANDO"]);
+    animateCounter("tatuando", stats["AÑOS TATUANDO"]);
+  }
+
+  function startCounters() {
+    window.GhaliStats.load()
+      .then(render)
+      .catch(function (error) {
+        console.error("Error al cargar estadísticas:", error);
+      });
+  }
+
+  function initCounters() {
+    var section = document.getElementById("stats-section");
+
+    if (!section) return;
+
+    if (!("IntersectionObserver" in window)) {
+      startCounters();
+      return;
+    }
+
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          observer.disconnect();
+          startCounters();
+        }
+      });
+    }, {
+      rootMargin: "250px 0px",
+      threshold: 0
+    });
+
+    observer.observe(section);
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initCounters);
+  } else {
+    initCounters();
+  }
+})();
+</script>
+<!-- Counter End -->
+
+
+<!-- JavaScript Libraries -->
+<script src="lib/jquery/jquery.min.js"></script>
+<script src="lib/jquery/jquery-migrate.min.js"></script>
+<script src="lib/popper/popper.min.js"></script>
+<script src="lib/bootstrap/js/bootstrap.min.js"></script>
+<script src="lib/easing/easing.min.js"></script>
+<script src="lib/owlcarousel/owl.carousel.min.js"></script>
+<script src="lib/lightbox/js/lightbox.min.js"></script>
+<script src="lib/typed/typed.min.js"></script>
+<script src="contactform/contactform.js"></script>
+
+<!-- Template Main Javascript -->
+<script src="js/main.js"></script>
+
+
+<!-- Protección básica -->
+<script>
+  document.addEventListener("contextmenu", function (event) {
+    event.preventDefault();
+  });
+
+  document.addEventListener("keydown", function (event) {
+    var key = event.key.toUpperCase();
+
+    if (event.key === "F12") {
+      event.preventDefault();
+    }
+
+    if (
+      (event.ctrlKey || event.metaKey) &&
+      event.shiftKey &&
+      ["I", "J", "C"].includes(key)
+    ) {
+      event.preventDefault();
+    }
+
+    if (
+      (event.ctrlKey || event.metaKey) &&
+      key === "U"
+    ) {
+      event.preventDefault();
+    }
+  });
+
+  document.querySelectorAll("img").forEach(function (image) {
+    image.addEventListener("dragstart", function (event) {
+      event.preventDefault();
+    });
+  });
+
+  console.log(
+    "%c🔒 Contenido protegido",
+    "font-size: 20px; font-weight: bold; color: #F40C5A;"
   );
-}
 
-let countersStarted = false;
-
-function startCounters() {
-  if (countersStarted) return;
-
-  const trabajosEl = document.getElementById("trabajos");
-  const clientesEl = document.getElementById("clientes");
-
-  if (isInViewport(trabajosEl)) {
-    countersStarted = true;
-
-    fetch("https://sheetdb.io/api/v1/gvl6na6phf41h")
-      .then(response => response.json())
-      .then(data => {
-        const trabajos = parseInt(data[0].TRABAJOS);
-        const clientes = parseInt(data[0].CLIENTES);
-        
-        animateCounter("disenando", data[0]["AÑOS DISEÑANDO"]);
-        animateCounter("tatuando", data[0]["AÑOS TATUANDO"]);
-
-        animateCounter("trabajos", trabajos);
-        animateCounter("clientes", clientes);
-      })
-      .catch(error => console.error("Error al cargar los datos:", error));
-  }
-}
-
-// Ejecutar cuando se haga scroll o al cargar
-window.addEventListener("scroll", startCounters);
-window.addEventListener("load", startCounters);
+  console.log(
+    "%cSi tienes alguna pregunta, contáctame mediante mis redes oficiales.",
+    "font-size: 14px;"
+  );
 </script>
-  <!--Counter End--> 
-
-   <!--Companies carousel End-->  
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-  const track = document.querySelector(".carousel-track");
-  const container = document.querySelector(".carousel-container");
-
-  const speed = 0.5; // píxeles por frame (~60fps). Ajusta para más/menos velocidad.
-  let posX = 0;
-
-  function animateCarousel() {
-    const maxScroll = track.scrollWidth - container.offsetWidth;
-
-    if (posX <= -maxScroll) {
-      // Fade out, reset position, fade in
-      track.classList.add("carousel-fade");
-      setTimeout(() => {
-        posX = 0;
-        track.style.transform = `translateX(${posX}px)`;
-        track.classList.remove("carousel-fade");
-      }, 500); // Duración del fade
-    } else {
-      posX -= speed;
-      track.style.transform = `translateX(${posX}px)`;
-    }
-
-    requestAnimationFrame(animateCarousel);
-  }
-
-  requestAnimationFrame(animateCarousel);
-});
-</script>
-
-   <!--Companies carousel End-->  
-
-  <!-- JavaScript Libraries -->
-  <script src="lib/jquery/jquery.min.js"></script>
-  <script src="lib/jquery/jquery-migrate.min.js"></script>
-  <script src="lib/popper/popper.min.js"></script>
-  <script src="lib/bootstrap/js/bootstrap.min.js"></script>
-  <script src="lib/easing/easing.min.js"></script>
-  <script src="lib/counterup/jquery.waypoints.min.js"></script>
-  <script src="lib/counterup/jquery.counterup.js"></script>
-  <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-  <script src="lib/lightbox/js/lightbox.min.js"></script>
-  <script src="lib/typed/typed.min.js"></script>
-  <!-- Contact Form JavaScript File -->
-  <script src="contactform/contactform.js"></script>
-
-  <!-- Template Main Javascript File -->
-  <script src="js/main.js"></script>
-
-
-<script>
-    // 1. Deshabilitar clic derecho en toda la página (refuerza tu medida actual)
-    document.addEventListener('contextmenu', function(e) {
-        // Puedes personalizar el mensaje si lo deseas
-        // alert("Función deshabilitada para proteger el contenido.");
-        e.preventDefault();
-        return false;
-    });
-
-    // 2. Deshabilitar combinaciones de teclas comunes para "Inspeccionar Elemento"
-    document.addEventListener('keydown', function(e) {
-        // Tecla F12
-        if (e.key === 'F12') {
-            e.preventDefault();
-            return false;
-        }
-        // Ctrl+Shift+I (Windows/Linux) o Cmd+Opt+I (Mac)
-        if ((e.ctrlKey || e.metaKey) && e.shiftKey && (e.key === 'I' || e.key === 'i')) {
-            e.preventDefault();
-            return false;
-        }
-        // Ctrl+Shift+J (Windows/Linux) o Cmd+Opt+J (Mac) - Consola
-        if ((e.ctrlKey || e.metaKey) && e.shiftKey && (e.key === 'J' || e.key === 'j')) {
-            e.preventDefault();
-            return false;
-        }
-        // Ctrl+U (Windows/Linux) o Cmd+U (Mac) - Ver código fuente
-        if ((e.ctrlKey || e.metaKey) && (e.key === 'U' || e.key === 'u')) {
-            e.preventDefault();
-            return false;
-        }
-        // Ctrl+Shift+C (Windows/Linux) o Cmd+Shift+C (Mac) - Inspeccionar elemento
-        if ((e.ctrlKey || e.metaKey) && e.shiftKey && (e.key === 'C' || e.key === 'c')) {
-            e.preventDefault();
-            return false;
-        }
-    });
-
-    // 3. Prevenir el arrastre de imágenes (protección adicional)
-    document.querySelectorAll('img').forEach(img => {
-        img.addEventListener('dragstart', function(e) {
-            e.preventDefault();
-            return false;
-        });
-    });
-
-    // 4. (Opcional) Advertencia en la consola para disuadir a curiosos
-    console.log('%c🔒 Contenido protegido', 'font-size: 20px; font-weight: bold; color: #F40C5A;');
-    console.log('%cSi tienes alguna pregunta o necesitas acceso, contáctame a través de mis redes oficiales.', 'font-size: 14px;');
-</script>
-
 
 </body>
 </html>

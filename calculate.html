@@ -1,0 +1,1615 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Stephany Ghalien - Calculadora 3D</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="keywords" content="ghalien, ghaliensita, ghalienzta, stephany ghalien, creadora de contenido, content creator, streamer, tattoo, tatuadora a domicilio, tatuajes, tattoos, tattooer, tattooer delivery, tatuajes pequeños, small tattoos, man tattoo, tatuaje hombre, woman tattoo, mujer tatuaje, emotes, emotes twitch, emotes whatsapp, commissions, comisiones, diseño gráfico, diseñadora gráfica, graphic design, graphic designer, illustration, ilustraciones, twitch, youtube, behance, dev, game dev, developer, video, video editing, edition, graphic pieces, 3d, 3d modeling, modelos 3d, impresión 3d, 3d print, 3d prints, 3d print model, 3d service, GHALI LAB, gea shop, gea Colombia, gea, Steph ghalien, impresión gran formato" />
+  <meta content="" name="description">
+
+  <!-- Favicons -->
+  <link href="img/favicon.png" rel="icon">
+  <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+
+  <!-- Libraries CSS Files -->
+  <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="lib/animate/animate.min.css" rel="stylesheet">
+  <link href="lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+  <link href="https://file.myfontastic.com/9uXaaj5vAm5wectHaxzyV9/icons.css" rel="stylesheet">
+  <link href="lib/ghali-icons/styles.css" rel="stylesheet">
+  <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+  <script src="https://cdn.jsdelivr.net/npm/swiffy-slider@1.6.0/dist/js/swiffy-slider.min.js" crossorigin="anonymous" defer></script>
+  <link href="https://cdn.jsdelivr.net/npm/swiffy-slider@1.6.0/dist/css/swiffy-slider.min.css" rel="stylesheet" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/swiffy-slider@1.6.0/dist/js/swiffy-slider-extensions.min.js">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Main Stylesheet File -->
+  <link href="css/style.css" rel="stylesheet">
+
+  <style>
+    /* ===== Calculadora 3D: extras ===== */
+    .calc-wrapper {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1rem 3rem 1rem;
+    }
+
+    .calc-title {
+      text-align: center;
+      margin-bottom: 0.5rem;
+    }
+
+    .calc-subtitle {
+      text-align: center;
+      color: rgba(255,255,255,0.6);
+      font-size: 0.95rem;
+      margin-bottom: 2rem;
+    }
+
+    .printer-buttons {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 1.5rem;
+    }
+
+    .printer-buttons button {
+      background-color: #2a2a2a;
+      color: #fff;
+      border: 2px solid #444;
+      padding: 14px 22px;
+      border-radius: 12px;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 0.95rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      transition: all 0.25s ease;
+    }
+
+    .printer-buttons button i {
+      font-size: 1.3rem;
+      color: #F40C5A;
+    }
+
+    .printer-buttons button.active {
+      background-color: #F40C5A;
+      border-color: #F40C5A;
+    }
+
+    .printer-buttons button small {
+      display: block;
+      font-weight: 400;
+      color: rgba(255,255,255,0.65);
+      font-size: 0.75rem;
+    }
+
+    .printer-buttons button.active small {
+      color: rgba(255,255,255,0.85);
+    }
+
+    .field-hint {
+      font-size: 0.72rem;
+      color: rgba(255,255,255,0.4);
+      margin-top: -8px;
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    .section h2 {
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .section h2 i {
+      color: #F40C5A;
+    }
+
+    .ganancia-note {
+      font-size: 13px;
+      margin-top: 12px;
+      line-height: 1.5;
+      color: rgba(255,255,255,0.7);
+    }
+
+    .currency-result-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      margin-top: 1.5rem;
+    }
+
+    .currency-result-card {
+      background-color: #1a1a1a;
+      border-radius: 12px;
+      padding: 14px 8px;
+      text-align: center;
+      border: 2px solid transparent;
+      transition: all 0.25s ease;
+      cursor: pointer;
+    }
+
+    .currency-result-card.active {
+      border-color: #F40C5A;
+      background-color: #2a1620;
+    }
+
+    .currency-result-card .curr-label {
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.55);
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+
+    .currency-result-card .curr-value {
+      font-size: 1.05rem;
+      font-weight: bold;
+      color: #fff;
+      margin-top: 4px;
+    }
+
+    .currency-result-card.active .curr-value {
+      color: #F40C5A;
+    }
+
+    @media (max-width: 576px) {
+      .currency-result-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .printer-buttons button {
+        flex: 1 1 100%;
+        justify-content: center;
+      }
+    }
+
+    .rates-note {
+      text-align: center;
+      font-size: 0.72rem;
+      color: rgba(255,255,255,0.35);
+      margin-top: 0.75rem;
+    }
+
+    .select-material {
+      width: 100%;
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #444;
+      background-color: #1a1a1a;
+      color: #fff;
+      font-size: 14px;
+      box-sizing: border-box;
+    }
+
+    .btn-guardar {
+      display: block;
+      margin: 1.5rem auto 0;
+      padding: 12px 28px;
+      background-color: #25D366;
+      color: #fff;
+      font-size: 15px;
+      font-weight: bold;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn-guardar:hover {
+      background-color: #1DA851;
+    }
+
+    .btn-guardar:disabled {
+      background-color: #444;
+      cursor: not-allowed;
+    }
+
+    .guardar-status {
+      text-align: center;
+      font-size: 0.85rem;
+      margin-top: 10px;
+      min-height: 20px;
+    }
+
+    .guardar-status.ok {
+      color: #25D366;
+    }
+
+    .guardar-status.error {
+      color: #F40C5A;
+    }
+
+    /* ===== Materiales dinámicos ===== */
+    .material-row {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr auto;
+      gap: 8px;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .material-row input {
+      width: 100%;
+      padding: 8px;
+      border-radius: 8px;
+      border: 1px solid #444;
+      background-color: #1a1a1a;
+      color: #fff;
+      font-size: 13px;
+      box-sizing: border-box;
+    }
+
+    .material-row .mat-remove {
+      background-color: #F40C5A;
+      border: none;
+      color: #fff;
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .material-row-labels {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr auto;
+      gap: 8px;
+      font-size: 0.68rem;
+      color: rgba(255,255,255,0.45);
+      margin-bottom: 6px;
+    }
+
+    .btn-add-material {
+      background-color: transparent;
+      border: 2px dashed #F40C5A;
+      color: #F40C5A;
+      padding: 8px 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 0.85rem;
+      margin-top: 4px;
+    }
+
+    .btn-add-material:hover {
+      background-color: rgba(244, 12, 90, 0.1);
+    }
+
+    @media (max-width: 576px) {
+      .material-row, .material-row-labels {
+        grid-template-columns: 1fr 1fr;
+      }
+      .material-row-labels { display: none; }
+    }
+
+    /* ===== Datos comunes de la cotización ===== */
+    .comunes-box {
+      background-color: #1a1a1a;
+      border-radius: 12px;
+      padding: 18px;
+      margin-bottom: 1.5rem;
+    }
+
+    .comunes-box h2 {
+      font-size: 1.05rem;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: #fff;
+    }
+
+    .comunes-box h2 i { color: #00C4F9; }
+
+    .comunes-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 12px;
+    }
+
+    .comunes-grid label {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.75);
+    }
+
+    .comunes-grid input, .comunes-grid textarea {
+      width: 100%;
+      padding: 9px;
+      border-radius: 8px;
+      border: 1px solid #444;
+      background-color: #0f0f0f;
+      color: #fff;
+      font-size: 14px;
+      box-sizing: border-box;
+      margin-top: 4px;
+    }
+
+    .comunes-grid textarea {
+      resize: vertical;
+      min-height: 40px;
+    }
+
+    /* ===== Mini calculadora de proporciones para moldes ===== */
+    .molde-proporciones {
+      background-color: #1a1a1a;
+      border-radius: 12px;
+      padding: 16px;
+      margin-top: 1rem;
+    }
+
+    .molde-proporciones h3 {
+      font-size: 0.95rem;
+      color: #00C4F9;
+      margin-bottom: 10px;
+    }
+
+    .molde-fila {
+      display: grid;
+      grid-template-columns: 1fr 1fr auto;
+      gap: 10px;
+      align-items: end;
+      margin-bottom: 10px;
+    }
+
+    .molde-fila label {
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.7);
+      display: block;
+    }
+
+    .molde-fila input {
+      width: 100%;
+      padding: 8px;
+      border-radius: 8px;
+      border: 1px solid #444;
+      background-color: #0f0f0f;
+      color: #fff;
+      margin-top: 4px;
+      box-sizing: border-box;
+    }
+
+    .molde-resultado {
+      font-weight: bold;
+      color: #F40C5A;
+      font-size: 0.9rem;
+      text-align: center;
+      padding-top: 6px;
+    }
+
+    /* ===== Pantalla de acceso (protección básica del lado del cliente) ===== */
+    .auth-gate {
+      position: fixed;
+      inset: 0;
+      background-color: #111;
+      z-index: 9999;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .auth-gate h2 {
+      color: #fff;
+      font-size: 1.3rem;
+      margin: 0;
+    }
+
+    .auth-gate p {
+      color: rgba(255,255,255,0.5);
+      font-size: 0.82rem;
+      max-width: 320px;
+    }
+
+    .auth-gate input {
+      padding: 12px 16px;
+      border-radius: 10px;
+      border: 1px solid #444;
+      background-color: #1a1a1a;
+      color: #fff;
+      font-size: 15px;
+      width: 260px;
+      text-align: center;
+    }
+
+    .auth-gate button {
+      background-color: #F40C5A;
+      color: #fff;
+      border: none;
+      padding: 12px 28px;
+      border-radius: 10px;
+      font-weight: bold;
+      cursor: pointer;
+      font-size: 15px;
+    }
+
+    .auth-gate .auth-error {
+      color: #F40C5A;
+      font-size: 0.82rem;
+      min-height: 18px;
+    }
+  </style>
+</head>
+
+<body>
+  <!--/ Nav Start /-->
+<nav class="navbar navbar-b navbar-trans navbar-expand-lg fixed-top" id="mainNav">
+  <div class="container">
+    <a class="navbar-brand js-scroll" href="index.html">
+      <img src="images/Ghali-GhaliLogo.svg" style="max-width: 50%;" alt="Ghalien Icon"> Ghalien
+    </a>
+    
+    <!-- Botón hamburguesa Bootstrap 5 con SVG personalizado -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarDefault"
+      aria-controls="navbarDefault" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span> <!-- Este es el icono default de Bootstrap -->
+    </button>
+    
+    <div class="collapse navbar-collapse justify-content-end" id="navbarDefault">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link js-scroll" href="index.html">Inicio</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link js-scroll" href="shop.html">Tienda</a>
+        </li>        
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle js-scroll" href="#" id="ghalilabDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            GHALI LAB
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="ghalilabDropdown">
+            <li><a class="dropdown-item js-scroll" href="ghalilab.html">Sobre GHALI LAB</a></li>
+            <li><a class="dropdown-item js-scroll" href="services.html">Servicios</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link js-scroll" href="tattoo.html">Ghalien Tattoo</a>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle js-scroll" href="#" id="aboutDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Sobre mí
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="aboutDropdown">
+            <li><a class="dropdown-item js-scroll" href="aboutme.html">¿Quién es Ghalien?</a></li>
+            <li><a class="dropdown-item js-scroll" href="paymethods.html">Pagos y donaciones</a></li>
+           
+          </ul>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle js-scroll" href="#" id="contactDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Contacto
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="contactDropdown">
+            <li><a class="dropdown-item js-scroll" href="utility.html">Redes sociales</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+  <!--/ Nav End /-->
+
+   <!--/ Intro Skew Star /-->
+   <div class="intro intro-single route bg-image" style="background-image: url(img/overlay-bg-3.jpg)">
+    <div class="overlay-mf"></div>
+    <div class="intro-content display-table">
+      <div class="table-cell">
+        <div class="container">
+          <ol class="breadcrumb d-flex justify-content-center">
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--/ Intro Skew End /-->
+
+  <!-- ============================================ -->
+  <!-- PANTALLA DE ACCESO (bloquea la calculadora hasta ingresar la contraseña) -->
+  <!-- ============================================ -->
+  <div class="auth-gate" id="authGate">
+    <img src="images/Ghali-GhaliLogo.svg" style="max-width:90px; opacity:0.9;" alt="Ghali Lab">
+    <h2>Acceso restringido</h2>
+    <p>Esta calculadora es solo para uso interno de GHALI LAB. Ingresa la contraseña para continuar.</p>
+    <input type="password" id="authPasswordInput" placeholder="Contraseña" autocomplete="off">
+    <button onclick="verificarAcceso()">Entrar</button>
+    <p class="auth-error" id="authError"></p>
+  </div>
+
+<!-- Section Calculate Start -->
+<div class="calc-wrapper" id="calcWrapperContent" style="display:none;">
+  <h1 class="calc-title">Calculadora de Costos GHALI LAB</h1>
+  <p class="calc-subtitle">Selecciona el tipo de pieza, completa los datos y calcula el precio real cubriendo materiales, tiempo, mano de obra y tu ganancia.</p>
+
+  <!-- Datos comunes de la cotización -->
+  <div class="comunes-box">
+    <h2><i class="fa-solid fa-user"></i> Datos de la cotización</h2>
+    <div class="comunes-grid">
+      <label>Cliente:
+        <input type="text" id="comunCliente" placeholder="Nombre del cliente" />
+      </label>
+      <label>Envío (COP $):
+        <input type="number" id="comunEnvio" value="0" />
+      </label>
+      <label>Abono 1 (COP $):
+        <input type="number" id="comunAbono1" value="0" />
+      </label>
+      <label>Abono 2 (COP $):
+        <input type="number" id="comunAbono2" value="0" />
+      </label>
+      <label style="grid-column: 1 / -1;">Descripción / notas:
+        <textarea id="comunDescripcion" placeholder="Detalles de la pieza, acuerdos con el cliente, referencias, etc."></textarea>
+      </label>
+    </div>
+  </div>
+
+  <!-- Selector de categoría de producto -->
+  <div class="printer-buttons" id="categoryButtons">
+    <button data-category="impresion" class="active">
+      <i class="fa-solid fa-cube"></i>
+      <span>Impresión 3D<br><small>FDM / Resina</small></span>
+    </button>
+    <button data-category="modelado">
+      <i class="fa-solid fa-pen-ruler"></i>
+      <span>Modelado 3D<br><small>Diseño por hora</small></span>
+    </button>
+    <button data-category="nfc">
+      <i class="fa-solid fa-tag"></i>
+      <span>NFC / Llaveros<br><small>Por pieza</small></span>
+    </button>
+    <button data-category="velas">
+      <i class="fa-solid fa-fire"></i>
+      <span>Velas<br><small>Artesanales</small></span>
+    </button>
+    <button data-category="clickers">
+      <i class="fa-solid fa-gamepad"></i>
+      <span>Clickers<br><small>Impresos + resina</small></span>
+    </button>
+    <button data-category="empaque">
+      <i class="fa-solid fa-box"></i>
+      <span>Empaque / Envío<br><small>Extra por pieza</small></span>
+    </button>
+    <button data-category="molde">
+      <i class="fa-solid fa-shapes"></i>
+      <span>Molde<br><small>Silicona / yeso</small></span>
+    </button>
+  </div>
+
+  <div id="panelImpresion">
+
+  <!-- Selector de impresora -->
+  <div class="printer-buttons" id="printerButtons">
+    <button data-printer="creality" class="active">
+      <i class="fa-solid fa-print"></i>
+      <span>Creality Hi<br><small>Filamento (FDM)</small></span>
+    </button>
+    <button data-printer="photon">
+      <i class="fa-solid fa-flask"></i>
+      <span>Anycubic Photon Mono 4<br><small>Resina (LCD/MSLA)</small></span>
+    </button>
+  </div>
+
+  <div class="grid-container">
+
+    <!-- Gastos Fijos -->
+    <div class="section">
+      <h2><i class="fa-solid fa-coins"></i> Gastos Fijos</h2>
+
+      <label>Precio de la impresora (COP $): <input type="number" id="precioImpresora" /></label>
+      <label>Vida útil de la impresora (horas): <input type="number" id="vidaUtilHoras" /></label>
+      <label>Consumo real (kW): <input type="number" step="0.001" id="consumoKW" /></label>
+      <label>Precio energía (COP $/kWh): <input type="number" id="precioEnergiaKwh" /></label>
+
+      <label>Arriendo mensual del taller (COP $): <input type="number" id="arriendoMensual" value="800000" /></label>
+      <label>Internet mensual (COP $): <input type="number" id="internetMensual" value="135000" /></label>
+      <label>Horas de uso del taller al mes: <input type="number" id="horasOperativasMes" value="200" /></label>
+      <span class="field-hint">Con esto se prorratean arriendo e internet por hora de impresión real.</span>
+
+      <label id="labelPrecioMaterial">Precio filamento por KG (COP $): <input type="number" id="precioMaterial" /></label>
+      <label>Mano de obra por hora (COP $): <input type="number" id="precioHoraPersonal" value="6000" /></label>
+      <label>% Desperdicio / margen de riesgo (fallos, repuestos): <input type="number" id="pctDesperdicio" value="80" /></label>
+      <label>Precio acrílico 30ml (COP $): <input type="number" id="precioAcrilico30ml" value="5000" /></label>
+    </div>
+
+    <!-- Pieza -->
+    <div class="section">
+      <h2><i class="fa-solid fa-cube"></i> Pieza</h2>
+
+      <label>Nombre / referencia de la pieza: <input type="text" id="nombrePieza" placeholder="Ej: Llavero logo GHALI LAB" /></label>
+
+      <label>Tipo de material:
+        <select id="tipoMaterial" class="select-material"></select>
+      </label>
+
+      <label id="labelCantidadMaterial">Gramos de filamento: <input type="number" id="cantidadMaterial" value="95" /></label>
+
+      <label>
+        Tiempo de impresión:
+        <div class="tiempo">
+          <div>
+            <small>Horas</small>
+            <input type="number" id="horasImpresion" value="0" min="0" />
+          </div>
+          <div>
+            <small>Minutos</small>
+            <input type="number" id="minutosImpresion" value="0" min="0" max="59" />
+          </div>
+        </div>
+      </label>
+
+      <h2 style="margin-top: 1.5rem;"><i class="fa-solid fa-paint-roller"></i> Postprocesado / acabados</h2>
+      <label>Minutos lijando: <input type="number" id="minutosLijado" value="0" /></label>
+      <label>Minutos pintando / lavado + curado: <input type="number" id="minutosPintando" value="0" /></label>
+      <label>Acrílico usado (ml): <input type="number" id="mlAcrilico" value="0" /></label>
+      <label>Otros insumos de acabado (COP $): <input type="number" id="extrasFijos" value="2000" /></label>
+    </div>
+
+    <!-- Ganancia -->
+    <div class="section">
+      <h2><i class="fa-solid fa-chart-line"></i> Ganancia</h2>
+      <label>Multiplicador de ganancia: <input type="number" step="0.1" id="gananciaMultiplicador" value="2.5" /></label>
+      <label>% IVA a aplicar (0 si no aplica): <input type="number" id="ivaPct" value="0" /></label>
+      <div class="ganancia-note">
+        <div class="note-title" style="color:#F40C5A; font-weight:bold; margin-bottom:4px;">Referencias de multiplicador:</div>
+        Piezas grandes / al por mayor → x1.8 – x2<br>
+        Precio minorista estándar → x2.5 – x3<br>
+        Llaveros / piezas pequeñas y detalladas → x3.5 – x4
+      </div>
+    </div>
+  </div>
+
+  <button id="calcularBtn" onclick="calcular()">Calcular precio de la pieza</button>
+
+  <div class="result" id="resultados"></div>
+
+  </div><!-- /panelImpresion -->
+
+  <!-- Panel genérico: Modelado 3D, NFC, Velas, Clickers, Empaque, Molde -->
+  <div id="panelGenerico" style="display:none;">
+    <div class="grid-container">
+
+      <!-- Materiales -->
+      <div class="section">
+        <h2><i class="fa-solid fa-boxes-stacked"></i> Materiales</h2>
+        <div class="material-row-labels">
+          <span>Material</span><span>Precio compra $</span><span>Uds. por compra</span><span>Uds. usadas/pieza</span><span></span>
+        </div>
+        <div id="materialesTabla"></div>
+        <button type="button" id="addMaterialBtn" class="btn-add-material" onclick="agregarMaterial()">+ Agregar material</button>
+        <div class="ganancia-note" style="margin-top:12px;">
+          Costo por pieza de cada material = Precio de compra ÷ Unidades por compra × Unidades usadas por pieza.
+        </div>
+
+        <!-- Mini calculadora de proporciones (solo visible en categoría Molde) -->
+        <div class="molde-proporciones" id="moldeProporciones" style="display:none;">
+          <h3><i class="fa-solid fa-flask"></i> Calculadora de proporciones para moldes</h3>
+
+          <div class="molde-fila">
+            <label>Silicona líquida (ml): <input type="number" id="moldeSiliconaMl" value="280" oninput="calcularProporcionesMolde()" /></label>
+            <label>% Catalizador: <input type="number" id="moldeCatalizadorPct" value="4" oninput="calcularProporcionesMolde()" /></label>
+            <div class="molde-resultado" id="moldeResultadoCatalizador">0 ml</div>
+          </div>
+
+          <div class="molde-fila">
+            <label>Yeso / escayola (g): <input type="number" id="moldeYesoG" value="500" oninput="calcularProporcionesMolde()" /></label>
+            <label>Ratio agua/yeso: <input type="number" step="0.01" id="moldeRatioAgua" value="0.45" oninput="calcularProporcionesMolde()" /></label>
+            <div class="molde-resultado" id="moldeResultadoAgua">0 ml</div>
+          </div>
+
+          <div class="field-hint">
+            Estos valores son solo una guía de proporciones para ayudarte a llenar la tabla de materiales de arriba (no se guardan en el Excel).
+          </div>
+        </div>
+      </div>
+
+      <!-- Pieza / mano de obra / tiempo -->
+      <div class="section">
+        <h2><i class="fa-solid fa-cube"></i> Pieza y mano de obra</h2>
+        <label>Nombre / referencia de la pieza: <input type="text" id="genPieza" placeholder="Ej: Vela lavanda 200g" /></label>
+        <label>Cantidad de piezas en este lote: <input type="number" id="genCantidadPiezas" value="1" min="1" /></label>
+        <label>Minutos de mano de obra por pieza: <input type="number" id="genMinutosManoObra" value="0" /></label>
+        <label>Tarifa mano de obra por hora (COP $): <input type="number" id="genTarifaHora" value="6000" /></label>
+
+        <label id="labelGenHoras">Horas de proceso (impresión / secado / curado): <input type="number" id="genHorasProceso" value="0" min="0" /></label>
+        <label id="labelGenMinutos">Minutos de proceso: <input type="number" id="genMinutosProceso" value="0" min="0" max="59" /></label>
+
+        <h2 style="margin-top: 1.5rem;"><i class="fa-solid fa-house"></i> Fijos prorateados (opcional)</h2>
+        <label>Arriendo mensual (COP $): <input type="number" id="genArriendoMensual" value="800000" /></label>
+        <label>Internet mensual (COP $): <input type="number" id="genInternetMensual" value="135000" /></label>
+        <label>Horas operativas al mes: <input type="number" id="genHorasOperativasMes" value="200" /></label>
+        <label>Horas del taller dedicadas a este lote: <input type="number" step="0.1" id="genHorasLote" value="0" /></label>
+        <span class="field-hint">Se prorratea (arriendo + internet) por hora y se reparte entre las piezas del lote.</span>
+        <label>Acabados extra (COP $, por pieza): <input type="number" id="genAcabadosExtra" value="0" /></label>
+      </div>
+
+      <!-- Ganancia -->
+      <div class="section">
+        <h2><i class="fa-solid fa-chart-line"></i> Ganancia</h2>
+        <label>Multiplicador de ganancia: <input type="number" step="0.1" id="genGanancia" value="2.5" /></label>
+        <label>% IVA a aplicar (0 si no aplica): <input type="number" id="genIva" value="0" /></label>
+        <div class="ganancia-note">
+          <div class="note-title" style="color:#F40C5A; font-weight:bold; margin-bottom:4px;">Referencias de multiplicador:</div>
+          Piezas grandes / al por mayor → x1.8 – x2<br>
+          Precio minorista estándar → x2.5 – x3<br>
+          Llaveros / piezas pequeñas y detalladas → x3.5 – x4
+        </div>
+      </div>
+    </div>
+
+    <button id="calcularGenBtn" onclick="calcularGenerico()">Calcular precio de la pieza</button>
+
+    <div class="result" id="resultadosGen"></div>
+  </div><!-- /panelGenerico -->
+
+  <!-- Selector + tabla de monedas -->
+  <div class="currency-buttons" id="currencyButtons" style="margin-top: 2rem;">
+    <button data-currency="COP" class="active">COP $</button>
+    <button data-currency="USD">USD US$</button>
+    <button data-currency="EUR">EUR €</button>
+    <button data-currency="MXN">MXN $</button>
+  </div>
+
+  <div class="currency-result-grid" id="currencyGrid"></div>
+  <p class="rates-note" id="ratesNote">Cargando tasas de cambio...</p>
+
+  <button id="guardarBtn" class="btn-guardar" onclick="guardarCotizacion()">💾 Guardar esta cotización en mis registros</button>
+  <p class="guardar-status" id="guardarStatus"></p>
+</div>
+<!-- Section Calculate End -->
+
+<script>
+    // ============================================
+    // ACCESO — protección básica del lado del cliente
+    // ============================================
+    // 1) Genera el hash de tu contraseña UNA VEZ desde la consola del navegador (F12):
+    //
+    //    async function h(p){const b=await crypto.subtle.digest('SHA-256', new TextEncoder().encode(p));
+    //      return [...new Uint8Array(b)].map(x=>x.toString(16).padStart(2,'0')).join('')}
+    //    h('tuContraseñaSecreta').then(console.log)
+    //
+    // 2) Copia el resultado (una cadena larga de letras y números) y pégalo abajo,
+    //    reemplazando el texto entre comillas.
+    const AUTH_HASH_SHA256 = "PEGA_AQUI_EL_HASH_DE_TU_CONTRASEÑA";
+
+    async function sha256Hex(texto) {
+      const enc = new TextEncoder().encode(texto);
+      const buf = await crypto.subtle.digest('SHA-256', enc);
+      return Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2, '0')).join('');
+    }
+
+    async function verificarAcceso() {
+      const input = document.getElementById('authPasswordInput');
+      const hash = await sha256Hex(input.value);
+      if (hash === AUTH_HASH_SHA256) {
+        sessionStorage.setItem('ghali_calc_auth', 'ok');
+        document.getElementById('authGate').style.display = 'none';
+        document.getElementById('calcWrapperContent').style.display = '';
+      } else {
+        document.getElementById('authError').textContent = 'Contraseña incorrecta.';
+        input.value = '';
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const passInput = document.getElementById('authPasswordInput');
+      passInput.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') verificarAcceso();
+      });
+
+      if (sessionStorage.getItem('ghali_calc_auth') === 'ok') {
+        document.getElementById('authGate').style.display = 'none';
+        document.getElementById('calcWrapperContent').style.display = '';
+      }
+    });
+
+    // ============================================
+    // GOOGLE SHEETS — pega aquí la URL de tu Apps Script (termina en /exec)
+    // Instrucciones completas en "google_apps_script_ghali_lab.gs"
+    // ============================================
+    const GOOGLE_SHEET_WEBHOOK_URL = "PEGA_AQUI_TU_URL_DE_APPS_SCRIPT";
+
+    // Debe ser EXACTAMENTE el mismo texto que pongas en SECRET_TOKEN dentro
+    // del Apps Script. Es una segunda capa de protección: aunque alguien
+    // consiga tu URL de Apps Script, sin este token sus envíos son rechazados.
+    const SAVE_TOKEN = "PEGA_AQUI_TU_TOKEN_SECRETO";
+
+    // ============================================
+    // FEE POR PAGO EN DIVISA EXTRANJERA
+    // ============================================
+    const FEE_DIVISA_EXTRANJERA = 0.10;
+
+    // ============================================
+    // TASAS DE CAMBIO — se traen en vivo desde una API gratuita
+    // ============================================
+    const TASAS_RESPALDO = {
+      COP: 1,
+      USD: 3249,
+      EUR: 3709,
+      MXN: 186
+    };
+
+    let TASAS = { ...TASAS_RESPALDO };
+
+    const SIMBOLOS = { COP: 'COP $', USD: 'USD US$', EUR: 'EUR €', MXN: 'MXN $' };
+
+    // ============================================
+    // PRESETS DE IMPRESORA
+    // ============================================
+    const IMPRESORAS = {
+      creality: {
+        nombre: 'Creality Hi',
+        precioImpresora: 2980000,
+        vidaUtilHoras: 20000,
+        consumoKW: 1.17,
+        precioEnergiaKwh: 817,
+        precioMaterial: 100000,
+        materialLabel: 'Precio filamento por KG (COP $):',
+        cantidadLabel: 'Gramos de filamento:',
+        materiales: ['PLA', 'PETG', 'ABS', 'TPU', 'ASA', 'Nylon', 'Otro']
+      },
+      photon: {
+        nombre: 'Anycubic Photon Mono 4',
+        precioImpresora: 1400000,
+        vidaUtilHoras: 30000,
+        consumoKW: 0.054,
+        precioEnergiaKwh: 891,
+        precioMaterial: 100000,
+        materialLabel: 'Precio resina por LITRO (COP $):',
+        cantidadLabel: 'Mililitros de resina:',
+        materiales: ['Resina Estándar', 'Resina Tough/Dura', 'Resina Flexible', 'Resina Lavable en agua', 'Resina Alta temperatura', 'Otro']
+      }
+    };
+
+    // ============================================
+    // PRESETS PARA CATEGORÍAS GENÉRICAS
+    // ============================================
+    const PRESETS_GENERICOS = {
+      modelado: {
+        label: 'Modelado 3D',
+        materiales: [],
+        tarifaHora: 30000,
+        minutosManoObra: 60,
+        cantidadPiezas: 1,
+        acabadosExtra: 0,
+        ganancia: 3,
+        horasProceso: 0,
+        minutosProceso: 0,
+        placeholderPieza: 'Ej: Modelado logo personalizado'
+      },
+      nfc: {
+        label: 'NFC / Llaveros',
+        materiales: [
+          { nombre: 'Tag NFC', precioCompra: 80000, unidades: 30, cantidadUsada: 1 },
+          { nombre: 'Resina de sellado', precioCompra: 40000, unidades: 30, cantidadUsada: 1 },
+          { nombre: 'Argolla de llavero', precioCompra: 40000, unidades: 100, cantidadUsada: 1 }
+        ],
+        tarifaHora: 6000,
+        minutosManoObra: 10,
+        cantidadPiezas: 1,
+        acabadosExtra: 0,
+        ganancia: 2.5,
+        horasProceso: 0,
+        minutosProceso: 0,
+        placeholderPieza: 'Ej: Llavero NFC redondo'
+      },
+      velas: {
+        label: 'Velas',
+        materiales: [
+          { nombre: 'Cera de soya', precioCompra: 40000, unidades: 40, cantidadUsada: 1 },
+          { nombre: 'Pabilo', precioCompra: 50000, unidades: 40, cantidadUsada: 1 },
+          { nombre: 'Aceite esencial', precioCompra: 41000, unidades: 40, cantidadUsada: 1 },
+          { nombre: 'Caucho para moldes (amortización)', precioCompra: 50000, unidades: 40, cantidadUsada: 1 },
+          { nombre: 'Colorante para vela', precioCompra: 15000, unidades: 40, cantidadUsada: 1 },
+          { nombre: 'Cemento', precioCompra: 20000, unidades: 40, cantidadUsada: 1 },
+          { nombre: 'Marmolina', precioCompra: 30000, unidades: 40, cantidadUsada: 1 },
+          { nombre: 'Herramientas (amortización)', precioCompra: 250000, unidades: 40, cantidadUsada: 1 },
+          { nombre: 'Empaque', precioCompra: 50000, unidades: 40, cantidadUsada: 1 },
+          { nombre: 'Etiqueta y diseño', precioCompra: 125000, unidades: 40, cantidadUsada: 1 }
+        ],
+        tarifaHora: 6000,
+        minutosManoObra: 20,
+        cantidadPiezas: 1,
+        acabadosExtra: 25,
+        ganancia: 2.5,
+        horasProceso: 2,
+        minutosProceso: 0,
+        placeholderPieza: 'Ej: Vela lavanda 200g'
+      },
+      clickers: {
+        label: 'Clickers',
+        materiales: [
+          { nombre: 'Impresión 3D (pieza base)', precioCompra: 34402, unidades: 1, cantidadUsada: 1 },
+          { nombre: 'Switch', precioCompra: 17000, unidades: 30, cantidadUsada: 1 },
+          { nombre: 'Argolla', precioCompra: 7000, unidades: 30, cantidadUsada: 1 },
+          { nombre: 'Resina UV', precioCompra: 80000, unidades: 900, cantidadUsada: 1 }
+        ],
+        tarifaHora: 6000,
+        minutosManoObra: 10,
+        cantidadPiezas: 1,
+        acabadosExtra: 0,
+        ganancia: 2.8,
+        horasProceso: 0,
+        minutosProceso: 0,
+        placeholderPieza: 'Ej: Clicker fidget redondo'
+      },
+      empaque: {
+        label: 'Empaque / Envío',
+        materiales: [
+          { nombre: 'Sobre burbuja', precioCompra: 60000, unidades: 100, cantidadUsada: 1 },
+          { nombre: 'Bolsa sellable', precioCompra: 40000, unidades: 100, cantidadUsada: 1 },
+          { nombre: 'Etiqueta', precioCompra: 100000, unidades: 100, cantidadUsada: 1 }
+        ],
+        tarifaHora: 0,
+        minutosManoObra: 0,
+        cantidadPiezas: 1,
+        acabadosExtra: 0,
+        ganancia: 1.3,
+        horasProceso: 0,
+        minutosProceso: 0,
+        placeholderPieza: 'Ej: Envío nacional caja mediana'
+      },
+      molde: {
+        label: 'Molde (silicona / yeso)',
+        materiales: [
+          { nombre: 'Silicona líquida', precioCompra: 180000, unidades: 1000, cantidadUsada: 250 },
+          { nombre: 'Catalizador', precioCompra: 20000, unidades: 200, cantidadUsada: 10 },
+          { nombre: 'Yeso / escayola', precioCompra: 15000, unidades: 1000, cantidadUsada: 300 },
+          { nombre: 'Vaselina / desmoldante', precioCompra: 10000, unidades: 200, cantidadUsada: 20 },
+          { nombre: 'Caja / contenedor (amortización)', precioCompra: 8000, unidades: 1, cantidadUsada: 1 }
+        ],
+        tarifaHora: 6000,
+        minutosManoObra: 30,
+        cantidadPiezas: 1,
+        acabadosExtra: 0,
+        ganancia: 2.2,
+        horasProceso: 24,
+        minutosProceso: 0,
+        placeholderPieza: 'Ej: Molde de silicona para llavero'
+      }
+    };
+
+    let impresoraActual = 'creality';
+    let monedaActual = 'COP';
+    let categoriaActual = 'impresion';
+    let ultimoResultadoCOP = null;
+    let ultimoDesglose = null;
+    let materialesActuales = [];
+
+    document.addEventListener('DOMContentLoaded', () => {
+      aplicarPreset('creality');
+      actualizarTasas();
+      calcular();
+    });
+
+    // ---- OBTENER TASAS DE CAMBIO EN VIVO ----
+    async function actualizarTasas() {
+      const cacheKey = 'ghali_tasas_cambio';
+      const cacheHoras = 12;
+
+      try {
+        const cache = JSON.parse(localStorage.getItem(cacheKey) || 'null');
+        if (cache && (Date.now() - cache.timestamp) < cacheHoras * 60 * 60 * 1000) {
+          TASAS = cache.tasas;
+          mostrarEstadoTasas('cache', cache.timestamp);
+          renderMonedas();
+          return;
+        }
+
+        const res = await fetch('https://open.er-api.com/v6/latest/COP');
+        const data = await res.json();
+
+        if (data.result === 'success' && data.rates.USD && data.rates.EUR && data.rates.MXN) {
+          TASAS = {
+            COP: 1,
+            USD: 1 / data.rates.USD,
+            EUR: 1 / data.rates.EUR,
+            MXN: 1 / data.rates.MXN
+          };
+          localStorage.setItem(cacheKey, JSON.stringify({ tasas: TASAS, timestamp: Date.now() }));
+          mostrarEstadoTasas('vivo', Date.now());
+        } else {
+          throw new Error('Respuesta inesperada de la API');
+        }
+      } catch (err) {
+        console.warn('No se pudo obtener el tipo de cambio en vivo, usando valores de referencia.', err);
+        TASAS = { ...TASAS_RESPALDO };
+        mostrarEstadoTasas('respaldo', null);
+      }
+
+      renderMonedas();
+    }
+
+    function mostrarEstadoTasas(origen, timestamp) {
+      const nota = document.getElementById('ratesNote');
+      const fecha = timestamp ? new Date(timestamp).toLocaleString('es-CO', { dateStyle: 'medium', timeStyle: 'short' }) : null;
+
+      const textos = {
+        vivo: `Tasas actualizadas en vivo el ${fecha}. 1 USD ≈ $${TASAS.USD.toLocaleString('es-CO', {maximumFractionDigits:0})} COP · 1 EUR ≈ $${TASAS.EUR.toLocaleString('es-CO', {maximumFractionDigits:0})} COP · 1 MXN ≈ $${TASAS.MXN.toLocaleString('es-CO', {maximumFractionDigits:0})} COP.`,
+        cache: `Tasas guardadas el ${fecha} (se renuevan cada 12h). 1 USD ≈ $${TASAS.USD.toLocaleString('es-CO', {maximumFractionDigits:0})} COP · 1 EUR ≈ $${TASAS.EUR.toLocaleString('es-CO', {maximumFractionDigits:0})} COP · 1 MXN ≈ $${TASAS.MXN.toLocaleString('es-CO', {maximumFractionDigits:0})} COP.`,
+        respaldo: `No se pudo conectar al servicio de tasas — usando valores de referencia. 1 USD ≈ $${TASAS.USD.toLocaleString('es-CO')} COP · 1 EUR ≈ $${TASAS.EUR.toLocaleString('es-CO')} COP · 1 MXN ≈ $${TASAS.MXN.toLocaleString('es-CO')} COP.`
+      };
+
+      nota.textContent = textos[origen] + ' Los precios en USD, EUR y MXN incluyen un ' + (FEE_DIVISA_EXTRANJERA*100).toFixed(0) + '% adicional por cambio de divisa, comisiones y otros impuestos. (Solo referencia visual, no se guarda en el Excel).';
+    }
+
+    // ---- SELECCIÓN DE IMPRESORA ----
+    document.querySelectorAll('#printerButtons button').forEach(btn => {
+      btn.addEventListener('click', function () {
+        document.querySelectorAll('#printerButtons button').forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+        impresoraActual = this.getAttribute('data-printer');
+        aplicarPreset(impresoraActual);
+        calcular();
+      });
+    });
+
+    function aplicarPreset(key) {
+      const p = IMPRESORAS[key];
+      document.getElementById('precioImpresora').value = p.precioImpresora;
+      document.getElementById('vidaUtilHoras').value = p.vidaUtilHoras;
+      document.getElementById('consumoKW').value = p.consumoKW;
+      document.getElementById('precioEnergiaKwh').value = p.precioEnergiaKwh;
+      document.getElementById('precioMaterial').value = p.precioMaterial;
+      document.getElementById('labelPrecioMaterial').childNodes[0].nodeValue = p.materialLabel;
+      document.getElementById('labelCantidadMaterial').childNodes[0].nodeValue = p.cantidadLabel;
+
+      const select = document.getElementById('tipoMaterial');
+      select.innerHTML = '';
+      p.materiales.forEach(m => {
+        const opt = document.createElement('option');
+        opt.value = m;
+        opt.textContent = m;
+        select.appendChild(opt);
+      });
+    }
+
+    // ---- SELECCIÓN DE CATEGORÍA DE PRODUCTO ----
+    document.querySelectorAll('#categoryButtons button').forEach(btn => {
+      btn.addEventListener('click', function () {
+        document.querySelectorAll('#categoryButtons button').forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+        categoriaActual = this.getAttribute('data-category');
+
+        const panelImpresion = document.getElementById('panelImpresion');
+        const panelGenerico = document.getElementById('panelGenerico');
+        const moldeProporciones = document.getElementById('moldeProporciones');
+
+        if (categoriaActual === 'impresion') {
+          panelImpresion.style.display = '';
+          panelGenerico.style.display = 'none';
+          calcular();
+        } else {
+          panelImpresion.style.display = 'none';
+          panelGenerico.style.display = '';
+          moldeProporciones.style.display = (categoriaActual === 'molde') ? '' : 'none';
+          cargarPresetGenerico(categoriaActual);
+          if (categoriaActual === 'molde') calcularProporcionesMolde();
+          calcularGenerico();
+        }
+      });
+    });
+
+    // ---- CARGAR PRESET DE UNA CATEGORÍA GENÉRICA ----
+    function cargarPresetGenerico(categoria) {
+      const preset = PRESETS_GENERICOS[categoria];
+      if (!preset) return;
+
+      materialesActuales = preset.materiales.map(m => ({ ...m }));
+      renderMaterialesTabla();
+
+      document.getElementById('genPieza').value = '';
+      document.getElementById('genPieza').placeholder = preset.placeholderPieza || 'Nombre de la pieza';
+      document.getElementById('genCantidadPiezas').value = preset.cantidadPiezas;
+      document.getElementById('genMinutosManoObra').value = preset.minutosManoObra;
+      document.getElementById('genTarifaHora').value = preset.tarifaHora;
+      document.getElementById('genAcabadosExtra').value = preset.acabadosExtra;
+      document.getElementById('genGanancia').value = preset.ganancia;
+      document.getElementById('genHorasProceso').value = preset.horasProceso;
+      document.getElementById('genMinutosProceso').value = preset.minutosProceso;
+      document.getElementById('genHorasLote').value = 0;
+      document.getElementById('genIva').value = 0;
+
+      const labelHoras = document.getElementById('labelGenHoras');
+      if (categoria === 'molde') {
+        labelHoras.childNodes[0].nodeValue = 'Horas de curado / secado del molde: ';
+      } else {
+        labelHoras.childNodes[0].nodeValue = 'Horas de proceso (impresión / secado / curado): ';
+      }
+    }
+
+    // ---- MINI CALCULADORA DE PROPORCIONES PARA MOLDES (solo referencia visual) ----
+    function calcularProporcionesMolde() {
+      const silicona = parseFloat(document.getElementById('moldeSiliconaMl').value) || 0;
+      const catalizadorPct = parseFloat(document.getElementById('moldeCatalizadorPct').value) || 0;
+      const yeso = parseFloat(document.getElementById('moldeYesoG').value) || 0;
+      const ratioAgua = parseFloat(document.getElementById('moldeRatioAgua').value) || 0;
+
+      const catalizadorMl = silicona * (catalizadorPct / 100);
+      const aguaMl = yeso * ratioAgua;
+
+      document.getElementById('moldeResultadoCatalizador').textContent = 'Catalizador: ' + catalizadorMl.toFixed(1) + ' ml';
+      document.getElementById('moldeResultadoAgua').textContent = 'Agua: ' + aguaMl.toFixed(1) + ' ml';
+    }
+
+    // ---- SELECCIÓN DE MONEDA ----
+    document.querySelectorAll('#currencyButtons button').forEach(btn => {
+      btn.addEventListener('click', function () {
+        document.querySelectorAll('#currencyButtons button').forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+        monedaActual = this.getAttribute('data-currency');
+        renderMonedas();
+      });
+    });
+
+    // ---- LEER DATOS COMUNES DE LA COTIZACIÓN ----
+    function leerComunes() {
+      return {
+        cliente: document.getElementById('comunCliente').value || '',
+        descripcion: document.getElementById('comunDescripcion').value || '',
+        envio: parseFloat(document.getElementById('comunEnvio').value) || 0,
+        abono1: parseFloat(document.getElementById('comunAbono1').value) || 0,
+        abono2: parseFloat(document.getElementById('comunAbono2').value) || 0
+      };
+    }
+
+    // ---- CONSTRUIR EL DESGLOSE FINAL (usado por Impresión y por el motor genérico) ----
+    // Devuelve los totales y deja listo ultimoDesglose / ultimoResultadoCOP para guardar y convertir moneda.
+    function construirResultado(params) {
+      const comunes = leerComunes();
+
+      const costoTotal = params.costoSinAcabados + params.acabados + comunes.envio;
+      const costoReal = costoTotal;
+      const precioVentaBase = costoTotal * params.ganancia;
+      const precioVenta = precioVentaBase * (1 + params.ivaPct);
+      const resta = precioVenta - comunes.abono1 - comunes.abono2;
+
+      ultimoResultadoCOP = precioVenta;
+      ultimoDesglose = {
+        fecha: new Date().toISOString(),
+        descripcion: comunes.descripcion,
+        queSeUso: params.queSeUso,
+        categoria: params.categoria,
+        pieza: params.pieza,
+        envio: comunes.envio,
+        acabados: Math.round(params.acabados),
+        cliente: comunes.cliente,
+        costoSinAcabados: Math.round(params.costoSinAcabados),
+        costoTotal: Math.round(costoTotal),
+        costoReal: Math.round(costoReal),
+        precioVenta: Math.round(precioVenta),
+        abono1: comunes.abono1,
+        abono2: comunes.abono2,
+        resta: Math.round(resta),
+        material: params.material,
+        horasImprimiendo: params.horasImprimiendo || 0,
+        minutosImprimiendo: params.minutosImprimiendo || 0
+      };
+
+      return {
+        costoTotal, costoReal, precioVenta, precioVentaBase, resta,
+        ivaMonto: precioVenta - precioVentaBase
+      };
+    }
+
+    // ---- CÁLCULO PRINCIPAL: IMPRESIÓN 3D ----
+    function calcular() {
+      const nombrePieza = document.getElementById('nombrePieza').value || '(sin nombre)';
+
+      const precioImpresora = parseFloat(document.getElementById('precioImpresora').value) || 0;
+      const vidaUtilHoras = parseFloat(document.getElementById('vidaUtilHoras').value) || 1;
+      const consumoKW = parseFloat(document.getElementById('consumoKW').value) || 0;
+      const precioEnergiaKwh = parseFloat(document.getElementById('precioEnergiaKwh').value) || 0;
+
+      const arriendoMensual = parseFloat(document.getElementById('arriendoMensual').value) || 0;
+      const internetMensual = parseFloat(document.getElementById('internetMensual').value) || 0;
+      const horasOperativasMes = parseFloat(document.getElementById('horasOperativasMes').value) || 1;
+
+      const precioMaterial = parseFloat(document.getElementById('precioMaterial').value) || 0;
+      const precioHoraPersonal = parseFloat(document.getElementById('precioHoraPersonal').value) || 0;
+      const pctDesperdicio = (parseFloat(document.getElementById('pctDesperdicio').value) || 0) / 100;
+      const precioAcrilico30ml = parseFloat(document.getElementById('precioAcrilico30ml').value) || 0;
+
+      const tipoMaterial = document.getElementById('tipoMaterial').value;
+      const cantidadMaterial = parseFloat(document.getElementById('cantidadMaterial').value) || 0;
+      const horasImpresion = parseFloat(document.getElementById('horasImpresion').value) || 0;
+      const minutosImpresion = parseFloat(document.getElementById('minutosImpresion').value) || 0;
+      const tiempoHoras = horasImpresion + (minutosImpresion / 60);
+
+      const minutosLijado = parseFloat(document.getElementById('minutosLijado').value) || 0;
+      const minutosPintando = parseFloat(document.getElementById('minutosPintando').value) || 0;
+      const mlAcrilico = parseFloat(document.getElementById('mlAcrilico').value) || 0;
+      const extrasFijos = parseFloat(document.getElementById('extrasFijos').value) || 0;
+
+      const gananciaMultiplicador = parseFloat(document.getElementById('gananciaMultiplicador').value) || 1;
+      const ivaPct = (parseFloat(document.getElementById('ivaPct').value) || 0) / 100;
+
+      // ---- Costos "sin acabados" ----
+      const costoMaterial = (precioMaterial / 1000) * cantidadMaterial;
+      const costoEnergia = consumoKW * precioEnergiaKwh * tiempoHoras;
+      const costoDesperdicio = (costoMaterial + costoEnergia) * pctDesperdicio;
+      const costoAmortizacion = (precioImpresora / vidaUtilHoras) * tiempoHoras;
+      const costoArriendoInternet = ((arriendoMensual + internetMensual) / horasOperativasMes) * tiempoHoras;
+      const costoSinAcabados = costoMaterial + costoEnergia + costoDesperdicio + costoAmortizacion + costoArriendoInternet;
+
+      // ---- Costos de "acabados" ----
+      const costoManoObra = ((minutosLijado + minutosPintando) / 60) * precioHoraPersonal;
+      const costoAcrilico = (precioAcrilico30ml / 30) * mlAcrilico;
+      const acabados = costoManoObra + costoAcrilico + extrasFijos;
+
+      const r = construirResultado({
+        categoria: 'Impresión 3D',
+        pieza: nombrePieza,
+        queSeUso: tipoMaterial + ' en ' + IMPRESORAS[impresoraActual].nombre,
+        material: tipoMaterial,
+        costoSinAcabados: costoSinAcabados,
+        acabados: acabados,
+        horasImprimiendo: horasImpresion,
+        minutosImprimiendo: minutosImpresion,
+        ganancia: gananciaMultiplicador,
+        ivaPct: ivaPct
+      });
+
+      document.getElementById('resultados').innerHTML = `
+        <div class="result-line"><span>Material (${tipoMaterial}):</span><span>COP $ ${costoMaterial.toFixed(0)}</span></div>
+        <div class="result-line"><span>Energía:</span><span>COP $ ${costoEnergia.toFixed(0)}</span></div>
+        <div class="result-line"><span>Desperdicio / riesgo (${(pctDesperdicio*100).toFixed(0)}%):</span><span>COP $ ${costoDesperdicio.toFixed(0)}</span></div>
+        <div class="result-line"><span>Amortización de la impresora:</span><span>COP $ ${costoAmortizacion.toFixed(0)}</span></div>
+        <div class="result-line"><span>Arriendo + Internet (prorrateado):</span><span>COP $ ${costoArriendoInternet.toFixed(0)}</span></div>
+        <div class="result-line"><span>Costo sin acabados:</span><span>COP $ ${costoSinAcabados.toFixed(0)}</span></div>
+        <div class="result-line"><span>Mano de obra (lijado/pintado):</span><span>COP $ ${costoManoObra.toFixed(0)}</span></div>
+        <div class="result-line"><span>Acrílico:</span><span>COP $ ${costoAcrilico.toFixed(0)}</span></div>
+        <div class="result-line"><span>Otros insumos de acabado:</span><span>COP $ ${extrasFijos.toFixed(0)}</span></div>
+        <div class="result-line"><span>Acabados (total):</span><span>COP $ ${acabados.toFixed(0)}</span></div>
+        <div class="result-line"><span>Envío:</span><span>COP $ ${ultimoDesglose.envio.toFixed(0)}</span></div>
+        <div class="result-line highlight"><span>Costo total real:</span><span>COP $ ${r.costoTotal.toFixed(0)}</span></div>
+        ${ivaPct > 0 ? `<div class="result-line"><span>IVA (${(ivaPct*100).toFixed(0)}%):</span><span>COP $ ${r.ivaMonto.toFixed(0)}</span></div>` : ''}
+        <div class="result-line total"><span>PRECIO SUGERIDO DE VENTA:</span><span>COP $ ${r.precioVenta.toFixed(0)}</span></div>
+        <div class="result-line"><span>Abonos recibidos:</span><span>COP $ ${(ultimoDesglose.abono1 + ultimoDesglose.abono2).toFixed(0)}</span></div>
+        <div class="result-line highlight"><span>Resta por pagar:</span><span>COP $ ${r.resta.toFixed(0)}</span></div>
+      `;
+
+      document.getElementById('guardarStatus').textContent = '';
+      document.getElementById('guardarStatus').className = 'guardar-status';
+
+      renderMonedas();
+    }
+
+    // ---- TABLA DE MATERIALES DINÁMICA ----
+    function renderMaterialesTabla() {
+      const cont = document.getElementById('materialesTabla');
+      cont.innerHTML = '';
+
+      materialesActuales.forEach((mat, idx) => {
+        const row = document.createElement('div');
+        row.className = 'material-row';
+        row.innerHTML = `
+          <input type="text" value="${mat.nombre}" placeholder="Nombre del material" data-idx="${idx}" data-field="nombre" />
+          <input type="number" value="${mat.precioCompra}" placeholder="Precio compra" data-idx="${idx}" data-field="precioCompra" />
+          <input type="number" value="${mat.unidades}" placeholder="Uds. por compra" data-idx="${idx}" data-field="unidades" />
+          <input type="number" value="${mat.cantidadUsada}" placeholder="Uds. usadas" data-idx="${idx}" data-field="cantidadUsada" />
+          <button type="button" class="mat-remove" data-idx="${idx}">✕</button>
+        `;
+        cont.appendChild(row);
+      });
+
+      cont.querySelectorAll('input').forEach(input => {
+        input.addEventListener('input', function () {
+          const idx = parseInt(this.getAttribute('data-idx'));
+          const field = this.getAttribute('data-field');
+          materialesActuales[idx][field] = field === 'nombre' ? this.value : (parseFloat(this.value) || 0);
+        });
+      });
+
+      cont.querySelectorAll('.mat-remove').forEach(btn => {
+        btn.addEventListener('click', function () {
+          const idx = parseInt(this.getAttribute('data-idx'));
+          materialesActuales.splice(idx, 1);
+          renderMaterialesTabla();
+        });
+      });
+    }
+
+    function agregarMaterial() {
+      materialesActuales.push({ nombre: '', precioCompra: 0, unidades: 1, cantidadUsada: 1 });
+      renderMaterialesTabla();
+    }
+
+    // ---- CÁLCULO GENÉRICO (Modelado / NFC / Velas / Clickers / Empaque / Molde) ----
+    function calcularGenerico() {
+      const preset = PRESETS_GENERICOS[categoriaActual] || { label: categoriaActual };
+      const pieza = document.getElementById('genPieza').value || '(sin nombre)';
+      const cantidadPiezas = parseFloat(document.getElementById('genCantidadPiezas').value) || 1;
+      const minutosManoObra = parseFloat(document.getElementById('genMinutosManoObra').value) || 0;
+      const tarifaHora = parseFloat(document.getElementById('genTarifaHora').value) || 0;
+
+      const arriendoMensual = parseFloat(document.getElementById('genArriendoMensual').value) || 0;
+      const internetMensual = parseFloat(document.getElementById('genInternetMensual').value) || 0;
+      const horasOperativasMes = parseFloat(document.getElementById('genHorasOperativasMes').value) || 1;
+      const horasLote = parseFloat(document.getElementById('genHorasLote').value) || 0;
+      const acabadosExtra = parseFloat(document.getElementById('genAcabadosExtra').value) || 0;
+
+      const horasProceso = parseFloat(document.getElementById('genHorasProceso').value) || 0;
+      const minutosProceso = parseFloat(document.getElementById('genMinutosProceso').value) || 0;
+
+      const ganancia = parseFloat(document.getElementById('genGanancia').value) || 1;
+      const ivaPct = (parseFloat(document.getElementById('genIva').value) || 0) / 100;
+
+      // ---- Costo de materiales por pieza ----
+      let costoMateriales = 0;
+      let filasMateriales = '';
+      let nombresMateriales = [];
+      materialesActuales.forEach(mat => {
+        const unidades = mat.unidades || 1;
+        const costoUnitario = (mat.precioCompra / unidades) * mat.cantidadUsada;
+        costoMateriales += costoUnitario;
+        if (mat.nombre) {
+          nombresMateriales.push(mat.nombre);
+          filasMateriales += `<div class="result-line"><span>${mat.nombre}:</span><span>COP $ ${costoUnitario.toFixed(0)}</span></div>`;
+        }
+      });
+
+      // ---- Mano de obra por pieza ----
+      const costoManoObra = (minutosManoObra / 60) * tarifaHora;
+
+      // ---- Fijos prorateados ----
+      const costoFijosLote = ((arriendoMensual + internetMensual) / horasOperativasMes) * horasLote;
+      const costoFijosPorPieza = costoFijosLote / cantidadPiezas;
+
+      const costoSinAcabados = costoMateriales + costoManoObra + costoFijosPorPieza;
+      const materialTexto = nombresMateriales.join(', ') || '-';
+
+      const r = construirResultado({
+        categoria: preset.label || categoriaActual,
+        pieza: pieza,
+        queSeUso: materialTexto,
+        material: materialTexto,
+        costoSinAcabados: costoSinAcabados,
+        acabados: acabadosExtra,
+        horasImprimiendo: horasProceso,
+        minutosImprimiendo: minutosProceso,
+        ganancia: ganancia,
+        ivaPct: ivaPct
+      });
+
+      document.getElementById('resultadosGen').innerHTML = `
+        ${filasMateriales}
+        <div class="result-line"><span>Mano de obra:</span><span>COP $ ${costoManoObra.toFixed(0)}</span></div>
+        <div class="result-line"><span>Fijos prorateados (por pieza):</span><span>COP $ ${costoFijosPorPieza.toFixed(0)}</span></div>
+        <div class="result-line"><span>Costo sin acabados:</span><span>COP $ ${costoSinAcabados.toFixed(0)}</span></div>
+        <div class="result-line"><span>Acabados extra:</span><span>COP $ ${acabadosExtra.toFixed(0)}</span></div>
+        <div class="result-line"><span>Envío:</span><span>COP $ ${ultimoDesglose.envio.toFixed(0)}</span></div>
+        <div class="result-line highlight"><span>Costo total real:</span><span>COP $ ${r.costoTotal.toFixed(0)}</span></div>
+        ${ivaPct > 0 ? `<div class="result-line"><span>IVA (${(ivaPct*100).toFixed(0)}%):</span><span>COP $ ${r.ivaMonto.toFixed(0)}</span></div>` : ''}
+        <div class="result-line total"><span>PRECIO SUGERIDO DE VENTA:</span><span>COP $ ${r.precioVenta.toFixed(0)}</span></div>
+        <div class="result-line"><span>Abonos recibidos:</span><span>COP $ ${(ultimoDesglose.abono1 + ultimoDesglose.abono2).toFixed(0)}</span></div>
+        <div class="result-line highlight"><span>Resta por pagar:</span><span>COP $ ${r.resta.toFixed(0)}</span></div>
+      `;
+
+      document.getElementById('guardarStatus').textContent = '';
+      document.getElementById('guardarStatus').className = 'guardar-status';
+
+      renderMonedas();
+    }
+
+    // ---- RENDER TABLA / SELECTOR DE MONEDAS (solo referencia visual, no se guarda) ----
+    function renderMonedas() {
+      if (ultimoResultadoCOP === null) return;
+
+      const grid = document.getElementById('currencyGrid');
+      grid.innerHTML = '';
+
+      Object.keys(TASAS).forEach(codigo => {
+        let valorConvertido = ultimoResultadoCOP / TASAS[codigo];
+
+        if (codigo !== 'COP') {
+          valorConvertido = valorConvertido * (1 + FEE_DIVISA_EXTRANJERA);
+        }
+
+        const card = document.createElement('div');
+        card.className = 'currency-result-card' + (codigo === monedaActual ? ' active' : '');
+        card.innerHTML = `
+          <div class="curr-label">${codigo}${codigo !== 'COP' ? ' <span style="font-size:0.6rem; opacity:0.6;">(+' + (FEE_DIVISA_EXTRANJERA*100).toFixed(0) + '%)</span>' : ''}</div>
+          <div class="curr-value">${valorConvertido.toLocaleString('es-CO', { maximumFractionDigits: codigo === 'COP' ? 0 : 2 })}</div>
+        `;
+        card.addEventListener('click', () => {
+          document.querySelectorAll('#currencyButtons button').forEach(b => b.classList.remove('active'));
+          document.querySelector(`#currencyButtons button[data-currency="${codigo}"]`).classList.add('active');
+          monedaActual = codigo;
+          renderMonedas();
+        });
+        grid.appendChild(card);
+      });
+    }
+
+    // ---- GUARDAR COTIZACIÓN EN GOOGLE SHEETS ----
+    function guardarCotizacion() {
+      if (ultimoResultadoCOP === null || !ultimoDesglose) {
+        alert('Primero calcula una cotización.');
+        return;
+      }
+
+      if (!GOOGLE_SHEET_WEBHOOK_URL || GOOGLE_SHEET_WEBHOOK_URL.includes('PEGA_AQUI')) {
+        alert('Falta configurar la URL de Google Apps Script en el código. Revisa el archivo google_apps_script_ghali_lab.gs para las instrucciones.');
+        return;
+      }
+
+      const btn = document.getElementById('guardarBtn');
+      const status = document.getElementById('guardarStatus');
+      btn.disabled = true;
+      status.textContent = 'Guardando...';
+      status.className = 'guardar-status';
+
+      const payload = { ...ultimoDesglose, token: SAVE_TOKEN };
+
+      fetch(GOOGLE_SHEET_WEBHOOK_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'text/plain' },
+        body: JSON.stringify(payload)
+      })
+      .then(() => {
+        status.textContent = '✅ Cotización enviada a tus registros.';
+        status.className = 'guardar-status ok';
+      })
+      .catch(() => {
+        status.textContent = '⚠️ No se pudo enviar. Revisa tu conexión o la URL configurada.';
+        status.className = 'guardar-status error';
+      })
+      .finally(() => {
+        btn.disabled = false;
+      });
+    }
+  </script>
+
+
+
+<!-- Quotte -->
+
+  <script type='text/javascript'>
+    document.oncontextmenu = function(){return false}
+  </script>
+  
+  <!--Footer Start-->
+<section class="footerghalien">
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+
+          <!-- SEO website -->
+          <nav class="footer-links">
+            <a href="index.html">INICIO</a> |
+            <a href="shop.html">TIENDA</a> |   
+            <a href="ghalilab.html">GHALI LAB</a> |
+            <a href="services.html">SERVICIOS</a> |
+            <a href="tattoo.html">GHALIEN TATTOO</a> |       
+            <a href="aboutme.html">SOBRE MÍ</a> |   
+            <a href="paymethods.html">MÉTODOS DE PAGO</a> |                                
+          
+            <a href="utility.html">MIS REDES</a> 
+
+          </nav>
+
+          <!-- Social media -->
+          <div class="social-icons">
+            <a href="https://www.instagram.com/ghalilab" target="_blank" aria-label="Instagram">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.tiktok.com/@ghalilab" target="_blank" aria-label="TikTok">
+              <i class="fab fa-tiktok"></i>
+            </a>
+            <a href="https://www.youtube.com/@StephGhalien" target="_blank" aria-label="YouTube">
+              <i class="fab fa-youtube"></i>
+            </a> |
+            <a href="https://www.youtube.com/@Ghaliensita" target="_blank" aria-label="YouTube">
+              <i class="fab fa-youtube"></i>
+            </a>   
+            </a>
+            <a href="https://www.tiktok.com/@ghaliensita" target="_blank" aria-label="TikTok">
+              <i class="fab fa-tiktok"></i>
+            </a>             
+            <a href="https://www.instagram.com/ghaliensita" target="_blank" aria-label="Instagram">
+              <i class="fab fa-instagram"></i>
+
+        
+          </div>
+
+          <!-- Copyright -->
+          <div class="copyright-box">
+            <p class="copyright">&copy; Copyright <strong>Ghaliensita</strong>. All Rights Reserved</p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </footer>
+</section>
+  <!--Footer End-->
+
+<a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+<div id="preloader"></div>
+
+
+
+<!-- JavaScript Libraries -->
+<script src="lib/jquery/jquery.min.js"></script>
+<script src="lib/jquery/jquery-migrate.min.js"></script>
+<script src="lib/popper/popper.min.js"></script>
+<script src="lib/bootstrap/js/bootstrap.min.js"></script>
+<script src="lib/easing/easing.min.js"></script>
+<script src="lib/counterup/jquery.waypoints.min.js"></script>
+<script src="lib/counterup/jquery.counterup.js"></script>
+<script src="lib/owlcarousel/owl.carousel.min.js"></script>
+<script src="lib/lightbox/js/lightbox.min.js"></script>
+<script src="lib/typed/typed.min.js"></script>
+<!-- Contact Form JavaScript File -->
+<script src="contactform/contactform.js"></script>
+
+<!-- Template Main Javascript File -->
+<script src="js/main.js"></script>
+
+
+<script>
+    // 1. Deshabilitar clic derecho en toda la página (refuerza tu medida actual)
+    document.addEventListener('contextmenu', function(e) {
+        e.preventDefault();
+        return false;
+    });
+
+    // 2. Deshabilitar combinaciones de teclas comunes para "Inspeccionar Elemento"
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'F12') {
+            e.preventDefault();
+            return false;
+        }
+        if ((e.ctrlKey || e.metaKey) && e.shiftKey && (e.key === 'I' || e.key === 'i')) {
+            e.preventDefault();
+            return false;
+        }
+        if ((e.ctrlKey || e.metaKey) && e.shiftKey && (e.key === 'J' || e.key === 'j')) {
+            e.preventDefault();
+            return false;
+        }
+        if ((e.ctrlKey || e.metaKey) && (e.key === 'U' || e.key === 'u')) {
+            e.preventDefault();
+            return false;
+        }
+        if ((e.ctrlKey || e.metaKey) && e.shiftKey && (e.key === 'C' || e.key === 'c')) {
+            e.preventDefault();
+            return false;
+        }
+    });
+
+    // 3. Prevenir el arrastre de imágenes (protección adicional)
+    document.querySelectorAll('img').forEach(img => {
+        img.addEventListener('dragstart', function(e) {
+            e.preventDefault();
+            return false;
+        });
+    });
+
+    // 4. (Opcional) Advertencia en la consola para disuadir a curiosos
+    console.log('%c🔒 Contenido protegido', 'font-size: 20px; font-weight: bold; color: #F40C5A;');
+    console.log('%cSi tienes alguna pregunta o necesitas acceso, contáctame a través de mis redes oficiales.', 'font-size: 14px;');
+</script>
+
+
+</body>
+</html>

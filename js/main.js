@@ -39,10 +39,10 @@
 	});
 
 	/*--/ Star Counter /--*/
-	$('.counter').counterUp({
-		delay: 15,
-		time: 2000
-	});
+	/*--/ $('.counter').counterUp({ /--*/
+	/*--/	delay: 15, /--*/
+	/*--/	time: 2000 /--*/
+	/*--/}); /--*/
 
 	/*--/ Star Scrolling nav /--*/
 	$('a.js-scroll[href*="#"]:not([href="#"])').on("click", function () {
@@ -232,3 +232,5 @@ window.addEventListener("scroll", function() {
   document.getElementById("cart-sidebar").classList.toggle("open");
 }
 
+const track = document.querySelector('.carousel-track');
+const container = document.querySelector('.carousel-container');
