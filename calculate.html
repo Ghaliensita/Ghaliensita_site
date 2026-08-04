@@ -786,7 +786,7 @@
     //
     // 2) Copia el resultado (una cadena larga de letras y números) y pégalo abajo,
     //    reemplazando el texto entre comillas.
-    const AUTH_HASH_SHA256 = "PEGA_AQUI_EL_HASH_DE_TU_CONTRASEÑA";
+    const AUTH_HASH_SHA256 = "5598c8abce1888cbd1a47453c7359b0221348e1095d16bc955dc1d0058e17448";
 
     async function sha256Hex(texto) {
       const enc = new TextEncoder().encode(texto);
@@ -828,7 +828,7 @@
     // Debe ser EXACTAMENTE el mismo texto que pongas en SECRET_TOKEN dentro
     // del Apps Script. Es una segunda capa de protección: aunque alguien
     // consiga tu URL de Apps Script, sin este token sus envíos son rechazados.
-    const SAVE_TOKEN = "PEGA_AQUI_TU_TOKEN_SECRETO";
+    const SAVE_TOKEN = "GhaliLab-2BRUH0#2!6";
 
     // ============================================
     // FEE POR PAGO EN DIVISA EXTRANJERA
@@ -1174,9 +1174,8 @@
     function construirResultado(params) {
       const comunes = leerComunes();
 
-      const costoTotal = params.costoSinAcabados + params.acabados + comunes.envio;
-      const costoReal = costoTotal;
-      const precioVentaBase = costoTotal * params.ganancia;
+      const costoReal = params.costoSinAcabados + params.acabados + comunes.envio;
+      const precioVentaBase = costoReal * params.ganancia;
       const precioVenta = precioVentaBase * (1 + params.ivaPct);
       const resta = precioVenta - comunes.abono1 - comunes.abono2;
 
@@ -1191,7 +1190,6 @@
         acabados: Math.round(params.acabados),
         cliente: comunes.cliente,
         costoSinAcabados: Math.round(params.costoSinAcabados),
-        costoTotal: Math.round(costoTotal),
         costoReal: Math.round(costoReal),
         precioVenta: Math.round(precioVenta),
         abono1: comunes.abono1,
@@ -1203,7 +1201,7 @@
       };
 
       return {
-        costoTotal, costoReal, precioVenta, precioVentaBase, resta,
+        costoReal, precioVenta, precioVentaBase, resta,
         ivaMonto: precioVenta - precioVentaBase
       };
     }
@@ -1278,7 +1276,7 @@
         <div class="result-line"><span>Otros insumos de acabado:</span><span>COP $ ${extrasFijos.toFixed(0)}</span></div>
         <div class="result-line"><span>Acabados (total):</span><span>COP $ ${acabados.toFixed(0)}</span></div>
         <div class="result-line"><span>Envío:</span><span>COP $ ${ultimoDesglose.envio.toFixed(0)}</span></div>
-        <div class="result-line highlight"><span>Costo total real:</span><span>COP $ ${r.costoTotal.toFixed(0)}</span></div>
+        <div class="result-line highlight"><span>Costo real:</span><span>COP $ ${r.costoReal.toFixed(0)}</span></div>
         ${ivaPct > 0 ? `<div class="result-line"><span>IVA (${(ivaPct*100).toFixed(0)}%):</span><span>COP $ ${r.ivaMonto.toFixed(0)}</span></div>` : ''}
         <div class="result-line total"><span>PRECIO SUGERIDO DE VENTA:</span><span>COP $ ${r.precioVenta.toFixed(0)}</span></div>
         <div class="result-line"><span>Abonos recibidos:</span><span>COP $ ${(ultimoDesglose.abono1 + ultimoDesglose.abono2).toFixed(0)}</span></div>
@@ -1395,7 +1393,7 @@
         <div class="result-line"><span>Costo sin acabados:</span><span>COP $ ${costoSinAcabados.toFixed(0)}</span></div>
         <div class="result-line"><span>Acabados extra:</span><span>COP $ ${acabadosExtra.toFixed(0)}</span></div>
         <div class="result-line"><span>Envío:</span><span>COP $ ${ultimoDesglose.envio.toFixed(0)}</span></div>
-        <div class="result-line highlight"><span>Costo total real:</span><span>COP $ ${r.costoTotal.toFixed(0)}</span></div>
+        <div class="result-line highlight"><span>Costo real:</span><span>COP $ ${r.costoReal.toFixed(0)}</span></div>
         ${ivaPct > 0 ? `<div class="result-line"><span>IVA (${(ivaPct*100).toFixed(0)}%):</span><span>COP $ ${r.ivaMonto.toFixed(0)}</span></div>` : ''}
         <div class="result-line total"><span>PRECIO SUGERIDO DE VENTA:</span><span>COP $ ${r.precioVenta.toFixed(0)}</span></div>
         <div class="result-line"><span>Abonos recibidos:</span><span>COP $ ${(ultimoDesglose.abono1 + ultimoDesglose.abono2).toFixed(0)}</span></div>
@@ -1546,7 +1544,18 @@
 <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
 <div id="preloader"></div>
 
+<script type="module" class="moduletypebot">
+  import Typebot from 'https://cdn.jsdelivr.net/npm/@typebot.io/js@0.3/dist/web.js'
 
+  Typebot.initBubble({
+    typebot: "gea-tech-servicios-ktkvq14",
+    theme: {
+      placement: "left",
+      button: { backgroundColor: "#F40C5A" },
+      chatWindow: { backgroundColor: "#fff" },
+    },
+  });
+</script>
 
 <!-- JavaScript Libraries -->
 <script src="lib/jquery/jquery.min.js"></script>
