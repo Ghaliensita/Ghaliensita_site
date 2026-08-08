@@ -388,6 +388,37 @@
       padding-top: 6px;
     }
 
+    .btn-usar-estimado {
+      background-color: transparent;
+      border: 1px solid #00C4F9;
+      color: #00C4F9;
+      padding: 6px 12px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 0.75rem;
+      font-weight: bold;
+      margin-top: 4px;
+    }
+
+    .btn-usar-estimado:hover {
+      background-color: rgba(0, 196, 249, 0.1);
+    }
+
+    .resultado-lote {
+      background-color: #1a1a1a;
+      border-radius: 12px;
+      padding: 14px 16px;
+      margin-top: 12px;
+      border: 2px solid #00C4F9;
+    }
+
+    .resultado-lote .lote-titulo {
+      color: #00C4F9;
+      font-weight: bold;
+      font-size: 0.85rem;
+      margin-bottom: 8px;
+    }
+
     /* ===== Pantalla de acceso (protección básica del lado del cliente) ===== */
     .auth-gate {
       position: fixed;
@@ -453,9 +484,10 @@
       <img src="images/Ghali-GhaliLogo.svg" style="max-width: 50%;" alt="Ghalien Icon"> Ghalien
     </a>
     
+    <!-- Botón hamburguesa Bootstrap 5 con SVG personalizado -->
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarDefault"
       aria-controls="navbarDefault" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span> 
+      <span class="navbar-toggler-icon"></span> <!-- Este es el icono default de Bootstrap -->
     </button>
     
     <div class="collapse navbar-collapse justify-content-end" id="navbarDefault">
@@ -465,8 +497,8 @@
         </li>
 
         <li class="nav-item">
-          <a class="nav-link js-scroll" href="stock.html">Tienda</a>
-        </li>
+          <a class="nav-link js-scroll" href="shop.html">Tienda</a>
+        </li>        
 
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle js-scroll" href="#" id="ghalilabDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -475,8 +507,6 @@
           <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="ghalilabDropdown">
             <li><a class="dropdown-item js-scroll" href="ghalilab.html">Sobre GHALI LAB</a></li>
             <li><a class="dropdown-item js-scroll" href="services.html">Servicios</a></li>
-            <li><a class="dropdown-item js-scroll" href="commissions.html">Comisiones</a></li>            
-            <li><a class="dropdown-item js-scroll" href="quoteprice.html">Cotización</a></li>
           </ul>
         </li>
 
@@ -491,6 +521,7 @@
           <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="aboutDropdown">
             <li><a class="dropdown-item js-scroll" href="aboutme.html">¿Quién es Ghalien?</a></li>
             <li><a class="dropdown-item js-scroll" href="paymethods.html">Pagos y donaciones</a></li>
+           
           </ul>
         </li>
 
@@ -499,7 +530,7 @@
             Contacto
           </a>
           <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="contactDropdown">
-            <li><a class="dropdown-item js-scroll" href="mysocial.html">Redes sociales</a></li>
+            <li><a class="dropdown-item js-scroll" href="utility.html">Redes sociales</a></li>
           </ul>
         </li>
       </ul>
@@ -699,7 +730,23 @@
 
         <!-- Mini calculadora de proporciones (solo visible en categoría Molde) -->
         <div class="molde-proporciones" id="moldeProporciones" style="display:none;">
-          <h3><i class="fa-solid fa-flask"></i> Calculadora de proporciones para moldes</h3>
+          <h3><i class="fa-solid fa-ruler-combined"></i> Paso 1: Estima la silicona según el tamaño del master</h3>
+
+          <div class="molde-fila">
+            <label>Largo del master (cm): <input type="number" step="0.1" id="moldeLargoCm" value="5" oninput="calcularVolumenMolde()" /></label>
+            <label>Ancho del master (cm): <input type="number" step="0.1" id="moldeAnchoCm" value="8" oninput="calcularVolumenMolde()" /></label>
+            <label>Alto del master (cm): <input type="number" step="0.1" id="moldeAltoCm" value="2" oninput="calcularVolumenMolde()" /></label>
+          </div>
+          <div class="molde-fila">
+            <label>Factor de holgura (paredes del molde): <input type="number" step="0.1" id="moldeFactorHolgura" value="2.5" oninput="calcularVolumenMolde()" /></label>
+            <div class="molde-resultado" id="moldeResultadoVolumen" style="grid-column: 2 / 4;">Volumen estimado del molde: 0 ml</div>
+          </div>
+          <span class="field-hint">
+            Holgura = cuántas veces el volumen de la pieza necesitas de silicona alrededor para que el molde tenga paredes resistentes. 2 – 2.5x es un punto de partida razonable; piezas con detalles finos necesitan más.
+          </span>
+          <button type="button" class="btn-usar-estimado" onclick="usarSiliconaEstimada()">↓ Usar este estimado de silicona</button>
+
+          <h3 style="margin-top:16px;"><i class="fa-solid fa-flask"></i> Paso 2: Proporciones de mezcla</h3>
 
           <div class="molde-fila">
             <label>Silicona líquida (ml): <input type="number" id="moldeSiliconaMl" value="280" oninput="calcularProporcionesMolde()" /></label>
@@ -717,13 +764,39 @@
             Estos valores son solo una guía de proporciones para ayudarte a llenar la tabla de materiales de arriba (no se guardan en el Excel).
           </div>
         </div>
+
+        <!-- Estimador para VELAS (solo visible en categoría Velas) -->
+        <div class="molde-proporciones" id="velasProporciones" style="display:none;">
+          <h3><i class="fa-solid fa-ruler-combined"></i> Estimador de cera según el molde de la vela</h3>
+
+          <div class="molde-fila">
+            <label>Diámetro del molde (cm): <input type="number" step="0.1" id="velasDiametroCm" value="7" oninput="calcularProporcionesVelas()" /></label>
+            <label>Altura del molde (cm): <input type="number" step="0.1" id="velasAlturaCm" value="9" oninput="calcularProporcionesVelas()" /></label>
+            <label>% de llenado real: <input type="number" id="velasPctLlenado" value="90" oninput="calcularProporcionesVelas()" /></label>
+          </div>
+          <div class="molde-fila">
+            <label>% Colorante (sobre peso de cera): <input type="number" step="0.1" id="velasPctColorante" value="2" oninput="calcularProporcionesVelas()" /></label>
+            <label>% Aceite esencial (sobre peso de cera): <input type="number" step="0.1" id="velasPctAceite" value="5" oninput="calcularProporcionesVelas()" /></label>
+            <div class="molde-resultado" id="velasResultadoCera">Cera: 0 g</div>
+          </div>
+          <div class="molde-fila">
+            <div class="molde-resultado" id="velasResultadoColorante">Colorante: 0 g</div>
+            <div class="molde-resultado" id="velasResultadoAceite">Aceite esencial: 0 ml</div>
+          </div>
+
+          <span class="field-hint">
+            Cálculo: volumen del cilindro (π × radio² × altura) × 90% de llenado real × densidad de la cera de soya (≈0.9 g/ml). Ajusta el % de llenado si el molde no es un cilindro perfecto.
+            Estos valores son solo una guía (no se guardan en el Excel) — ajusta manualmente "Cera de soya" y "Colorante" en la tabla de materiales de arriba si quieres que se reflejen en el costo.
+          </span>
+        </div>
       </div>
 
       <!-- Pieza / mano de obra / tiempo -->
       <div class="section">
         <h2><i class="fa-solid fa-cube"></i> Pieza y mano de obra</h2>
         <label>Nombre / referencia de la pieza: <input type="text" id="genPieza" placeholder="Ej: Vela lavanda 200g" /></label>
-        <label>Cantidad de piezas en este lote: <input type="number" id="genCantidadPiezas" value="1" min="1" /></label>
+        <label>Cantidad de piezas a cotizar/producir: <input type="number" id="genCantidadPiezas" value="1" min="1" oninput="calcularGenerico()" /></label>
+        <span class="field-hint">Se usa para prorratear costos fijos y para calcular el precio total si cotizas el lote completo (más abajo, en el resultado).</span>
         <label>Minutos de mano de obra por pieza: <input type="number" id="genMinutosManoObra" value="0" /></label>
         <label>Tarifa mano de obra por hora (COP $): <input type="number" id="genTarifaHora" value="6000" /></label>
 
@@ -898,7 +971,7 @@
         materiales: [
           { nombre: 'Tag NFC', precioCompra: 80000, unidades: 30, cantidadUsada: 1 },
           { nombre: 'Resina de sellado', precioCompra: 40000, unidades: 30, cantidadUsada: 1 },
-          { nombre: 'Argolla de llavero', precioCompra: 40000, unidades: 100, cantidadUsada: 1 }
+          { nombre: 'Argolla de llavero', precioCompra: 40000, unidades: 30, cantidadUsada: 1 }
         ],
         tarifaHora: 6000,
         minutosManoObra: 10,
@@ -912,16 +985,17 @@
       velas: {
         label: 'Velas',
         materiales: [
-          { nombre: 'Cera de soya', precioCompra: 40000, unidades: 40, cantidadUsada: 1 },
-          { nombre: 'Pabilo', precioCompra: 50000, unidades: 40, cantidadUsada: 1 },
-          { nombre: 'Aceite esencial', precioCompra: 41000, unidades: 40, cantidadUsada: 1 },
-          { nombre: 'Caucho para moldes (amortización)', precioCompra: 50000, unidades: 40, cantidadUsada: 1 },
-          { nombre: 'Colorante para vela', precioCompra: 15000, unidades: 40, cantidadUsada: 1 },
-          { nombre: 'Cemento', precioCompra: 20000, unidades: 40, cantidadUsada: 1 },
-          { nombre: 'Marmolina', precioCompra: 30000, unidades: 40, cantidadUsada: 1 },
-          { nombre: 'Herramientas (amortización)', precioCompra: 250000, unidades: 40, cantidadUsada: 1 },
-          { nombre: 'Empaque', precioCompra: 50000, unidades: 40, cantidadUsada: 1 },
-          { nombre: 'Etiqueta y diseño', precioCompra: 125000, unidades: 40, cantidadUsada: 1 }
+          { nombre: 'Cera de soya', precioCompra: 40000, unidades: 60, cantidadUsada: 1 },
+          { nombre: 'Pabilo', precioCompra: 50000, unidades: 60, cantidadUsada: 1 },
+          { nombre: 'Aceite esencial', precioCompra: 41000, unidades: 60, cantidadUsada: 1 },
+          { nombre: 'Caucho para moldes (amortización)', precioCompra: 50000, unidades: 60, cantidadUsada: 1 },
+          { nombre: 'Colorante para vela', precioCompra: 15000, unidades: 60, cantidadUsada: 1 },
+          { nombre: 'Cemento', precioCompra: 20000, unidades: 60, cantidadUsada: 1 },
+          { nombre: 'Marmolina', precioCompra: 30000, unidades: 60, cantidadUsada: 1 },
+          { nombre: 'Herramientas (amortización)', precioCompra: 250000, unidades: 60, cantidadUsada: 1 },
+          { nombre: 'Empaque', precioCompra: 50000, unidades: 60, cantidadUsada: 1 },
+          { nombre: 'Etiqueta y diseño', precioCompra: 125000, unidades: 60, cantidadUsada: 1 },
+          { nombre: 'Energía (horno/estufa)', precioCompra: 1000, unidades: 60, cantidadUsada: 1 }
         ],
         tarifaHora: 6000,
         minutosManoObra: 20,
@@ -1090,6 +1164,7 @@
         const panelImpresion = document.getElementById('panelImpresion');
         const panelGenerico = document.getElementById('panelGenerico');
         const moldeProporciones = document.getElementById('moldeProporciones');
+        const velasProporciones = document.getElementById('velasProporciones');
 
         if (categoriaActual === 'impresion') {
           panelImpresion.style.display = '';
@@ -1099,8 +1174,10 @@
           panelImpresion.style.display = 'none';
           panelGenerico.style.display = '';
           moldeProporciones.style.display = (categoriaActual === 'molde') ? '' : 'none';
+          velasProporciones.style.display = (categoriaActual === 'velas') ? '' : 'none';
           cargarPresetGenerico(categoriaActual);
-          if (categoriaActual === 'molde') calcularProporcionesMolde();
+          if (categoriaActual === 'molde') { calcularVolumenMolde(); calcularProporcionesMolde(); }
+          if (categoriaActual === 'velas') calcularProporcionesVelas();
           calcularGenerico();
         }
       });
@@ -1146,6 +1223,48 @@
 
       document.getElementById('moldeResultadoCatalizador').textContent = 'Catalizador: ' + catalizadorMl.toFixed(1) + ' ml';
       document.getElementById('moldeResultadoAgua').textContent = 'Agua: ' + aguaMl.toFixed(1) + ' ml';
+    }
+
+    // ---- ESTIMAR VOLUMEN DE SILICONA SEGÚN TAMAÑO DEL MASTER (Molde) ----
+    let ultimoVolumenSiliconaEstimado = 0;
+    function calcularVolumenMolde() {
+      const largo = parseFloat(document.getElementById('moldeLargoCm').value) || 0;
+      const ancho = parseFloat(document.getElementById('moldeAnchoCm').value) || 0;
+      const alto = parseFloat(document.getElementById('moldeAltoCm').value) || 0;
+      const factorHolgura = parseFloat(document.getElementById('moldeFactorHolgura').value) || 1;
+
+      const volumenPiezaCm3 = largo * ancho * alto;
+      const volumenMoldeMl = volumenPiezaCm3 * factorHolgura;
+      ultimoVolumenSiliconaEstimado = volumenMoldeMl;
+
+      document.getElementById('moldeResultadoVolumen').textContent =
+        'Volumen estimado del molde: ' + volumenMoldeMl.toFixed(0) + ' ml (pieza: ' + volumenPiezaCm3.toFixed(0) + ' cm³)';
+    }
+
+    function usarSiliconaEstimada() {
+      document.getElementById('moldeSiliconaMl').value = Math.round(ultimoVolumenSiliconaEstimado);
+      calcularProporcionesMolde();
+    }
+
+    // ---- ESTIMAR CERA SEGÚN TAMAÑO DEL MOLDE DE LA VELA ----
+    function calcularProporcionesVelas() {
+      const diametro = parseFloat(document.getElementById('velasDiametroCm').value) || 0;
+      const altura = parseFloat(document.getElementById('velasAlturaCm').value) || 0;
+      const pctLlenado = (parseFloat(document.getElementById('velasPctLlenado').value) || 0) / 100;
+      const pctColorante = (parseFloat(document.getElementById('velasPctColorante').value) || 0) / 100;
+      const pctAceite = (parseFloat(document.getElementById('velasPctAceite').value) || 0) / 100;
+
+      const DENSIDAD_CERA_SOYA = 0.9; // g/ml, aproximado
+
+      const radio = diametro / 2;
+      const volumenCm3 = Math.PI * radio * radio * altura * pctLlenado;
+      const ceraGramos = volumenCm3 * DENSIDAD_CERA_SOYA;
+      const coloranteGramos = ceraGramos * pctColorante;
+      const aceiteMl = ceraGramos * pctAceite;
+
+      document.getElementById('velasResultadoCera').textContent = 'Cera: ' + ceraGramos.toFixed(0) + ' g';
+      document.getElementById('velasResultadoColorante').textContent = 'Colorante: ' + coloranteGramos.toFixed(1) + ' g';
+      document.getElementById('velasResultadoAceite').textContent = 'Aceite esencial: ' + aceiteMl.toFixed(1) + ' ml';
     }
 
     // ---- SELECCIÓN DE MONEDA ----
@@ -1255,7 +1374,7 @@
         categoria: 'Impresión 3D',
         pieza: nombrePieza,
         queSeUso: tipoMaterial + ' en ' + IMPRESORAS[impresoraActual].nombre,
-        material: tipoMaterial,
+        material: cantidadMaterial + (impresoraActual === 'creality' ? ' g' : ' ml'),
         costoSinAcabados: costoSinAcabados,
         acabados: acabados,
         horasImprimiendo: horasImpresion,
@@ -1353,12 +1472,14 @@
       let costoMateriales = 0;
       let filasMateriales = '';
       let nombresMateriales = [];
+      let cantidadesMateriales = [];
       materialesActuales.forEach(mat => {
         const unidades = mat.unidades || 1;
         const costoUnitario = (mat.precioCompra / unidades) * mat.cantidadUsada;
         costoMateriales += costoUnitario;
         if (mat.nombre) {
           nombresMateriales.push(mat.nombre);
+          cantidadesMateriales.push(mat.nombre + ': ' + mat.cantidadUsada);
           filasMateriales += `<div class="result-line"><span>${mat.nombre}:</span><span>COP $ ${costoUnitario.toFixed(0)}</span></div>`;
         }
       });
@@ -1372,12 +1493,13 @@
 
       const costoSinAcabados = costoMateriales + costoManoObra + costoFijosPorPieza;
       const materialTexto = nombresMateriales.join(', ') || '-';
+      const cantidadesTexto = cantidadesMateriales.join(', ') || '-';
 
       const r = construirResultado({
         categoria: preset.label || categoriaActual,
         pieza: pieza,
         queSeUso: materialTexto,
-        material: materialTexto,
+        material: cantidadesTexto,
         costoSinAcabados: costoSinAcabados,
         acabados: acabadosExtra,
         horasImprimiendo: horasProceso,
@@ -1386,6 +1508,10 @@
         ivaPct: ivaPct
       });
 
+      // ---- Total del lote (si se están cotizando varias piezas a la vez) ----
+      const precioVentaTotalLote = r.precioVenta * cantidadPiezas;
+      const restaTotalLote = precioVentaTotalLote - ultimoDesglose.abono1 - ultimoDesglose.abono2;
+
       document.getElementById('resultadosGen').innerHTML = `
         ${filasMateriales}
         <div class="result-line"><span>Mano de obra:</span><span>COP $ ${costoManoObra.toFixed(0)}</span></div>
@@ -1393,11 +1519,17 @@
         <div class="result-line"><span>Costo sin acabados:</span><span>COP $ ${costoSinAcabados.toFixed(0)}</span></div>
         <div class="result-line"><span>Acabados extra:</span><span>COP $ ${acabadosExtra.toFixed(0)}</span></div>
         <div class="result-line"><span>Envío:</span><span>COP $ ${ultimoDesglose.envio.toFixed(0)}</span></div>
-        <div class="result-line highlight"><span>Costo real:</span><span>COP $ ${r.costoReal.toFixed(0)}</span></div>
+        <div class="result-line highlight"><span>Costo real (por pieza):</span><span>COP $ ${r.costoReal.toFixed(0)}</span></div>
         ${ivaPct > 0 ? `<div class="result-line"><span>IVA (${(ivaPct*100).toFixed(0)}%):</span><span>COP $ ${r.ivaMonto.toFixed(0)}</span></div>` : ''}
-        <div class="result-line total"><span>PRECIO SUGERIDO DE VENTA:</span><span>COP $ ${r.precioVenta.toFixed(0)}</span></div>
+        <div class="result-line total"><span>PRECIO SUGERIDO DE VENTA (por pieza):</span><span>COP $ ${r.precioVenta.toFixed(0)}</span></div>
         <div class="result-line"><span>Abonos recibidos:</span><span>COP $ ${(ultimoDesglose.abono1 + ultimoDesglose.abono2).toFixed(0)}</span></div>
-        <div class="result-line highlight"><span>Resta por pagar:</span><span>COP $ ${r.resta.toFixed(0)}</span></div>
+        <div class="result-line highlight"><span>Resta por pagar (por pieza):</span><span>COP $ ${r.resta.toFixed(0)}</span></div>
+        ${cantidadPiezas > 1 ? `
+        <div class="resultado-lote">
+          <div class="lote-titulo">📦 Cotización para las ${cantidadPiezas} piezas del lote</div>
+          <div class="result-line"><span>Precio total del lote:</span><span>COP $ ${precioVentaTotalLote.toFixed(0)}</span></div>
+          <div class="result-line"><span>Resta por pagar (lote completo):</span><span>COP $ ${restaTotalLote.toFixed(0)}</span></div>
+        </div>` : ''}
       `;
 
       document.getElementById('guardarStatus').textContent = '';
@@ -1494,14 +1626,15 @@
           <!-- SEO website -->
           <nav class="footer-links">
             <a href="index.html">INICIO</a> |
-            <a href="stock.html">TIENDA</a> |   
+            <a href="shop.html">TIENDA</a> |   
             <a href="ghalilab.html">GHALI LAB</a> |
             <a href="services.html">SERVICIOS</a> |
-            <a href="quoteprice.html">COTIZACIÓN</a> |
             <a href="tattoo.html">GHALIEN TATTOO</a> |       
             <a href="aboutme.html">SOBRE MÍ</a> |   
             <a href="paymethods.html">MÉTODOS DE PAGO</a> |                                
-            <a href="mysocial.html">MIS REDES</a> 
+          
+            <a href="utility.html">MIS REDES</a> 
+
           </nav>
 
           <!-- Social media -->
