@@ -7,6 +7,15 @@
   <meta name="keywords" content="ghalien, ghaliensita, stephany ghalien, tienda, shop, impresión 3d, accesorios cascos, llaveros, NFC, clickers, fidget, modelado 3d, GHALI LAB, ghali shop, Colombia, envíos">
   <meta name="description" content="Tienda GHALI LAB: accesorios personalizados en impresión 3D, llaveros, clickers, NFC y servicios. Envíos a todo Colombia.">
 
+  <!-- Conexiones anticipadas -->
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link rel="preconnect" href="https://wsrv.nl" crossorigin>
+
+  <!-- Fuentes de iconos con prioridad alta -->
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/webfonts/fa-brands-400.woff2">
+
   <!-- Favicons -->
   <link href="img/favicon.png" rel="icon">
   <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
@@ -15,20 +24,141 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
 
-  <!-- Libraries CSS Files -->
-  <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-  <link href="lib/animate/animate.min.css" rel="stylesheet">
-  <link href="lib/ionicons/css/ionicons.min.css" rel="stylesheet">
-  <link href="https://file.myfontastic.com/9uXaaj5vAm5wectHaxzyV9/icons.css" rel="stylesheet">
-  <link href="lib/ghali-icons/styles.css" rel="stylesheet">
-  <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-  <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
-
   <!-- Font Awesome 6 -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <!-- Main Stylesheet File -->
   <link href="css/style.css" rel="stylesheet">
+
+  <!-- Ajustes de esta página: celulares + visor de fotos -->
+  <style>
+    /* Si algún día vuelve el preloader en el HTML, esto lo oculta */
+    #preloader { display: none !important; }
+
+    /* Celulares y tablets: menos efectos pesados para la GPU */
+    @media (max-width: 991px) {
+      .navbar {
+        -webkit-backdrop-filter: none;
+        backdrop-filter: none;
+        background-color: rgba(20, 20, 20, 0.92);
+      }
+
+      .gallery-badge {
+        -webkit-backdrop-filter: none;
+        backdrop-filter: none;
+      }
+    }
+
+    /* En pantallas táctiles no hay "hover": se quitan esas animaciones */
+    @media (hover: none) {
+      .shop-product-card,
+      .shop-product-card .product-img-wrapper img {
+        transition: none;
+      }
+
+      .shop-product-card:hover {
+        transform: none;
+        box-shadow: none;
+      }
+
+      .shop-product-card:hover .product-img-wrapper img {
+        transform: none;
+      }
+    }
+
+    /* Visor de fotos */
+    .gl-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 5000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+      background: rgba(10, 10, 10, 0.94);
+    }
+
+    .gl-overlay[hidden] {
+      display: none;
+    }
+
+    .gl-fig {
+      max-width: min(92vw, 1100px);
+      max-height: 92vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .gl-img {
+      max-width: 100%;
+      max-height: 78vh;
+      object-fit: contain;
+      border-radius: 12px;
+      background: #111;
+    }
+
+    .gl-cap {
+      color: #ddd;
+      font-size: 0.9rem;
+      text-align: center;
+    }
+
+    .gl-btn {
+      position: absolute;
+      width: 46px;
+      height: 46px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 1.6rem;
+      line-height: 1;
+      cursor: pointer;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 50%;
+    }
+
+    .gl-btn:hover,
+    .gl-btn:focus-visible {
+      background: #F40C5A;
+      border-color: #F40C5A;
+      outline: none;
+    }
+
+    .gl-close { top: 14px; right: 14px; }
+    .gl-prev { left: 14px; top: 50%; transform: translateY(-50%); }
+    .gl-next { right: 14px; top: 50%; transform: translateY(-50%); }
+  </style>
+
+  <!-- Ayudante: entrega las fotos reducidas y en WebP (si falla, usa la original) -->
+  <script>
+    window.ghaliImg = function (path, w, q) {
+      try {
+        var abs = new URL(path, location.href);
+
+        if (
+          abs.protocol.indexOf("http") !== 0 ||
+          abs.hostname === "localhost" ||
+          abs.hostname === "127.0.0.1"
+        ) {
+          return path;
+        }
+
+        return (
+          "https://wsrv.nl/?url=" +
+          encodeURIComponent(abs.href) +
+          "&w=" + w +
+          "&q=" + (q || 75) +
+          "&output=webp&we=1"
+        );
+      } catch (error) {
+        return path;
+      }
+    };
+  </script>
 </head>
 
 <body>
@@ -67,10 +197,6 @@
           </ul>
         </li>
 
-        <li class="nav-item">
-          <a class="nav-link js-scroll" href="tattoo.html">Ghalien Tattoo</a>
-        </li>
-
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle js-scroll" href="#" id="aboutDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Sobre mí
@@ -95,8 +221,8 @@
 </nav>
 <!-- Nav End -->
 
-<!-- Hero Start -->
-<header class="intro intro-single route bg-image ghlab-hero shop-hero" style="background-image: url(img/overlay-bg-3.jpg)">
+<!-- Hero Start (el fondo se carga reducido desde el script de abajo) -->
+<header class="intro intro-single route bg-image ghlab-hero shop-hero" data-bg="img/overlay-bg-3.jpg" style="background-color: #1b1b1b;">
   <div class="overlay-mf"></div>
   <div class="intro-content display-table">
     <div class="table-cell">
@@ -117,6 +243,27 @@
     </div>
   </div>
 </header>
+<script>
+  (function () {
+    var hero = document.querySelector(".shop-hero");
+    if (!hero) return;
+
+    var original = hero.getAttribute("data-bg");
+    var width = window.innerWidth <= 768 ? 900 : 1600;
+    var optimized = window.ghaliImg(original, width, 70);
+    var probe = new Image();
+
+    probe.onload = function () {
+      hero.style.backgroundImage = 'url("' + optimized + '")';
+    };
+
+    probe.onerror = function () {
+      hero.style.backgroundImage = 'url("' + original + '")';
+    };
+
+    probe.src = optimized;
+  })();
+</script>
 <!-- Hero End -->
 
 <main class="ghlab-page shop-page">
@@ -202,13 +349,13 @@
       </div>
     </div>
 
-    <!-- Product Grid -->
+    <!-- Product Grid (las fotos se cargan reducidas desde el script de abajo) -->
     <div class="shop-grid" id="inventory-grid">
 
       <!-- Cuernitos Lisos -->
       <article class="shop-product-card product-item accesorios" data-price="40000">
         <a href="images/ghali shop/horns.jpg" class="product-img-wrapper" data-title="Cuernitos Lisos" data-extra-images="images/ghali shop/horns-client.jpg">
-          <img src="images/ghali shop/horns.jpg" alt="Cuernitos Lisos" loading="lazy">
+          <img data-src="images/ghali shop/horns.jpg" alt="Cuernitos Lisos" width="520" height="520" loading="lazy" decoding="async">
         </a>
         <div class="shop-product-body">
           <span class="shop-product-cat">Accesorios cascos</span>
@@ -226,7 +373,7 @@
       <!-- Cuernitos Rugosos -->
       <article class="shop-product-card product-item accesorios" data-price="40000">
         <a href="images/ghali shop/horns2.jpg" class="product-img-wrapper" data-title="Cuernitos Rugosos">
-          <img src="images/ghali shop/horns2.jpg" alt="Cuernitos Rugosos" loading="lazy">
+          <img data-src="images/ghali shop/horns2.jpg" alt="Cuernitos Rugosos" width="520" height="520" loading="lazy" decoding="async">
         </a>
         <div class="shop-product-body">
           <span class="shop-product-cat">Accesorios cascos</span>
@@ -244,7 +391,7 @@
       <!-- Orejas de Gato -->
       <article class="shop-product-card product-item accesorios" data-price="40000">
         <a href="images/ghali shop/cat ears.jpg" class="product-img-wrapper" data-title="Orejas de Gato">
-          <img src="images/ghali shop/cat ears.jpg" alt="Orejas de Gato" loading="lazy">
+          <img data-src="images/ghali shop/cat ears.jpg" alt="Orejas de Gato" width="520" height="520" loading="lazy" decoding="async">
         </a>
         <div class="shop-product-body">
           <span class="shop-product-cat">Accesorios cascos</span>
@@ -262,7 +409,7 @@
       <!-- Orejas de Kuromi -->
       <article class="shop-product-card product-item accesorios" data-price="40000">
         <a href="images/ghali shop/kuromi ears.jpg" class="product-img-wrapper" data-title="Orejas de Kuromi" data-extra-images="images/ghali shop/kuromiearsclient.jpg">
-          <img src="images/ghali shop/kuromi ears.jpg" alt="Orejas de Kuromi" loading="lazy">
+          <img data-src="images/ghali shop/kuromi ears.jpg" alt="Orejas de Kuromi" width="520" height="520" loading="lazy" decoding="async">
         </a>
         <div class="shop-product-body">
           <span class="shop-product-cat">Accesorios cascos</span>
@@ -280,7 +427,7 @@
       <!-- Cuernos Grandes -->
       <article class="shop-product-card product-item accesorios" data-price="40000">
         <a href="images/ghali shop/bighorns.jpg" class="product-img-wrapper" data-title="Cuernos Grandes">
-          <img src="images/ghali shop/bighorns.jpg" alt="Cuernos Grandes" loading="lazy">
+          <img data-src="images/ghali shop/bighorns.jpg" alt="Cuernos Grandes" width="520" height="520" loading="lazy" decoding="async">
         </a>
         <div class="shop-product-body">
           <span class="shop-product-cat">Accesorios cascos</span>
@@ -298,7 +445,7 @@
       <!-- Orejas de murciélago -->
       <article class="shop-product-card product-item accesorios" data-price="70000">
         <a href="images/ghali shop/bat-ears.jpg" class="product-img-wrapper" data-title="Orejas de murciélago">
-          <img src="images/ghali shop/bat-ears.jpg" alt="Orejas de murciélago" loading="lazy">
+          <img data-src="images/ghali shop/bat-ears.jpg" alt="Orejas de murciélago" width="520" height="520" loading="lazy" decoding="async">
         </a>
         <div class="shop-product-body">
           <span class="shop-product-cat">Accesorios cascos</span>
@@ -316,7 +463,7 @@
       <!-- Llavero Biker Personalizado -->
       <article class="shop-product-card product-item llaveros" data-price="30000">
         <a href="images/ghali shop/biker keyring personalized.jpg" class="product-img-wrapper" data-title="Llavero Biker Personalizado">
-          <img src="images/ghali shop/biker keyring personalized.jpg" alt="Llavero Biker Personalizado" loading="lazy">
+          <img data-src="images/ghali shop/biker keyring personalized.jpg" alt="Llavero Biker Personalizado" width="520" height="520" loading="lazy" decoding="async">
         </a>
         <div class="shop-product-body">
           <span class="shop-product-cat">Llaveros</span>
@@ -334,7 +481,7 @@
       <!-- Pez articulado -->
       <article class="shop-product-card product-item flexi" data-price="10000">
         <a href="images/ghali shop/articulated-fish.jpg" class="product-img-wrapper" data-title="Pez articulado">
-          <img src="images/ghali shop/articulated-fish.jpg" alt="Pez articulado" loading="lazy">
+          <img data-src="images/ghali shop/articulated-fish.jpg" alt="Pez articulado" width="520" height="520" loading="lazy" decoding="async">
         </a>
         <div class="shop-product-body">
           <span class="shop-product-cat">Flexi</span>
@@ -352,7 +499,7 @@
       <!-- Clicker diana -->
       <article class="shop-product-card product-item clicker" data-price="25000">
         <a href="images/ghali shop/clicker-archery.jpg" class="product-img-wrapper" data-title="Clicker diana de arquería" data-extra-images="images/ghali shop/clicker-archery2.jpg">
-          <img src="images/ghali shop/clicker-archery.jpg" alt="Clicker diana de arquería" loading="lazy">
+          <img data-src="images/ghali shop/clicker-archery.jpg" alt="Clicker diana de arquería" width="520" height="520" loading="lazy" decoding="async">
         </a>
         <div class="shop-product-body">
           <span class="shop-product-cat">Clicker</span>
@@ -370,7 +517,7 @@
       <!-- Llavero Personalizado -->
       <article class="shop-product-card product-item llaveros" data-price="25000">
         <a href="images/ghali shop/drdemon-keyring-personalized.jpg" class="product-img-wrapper" data-title="Llavero Personalizado">
-          <img src="images/ghali shop/drdemon-keyring-personalized.jpg" alt="Llavero Personalizado" loading="lazy">
+          <img data-src="images/ghali shop/drdemon-keyring-personalized.jpg" alt="Llavero Personalizado" width="520" height="520" loading="lazy" decoding="async">
         </a>
         <div class="shop-product-body">
           <span class="shop-product-cat">Llaveros</span>
@@ -388,7 +535,7 @@
       <!-- Clicker materita -->
       <article class="shop-product-card product-item clicker" data-price="25000">
         <a href="images/ghali shop/clicker-succulentus.jpg" class="product-img-wrapper" data-title="Clicker materita con carita" data-extra-images="images/ghali shop/clicker-succulentus2.jpg">
-          <img src="images/ghali shop/clicker-succulentus.jpg" alt="Clicker materita con carita" loading="lazy">
+          <img data-src="images/ghali shop/clicker-succulentus.jpg" alt="Clicker materita con carita" width="520" height="520" loading="lazy" decoding="async">
         </a>
         <div class="shop-product-body">
           <span class="shop-product-cat">Clicker</span>
@@ -406,7 +553,7 @@
       <!-- Fidget shaker gym -->
       <article class="shop-product-card product-item fidget" data-price="10000">
         <a href="images/ghali shop/fidget-shaker-gym.jpg" class="product-img-wrapper" data-title="Fidget shaker gym">
-          <img src="images/ghali shop/fidget-shaker-gym.jpg" alt="Fidget shaker gym" loading="lazy">
+          <img data-src="images/ghali shop/fidget-shaker-gym.jpg" alt="Fidget shaker gym" width="520" height="520" loading="lazy" decoding="async">
         </a>
         <div class="shop-product-body">
           <span class="shop-product-cat">Fidget</span>
@@ -424,7 +571,7 @@
       <!-- Página web -->
       <article class="shop-product-card product-item services" data-price="0">
         <a href="images/ghali shop/ghalilab.jpg" class="product-img-wrapper" data-title="Creación de página web">
-          <img src="images/ghali shop/ghalilab.jpg" alt="Creación de página web" loading="lazy">
+          <img data-src="images/ghali shop/ghalilab.jpg" alt="Creación de página web" width="520" height="520" loading="lazy" decoding="async">
         </a>
         <div class="shop-product-body">
           <span class="shop-product-cat">Servicios</span>
@@ -442,7 +589,7 @@
       <!-- Modelado 3D -->
       <article class="shop-product-card product-item services" data-price="0">
         <a href="images/ghali shop/ghalilab.jpg" class="product-img-wrapper" data-title="Modelado y/o impresión 3D">
-          <img src="images/ghali shop/ghalilab.jpg" alt="Modelado y/o impresión 3D" loading="lazy">
+          <img data-src="images/ghali shop/ghalilab.jpg" alt="Modelado y/o impresión 3D" width="520" height="520" loading="lazy" decoding="async">
         </a>
         <div class="shop-product-body">
           <span class="shop-product-cat">Servicios</span>
@@ -460,7 +607,7 @@
       <!-- Aviso LED -->
       <article class="shop-product-card product-item services" data-price="0">
         <a href="images/ghali shop/led-circle.jpg" class="product-img-wrapper" data-title="Aviso led">
-          <img src="images/ghali shop/led-circle.jpg" alt="Aviso LED" loading="lazy">
+          <img data-src="images/ghali shop/led-circle.jpg" alt="Aviso LED" width="520" height="520" loading="lazy" decoding="async">
         </a>
         <div class="shop-product-body">
           <span class="shop-product-cat">Servicios</span>
@@ -478,7 +625,7 @@
       <!-- Clicker R.E.P.O. -->
       <article class="shop-product-card product-item clicker" data-price="25000">
         <a href="images/ghali shop/clicker-repo.jpg" class="product-img-wrapper" data-title="Clicker R.E.P.O." data-extra-images="images/ghali shop/clicker-repo2.jpg, images/ghali shop/clicker-repo3.jpg">
-          <img src="images/ghali shop/clicker-repo.jpg" alt="Clicker R.E.P.O." loading="lazy">
+          <img data-src="images/ghali shop/clicker-repo.jpg" alt="Clicker R.E.P.O." width="520" height="520" loading="lazy" decoding="async">
         </a>
         <div class="shop-product-body">
           <span class="shop-product-cat">Clicker</span>
@@ -496,7 +643,7 @@
       <!-- Clicker ramo de flores -->
       <article class="shop-product-card product-item clicker" data-price="40000">
         <a href="images/ghali shop/clicker-rose-bck.jpg" class="product-img-wrapper" data-title="Clicker ramo de flores" data-extra-images="images/ghali shop/clicker-rose-bck3.jpg, images/ghali shop/clicker-rose-bck5.jpg, images/ghali shop/clicker-rose-bck2.jpg, images/ghali shop/clicker-rose-bck4.jpg">
-          <img src="images/ghali shop/clicker-rose-bck.jpg" alt="Clicker ramo de flores" loading="lazy">
+          <img data-src="images/ghali shop/clicker-rose-bck.jpg" alt="Clicker ramo de flores" width="520" height="520" loading="lazy" decoding="async">
         </a>
         <div class="shop-product-body">
           <span class="shop-product-cat">Clicker</span>
@@ -514,7 +661,7 @@
       <!-- Máscara Hannya -->
       <article class="shop-product-card product-item variety" data-price="70000">
         <a href="images/ghali shop/mask-hannya.jpg" class="product-img-wrapper" data-title="Máscara: Hannya" data-extra-images="images/ghali shop/mask-hannya2.jpg">
-          <img src="images/ghali shop/mask-hannya.jpg" alt="Máscara Hannya" loading="lazy">
+          <img data-src="images/ghali shop/mask-hannya.jpg" alt="Máscara Hannya" width="520" height="520" loading="lazy" decoding="async">
         </a>
         <div class="shop-product-body">
           <span class="shop-product-cat">Variedad</span>
@@ -532,7 +679,7 @@
       <!-- NFC personalizado -->
       <article class="shop-product-card product-item nfc llaveros" data-price="30000">
         <a href="images/ghali shop/nfc-keyring.jpg" class="product-img-wrapper" data-title="NFC personalizado" data-extra-images="images/ghali shop/nfc-keyring2.jpg">
-          <img src="images/ghali shop/nfc-keyring.jpg" alt="NFC personalizado" loading="lazy">
+          <img data-src="images/ghali shop/nfc-keyring.jpg" alt="NFC personalizado" width="520" height="520" loading="lazy" decoding="async">
         </a>
         <div class="shop-product-body">
           <span class="shop-product-cat">NFC</span>
@@ -550,7 +697,7 @@
       <!-- Fidget antiestrés -->
       <article class="shop-product-card product-item fidget" data-price="15000">
         <a href="images/ghali shop/fidget-makercoin.jpg" class="product-img-wrapper" data-title="Fidget antiestrés">
-          <img src="images/ghali shop/fidget-makercoin.jpg" alt="Fidget antiestrés" loading="lazy">
+          <img data-src="images/ghali shop/fidget-makercoin.jpg" alt="Fidget antiestrés" width="520" height="520" loading="lazy" decoding="async">
         </a>
         <div class="shop-product-body">
           <span class="shop-product-cat">Fidget</span>
@@ -603,7 +750,6 @@
             <a href="ghalilab.html">GHALI LAB</a> |
             <a href="services.html">SERVICIOS</a> |
             <a href="quoteprice.html">COTIZACIÓN</a> |
-            <a href="tattoo.html">GHALIEN TATTOO</a> |
             <a href="aboutme.html">SOBRE MÍ</a> |
             <a href="paymethods.html">MÉTODOS DE PAGO</a> |
             <a href="mysocial.html">MIS REDES</a>
@@ -643,198 +789,360 @@
 <!-- Footer End -->
 
 <a href="#" class="back-to-top" aria-label="Volver arriba"><i class="fa fa-chevron-up"></i></a>
-<div id="preloader"></div>
 
-<!-- JavaScript Libraries -->
-<script src="lib/jquery/jquery.min.js"></script>
-<script src="lib/jquery/jquery-migrate.min.js"></script>
-<script src="lib/popper/popper.min.js"></script>
-<script src="lib/bootstrap/js/bootstrap.min.js"></script>
-<script src="lib/easing/easing.min.js"></script>
-<script src="lib/counterup/jquery.waypoints.min.js"></script>
-<script src="lib/counterup/jquery.counterup.js"></script>
-<script src="lib/owlcarousel/owl.carousel.min.js"></script>
-<script src="lib/lightbox/js/lightbox.min.js"></script>
-<script src="lib/typed/typed.min.js"></script>
-<script src="contactform/contactform.js"></script>
-<script src="js/main.js"></script>
+<!-- Visor de fotos -->
+<div class="gl-overlay" id="gl" role="dialog" aria-modal="true" aria-label="Visor de imágenes" hidden>
+  <button type="button" class="gl-btn gl-close" aria-label="Cerrar">&times;</button>
+  <button type="button" class="gl-btn gl-prev" aria-label="Anterior">&#8249;</button>
+  <figure class="gl-fig">
+    <img class="gl-img" alt="">
+    <figcaption class="gl-cap"></figcaption>
+  </figure>
+  <button type="button" class="gl-btn gl-next" aria-label="Siguiente">&#8250;</button>
+</div>
 
+<!-- Script de la tienda (sin jQuery ni librerías externas) -->
 <script>
-document.oncontextmenu = function(){return false};
+(function () {
+  "use strict";
 
-const WHATSAPP_NUMBER = "573505136986";
+  var WHATSAPP_NUMBER = "573505136986";
+  var grid = document.getElementById("inventory-grid");
 
-const grid = document.getElementById('inventory-grid');
+  function lsGet(key) {
+    try { return localStorage.getItem(key); } catch (error) { return null; }
+  }
 
-let currentFilter = localStorage.getItem('ghali_filter') || 'all';
-let currentSort = localStorage.getItem('ghali_sort') || '';
-let currentSortLabel = localStorage.getItem('ghali_sort_label') || 'Ordenar por';
+  function lsSet(key, value) {
+    try { localStorage.setItem(key, value); } catch (error) {}
+  }
 
-document.addEventListener("DOMContentLoaded", () => {
-  const activeBtn = document.querySelector(`.filter-btn[data-filter="${currentFilter}"], .shop-filter-btn[data-filter="${currentFilter}"]`);
-  if (activeBtn) setFilterButtonStyles(activeBtn);
+  var currentFilter = lsGet("ghali_filter") || "all";
+  var currentSort = lsGet("ghali_sort") || "";
+  var currentSortLabel = lsGet("ghali_sort_label") || "Ordenar por";
 
-  const sortLabel = document.getElementById('sort-label');
-  if (sortLabel) sortLabel.innerText = currentSortLabel;
+  /* ---------- Fotos de producto: versión reducida ---------- */
+  function optimizeImages() {
+    document.querySelectorAll(".product-item img[data-src]").forEach(function (img, index) {
+      var original = img.getAttribute("data-src");
 
-  updateActiveSortOption();
+      // Las primeras 4 se cargan de inmediato, el resto cuando se acerquen
+      if (index < 4) img.loading = "eager";
 
-  if (currentSort) sortItems(currentSort);
-  applyFilterAndSort();
-  buildWhatsAppLinks();
-  initProductGalleries();
+      img.onerror = function () {
+        img.onerror = null;
+        img.src = original;
+      };
 
-  document.addEventListener('click', function(e) {
-    const container = document.getElementById('sortDropdownContainer');
-    const btn = document.getElementById('sortDropdownBtn');
-    if (container && btn && !container.contains(e.target)) {
-      const instance = bootstrap.Dropdown.getInstance(btn);
-      if (instance) instance.hide();
+      img.src = window.ghaliImg(original, 520, 72);
+    });
+  }
+
+  /* ---------- Enlaces de WhatsApp ---------- */
+  function buildWhatsAppLinks() {
+    document.querySelectorAll(".js-wa-btn").forEach(function (btn) {
+      var message =
+        btn.getAttribute("data-msg") ||
+        "Hola, ¿Cómo estás? En tu web vi algo que me interesó: quiero más información";
+
+      btn.setAttribute(
+        "href",
+        "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(message)
+      );
+      btn.setAttribute("target", "_blank");
+      btn.setAttribute("rel", "noopener noreferrer");
+    });
+  }
+
+  /* ---------- Visor de fotos ---------- */
+  var gl = document.getElementById("gl");
+  var glImg = gl.querySelector(".gl-img");
+  var glCap = gl.querySelector(".gl-cap");
+  var glPrev = gl.querySelector(".gl-prev");
+  var glNext = gl.querySelector(".gl-next");
+  var glClose = gl.querySelector(".gl-close");
+  var glTitle = "";
+  var glImages = [];
+  var glIndex = 0;
+  var glTouchX = null;
+  var glLastFocus = null;
+
+  function showGalleryImage() {
+    var original = glImages[glIndex];
+    var multiple = glImages.length > 1;
+
+    glImg.onerror = function () {
+      glImg.onerror = null;
+      glImg.src = original;
+    };
+
+    glImg.src = window.ghaliImg(original, 1400, 80);
+    glImg.alt = glTitle;
+    glCap.textContent = glTitle + (multiple ? "  ·  " + (glIndex + 1) + " / " + glImages.length : "");
+
+    glPrev.style.display = multiple ? "" : "none";
+    glNext.style.display = multiple ? "" : "none";
+
+    if (multiple) {
+      var preload = new Image();
+      preload.src = window.ghaliImg(glImages[(glIndex + 1) % glImages.length], 1400, 80);
     }
-  });
+  }
 
-  document.querySelectorAll('.sort-option').forEach(option => {
-    option.addEventListener('click', function() {
-      setTimeout(() => {
-        const btn = document.getElementById('sortDropdownBtn');
-        if (btn) {
-          const instance = bootstrap.Dropdown.getInstance(btn);
+  function openGallery(title, images) {
+    glTitle = title;
+    glImages = images;
+    glIndex = 0;
+    glLastFocus = document.activeElement;
+    gl.hidden = false;
+    document.body.style.overflow = "hidden";
+    showGalleryImage();
+    glClose.focus();
+  }
+
+  function closeGallery() {
+    gl.hidden = true;
+    document.body.style.overflow = "";
+    glImg.removeAttribute("src");
+
+    if (glLastFocus && glLastFocus.focus) glLastFocus.focus();
+  }
+
+  function stepGallery(direction) {
+    if (glImages.length < 2) return;
+    glIndex = (glIndex + direction + glImages.length) % glImages.length;
+    showGalleryImage();
+  }
+
+  function initProductGalleries() {
+    document.querySelectorAll(".product-img-wrapper").forEach(function (link) {
+      var title = link.getAttribute("data-title") || "";
+      var extras = (link.getAttribute("data-extra-images") || "")
+        .split(",")
+        .map(function (item) { return item.trim(); })
+        .filter(Boolean)
+        .slice(0, 4);
+      var images = [link.getAttribute("href")].concat(extras);
+
+      link.addEventListener("click", function (event) {
+        event.preventDefault();
+        openGallery(title, images);
+      });
+
+      if (images.length > 1) {
+        var badge = document.createElement("span");
+        badge.className = "gallery-badge";
+        badge.innerHTML = '<i class="fa-solid fa-images"></i> ' + images.length;
+        link.appendChild(badge);
+      }
+    });
+
+    glClose.addEventListener("click", closeGallery);
+
+    glPrev.addEventListener("click", function (event) {
+      event.stopPropagation();
+      stepGallery(-1);
+    });
+
+    glNext.addEventListener("click", function (event) {
+      event.stopPropagation();
+      stepGallery(1);
+    });
+
+    gl.addEventListener("click", function (event) {
+      if (event.target === gl) closeGallery();
+    });
+
+    document.addEventListener("keydown", function (event) {
+      if (gl.hidden) return;
+
+      if (event.key === "Escape") closeGallery();
+      if (event.key === "ArrowLeft") stepGallery(-1);
+      if (event.key === "ArrowRight") stepGallery(1);
+    });
+
+    gl.addEventListener("touchstart", function (event) {
+      glTouchX = event.changedTouches[0].clientX;
+    }, { passive: true });
+
+    gl.addEventListener("touchend", function (event) {
+      if (glTouchX === null) return;
+
+      var delta = event.changedTouches[0].clientX - glTouchX;
+      glTouchX = null;
+
+      if (Math.abs(delta) > 50) stepGallery(delta > 0 ? -1 : 1);
+    }, { passive: true });
+  }
+
+  /* ---------- Filtros y orden ---------- */
+  function setFilterButtonStyles(button) {
+    document.querySelectorAll(".shop-filter-btn").forEach(function (btn) {
+      btn.classList.remove("active");
+    });
+
+    if (button) button.classList.add("active");
+  }
+
+  function updateActiveSortOption() {
+    document.querySelectorAll(".sort-option").forEach(function (option) {
+      if (option.getAttribute("data-sort") === currentSort) {
+        option.classList.add("active", "fw-bold");
+      } else {
+        option.classList.remove("active", "fw-bold");
+      }
+    });
+  }
+
+  function sortItems(type) {
+    var items = Array.prototype.slice.call(document.querySelectorAll(".product-item"));
+    var visible = items.filter(function (item) { return item.style.display !== "none"; });
+    var hidden = items.filter(function (item) { return item.style.display === "none"; });
+
+    visible.sort(function (a, b) {
+      var priceA = parseInt(a.getAttribute("data-price"), 10) || 0;
+      var priceB = parseInt(b.getAttribute("data-price"), 10) || 0;
+
+      if (type === "low-high") return priceA - priceB;
+      if (type === "high-low") return priceB - priceA;
+      return 0;
+    });
+
+    visible.forEach(function (item) { grid.appendChild(item); });
+    hidden.forEach(function (item) { grid.appendChild(item); });
+  }
+
+  function applyFilterAndSort() {
+    document.querySelectorAll(".product-item").forEach(function (item) {
+      if (currentFilter === "all" || item.classList.contains(currentFilter)) {
+        item.style.display = "";
+        item.classList.remove("hidden");
+      } else {
+        item.style.display = "none";
+        item.classList.add("hidden");
+      }
+    });
+
+    if (currentSort) sortItems(currentSort);
+  }
+
+  function initFilters() {
+    var activeBtn = document.querySelector('.shop-filter-btn[data-filter="' + currentFilter + '"]');
+    if (activeBtn) setFilterButtonStyles(activeBtn);
+
+    var sortLabel = document.getElementById("sort-label");
+    if (sortLabel) sortLabel.textContent = currentSortLabel;
+
+    updateActiveSortOption();
+
+    document.querySelectorAll(".shop-filter-btn").forEach(function (button) {
+      button.addEventListener("click", function () {
+        setFilterButtonStyles(this);
+        currentFilter = this.getAttribute("data-filter");
+        lsSet("ghali_filter", currentFilter);
+        applyFilterAndSort();
+      });
+    });
+
+    document.querySelectorAll(".sort-option").forEach(function (option) {
+      option.addEventListener("click", function (event) {
+        event.preventDefault();
+
+        currentSortLabel = this.textContent.trim();
+        currentSort = this.getAttribute("data-sort");
+
+        document.getElementById("sort-label").textContent = currentSortLabel;
+
+        lsSet("ghali_sort", currentSort);
+        lsSet("ghali_sort_label", currentSortLabel);
+
+        sortItems(currentSort);
+        updateActiveSortOption();
+
+        var btn = document.getElementById("sortDropdownBtn");
+        if (btn && window.bootstrap && window.bootstrap.Dropdown) {
+          var instance = window.bootstrap.Dropdown.getInstance(btn);
           if (instance) instance.hide();
         }
-      }, 100);
-    });
-  });
-});
-
-function buildWhatsAppLinks() {
-  document.querySelectorAll('.js-wa-btn').forEach(btn => {
-    const mensaje = btn.getAttribute('data-msg') || 'Hola, ¿Cómo estás? En tu web vi algo que me interesó: quiero más información';
-    const enlace = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(mensaje)}`;
-    btn.setAttribute('href', enlace);
-    btn.setAttribute('target', '_blank');
-    btn.setAttribute('rel', 'noopener noreferrer');
-  });
-}
-
-function initProductGalleries() {
-  document.querySelectorAll('.product-img-wrapper').forEach((mainLink, idx) => {
-    const galleryId = `product-gallery-${idx}`;
-    const title = mainLink.getAttribute('data-title') || '';
-
-    mainLink.setAttribute('data-lightbox', galleryId);
-    mainLink.setAttribute('data-title', title);
-
-    const extraRaw = mainLink.getAttribute('data-extra-images') || '';
-    const extraImages = extraRaw.split(',').map(s => s.trim()).filter(Boolean).slice(0, 4);
-
-    extraImages.forEach(src => {
-      const a = document.createElement('a');
-      a.href = src;
-      a.setAttribute('data-lightbox', galleryId);
-      a.setAttribute('data-title', title);
-      a.style.display = 'none';
-      mainLink.insertAdjacentElement('afterend', a);
+      });
     });
 
-    const totalImages = extraImages.length + 1;
-    if (totalImages > 1) {
-      const badge = document.createElement('span');
-      badge.className = 'gallery-badge';
-      badge.innerHTML = `<i class="fa-solid fa-images"></i> ${totalImages}`;
-      mainLink.appendChild(badge);
-    }
-  });
-}
-
-function setFilterButtonStyles(button) {
-  document.querySelectorAll('.filter-btn, .shop-filter-btn').forEach(btn => {
-    btn.classList.remove('active');
-  });
-  if (button) {
-    button.classList.add('active');
-  }
-}
-
-document.querySelectorAll('.filter-btn, .shop-filter-btn').forEach(button => {
-  button.addEventListener('click', function() {
-    setFilterButtonStyles(this);
-    currentFilter = this.getAttribute('data-filter');
-    localStorage.setItem('ghali_filter', currentFilter);
     applyFilterAndSort();
-  });
-});
+  }
 
-document.querySelectorAll('.sort-option').forEach(option => {
-  option.addEventListener('click', function(e) {
-    e.preventDefault();
-    currentSortLabel = this.innerText;
-    document.getElementById('sort-label').innerText = currentSortLabel;
-    currentSort = this.getAttribute('data-sort');
-    localStorage.setItem('ghali_sort', currentSort);
-    localStorage.setItem('ghali_sort_label', currentSortLabel);
-    sortItems(currentSort);
-    updateActiveSortOption();
-  });
-});
+  /* ---------- Botón "volver arriba" ---------- */
+  function initBackToTop() {
+    var backToTop = document.querySelector(".back-to-top");
+    if (!backToTop) return;
 
-function updateActiveSortOption() {
-  document.querySelectorAll('.sort-option').forEach(opt => {
-    if (opt.getAttribute('data-sort') === currentSort) {
-      opt.classList.add('active', 'fw-bold');
-    } else {
-      opt.classList.remove('active', 'fw-bold');
+    var ticking = false;
+
+    var update = function () {
+      var y = window.pageYOffset || document.documentElement.scrollTop;
+      backToTop.style.display = y > 100 ? "block" : "none";
+      ticking = false;
+    };
+
+    window.addEventListener("scroll", function () {
+      if (!ticking) {
+        ticking = true;
+        requestAnimationFrame(update);
+      }
+    }, { passive: true });
+
+    update();
+  }
+
+  function init() {
+    optimizeImages();
+    buildWhatsAppLinks();
+    initProductGalleries();
+    initFilters();
+    initBackToTop();
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", init);
+  } else {
+    init();
+  }
+})();
+</script>
+
+<!-- Protección básica -->
+<script>
+  document.addEventListener("contextmenu", function (event) {
+    event.preventDefault();
+  });
+
+  document.addEventListener("keydown", function (event) {
+    var key = event.key.toUpperCase();
+
+    if (event.key === "F12") {
+      event.preventDefault();
+    }
+
+    if (
+      (event.ctrlKey || event.metaKey) &&
+      event.shiftKey &&
+      ["I", "J", "C"].indexOf(key) !== -1
+    ) {
+      event.preventDefault();
+    }
+
+    if ((event.ctrlKey || event.metaKey) && key === "U") {
+      event.preventDefault();
     }
   });
-}
 
-function sortItems(type) {
-  const items = Array.from(document.querySelectorAll('.product-item'));
-  const visibleItems = items.filter(item => item.style.display !== 'none');
-  const hiddenItems = items.filter(item => item.style.display === 'none');
-
-  visibleItems.sort((a, b) => {
-    const priceA = parseInt(a.getAttribute('data-price')) || 0;
-    const priceB = parseInt(b.getAttribute('data-price')) || 0;
-    if (type === 'low-high') return priceA - priceB;
-    if (type === 'high-low') return priceB - priceA;
-    return 0;
-  });
-
-  visibleItems.forEach(item => grid.appendChild(item));
-  hiddenItems.forEach(item => grid.appendChild(item));
-}
-
-function applyFilterAndSort() {
-  const items = document.querySelectorAll('.product-item');
-  items.forEach(item => {
-    if (currentFilter === 'all' || item.classList.contains(currentFilter)) {
-      item.style.display = '';
-      item.classList.remove('hidden');
-    } else {
-      item.style.display = 'none';
-      item.classList.add('hidden');
+  document.addEventListener("dragstart", function (event) {
+    if (event.target && event.target.tagName === "IMG") {
+      event.preventDefault();
     }
   });
 
-  if (currentSort) sortItems(currentSort);
-}
-
-document.addEventListener('contextmenu', function(e) { e.preventDefault(); return false; });
-
-document.addEventListener('keydown', function(e) {
-  if (e.key === 'F12') { e.preventDefault(); return false; }
-  if ((e.ctrlKey || e.metaKey) && e.shiftKey && (e.key === 'I' || e.key === 'i')) { e.preventDefault(); return false; }
-  if ((e.ctrlKey || e.metaKey) && e.shiftKey && (e.key === 'J' || e.key === 'j')) { e.preventDefault(); return false; }
-  if ((e.ctrlKey || e.metaKey) && (e.key === 'U' || e.key === 'u')) { e.preventDefault(); return false; }
-  if ((e.ctrlKey || e.metaKey) && e.shiftKey && (e.key === 'C' || e.key === 'c')) { e.preventDefault(); return false; }
-});
-
-document.querySelectorAll('img').forEach(img => {
-  img.addEventListener('dragstart', function(e) { e.preventDefault(); return false; });
-});
-
-console.log('%c🔒 Contenido protegido', 'font-size: 20px; font-weight: bold; color: #F40C5A;');
-console.log('%cSi tienes alguna pregunta o necesitas acceso, contáctame a través de mis redes oficiales.', 'font-size: 14px;');
+  console.log("%c🔒 Contenido protegido", "font-size: 20px; font-weight: bold; color: #F40C5A;");
+  console.log("%cSi tienes alguna pregunta o necesitas acceso, contáctame a través de mis redes oficiales.", "font-size: 14px;");
 </script>
 
 </body>

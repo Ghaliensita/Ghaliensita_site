@@ -4842,3 +4842,35 @@ button#calcularBtn:hover {
     transition: none;
   }
 }
+
+/* Celulares y tablets: menos efectos pesados */
+@media (max-width: 991px) {
+  .navbar {
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+    background-color: rgba(20, 20, 20, 0.92);
+  }
+
+  .gallery-badge {
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+
+  /* El filtro gris de los 42 logos en movimiento cansa mucho a un celular */
+  .home-marquee-list img {
+    filter: none;
+    opacity: 0.85;
+  }
+}
+
+/* Pantallas táctiles: no hay "hover", se quitan esas animaciones */
+@media (hover: none) {
+  .home-universe-card,
+  .home-review-card,
+  .ghlab-service-card,
+  .ghlab-product-card,
+  .maker-card,
+  .maker-step {
+    transition: none;
+  }
+}
