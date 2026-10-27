@@ -1,102 +1,139 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-   <meta charset="utf-8">
-  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
-  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <meta charset="utf-8">
 
   <title>Stephany Ghalien | GHALI LAB · Tattoo · Diseño · 3D</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#1b1b1b">
 
   <meta name="keywords" content="ghalien, ghaliensita, stephany ghalien, ghali lab, impresión 3d, modelado 3d, diseño gráfico, páginas web, tatuajes, ghalien tattoo, content creator, streamer, comisiones, diseño web, Colombia">
 
   <meta name="description" content="Stephany Ghalien: creatividad, impresión 3D, modelado, desarrollo web, diseño, tatuajes, contenido y tecnología creativa. Conoce GHALI LAB y Ghalien Tattoo.">
 
-  <!-- Optimización API del contador -->
-  <link rel="preconnect" href="https://sheetdb.io" crossorigin>
+  <!-- Conexiones anticipadas -->
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link rel="preconnect" href="https://wsrv.nl" crossorigin>
   <link rel="dns-prefetch" href="https://sheetdb.io">
+
+  <!-- Foto del hero: original en pantallas grandes, versión reducida en celulares -->
+  <link rel="preload" as="image" href="img/intro-bg---Copy.jpg" media="(min-width: 769px)" fetchpriority="high">
+  <link rel="preload" as="image" href="https://wsrv.nl/?url=https%3A%2F%2Fghaliensita.github.io%2FGhaliensita_site%2Fimg%2Fintro-bg---Copy.jpg&w=900&q=65&output=webp&we=1" media="(max-width: 768px)" fetchpriority="high">
 
   <!-- Favicons -->
   <link href="img/favicon.png" rel="icon">
   <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
 
-  <!-- Bootstrap 5 -->
+  <!-- Bootstrap 5 (único CSS que bloquea el pintado, junto con style.css) -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
-
-  <!-- Libraries CSS Files -->
-  <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-  <link href="lib/animate/animate.min.css" rel="stylesheet">
-  <link href="lib/ionicons/css/ionicons.min.css" rel="stylesheet">
-  <link href="https://file.myfontastic.com/9uXaaj5vAm5wectHaxzyV9/icons.css" rel="stylesheet" media="print" onload="this.media='all'">
-  <link href="lib/ghali-icons/styles.css" rel="stylesheet">
-  <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-  <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
-
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <!-- Main Stylesheet -->
   <link href="css/style.css" rel="stylesheet">
 
-  <!-- Carga anticipada de estadísticas -->
-  <script>
-    window.GhaliStats = (function () {
-      var API = "https://sheetdb.io/api/v1/gvl6na6phf41h";
-      var CACHE_KEY = "ghali_stats_v1";
-      var TTL = 6 * 60 * 60 * 1000;
-      var promise = null;
+  <!-- Iconos: no bloquean el pintado (el hero no usa iconos) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
+  <link href="lib/ghali-icons/styles.css" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="lib/ghali-icons/styles.css" rel="stylesheet">
+    <style>.home-hero { background-image: url(img/intro-bg---Copy.jpg); }</style>
+  </noscript>
 
-      function load() {
-        if (promise) return promise;
+  <!-- Ajustes de esta página -->
+  <style>
+    #preloader { display: none !important; }
 
-        try {
-          var raw = sessionStorage.getItem(CACHE_KEY);
+    /* Las secciones de abajo no se pintan hasta que están cerca */
+    .home-lab-section,
+    .home-clients-section,
+    .home-faq-section,
+    .home-final-section {
+      content-visibility: auto;
+      contain-intrinsic-size: auto 700px;
+    }
 
-          if (raw) {
-            var cached = JSON.parse(raw);
+    /* La animación de logos se pausa cuando no se ve */
+    .home-marquee-track.is-paused {
+      animation-play-state: paused;
+    }
 
-            if (cached && (Date.now() - cached.t) < TTL) {
-              promise = Promise.resolve(cached.d);
-              return promise;
-            }
-          }
-        } catch (error) {}
-
-        promise = fetch(API)
-          .then(function (response) {
-            if (!response.ok) {
-              throw new Error("No fue posible cargar las estadísticas.");
-            }
-
-            return response.json();
-          })
-          .then(function (data) {
-            var stats = data[0];
-
-            try {
-              sessionStorage.setItem(
-                CACHE_KEY,
-                JSON.stringify({
-                  t: Date.now(),
-                  d: stats
-                })
-              );
-            } catch (error) {}
-
-            return stats;
-          });
-
-        return promise;
+    /* Celulares y tablets: menos efectos pesados para la GPU */
+    @media (max-width: 991px) {
+      .navbar {
+        -webkit-backdrop-filter: none;
+        backdrop-filter: none;
+        background-color: rgba(20, 20, 20, 0.92);
       }
 
-      load();
+      .home-marquee-list img {
+        filter: none;
+        opacity: 0.85;
+      }
+    }
 
-      return {
-        load: load
+    /* Pantallas táctiles: no hay "hover", se quitan esas animaciones */
+    @media (hover: none) {
+      .home-universe-card,
+      .home-review-card,
+      .home-lab-image img {
+        transition: none;
+      }
+
+      .home-universe-card:hover,
+      .home-review-card:hover {
+        transform: none;
+        box-shadow: none;
+      }
+
+      .home-lab-card:hover .home-lab-image img {
+        transform: none;
+      }
+    }
+  </style>
+
+  <!-- Ayudante: entrega fotos reducidas y en WebP (si falla, se usa la original) -->
+  <script>
+    window.ghaliImg = function (path, w, q) {
+      try {
+        var abs = new URL(path, location.href);
+
+        if (
+          abs.protocol.indexOf("http") !== 0 ||
+          abs.hostname === "localhost" ||
+          abs.hostname === "127.0.0.1"
+        ) {
+          return path;
+        }
+
+        return (
+          "https://wsrv.nl/?url=" +
+          encodeURIComponent(abs.href) +
+          "&w=" + w +
+          "&q=" + (q || 70) +
+          "&output=webp&we=1"
+        );
+      } catch (error) {
+        return path;
+      }
+    };
+
+    window.ghaliSetBg = function (element, path, width, quality) {
+      var optimized = window.ghaliImg(path, width, quality);
+      var probe = new Image();
+
+      probe.onload = function () {
+        element.style.backgroundImage = 'url("' + optimized + '")';
       };
-    })();
+
+      probe.onerror = function () {
+        element.style.backgroundImage = 'url("' + path + '")';
+      };
+
+      probe.src = optimized;
+    };
   </script>
 </head>
 
@@ -137,7 +174,7 @@
             Tienda
           </a>
         </li>
-        
+
         <li class="nav-item">
           <a class="nav-link js-scroll" href="ghalilab.html">
             GHALI LAB
@@ -187,11 +224,11 @@
 <!-- Nav End -->
 
 
-<!-- Hero Start -->
+<!-- Hero Start (la foto se asigna desde el script de abajo) -->
 <header
   id="home"
   class="intro route bg-image home-hero"
-  style="background-image: url(img/intro-bg---Copy.jpg)"
+  style="background-color: #1b1b1b;"
 >
   <div class="overlay-itro"></div>
 
@@ -237,6 +274,21 @@
     </div>
   </div>
 </header>
+<script>
+  (function () {
+    var hero = document.getElementById("home");
+    var original = "img/intro-bg---Copy.jpg";
+    var isMobile = window.matchMedia && window.matchMedia("(max-width: 768px)").matches;
+
+    if (!hero) return;
+
+    if (isMobile) {
+      window.ghaliSetBg(hero, original, 900, 65);
+    } else {
+      hero.style.backgroundImage = "url(" + original + ")";
+    }
+  })();
+</script>
 <!-- Hero End -->
 
 
@@ -395,10 +447,14 @@
 
       <div class="home-lab-image">
         <img
-          src="img/ghalilab-pic.jpg"
+          data-src="img/ghalilab-pic.jpg"
           alt="Proyecto creativo de GHALI LAB"
+          width="800"
+          height="600"
           loading="lazy"
+          decoding="async"
         >
+        <noscript><img src="img/ghalilab-pic.jpg" alt="Proyecto creativo de GHALI LAB"></noscript>
       </div>
 
     </div>
@@ -407,11 +463,11 @@
   <!-- GHALI LAB Vision End -->
 
 
-  <!-- Stats Start -->
+  <!-- Stats Start (el fondo y los números se cargan solo al acercarse) -->
   <section
     class="home-stats-section"
     id="stats-section"
-    style="background-image: url(img/counters-bg.jpg)"
+    data-bg="img/counters-bg.jpg"
   >
     <div class="home-stats-overlay"></div>
 
@@ -490,51 +546,51 @@
       <div class="home-marquee-track">
 
         <div class="home-marquee-list">
-          <div><img src="images/Ghali-GHALI LAB.svg" alt="GHALI LAB"></div>
-          <div><img src="images/Ghali-METRICAZAGENCY.svg" alt="Metricaz Agency"></div>
-          <div><img src="images/Ghali-SMSCARBON.svg" alt="SMS Carbon SAS"></div>
-          <div><img src="images/Ghali-FUNDACIONSANCHARBEL.svg" alt="Fundación San Charbel"></div>
-          <div><img src="images/Ghali-Ari3D.svg" alt="Ari3D"></div>
-          <div><img src="images/Ghali-Serempre.svg" alt="Serempre"></div>
-          <div><img src="images/Ghali-Cetiia.svg" alt="CETIIA"></div>
-          <div><img src="images/Ghali-ACOPI.svg" alt="ACOPI"></div>
-          <div><img src="images/Ghali-24HN.svg" alt="24HN"></div>
-          <div><img src="images/Ghali-SalvarVidasYa.svg" alt="Salvar Vidas Ya"></div>
-          <div><img src="images/Ghali-AFM.svg" alt="AFM Holding"></div>
-          <div><img src="images/Ghali-ADINTELO.svg" alt="ADINTELO"></div>
-          <div><img src="images/Ghali-Tu Fiesta HLM.svg" alt="Tu Fiesta HLM"></div>
-          <div><img src="images/Ghali-Rehumanizar.svg" alt="Rehumanizar"></div>
-          <div><img src="images/Ghali-Cooperen.svg" alt="Cooperen"></div>
-          <div><img src="images/Ghali-VIDACOOP.svg" alt="VIDACOOP"></div>
-          <div><img src="images/Ghali-Refrilogística.svg" alt="Refrilogística"></div>
-          <div><img src="images/Ghali-Aburrá.svg" alt="Aburrá LTDA"></div>
-          <div><img src="images/Ghali-Ahumados Toto.svg" alt="Ahumados Toto"></div>
-          <div><img src="images/Ghali-FEC.svg" alt="FEC"></div>
-          <div><img src="images/Ghali-CAC Marketing y Publicidad.svg" alt="CAC Marketing y Publicidad"></div>
+          <div><img loading="lazy" decoding="async" src="images/Ghali-GHALI LAB.svg" alt="GHALI LAB"></div>
+          <div><img loading="lazy" decoding="async" src="images/Ghali-METRICAZAGENCY.svg" alt="Metricaz Agency"></div>
+          <div><img loading="lazy" decoding="async" src="images/Ghali-SMSCARBON.svg" alt="SMS Carbon SAS"></div>
+          <div><img loading="lazy" decoding="async" src="images/Ghali-FUNDACIONSANCHARBEL.svg" alt="Fundación San Charbel"></div>
+          <div><img loading="lazy" decoding="async" src="images/Ghali-Ari3D.svg" alt="Ari3D"></div>
+          <div><img loading="lazy" decoding="async" src="images/Ghali-Serempre.svg" alt="Serempre"></div>
+          <div><img loading="lazy" decoding="async" src="images/Ghali-Cetiia.svg" alt="CETIIA"></div>
+          <div><img loading="lazy" decoding="async" src="images/Ghali-ACOPI.svg" alt="ACOPI"></div>
+          <div><img loading="lazy" decoding="async" src="images/Ghali-24HN.svg" alt="24HN"></div>
+          <div><img loading="lazy" decoding="async" src="images/Ghali-SalvarVidasYa.svg" alt="Salvar Vidas Ya"></div>
+          <div><img loading="lazy" decoding="async" src="images/Ghali-AFM.svg" alt="AFM Holding"></div>
+          <div><img loading="lazy" decoding="async" src="images/Ghali-ADINTELO.svg" alt="ADINTELO"></div>
+          <div><img loading="lazy" decoding="async" src="images/Ghali-Tu Fiesta HLM.svg" alt="Tu Fiesta HLM"></div>
+          <div><img loading="lazy" decoding="async" src="images/Ghali-Rehumanizar.svg" alt="Rehumanizar"></div>
+          <div><img loading="lazy" decoding="async" src="images/Ghali-Cooperen.svg" alt="Cooperen"></div>
+          <div><img loading="lazy" decoding="async" src="images/Ghali-VIDACOOP.svg" alt="VIDACOOP"></div>
+          <div><img loading="lazy" decoding="async" src="images/Ghali-Refrilogística.svg" alt="Refrilogística"></div>
+          <div><img loading="lazy" decoding="async" src="images/Ghali-Aburrá.svg" alt="Aburrá LTDA"></div>
+          <div><img loading="lazy" decoding="async" src="images/Ghali-Ahumados Toto.svg" alt="Ahumados Toto"></div>
+          <div><img loading="lazy" decoding="async" src="images/Ghali-FEC.svg" alt="FEC"></div>
+          <div><img loading="lazy" decoding="async" src="images/Ghali-CAC Marketing y Publicidad.svg" alt="CAC Marketing y Publicidad"></div>
         </div>
 
         <div class="home-marquee-list" aria-hidden="true">
-          <div><img src="images/Ghali-GHALI LAB.svg" alt=""></div>
-          <div><img src="images/Ghali-METRICAZAGENCY.svg" alt=""></div>
-          <div><img src="images/Ghali-SMSCARBON.svg" alt=""></div>
-          <div><img src="images/Ghali-FUNDACIONSANCHARBEL.svg" alt=""></div>
-          <div><img src="images/Ghali-Ari3D.svg" alt=""></div>
-          <div><img src="images/Ghali-Serempre.svg" alt=""></div>
-          <div><img src="images/Ghali-Cetiia.svg" alt=""></div>
-          <div><img src="images/Ghali-ACOPI.svg" alt=""></div>
-          <div><img src="images/Ghali-24HN.svg" alt=""></div>
-          <div><img src="images/Ghali-SalvarVidasYa.svg" alt=""></div>
-          <div><img src="images/Ghali-AFM.svg" alt=""></div>
-          <div><img src="images/Ghali-ADINTELO.svg" alt=""></div>
-          <div><img src="images/Ghali-Tu Fiesta HLM.svg" alt=""></div>
-          <div><img src="images/Ghali-Rehumanizar.svg" alt=""></div>
-          <div><img src="images/Ghali-Cooperen.svg" alt=""></div>
-          <div><img src="images/Ghali-VIDACOOP.svg" alt=""></div>
-          <div><img src="images/Ghali-Refrilogística.svg" alt=""></div>
-          <div><img src="images/Ghali-Aburrá.svg" alt=""></div>
-          <div><img src="images/Ghali-Ahumados Toto.svg" alt=""></div>
-          <div><img src="images/Ghali-FEC.svg" alt=""></div>
-          <div><img src="images/Ghali-CAC Marketing y Publicidad.svg" alt=""></div>
+          <div><img loading="lazy" decoding="async" src="images/Ghali-GHALI LAB.svg" alt=""></div>
+          <div><img loading="lazy" decoding="async" src="images/Ghali-METRICAZAGENCY.svg" alt=""></div>
+          <div><img loading="lazy" decoding="async" src="images/Ghali-SMSCARBON.svg" alt=""></div>
+          <div><img loading="lazy" decoding="async" src="images/Ghali-FUNDACIONSANCHARBEL.svg" alt=""></div>
+          <div><img loading="lazy" decoding="async" src="images/Ghali-Ari3D.svg" alt=""></div>
+          <div><img loading="lazy" decoding="async" src="images/Ghali-Serempre.svg" alt=""></div>
+          <div><img loading="lazy" decoding="async" src="images/Ghali-Cetiia.svg" alt=""></div>
+          <div><img loading="lazy" decoding="async" src="images/Ghali-ACOPI.svg" alt=""></div>
+          <div><img loading="lazy" decoding="async" src="images/Ghali-24HN.svg" alt=""></div>
+          <div><img loading="lazy" decoding="async" src="images/Ghali-SalvarVidasYa.svg" alt=""></div>
+          <div><img loading="lazy" decoding="async" src="images/Ghali-AFM.svg" alt=""></div>
+          <div><img loading="lazy" decoding="async" src="images/Ghali-ADINTELO.svg" alt=""></div>
+          <div><img loading="lazy" decoding="async" src="images/Ghali-Tu Fiesta HLM.svg" alt=""></div>
+          <div><img loading="lazy" decoding="async" src="images/Ghali-Rehumanizar.svg" alt=""></div>
+          <div><img loading="lazy" decoding="async" src="images/Ghali-Cooperen.svg" alt=""></div>
+          <div><img loading="lazy" decoding="async" src="images/Ghali-VIDACOOP.svg" alt=""></div>
+          <div><img loading="lazy" decoding="async" src="images/Ghali-Refrilogística.svg" alt=""></div>
+          <div><img loading="lazy" decoding="async" src="images/Ghali-Aburrá.svg" alt=""></div>
+          <div><img loading="lazy" decoding="async" src="images/Ghali-Ahumados Toto.svg" alt=""></div>
+          <div><img loading="lazy" decoding="async" src="images/Ghali-FEC.svg" alt=""></div>
+          <div><img loading="lazy" decoding="async" src="images/Ghali-CAC Marketing y Publicidad.svg" alt=""></div>
         </div>
 
       </div>
@@ -556,91 +612,83 @@
 
 
   <!-- Reviews Start -->
-<section class="ghlab-section home-reviews-section">
+  <section class="ghlab-section home-reviews-section">
 
-  <div class="ghlab-section-head">
-    <span class="ghlab-kicker">Reseñas</span>
-    <h2>Lo que opinan nuestros clientes</h2>
-    <p>Algunas experiencias compartidas por clientes de GHALI LAB y Ghalien Tattoo.</p>
-  </div>
+    <div class="ghlab-section-head">
+      <span class="ghlab-kicker">Reseñas</span>
+      <h2>Lo que opinan nuestros clientes</h2>
+      <p>Algunas experiencias compartidas por clientes de GHALI LAB y Ghalien Tattoo.</p>
+    </div>
 
-  <div class="home-reviews-grid">
+    <div class="home-reviews-grid">
 
-    <!-- Reseña 1 -->
-    <article class="home-review-card">
-      <div class="home-review-stars">★★★★★</div>
-      <p>“Excelente calidad en el servicio y productos.”</p>
-      <div class="home-review-author">Daniel Coronado</div>
-    </article>
+      <article class="home-review-card">
+        <div class="home-review-stars">★★★★★</div>
+        <p>“Excelente calidad en el servicio y productos.”</p>
+        <div class="home-review-author">Daniel Coronado</div>
+      </article>
 
-    <!-- Reseña 2 -->
-    <article class="home-review-card">
-      <div class="home-review-stars">★★★★★</div>
-      <p>“Comprometida con el encargo desde el minuto uno. Me mostró diferentes diseños, terminó la impresión en menos de un día y llegó en excelentes condiciones.”</p>
-      <div class="home-review-author">Miguel Herrera</div>
-    </article>
+      <article class="home-review-card">
+        <div class="home-review-stars">★★★★★</div>
+        <p>“Comprometida con el encargo desde el minuto uno. Me mostró diferentes diseños, terminó la impresión en menos de un día y llegó en excelentes condiciones.”</p>
+        <div class="home-review-author">Miguel Herrera</div>
+      </article>
 
-    <!-- Reseña 3 -->
-    <article class="home-review-card">
-      <div class="home-review-stars">★★★★★</div>
-      <p>“Excelente calidad de diseños según tus gustos. Transmite una energía increíble y pone pasión en cada línea que deja en tu piel.”</p>
-      <div class="home-review-author">Anny Castrillón</div>
-    </article>
+      <article class="home-review-card">
+        <div class="home-review-stars">★★★★★</div>
+        <p>“Excelente calidad de diseños según tus gustos. Transmite una energía increíble y pone pasión en cada línea que deja en tu piel.”</p>
+        <div class="home-review-author">Anny Castrillón</div>
+      </article>
 
-    <!-- Reseña 4 -->
-    <article class="home-review-card">
-      <div class="home-review-stars">★★★★★</div>
-      <p>“Excelente servicio, gran atención y muy buena persona. Recomendadísimo.”</p>
-      <div class="home-review-author">Gabriel Lencina</div>
-    </article>
+      <article class="home-review-card">
+        <div class="home-review-stars">★★★★★</div>
+        <p>“Excelente servicio, gran atención y muy buena persona. Recomendadísimo.”</p>
+        <div class="home-review-author">Gabriel Lencina</div>
+      </article>
 
-    <!-- Reseña 5 - Juan Jube -->
-    <article class="home-review-card">
-      <div class="home-review-stars">★★★★★</div>
-      <p>“Muy buen servicio, entrega oportuna de piezas y web.”</p>
-      <div class="home-review-author">Juan Jube</div>
-    </article>
+      <article class="home-review-card">
+        <div class="home-review-stars">★★★★★</div>
+        <p>“Muy buen servicio, entrega oportuna de piezas y web.”</p>
+        <div class="home-review-author">Juan Jube</div>
+      </article>
 
-        <!-- Reseña 5 - Diana Carolina Correa -->
-    <article class="home-review-card">
-      <div class="home-review-stars">★★★★★</div>
-      <p>“La mejor! Muy buena calidad”</p>
-      <div class="home-review-author">Diana Carolina Correa</div>
-    </article>
+      <article class="home-review-card">
+        <div class="home-review-stars">★★★★★</div>
+        <p>“La mejor! Muy buena calidad”</p>
+        <div class="home-review-author">Diana Carolina Correa</div>
+      </article>
 
-        <!-- Reseña 5 - Edison Alexander Echeverri Cataño -->
-    <article class="home-review-card">
-      <div class="home-review-stars">★★★★★</div>
-      <p>“Excelente atención y excelente servicio!!! Muy buena tatuadora”</p>
-      <div class="home-review-author">Edison Alexander Echeverri Cataño</div>
-    </article>
+      <article class="home-review-card">
+        <div class="home-review-stars">★★★★★</div>
+        <p>“Excelente atención y excelente servicio!!! Muy buena tatuadora”</p>
+        <div class="home-review-author">Edison Alexander Echeverri Cataño</div>
+      </article>
 
-        <!-- Reseña 5 - Paola Lugo -->
-    <article class="home-review-card">
-      <div class="home-review-stars">★★★★★</div>
-      <p>“Excelente tatuadora, súper profesional y me dio mucha confianza!”</p>
-      <div class="home-review-author">Paola Lugo</div>
-    </article>
+      <article class="home-review-card">
+        <div class="home-review-stars">★★★★★</div>
+        <p>“Excelente tatuadora, súper profesional y me dio mucha confianza!”</p>
+        <div class="home-review-author">Paola Lugo</div>
+      </article>
 
-  </div>
+    </div>
 
-  <!-- Botón para ver todas las reseñas -->
-  <div class="home-reviews-footer" style="text-align: center; margin-top: 20px;">
-    <a href="https://g.page/r/CfqxOsfArykmEAE/review" 
-       target="_blank" 
-       rel="noopener" 
-       class="ghlab-button ghlab-button-secondary">
-      <i class="fa-brands fa-google"></i> Ver todas las reseñas en Google Maps
-    </a>
-  </div>
+    <div class="home-reviews-footer" style="text-align: center; margin-top: 20px;">
+      <a href="https://g.page/r/CfqxOsfArykmEAE/review"
+         target="_blank"
+         rel="noopener"
+         class="ghlab-button ghlab-button-secondary">
+        <i class="fa-brands fa-google"></i> Ver todas las reseñas en Google Maps
+      </a>
+    </div>
 
-<br>
-<!-- Elfsight Google Reviews | Untitled Google Reviews -->
- <p style="text-align: center;">Más reseñas disponibles en Google Maps de <strong> GHALI LAB</strong></p>
-<script src="https://elfsightcdn.com/platform.js" async></script>
-<div class="elfsight-app-fd62b4ef-a41f-47bb-8626-e26b4f77c9bb" data-elfsight-app-lazy></div>
+    <br>
 
-</section>
+    <p style="text-align: center;">Más reseñas disponibles en Google Maps de <strong> GHALI LAB</strong></p>
+
+    <!-- Elfsight Google Reviews: el script se carga solo cuando esta zona está por aparecer -->
+    <div class="elfsight-app-fd62b4ef-a41f-47bb-8626-e26b4f77c9bb" data-elfsight-app-lazy></div>
+
+  </section>
   <!-- Reviews End -->
 
 
@@ -765,7 +813,6 @@
             <a href="ghalilab.html">GHALI LAB</a> |
             <a href="services.html">SERVICIOS</a> |
             <a href="quoteprice.html">COTIZACIÓN</a> |
-
             <a href="aboutme.html">SOBRE MÍ</a> |
             <a href="paymethods.html">MÉTODOS DE PAGO</a> |
             <a href="mysocial.html">MIS REDES</a>
@@ -818,22 +865,95 @@
 </a>
 
 
-
-
-<!-- Counter Start -->
+<!-- Scripts de la página (sin jQuery ni librerías externas) -->
 <script>
 (function () {
   "use strict";
 
+  var isMobile = window.matchMedia && window.matchMedia("(max-width: 768px)").matches;
+
+  /* ---------- Foto de GHALI LAB (reducida) ---------- */
+  function loadLabImage() {
+    var img = document.querySelector(".home-lab-image img[data-src]");
+    if (!img) return;
+
+    var original = img.getAttribute("data-src");
+
+    img.onerror = function () {
+      img.onerror = null;
+      img.src = original;
+    };
+
+    img.src = window.ghaliImg(original, isMobile ? 700 : 1000, 72);
+  }
+
+  /* ---------- Estadísticas (SheetDB) ---------- */
+  var API = "https://sheetdb.io/api/v1/gvl6na6phf41h";
+  var CACHE_KEY = "ghali_stats_v2";
+  var TTL = 6 * 60 * 60 * 1000;
   var DURATION = 1100;
+  var promise = null;
+
+  function readCache(ignoreTTL) {
+    try {
+      var raw = localStorage.getItem(CACHE_KEY);
+      if (!raw) return null;
+
+      var cached = JSON.parse(raw);
+
+      if (cached && cached.d && (ignoreTTL || (Date.now() - cached.t) < TTL)) {
+        return cached.d;
+      }
+    } catch (error) {}
+
+    return null;
+  }
+
+  function loadStats() {
+    if (promise) return promise;
+
+    var fresh = readCache(false);
+
+    if (fresh) {
+      promise = Promise.resolve(fresh);
+      return promise;
+    }
+
+    promise = fetch(API)
+      .then(function (response) {
+        if (!response.ok) {
+          throw new Error("No fue posible cargar las estadísticas.");
+        }
+
+        return response.json();
+      })
+      .then(function (data) {
+        var stats = data[0];
+
+        try {
+          localStorage.setItem(
+            CACHE_KEY,
+            JSON.stringify({ t: Date.now(), d: stats })
+          );
+        } catch (error) {}
+
+        return stats;
+      })
+      .catch(function (error) {
+        var stale = readCache(true);
+        if (stale) return stale;
+        throw error;
+      });
+
+    return promise;
+  }
 
   function easeOutCubic(t) {
     return 1 - Math.pow(1 - t, 3);
   }
 
-  function animateCounter(id, endValue, duration) {
+  function animateCounter(id, endValue) {
     var element = document.getElementById(id);
-
     if (!element) return;
 
     endValue = parseInt(endValue, 10);
@@ -842,8 +962,6 @@
       element.textContent = "+0";
       return;
     }
-
-    duration = duration || DURATION;
 
     if (
       window.matchMedia &&
@@ -858,14 +976,10 @@
     function step(timestamp) {
       if (startTime === null) startTime = timestamp;
 
-      var progress = Math.min((timestamp - startTime) / duration, 1);
+      var progress = Math.min((timestamp - startTime) / DURATION, 1);
+      var currentValue = Math.round(endValue * easeOutCubic(progress));
 
-      var currentValue = Math.round(
-        endValue * easeOutCubic(progress)
-      );
-
-      element.textContent =
-        "+" + currentValue.toLocaleString("es-ES");
+      element.textContent = "+" + currentValue.toLocaleString("es-ES");
 
       if (progress < 1) {
         requestAnimationFrame(step);
@@ -883,61 +997,130 @@
   }
 
   function startCounters() {
-    window.GhaliStats.load()
+    loadStats()
       .then(render)
       .catch(function (error) {
         console.error("Error al cargar estadísticas:", error);
       });
   }
 
-  function initCounters() {
-    var section = document.getElementById("stats-section");
+  function setStatsBackground(section) {
+    var bg = section.getAttribute("data-bg");
+    if (!bg) return;
 
+    section.removeAttribute("data-bg");
+    window.ghaliSetBg(section, bg, isMobile ? 900 : 1600, 60);
+  }
+
+  function initStats() {
+    var section = document.getElementById("stats-section");
     if (!section) return;
 
     if (!("IntersectionObserver" in window)) {
+      setStatsBackground(section);
       startCounters();
       return;
     }
 
-    var observer = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting) {
-          observer.disconnect();
-          startCounters();
-        }
-      });
-    }, {
-      rootMargin: "250px 0px",
-      threshold: 0
-    });
+    var bgObserver = new IntersectionObserver(function (entries) {
+      if (entries[0].isIntersecting) {
+        bgObserver.disconnect();
+        setStatsBackground(section);
+      }
+    }, { rootMargin: "800px 0px", threshold: 0 });
+    bgObserver.observe(section);
 
-    observer.observe(section);
+    var statsObserver = new IntersectionObserver(function (entries) {
+      if (entries[0].isIntersecting) {
+        statsObserver.disconnect();
+        startCounters();
+      }
+    }, { rootMargin: "250px 0px", threshold: 0 });
+    statsObserver.observe(section);
+  }
+
+  /* ---------- Carrusel de logos: se pausa cuando no se ve ---------- */
+  function initMarqueePause() {
+    var viewport = document.querySelector(".home-marquee-viewport");
+    var track = document.querySelector(".home-marquee-track");
+
+    if (!viewport || !track || !("IntersectionObserver" in window)) return;
+
+    new IntersectionObserver(function (entries) {
+      track.classList.toggle("is-paused", !entries[0].isIntersecting);
+    }, { threshold: 0 }).observe(viewport);
+  }
+
+  /* ---------- Elfsight (reseñas de Google) bajo demanda ---------- */
+  var elfsightLoaded = false;
+
+  function loadElfsight() {
+    if (elfsightLoaded) return;
+    elfsightLoaded = true;
+
+    var script = document.createElement("script");
+    script.src = "https://elfsightcdn.com/platform.js";
+    script.async = true;
+    document.body.appendChild(script);
+  }
+
+  function initElfsight() {
+    var target = document.querySelector('[class^="elfsight-app-"]');
+    if (!target) return;
+
+    if (!("IntersectionObserver" in window)) {
+      window.addEventListener("load", loadElfsight);
+      return;
+    }
+
+    var observer = new IntersectionObserver(function (entries) {
+      if (entries[0].isIntersecting) {
+        observer.disconnect();
+        loadElfsight();
+      }
+    }, { rootMargin: "500px 0px", threshold: 0 });
+
+    observer.observe(target);
+  }
+
+  /* ---------- Botón "volver arriba" ---------- */
+  function initBackToTop() {
+    var backToTop = document.querySelector(".back-to-top");
+    if (!backToTop) return;
+
+    var ticking = false;
+
+    var update = function () {
+      var y = window.pageYOffset || document.documentElement.scrollTop;
+      backToTop.style.display = y > 100 ? "block" : "none";
+      ticking = false;
+    };
+
+    window.addEventListener("scroll", function () {
+      if (!ticking) {
+        ticking = true;
+        requestAnimationFrame(update);
+      }
+    }, { passive: true });
+
+    update();
+  }
+
+  function init() {
+    loadLabImage();
+    initStats();
+    initMarqueePause();
+    initElfsight();
+    initBackToTop();
   }
 
   if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", initCounters);
+    document.addEventListener("DOMContentLoaded", init);
   } else {
-    initCounters();
+    init();
   }
 })();
 </script>
-<!-- Counter End -->
-
-
-<!-- JavaScript Libraries -->
-<script src="lib/jquery/jquery.min.js"></script>
-
-
-
-
-<script src="lib/owlcarousel/owl.carousel.min.js"></script>
-<script src="lib/lightbox/js/lightbox.min.js"></script>
-
-
-
-<!-- Template Main Javascript -->
-<script src="js/main.js" defer></script>
 
 
 <!-- Protección básica -->
@@ -956,23 +1139,20 @@
     if (
       (event.ctrlKey || event.metaKey) &&
       event.shiftKey &&
-      ["I", "J", "C"].includes(key)
+      ["I", "J", "C"].indexOf(key) !== -1
     ) {
       event.preventDefault();
     }
 
-    if (
-      (event.ctrlKey || event.metaKey) &&
-      key === "U"
-    ) {
+    if ((event.ctrlKey || event.metaKey) && key === "U") {
       event.preventDefault();
     }
   });
 
-  document.querySelectorAll("img").forEach(function (image) {
-    image.addEventListener("dragstart", function (event) {
+  document.addEventListener("dragstart", function (event) {
+    if (event.target && event.target.tagName === "IMG") {
       event.preventDefault();
-    });
+    }
   });
 
   console.log(
