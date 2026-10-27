@@ -1,13 +1,43 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-   <meta charset="utf-8">
+  <meta charset="utf-8">
+  <script>document.documentElement.className += " js";</script>
+
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
   <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
-  <title>Stephany Ghalien - GHALI LAB</title>
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <meta name="keywords" content="ghalien, ghaliensita, ghalienzta, stephany ghalien, creadora de contenido, content creator, streamer, tattoo, tatuadora a domicilio, tatuajes, tattoos, tattooer, tattooer delivery, tatuajes pequeños, small tattoos, man tattoo, tatuaje hombre, woman tattoo, mujer tatuaje, emotes, emotes twitch, emotes whatsapp, commissions, comisiones, diseño gráfico, diseñadora gráfica, graphic design, graphic designer, illustration, ilustraciones, twitch, youtube, behance, dev, game dev, developer, video, video editing, edition, graphic pieces, 3d, 3d modeling, modelos 3d, impresión 3d, 3d print, 3d prints, 3d print model, 3d service, GHALI LAB, ghali shop, ghali Colombia, ghali, Steph ghalien, impresión gran formato">
-  <meta name="description" content="GHALI LAB transforma ideas en productos físicos y digitales: impresión 3D, modelado, prototipos, llaveros NFC, productos personalizados y servicios creativos para emprendedores.">
+
+  <title>Impresión 3D en Medellín y toda Colombia | GHALI LAB</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="GHALI LAB: impresión 3D personalizada en FDM y resina. Letras 3D, logos, figuras, clickers antiestrés, trofeos, alcancías, prototipos, piezas automotrices, props de cosplay y más. Envíos a todo Colombia.">
+  <meta name="keywords" content="impresión 3D, impresión 3D Medellín, impresión 3D Colombia, letras 3D, logos 3D, figuras 3D, clickers antiestrés, clickers TDAH, trofeos 3D, alcancías 3D, prototipos, piezas automotrices, props cosplay, avisos 3D, souvenir empresariales, modelado 3D, GHALI LAB, ghalien, ghaliensita, Stephany Ghalien">
+  <link rel="canonical" href="https://ghaliensita.github.io/Ghaliensita_site/ghalilab.html">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Impresión 3D personalizada | GHALI LAB">
+  <meta property="og:description" content="Letras 3D, logos, figuras, prototipos y piezas a tu medida. Imprimimos en FDM y resina con envíos a toda Colombia.">
+  <meta property="og:image" content="https://ghaliensita.github.io/Ghaliensita_site/images/00034-3D-PRINT.jpg">
+  <meta property="og:url" content="https://ghaliensita.github.io/Ghaliensita_site/ghalilab.html">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Impresión 3D personalizada",
+    "serviceType": "Impresión 3D, modelado 3D y prototipado",
+    "provider": {
+      "@type": "Organization",
+      "name": "GHALI LAB",
+      "url": "https://ghaliensita.github.io/Ghaliensita_site/"
+    },
+    "areaServed": { "@type": "Country", "name": "Colombia" }
+  }
+  </script>
+
+  <!-- Recursos críticos -->
+  <link rel="preload" as="image" href="images/00034-3D-PRINT.jpg" fetchpriority="high">
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/webfonts/fa-brands-400.woff2">
 
   <!-- Favicons -->
   <link href="img/favicon.png" rel="icon">
@@ -17,23 +47,915 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
 
-  <!-- Libraries CSS Files -->
-  <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-  <link href="lib/animate/animate.min.css" rel="stylesheet">
-  <link href="lib/ionicons/css/ionicons.min.css" rel="stylesheet">
-  <link href="https://file.myfontastic.com/9uXaaj5vAm5wectHaxzyV9/icons.css" rel="stylesheet" media="print" onload="this.media='all'">
-  <link href="lib/ghali-icons/styles.css" rel="stylesheet">
-  <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-  <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+  <!-- Font Awesome 6 -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <!-- Main Stylesheet File -->
   <link href="css/style.css" rel="stylesheet">
+
+  <!-- Estilos de esta página -->
+  <style>
+    :root {
+      --lab-bg: #121214;
+      --lab-surface: #18181b;
+      --lab-surface-2: #1e1e22;
+      --lab-line: rgba(255, 255, 255, 0.08);
+      --lab-line-strong: rgba(255, 255, 255, 0.16);
+      --lab-text: #f4f4f5;
+      --lab-muted: #a1a1aa;
+      --lab-pink: #F40C5A;
+      --lab-pink-soft: #ff6b97;
+      --lab-radius: 20px;
+    }
+
+    #preloader { display: none !important; }
+
+    .lab-page {
+      background: var(--lab-bg);
+      color: var(--lab-text);
+      padding-top: 7.5rem;
+      overflow: hidden;
+    }
+
+    .lab-wrap {
+      width: 100%;
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    .lab-section {
+      padding: 5.5rem 0;
+      content-visibility: auto;
+      contain-intrinsic-size: auto 760px;
+    }
+
+    .lab-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.45rem 0.95rem;
+      color: var(--lab-pink-soft);
+      background: rgba(244, 12, 90, 0.08);
+      border: 1px solid rgba(244, 12, 90, 0.3);
+      border-radius: 999px;
+      font-size: 0.74rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .lab-title {
+      margin: 1rem 0 0.9rem;
+      font-size: clamp(2rem, 4.2vw, 3.1rem);
+      font-weight: 800;
+      letter-spacing: -0.035em;
+      line-height: 1.08;
+    }
+
+    .lab-lead {
+      max-width: 640px;
+      margin: 0;
+      color: var(--lab-muted);
+      font-size: 1.05rem;
+      line-height: 1.75;
+    }
+
+    .lab-head {
+      max-width: 740px;
+      margin: 0 auto 3rem;
+      text-align: center;
+    }
+
+    .lab-head .lab-lead {
+      margin: 0 auto;
+    }
+
+    /* Botones */
+    .lab-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      padding: 0.95rem 1.55rem;
+      font-size: 0.95rem;
+      font-weight: 700;
+      line-height: 1;
+      border: 1px solid transparent;
+      border-radius: 999px;
+      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease, background-color 0.25s ease;
+    }
+
+    .lab-btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .lab-btn--primary {
+      color: #fff !important;
+      background: linear-gradient(135deg, var(--lab-pink), #ff3d7f);
+      box-shadow: 0 10px 30px -10px rgba(244, 12, 90, 0.6);
+    }
+
+    .lab-btn--primary:hover {
+      color: #fff !important;
+      box-shadow: 0 14px 36px -10px rgba(244, 12, 90, 0.85);
+    }
+
+    .lab-btn--ghost {
+      color: #fff !important;
+      background: rgba(255, 255, 255, 0.04);
+      border-color: var(--lab-line-strong);
+    }
+
+    .lab-btn--ghost:hover {
+      color: #fff !important;
+      background: rgba(244, 12, 90, 0.08);
+      border-color: rgba(244, 12, 90, 0.55);
+    }
+
+    .lab-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.9rem;
+    }
+
+    /* Revelado al hacer scroll */
+    .js .lab-reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .js .lab-reveal.in {
+      opacity: 1;
+      transform: none;
+    }
+
+    /* HERO */
+    .lab-hero {
+      position: relative;
+      padding: 2.5rem 0 5rem;
+    }
+
+    .lab-hero::before {
+      content: "";
+      position: absolute;
+      inset: -8% -10% auto -10%;
+      height: 75%;
+      pointer-events: none;
+      background:
+        radial-gradient(55% 60% at 18% 22%, rgba(244, 12, 90, 0.2), transparent 70%),
+        radial-gradient(40% 50% at 88% 8%, rgba(255, 255, 255, 0.06), transparent 70%);
+    }
+
+    .lab-hero-grid {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 3.5rem;
+      align-items: center;
+    }
+
+    .lab-hero h1 {
+      margin: 1.2rem 0 1.2rem;
+      font-size: clamp(2.4rem, 5.4vw, 4.2rem);
+      font-weight: 850;
+      letter-spacing: -0.045em;
+      line-height: 1.03;
+    }
+
+    .lab-hero h1 em {
+      font-style: normal;
+      color: transparent;
+      background: linear-gradient(120deg, #fff 5%, var(--lab-pink-soft) 55%, var(--lab-pink));
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .lab-hero .lab-lead {
+      margin-bottom: 2rem;
+      font-size: 1.12rem;
+    }
+
+    .lab-points {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem 1.4rem;
+      margin: 2rem 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .lab-points li {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: #d4d4d8;
+      font-size: 0.88rem;
+    }
+
+    .lab-points i {
+      color: var(--lab-pink);
+      font-size: 0.8rem;
+    }
+
+    .lab-mosaic {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      gap: 0.9rem;
+      height: clamp(380px, 46vw, 540px);
+    }
+
+    .lab-mosaic::before {
+      content: "";
+      position: absolute;
+      inset: 8% 6%;
+      z-index: 0;
+      background: radial-gradient(circle, rgba(244, 12, 90, 0.32), transparent 68%);
+      filter: blur(30px);
+    }
+
+    .lab-shot {
+      position: relative;
+      z-index: 1;
+      margin: 0;
+      overflow: hidden;
+      background: var(--lab-surface);
+      border: 1px solid var(--lab-line-strong);
+      border-radius: 24px;
+    }
+
+    .lab-shot--tall {
+      grid-row: span 2;
+    }
+
+    .lab-shot img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .lab-chip-float {
+      position: absolute;
+      left: -1rem;
+      bottom: 1.6rem;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      padding: 0.8rem 1.1rem;
+      background: rgba(24, 24, 27, 0.94);
+      border: 1px solid var(--lab-line-strong);
+      border-radius: 16px;
+      box-shadow: 0 18px 40px -16px rgba(0, 0, 0, 0.7);
+    }
+
+    .lab-chip-float i {
+      width: 38px;
+      height: 38px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--lab-pink);
+      background: rgba(244, 12, 90, 0.12);
+      border-radius: 11px;
+    }
+
+    .lab-chip-float strong {
+      display: block;
+      font-size: 0.9rem;
+    }
+
+    .lab-chip-float span {
+      color: var(--lab-muted);
+      font-size: 0.75rem;
+    }
+
+    /* Barra de confianza */
+    .lab-trust {
+      padding: 0 0 1rem;
+    }
+
+    .lab-trust-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      overflow: hidden;
+      background: var(--lab-line);
+      border: 1px solid var(--lab-line);
+      border-radius: 22px;
+    }
+
+    .lab-trust-item {
+      display: flex;
+      align-items: center;
+      gap: 0.95rem;
+      padding: 1.3rem 1.4rem;
+      background: var(--lab-surface);
+    }
+
+    .lab-trust-item i {
+      color: var(--lab-pink);
+      font-size: 1.35rem;
+    }
+
+    .lab-trust-item strong {
+      display: block;
+      font-size: 0.95rem;
+    }
+
+    .lab-trust-item span {
+      color: var(--lab-muted);
+      font-size: 0.8rem;
+    }
+
+    /* Catálogo */
+    .lab-filters {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.55rem;
+      margin: 0 0 2.2rem;
+    }
+
+    .lab-chip {
+      padding: 0.6rem 1.1rem;
+      color: #d4d4d8;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      background: transparent;
+      border: 1px solid var(--lab-line-strong);
+      border-radius: 999px;
+      transition: all 0.25s ease;
+    }
+
+    .lab-chip:hover {
+      color: #fff;
+      border-color: rgba(244, 12, 90, 0.5);
+    }
+
+    .lab-chip.is-active {
+      color: #fff;
+      background: var(--lab-pink);
+      border-color: var(--lab-pink);
+    }
+
+    .lab-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+    }
+
+    .lab-card {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      padding: 1.5rem;
+      background: linear-gradient(180deg, var(--lab-surface-2), var(--lab-surface));
+      border: 1px solid var(--lab-line);
+      border-radius: var(--lab-radius);
+      transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .lab-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(244, 12, 90, 0.45);
+      box-shadow: 0 22px 44px -24px rgba(244, 12, 90, 0.45);
+    }
+
+    .lab-card.is-hidden {
+      display: none;
+    }
+
+    .lab-card-icon {
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.1rem;
+      color: var(--lab-pink);
+      font-size: 1.2rem;
+      background: rgba(244, 12, 90, 0.1);
+      border: 1px solid rgba(244, 12, 90, 0.22);
+      border-radius: 14px;
+    }
+
+    .lab-card h3 {
+      margin: 0 0 0.5rem;
+      font-size: 1.05rem;
+      font-weight: 750;
+      letter-spacing: -0.01em;
+    }
+
+    .lab-card p {
+      margin: 0;
+      color: var(--lab-muted);
+      font-size: 0.88rem;
+      line-height: 1.65;
+    }
+
+    .lab-card--cta {
+      grid-column: span 2;
+      justify-content: center;
+      background:
+        radial-gradient(circle at 100% 0%, rgba(244, 12, 90, 0.35), transparent 60%),
+        linear-gradient(180deg, #24141b, #1a1317);
+      border-color: rgba(244, 12, 90, 0.4);
+    }
+
+    .lab-card--cta h3 {
+      font-size: 1.35rem;
+    }
+
+    .lab-card--cta .lab-btn {
+      align-self: flex-start;
+      margin-top: 1.2rem;
+    }
+
+    /* Galería */
+    .lab-gallery {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+    }
+
+    .lab-gallery figure {
+      position: relative;
+      margin: 0;
+      overflow: hidden;
+      aspect-ratio: 1 / 1;
+      background: var(--lab-surface);
+      border: 1px solid var(--lab-line);
+      border-radius: 20px;
+    }
+
+    .lab-gallery figure:first-child {
+      grid-column: span 2;
+      grid-row: span 2;
+    }
+
+    .lab-gallery img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .lab-gallery figure:hover img {
+      transform: scale(1.05);
+    }
+
+    .lab-gallery figcaption {
+      position: absolute;
+      inset: auto 0 0 0;
+      padding: 2.2rem 1rem 0.9rem;
+      color: #fff;
+      font-size: 0.85rem;
+      font-weight: 650;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.78), transparent);
+    }
+
+    .lab-center {
+      display: flex;
+      justify-content: center;
+      margin-top: 2.2rem;
+    }
+
+    /* Proceso */
+    .lab-steps {
+      position: relative;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.2rem;
+    }
+
+    .lab-step {
+      position: relative;
+      padding: 1.8rem 1.4rem 1.5rem;
+      background: var(--lab-surface);
+      border: 1px solid var(--lab-line);
+      border-radius: var(--lab-radius);
+    }
+
+    .lab-step-num {
+      width: 38px;
+      height: 38px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.1rem;
+      color: #fff;
+      font-size: 0.9rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, var(--lab-pink), #ff3d7f);
+      border-radius: 12px;
+    }
+
+    .lab-step h3 {
+      margin: 0 0 0.45rem;
+      font-size: 1.05rem;
+      font-weight: 750;
+    }
+
+    .lab-step p {
+      margin: 0;
+      color: var(--lab-muted);
+      font-size: 0.88rem;
+      line-height: 1.65;
+    }
+
+    /* Tecnologías */
+    .lab-tech {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.2rem;
+    }
+
+    .lab-tech-card {
+      padding: 2rem;
+      background: linear-gradient(180deg, var(--lab-surface-2), var(--lab-surface));
+      border: 1px solid var(--lab-line);
+      border-top: 3px solid var(--accent, var(--lab-pink));
+      border-radius: 22px;
+    }
+
+    .lab-tech-card--fdm { --accent: #4caf50; }
+    .lab-tech-card--sla { --accent: #3d9bff; }
+
+    .lab-tech-top {
+      display: flex;
+      align-items: baseline;
+      gap: 0.7rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .lab-tech-top h3 {
+      margin: 0;
+      font-size: 1.7rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+    }
+
+    .lab-tech-top span {
+      color: var(--lab-muted);
+      font-size: 0.9rem;
+    }
+
+    .lab-tech-card > p {
+      margin: 0 0 1.2rem;
+      color: var(--lab-muted);
+      line-height: 1.7;
+    }
+
+    .lab-list {
+      margin: 0 0 1.4rem;
+      padding: 0;
+      list-style: none;
+    }
+
+    .lab-list li {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      padding: 0.55rem 0;
+      color: #e4e4e7;
+      font-size: 0.93rem;
+      border-bottom: 1px solid var(--lab-line);
+    }
+
+    .lab-list li:last-child {
+      border-bottom: none;
+    }
+
+    .lab-list i {
+      color: var(--accent, var(--lab-pink));
+      font-size: 0.8rem;
+    }
+
+    .lab-best {
+      padding: 0.9rem 1rem;
+      color: #e4e4e7;
+      font-size: 0.88rem;
+      line-height: 1.6;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--lab-line);
+      border-radius: 14px;
+    }
+
+    /* Materiales */
+    .lab-materials {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+
+    .lab-material {
+      position: relative;
+      padding: 1.5rem;
+      background: var(--lab-surface);
+      border: 1px solid var(--lab-line);
+      border-radius: var(--lab-radius);
+      transition: border-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .lab-material:hover {
+      transform: translateY(-4px);
+      border-color: rgba(244, 12, 90, 0.4);
+    }
+
+    .lab-material--rec {
+      border-color: rgba(244, 12, 90, 0.5);
+      background: linear-gradient(180deg, #221419, var(--lab-surface));
+    }
+
+    .lab-material-tag {
+      display: inline-block;
+      margin-bottom: 0.7rem;
+      color: var(--lab-pink-soft);
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+    }
+
+    .lab-material h3 {
+      margin: 0 0 0.5rem;
+      font-size: 1.3rem;
+      font-weight: 800;
+    }
+
+    .lab-material p {
+      margin: 0;
+      color: var(--lab-muted);
+      font-size: 0.9rem;
+      line-height: 1.65;
+    }
+
+    .lab-material small {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.3rem 0.7rem;
+      color: #fff;
+      font-size: 0.7rem;
+      font-weight: 800;
+      background: var(--lab-pink);
+      border-radius: 999px;
+    }
+
+    /* Eco */
+    .lab-eco {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 1.8rem;
+      align-items: center;
+      padding: 2.2rem;
+      background:
+        radial-gradient(circle at 0% 50%, rgba(76, 175, 80, 0.14), transparent 55%),
+        var(--lab-surface);
+      border: 1px solid var(--lab-line);
+      border-radius: 26px;
+    }
+
+    .lab-eco-icon {
+      width: 78px;
+      height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #7bd88f;
+      font-size: 2rem;
+      background: rgba(76, 175, 80, 0.12);
+      border: 1px solid rgba(76, 175, 80, 0.3);
+      border-radius: 50%;
+    }
+
+    .lab-eco h2 {
+      margin: 0 0 0.6rem;
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+    }
+
+    .lab-eco p {
+      margin: 0;
+      color: var(--lab-muted);
+      line-height: 1.7;
+    }
+
+    .lab-eco strong {
+      color: #fff;
+    }
+
+    /* Reseñas */
+    .lab-reviews {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+
+    .lab-review {
+      display: flex;
+      flex-direction: column;
+      padding: 1.6rem;
+      background: linear-gradient(180deg, var(--lab-surface-2), var(--lab-surface));
+      border: 1px solid var(--lab-line);
+      border-radius: var(--lab-radius);
+    }
+
+    .lab-stars {
+      margin-bottom: 0.9rem;
+      color: #ffcf3f;
+      letter-spacing: 0.14em;
+    }
+
+    .lab-review p {
+      flex: 1;
+      margin: 0 0 1.2rem;
+      color: #e4e4e7;
+      font-size: 0.95rem;
+      font-style: italic;
+      line-height: 1.7;
+    }
+
+    .lab-review cite {
+      padding-top: 0.9rem;
+      color: var(--lab-pink-soft);
+      font-size: 0.85rem;
+      font-style: normal;
+      font-weight: 700;
+      border-top: 1px solid var(--lab-line);
+    }
+
+    /* FAQ */
+    .lab-faq {
+      max-width: 820px;
+      margin: 0 auto;
+    }
+
+    .lab-faq details {
+      margin-bottom: 0.8rem;
+      padding: 1.15rem 1.4rem;
+      background: var(--lab-surface);
+      border: 1px solid var(--lab-line);
+      border-radius: 16px;
+      transition: border-color 0.25s ease;
+    }
+
+    .lab-faq details:hover,
+    .lab-faq details[open] {
+      border-color: rgba(244, 12, 90, 0.4);
+    }
+
+    .lab-faq summary {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      list-style: none;
+    }
+
+    .lab-faq summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .lab-faq summary::after {
+      content: "\f078";
+      color: var(--lab-pink);
+      font-family: "Font Awesome 6 Free";
+      font-size: 0.75rem;
+      font-weight: 900;
+      transition: transform 0.25s ease;
+    }
+
+    .lab-faq details[open] summary::after {
+      transform: rotate(180deg);
+    }
+
+    .lab-faq details p {
+      margin: 1rem 0 0;
+      color: var(--lab-muted);
+      font-size: 0.93rem;
+      line-height: 1.75;
+    }
+
+    .lab-faq details a {
+      color: var(--lab-pink-soft) !important;
+      text-decoration: underline;
+    }
+
+    /* CTA final */
+    .lab-cta {
+      position: relative;
+      padding: clamp(2.2rem, 6vw, 4.2rem);
+      overflow: hidden;
+      text-align: center;
+      background:
+        radial-gradient(circle at 50% 0%, rgba(244, 12, 90, 0.34), transparent 55%),
+        linear-gradient(135deg, #251018, #141416);
+      border: 1px solid rgba(244, 12, 90, 0.35);
+      border-radius: 32px;
+    }
+
+    .lab-cta h2 {
+      max-width: 720px;
+      margin: 1rem auto 0.9rem;
+      font-size: clamp(1.9rem, 4.2vw, 3rem);
+      font-weight: 850;
+      letter-spacing: -0.04em;
+      line-height: 1.1;
+    }
+
+    .lab-cta p {
+      max-width: 620px;
+      margin: 0 auto 2rem;
+      color: #d4d4d8;
+      font-size: 1.05rem;
+      line-height: 1.7;
+    }
+
+    .lab-cta .lab-actions {
+      justify-content: center;
+    }
+
+    /* Responsive */
+    @media (max-width: 1100px) {
+      .lab-grid { grid-template-columns: repeat(3, 1fr); }
+      .lab-card--cta { grid-column: span 3; }
+    }
+
+    @media (max-width: 991px) {
+      .lab-hero-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .lab-mosaic { height: clamp(320px, 70vw, 460px); }
+      .lab-chip-float { left: 0.8rem; }
+      .lab-trust-grid { grid-template-columns: repeat(2, 1fr); }
+      .lab-steps { grid-template-columns: repeat(2, 1fr); }
+      .lab-tech { grid-template-columns: 1fr; }
+      .lab-materials { grid-template-columns: repeat(2, 1fr); }
+      .lab-reviews { grid-template-columns: 1fr; }
+
+      .navbar {
+        -webkit-backdrop-filter: none;
+        backdrop-filter: none;
+        background-color: rgba(20, 20, 20, 0.92);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .lab-page { padding-top: 6.5rem; }
+      .lab-section { padding: 4rem 0; }
+      .lab-wrap { padding: 0 1.1rem; }
+      .lab-grid { grid-template-columns: repeat(2, 1fr); }
+      .lab-card--cta { grid-column: span 2; }
+      .lab-gallery { grid-template-columns: repeat(2, 1fr); }
+      .lab-gallery figure:first-child { grid-row: auto; aspect-ratio: 2 / 1; }
+      .lab-eco { grid-template-columns: 1fr; text-align: center; justify-items: center; }
+      .lab-actions .lab-btn { width: 100%; }
+    }
+
+    @media (max-width: 520px) {
+      .lab-grid,
+      .lab-steps,
+      .lab-materials { grid-template-columns: 1fr; }
+      .lab-card--cta { grid-column: auto; }
+      .lab-trust-grid { grid-template-columns: 1fr; }
+      .lab-tech-card { padding: 1.4rem; }
+    }
+
+    /* Pantallas táctiles: sin animaciones hover */
+    @media (hover: none) {
+      .lab-card,
+      .lab-material,
+      .lab-gallery img { transition: none; }
+
+      .lab-card:hover,
+      .lab-material:hover { transform: none; box-shadow: none; }
+
+      .lab-gallery figure:hover img { transform: none; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .js .lab-reveal { opacity: 1; transform: none; transition: none; }
+      .lab-btn,
+      .lab-card,
+      .lab-material,
+      .lab-gallery img { transition: none; }
+    }
+  </style>
 </head>
 
 <body>
 
-<!--/ Nav Start /-->
+<!-- Nav Start -->
 <nav class="navbar navbar-b navbar-trans navbar-expand-lg fixed-top" id="mainNav">
   <div class="container">
 
@@ -58,7 +980,7 @@
       <ul class="navbar-nav">
 
         <li class="nav-item">
-          <a class="nav-link js-scroll" href="index.html" aria-current="page">
+          <a class="nav-link js-scroll" href="index.html">
             Inicio
           </a>
         </li>
@@ -68,9 +990,9 @@
             Tienda
           </a>
         </li>
-        
+
         <li class="nav-item">
-          <a class="nav-link js-scroll" href="ghalilab.html">
+          <a class="nav-link js-scroll" href="ghalilab.html" aria-current="page">
             GHALI LAB
           </a>
         </li>
@@ -115,309 +1037,620 @@
     </div>
   </div>
 </nav>
-<!--/ Nav End /-->
+<!-- Nav End -->
 
-<!-- Hero Start -->
-<header class="intro intro-single route bg-image ghlab-hero" style="background-image: url(img/overlay-bg-3.jpg)">
-  <div class="overlay-mf"></div>
-  <div class="intro-content display-table">
-    <div class="table-cell">
-      <div class="container">
-        <div class="ghlab-hero-content">
-          <span class="ghlab-kicker">GHALI LAB</span>
-          <h1>Ideas que se convierten en objetos reales</h1>
-          <p>
-            Diseño, modelado, impresión 3D, prototipos y soluciones creativas para personas, marcas y emprendimientos.
-          </p>
+<main class="lab-page">
 
-          <div class="ghlab-hero-actions">
-            <a href="quoteprice.html" class="ghlab-button ghlab-button-primary">Cotizar proyecto</a>
-            <a href="services.html" class="ghlab-button ghlab-button-secondary">Ver servicios</a>
+  <!-- HERO -->
+  <section class="lab-hero">
+    <div class="lab-wrap lab-hero-grid">
+
+      <div class="lab-hero-copy">
+        <span class="lab-eyebrow"><i class="fa-solid fa-cube"></i> GHALI LAB · Impresión 3D</span>
+
+        <h1>Impresión 3D personalizada, <em>hecha con detalle</em></h1>
+
+        <p class="lab-lead">
+          Letras 3D, logos, figuras, prototipos y piezas a tu medida. Imprimimos en
+          FDM y resina, y enviamos a toda Colombia.
+        </p>
+
+        <div class="lab-actions">
+          <a
+            href="https://wa.me/573505136986?text=Hola%2C%20quiero%20cotizar%20una%20impresi%C3%B3n%203D%20en%20GHALI%20LAB"
+            target="_blank"
+            rel="noopener"
+            class="lab-btn lab-btn--primary"
+          >
+            <i class="fa-brands fa-whatsapp"></i> Cotizar por WhatsApp
+          </a>
+
+          <a href="#catalogo" class="lab-btn lab-btn--ghost js-scroll">
+            Ver qué puedo imprimir <i class="fa-solid fa-arrow-down"></i>
+          </a>
+        </div>
+
+        <ul class="lab-points">
+          <li><i class="fa-solid fa-check"></i> FDM y resina</li>
+          <li><i class="fa-solid fa-check"></i> Modelado desde cero</li>
+          <li><i class="fa-solid fa-check"></i> Envíos a todo Colombia</li>
+        </ul>
+      </div>
+
+      <div class="lab-hero-visual">
+        <div class="lab-mosaic">
+          <figure class="lab-shot lab-shot--tall">
+            <img
+              src="images/00034-3D-PRINT.jpg"
+              alt="Clickers personalizados impresos en 3D por GHALI LAB"
+              width="600" height="800"
+              fetchpriority="high"
+              decoding="async"
+            >
+          </figure>
+
+          <figure class="lab-shot">
+            <img
+              src="images/00032-3D-PRINT.jpg"
+              alt="Llaveros NFC personalizados por GHALI LAB"
+              width="600" height="400"
+              decoding="async"
+            >
+          </figure>
+
+          <figure class="lab-shot">
+            <img
+              src="images/009-Ranita.jpg"
+              alt="Figura y prototipo impresos en 3D por GHALI LAB"
+              width="600" height="400"
+              decoding="async"
+            >
+          </figure>
+
+          <div class="lab-chip-float">
+            <i class="fa-solid fa-layer-group"></i>
+            <div>
+              <strong>FDM + Resina</strong>
+              <span>PLA · PETG · TPU</span>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</header>
-<!-- Hero End -->
 
-<main class="ghlab-page">
-
-  <!-- Showcase Start -->
-  <section class="ghlab-section ghlab-showcase-section">
-    <div class="ghlab-section-head">
-      <span class="ghlab-kicker">Lo que hacemos</span>
-      <h2>Explora GHALI LAB</h2>
-      <p>
-        Creamos productos personalizados, funcionales y con propósito. Diseños pensados para resolver necesidades reales, mejorar experiencias y materializar ideas.
-      </p>
-    </div>
-
-    <div class="ghlab-showcase-grid">
-      <article class="ghlab-product-card">
-        <div class="ghlab-product-image">
-          <img src="images/00034-3D-PRINT.jpg" alt="Clickers personalizados impresos en 3D por GHALI LAB" loading="lazy">
-        </div>
-        <div class="ghlab-product-content">
-          <span class="ghlab-product-tag">Personalizado</span>
-          <h3>Clickers personalizados</h3>
-          <p>
-            Fidget clickers diseñados para canalizar energía, reducir estrés y mejorar la concentración. Ideales para ansiedad, TDAH o inquietud motora.
-          </p>
-        </div>
-      </article>
-
-      <article class="ghlab-product-card">
-        <div class="ghlab-product-image">
-          <img src="images/00032-3D-PRINT.jpg" alt="Llaveros NFC personalizados por GHALI LAB" loading="lazy">
-        </div>
-        <div class="ghlab-product-content">
-          <span class="ghlab-product-tag">Tecnología útil</span>
-          <h3>Llaveros NFC</h3>
-          <p>
-            Comparte información a un toque: datos de contacto, portafolio, redes, marca, identificación o accesos. Funcionales, compactos y personalizables.
-          </p>
-        </div>
-      </article>
-
-      <article class="ghlab-product-card">
-        <div class="ghlab-product-image">
-          <img src="images/009-Ranita.jpg" alt="Prototipos e impresión 3D por GHALI LAB" loading="lazy">
-        </div>
-        <div class="ghlab-product-content">
-          <span class="ghlab-product-tag">Prototipado</span>
-          <h3>Prototipos e impresión 3D</h3>
-          <p>
-            Desde piezas funcionales hasta figuras decorativas, recuerdos, accesorios o ideas únicas. Convertimos conceptos digitales en objetos físicos.
-          </p>
-        </div>
-      </article>
     </div>
   </section>
-  <!-- Showcase End -->
 
-  <!-- Value Section Start -->
-  <section class="ghlab-section ghlab-value-section">
-    <div class="ghlab-value-card">
-      <div class="ghlab-value-copy">
-        <span class="ghlab-kicker">Transformamos ideas</span>
-        <h2>¿Tienes una idea y no sabes cómo llevarla a la realidad?</h2>
-        <p>
-          En <strong>GHALI LAB</strong> te acompañamos desde la idea inicial hasta el producto final. Podemos ayudarte a diseñar, modelar, imprimir, prototipar o presentar tu proyecto de forma profesional.
-        </p>
+  <!-- BARRA DE CONFIANZA -->
+  <section class="lab-trust">
+    <div class="lab-wrap">
+      <div class="lab-trust-grid lab-reveal">
 
-        <div class="ghlab-check-list">
-          <div><i class="fa-solid fa-check"></i> Modelado y renderizado 3D</div>
-          <div><i class="fa-solid fa-check"></i> Impresión 3D personalizada</div>
-          <div><i class="fa-solid fa-check"></i> Prototipos funcionales</div>
-          <div><i class="fa-solid fa-check"></i> Páginas web para emprendedores</div>
+        <div class="lab-trust-item">
+          <i class="fa-solid fa-print"></i>
+          <div><strong>FDM y resina</strong><span>La técnica ideal para cada pieza</span></div>
         </div>
 
-        <a href="services.html" class="ghlab-button ghlab-button-primary">Conocer servicios</a>
-      </div>
-
-      <div class="ghlab-value-mini">
-        <div class="ghlab-mini-card">
-          <i class="fa-solid fa-lightbulb"></i>
-          <h4>Idea</h4>
-          <p>Nos cuentas lo que quieres crear.</p>
-        </div>
-
-        <div class="ghlab-mini-card">
+        <div class="lab-trust-item">
           <i class="fa-solid fa-pen-ruler"></i>
-          <h4>Diseño</h4>
-          <p>Definimos forma, función y materiales.</p>
+          <div><strong>Modelado 3D</strong><span>Desde tu idea o tu archivo</span></div>
         </div>
 
-        <div class="ghlab-mini-card">
-          <i class="fa-solid fa-cube"></i>
-          <h4>Producción</h4>
-          <p>Imprimimos o desarrollamos tu solución.</p>
+        <div class="lab-trust-item">
+          <i class="fa-solid fa-swatchbook"></i>
+          <div><strong>Variedad de materiales</strong><span>PLA, PETG, TPU y resinas</span></div>
         </div>
 
-        <div class="ghlab-mini-card">
-          <i class="fa-solid fa-hand-holding-heart"></i>
-          <h4>Entrega</h4>
-          <p>Recibes una pieza hecha con detalle.</p>
+        <div class="lab-trust-item">
+          <i class="fa-solid fa-truck-fast"></i>
+          <div><strong>Envíos a todo Colombia</strong><span>Despachamos desde Medellín</span></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CATÁLOGO: QUÉ SE PUEDE IMPRIMIR -->
+  <section class="lab-section" id="catalogo">
+    <div class="lab-wrap">
+
+      <div class="lab-head lab-reveal">
+        <span class="lab-eyebrow">Lo que hacemos</span>
+        <h2 class="lab-title">¿Qué podemos imprimir en 3D?</h2>
+        <p class="lab-lead">
+          Desde piezas para tu marca hasta regalos únicos, accesorios y repuestos.
+          Si puedes imaginarlo, podemos ayudarte a hacerlo real.
+        </p>
+      </div>
+
+      <div class="lab-filters lab-reveal" role="group" aria-label="Filtrar por categoría">
+        <button type="button" class="lab-chip is-active" data-filter="all" aria-pressed="true">Todo</button>
+        <button type="button" class="lab-chip" data-filter="negocios" aria-pressed="false">Negocios</button>
+        <button type="button" class="lab-chip" data-filter="gaming" aria-pressed="false">Gaming y cosplay</button>
+        <button type="button" class="lab-chip" data-filter="tecnico" aria-pressed="false">Técnico y automotriz</button>
+        <button type="button" class="lab-chip" data-filter="regalos" aria-pressed="false">Regalos y hogar</button>
+      </div>
+
+      <div class="lab-grid" id="lab-grid">
+
+        <article class="lab-card lab-reveal" data-cat="negocios regalos">
+          <div class="lab-card-icon"><i class="fa-solid fa-font"></i></div>
+          <h3>Letras 3D</h3>
+          <p>Letras grandes o pequeñas, listas para pintar o iluminar. Para negocios, eventos y decoración.</p>
+        </article>
+
+        <article class="lab-card lab-reveal" data-cat="negocios">
+          <div class="lab-card-icon"><i class="fa-solid fa-gem"></i></div>
+          <h3>Logos en 3D</h3>
+          <p>Tu logotipo convertido en una pieza física: sólida, hueca o a varios colores.</p>
+        </article>
+
+        <article class="lab-card lab-reveal" data-cat="negocios">
+          <div class="lab-card-icon"><i class="fa-solid fa-sign-hanging"></i></div>
+          <h3>Avisos y soportes</h3>
+          <p>Avisos, bases, marcos y piezas de montaje para exhibir tu marca con presencia.</p>
+        </article>
+
+        <article class="lab-card lab-reveal" data-cat="negocios regalos">
+          <div class="lab-card-icon"><i class="fa-solid fa-gift"></i></div>
+          <h3>Souvenir empresariales</h3>
+          <p>Llaveros, detalles de marca y llaveros NFC para clientes, equipos y eventos.</p>
+        </article>
+
+        <article class="lab-card lab-reveal" data-cat="negocios regalos">
+          <div class="lab-card-icon"><i class="fa-solid fa-trophy"></i></div>
+          <h3>Trofeos y reconocimientos</h3>
+          <p>Trofeos y piezas conmemorativas personalizadas para torneos, equipos y celebraciones.</p>
+        </article>
+
+        <article class="lab-card lab-reveal" data-cat="regalos negocios">
+          <div class="lab-card-icon"><i class="fa-solid fa-lightbulb"></i></div>
+          <h3>Modelos para iluminación</h3>
+          <p>Piezas huecas pensadas para llevar luz LED: lámparas, letras y figuras luminosas.</p>
+        </article>
+
+        <article class="lab-card lab-reveal" data-cat="regalos">
+          <div class="lab-card-icon"><i class="fa-solid fa-piggy-bank"></i></div>
+          <h3>Alcancías</h3>
+          <p>Alcancías con la forma, el tamaño y el diseño que quieras, para ti o para regalar.</p>
+        </article>
+
+        <article class="lab-card lab-reveal" data-cat="regalos gaming">
+          <div class="lab-card-icon"><i class="fa-solid fa-ghost"></i></div>
+          <h3>Figuras y personajes</h3>
+          <p>Figuras decorativas, caricaturas 3D y personajes hechos a medida.</p>
+        </article>
+
+        <article class="lab-card lab-reveal" data-cat="regalos">
+          <div class="lab-card-icon"><i class="fa-solid fa-hand-pointer"></i></div>
+          <h3>Clickers antiestrés y TDAH</h3>
+          <p>Fidget clickers para canalizar energía, reducir el estrés y mejorar la concentración.</p>
+        </article>
+
+        <article class="lab-card lab-reveal" data-cat="gaming">
+          <div class="lab-card-icon"><i class="fa-solid fa-mask"></i></div>
+          <h3>Props para cosplay</h3>
+          <p>Máscaras, cuernos, orejas y accesorios para cosplay, eventos y convenciones.</p>
+        </article>
+
+        <article class="lab-card lab-reveal" data-cat="gaming">
+          <div class="lab-card-icon"><i class="fa-solid fa-gamepad"></i></div>
+          <h3>Para gamers</h3>
+          <p>Figuras, soportes y accesorios inspirados en tus juegos y personajes favoritos.</p>
+        </article>
+
+        <article class="lab-card lab-reveal" data-cat="regalos gaming">
+          <div class="lab-card-icon"><i class="fa-solid fa-puzzle-piece"></i></div>
+          <h3>Juguetes y fidgets</h3>
+          <p>Juguetes articulados y objetos divertidos para niños y para adultos.</p>
+        </article>
+
+        <article class="lab-card lab-reveal" data-cat="tecnico">
+          <div class="lab-card-icon"><i class="fa-solid fa-motorcycle"></i></div>
+          <h3>Piezas automotrices</h3>
+          <p>Accesorios y piezas a medida para carro y moto, incluidos accesorios para casco.</p>
+        </article>
+
+        <article class="lab-card lab-reveal" data-cat="tecnico negocios">
+          <div class="lab-card-icon"><i class="fa-solid fa-gears"></i></div>
+          <h3>Prototipos y piezas funcionales</h3>
+          <p>Carcasas, adaptadores, repuestos y pruebas de concepto para validar tu idea.</p>
+        </article>
+
+        <article class="lab-card lab-reveal" data-cat="regalos negocios gaming tecnico">
+          <div class="lab-card-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+          <h3>Personalizaciones</h3>
+          <p>Cualquier pieza con tu nombre, tus colores y el tamaño que necesites.</p>
+        </article>
+
+        <article class="lab-card lab-card--cta lab-reveal" data-always>
+          <span class="lab-eyebrow" style="align-self:flex-start;margin-bottom:1rem;">Y mucho más</span>
+          <h3>¿Tienes algo distinto en mente?</h3>
+          <p>Cuéntanos tu idea. La revisamos contigo y te decimos cómo hacerla realidad.</p>
+          <a
+            href="https://wa.me/573505136986?text=Hola%2C%20tengo%20una%20idea%20para%20imprimir%20en%203D"
+            target="_blank"
+            rel="noopener"
+            class="lab-btn lab-btn--primary"
+          >
+            <i class="fa-brands fa-whatsapp"></i> Contarte mi idea
+          </a>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- TRABAJOS -->
+  <section class="lab-section">
+    <div class="lab-wrap">
+
+      <div class="lab-head lab-reveal">
+        <span class="lab-eyebrow">Portafolio</span>
+        <h2 class="lab-title">Algunos trabajos</h2>
+        <p class="lab-lead">Piezas reales hechas en GHALI LAB: accesorios, clickers, llaveros, props y más.</p>
+      </div>
+
+      <div class="lab-gallery">
+
+        <figure class="lab-reveal">
+          <img src="images/ghali%20shop/clicker-rose-bck.jpg" alt="Clicker ramo de flores impreso en 3D" width="800" height="800" loading="lazy" decoding="async">
+          <figcaption>Clicker ramo de flores</figcaption>
+        </figure>
+
+        <figure class="lab-reveal">
+          <img src="images/ghali%20shop/mask-hannya.jpg" alt="Máscara Hannya impresa en 3D" width="400" height="400" loading="lazy" decoding="async">
+          <figcaption>Máscara Hannya</figcaption>
+        </figure>
+
+        <figure class="lab-reveal">
+          <img src="images/ghali%20shop/kuromi%20ears.jpg" alt="Orejas de Kuromi para casco impresas en 3D" width="400" height="400" loading="lazy" decoding="async">
+          <figcaption>Orejas de Kuromi</figcaption>
+        </figure>
+
+        <figure class="lab-reveal">
+          <img src="images/ghali%20shop/nfc-keyring.jpg" alt="Llavero NFC personalizado" width="400" height="400" loading="lazy" decoding="async">
+          <figcaption>Llavero NFC</figcaption>
+        </figure>
+
+        <figure class="lab-reveal">
+          <img src="images/ghali%20shop/clicker-repo.jpg" alt="Clicker inspirado en R.E.P.O. impreso en 3D" width="400" height="400" loading="lazy" decoding="async">
+          <figcaption>Clicker R.E.P.O.</figcaption>
+        </figure>
+
+        <figure class="lab-reveal">
+          <img src="images/ghali%20shop/bat-ears.jpg" alt="Orejas de murciélago para casco impresas en 3D" width="400" height="400" loading="lazy" decoding="async">
+          <figcaption>Orejas de murciélago</figcaption>
+        </figure>
+
+        <figure class="lab-reveal">
+          <img src="images/ghali%20shop/led-circle.jpg" alt="Aviso LED circular" width="400" height="400" loading="lazy" decoding="async">
+          <figcaption>Aviso LED</figcaption>
+        </figure>
+
+        <figure class="lab-reveal">
+          <img src="images/ghali%20shop/articulated-fish.jpg" alt="Pez articulado impreso en 3D" width="400" height="400" loading="lazy" decoding="async">
+          <figcaption>Pez articulado</figcaption>
+        </figure>
+
+      </div>
+
+      <div class="lab-center">
+        <a href="stock.html" class="lab-btn lab-btn--ghost">
+          Ver la tienda <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PROCESO -->
+  <section class="lab-section">
+    <div class="lab-wrap">
+
+      <div class="lab-head lab-reveal">
+        <span class="lab-eyebrow">Cómo trabajamos</span>
+        <h2 class="lab-title">De tu idea a tus manos</h2>
+        <p class="lab-lead">Convertimos un diseño digital en un objeto real, capa por capa. Tú imaginas, nosotros lo hacemos tangible.</p>
+      </div>
+
+      <div class="lab-steps">
+
+        <div class="lab-step lab-reveal">
+          <div class="lab-step-num">1</div>
+          <h3>Cuéntanos tu idea</h3>
+          <p>Nos cuentas lo que quieres crear, para qué lo necesitas y en qué tamaño.</p>
+        </div>
+
+        <div class="lab-step lab-reveal">
+          <div class="lab-step-num">2</div>
+          <h3>Diseño 3D</h3>
+          <p>Creamos o adaptamos un modelo digital de tu idea y elegimos el material ideal.</p>
+        </div>
+
+        <div class="lab-step lab-reveal">
+          <div class="lab-step-num">3</div>
+          <h3>Impresión</h3>
+          <p>La impresora construye la pieza capa por capa, en FDM o en resina.</p>
+        </div>
+
+        <div class="lab-step lab-reveal">
+          <div class="lab-step-num">4</div>
+          <h3>Acabado y entrega</h3>
+          <p>Limpieza, curado y detalles finales. Después te la enviamos a donde estés.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- TECNOLOGÍAS -->
+  <section class="lab-section">
+    <div class="lab-wrap">
+
+      <div class="lab-head lab-reveal">
+        <span class="lab-eyebrow">Tecnología</span>
+        <h2 class="lab-title">FDM vs SLA: ¿cuál elijo?</h2>
+        <p class="lab-lead">Trabajamos con dos tecnologías. Te ayudamos a escoger la que mejor se adapta a tu proyecto.</p>
+      </div>
+
+      <div class="lab-tech">
+
+        <article class="lab-tech-card lab-tech-card--fdm lab-reveal">
+          <div class="lab-tech-top">
+            <h3>FDM</h3>
+            <span>Filamento</span>
+          </div>
+
+          <p>
+            Funde filamento termoplástico y lo deposita capa por capa. Es una opción
+            versátil, funcional y económica.
+          </p>
+
+          <ul class="lab-list">
+            <li><i class="fa-solid fa-check"></i> Piezas funcionales y resistentes</li>
+            <li><i class="fa-solid fa-check"></i> Gran variedad de colores</li>
+            <li><i class="fa-solid fa-check"></i> Ideal para tamaños medianos y grandes</li>
+            <li><i class="fa-solid fa-check"></i> Opción práctica y eco-friendly con PLA</li>
+          </ul>
+
+          <div class="lab-best">
+            <strong>Mejor para:</strong> prototipos, piezas mecánicas, soportes, accesorios y objetos decorativos.
+          </div>
+        </article>
+
+        <article class="lab-tech-card lab-tech-card--sla lab-reveal">
+          <div class="lab-tech-top">
+            <h3>SLA</h3>
+            <span>Resina</span>
+          </div>
+
+          <p>
+            Solidifica resina líquida con luz UV, logrando un nivel de detalle muy alto
+            y superficies más lisas.
+          </p>
+
+          <ul class="lab-list">
+            <li><i class="fa-solid fa-check"></i> Alta precisión y detalle fino</li>
+            <li><i class="fa-solid fa-check"></i> Superficies lisas y acabado premium</li>
+            <li><i class="fa-solid fa-check"></i> Ideal para piezas pequeñas</li>
+            <li><i class="fa-solid fa-check"></i> Perfecta para miniaturas y joyería</li>
+          </ul>
+
+          <div class="lab-best">
+            <strong>Mejor para:</strong> figuras detalladas, miniaturas, joyería, moldes y prototipos de alta precisión.
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- MATERIALES -->
+  <section class="lab-section">
+    <div class="lab-wrap">
+
+      <div class="lab-head lab-reveal">
+        <span class="lab-eyebrow">Materiales</span>
+        <h2 class="lab-title">Elegimos el material según tu proyecto</h2>
+        <p class="lab-lead">
+          No todas las piezas necesitan lo mismo. Algunas requieren resistencia, otras
+          flexibilidad, detalle o un acabado más estético.
+        </p>
+      </div>
+
+      <div class="lab-materials">
+
+        <article class="lab-material lab-material--rec lab-reveal">
+          <span class="lab-material-tag">FDM</span>
+          <h3>PLA</h3>
+          <p>Ideal para piezas decorativas, prototipos, productos personalizados y objetos de uso general.</p>
+          <small>Recomendado por GHALI LAB</small>
+        </article>
+
+        <article class="lab-material lab-reveal">
+          <span class="lab-material-tag">FDM</span>
+          <h3>PETG</h3>
+          <p>Buena resistencia y durabilidad. Útil para piezas que necesitan mayor solidez.</p>
+        </article>
+
+        <article class="lab-material lab-reveal">
+          <span class="lab-material-tag">FDM</span>
+          <h3>TPU</h3>
+          <p>Material flexible, ideal para piezas elásticas, protectores, grips o componentes blandos.</p>
+        </article>
+
+        <article class="lab-material lab-reveal">
+          <span class="lab-material-tag">SLA</span>
+          <h3>Resina estándar</h3>
+          <p>Perfecta para piezas detalladas, figuras, prototipos visuales y acabados finos.</p>
+        </article>
+
+        <article class="lab-material lab-reveal">
+          <span class="lab-material-tag">SLA</span>
+          <h3>Resina flexible</h3>
+          <p>Útil para piezas con cierta elasticidad o proyectos que requieren acabados especiales.</p>
+        </article>
+
+        <article class="lab-material lab-reveal">
+          <span class="lab-material-tag">SLA</span>
+          <h3>Resina calcinable</h3>
+          <p>Usada en procesos específicos como joyería, moldes o piezas de alta precisión.</p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ECO -->
+  <section class="lab-section">
+    <div class="lab-wrap">
+      <div class="lab-eco lab-reveal">
+        <div class="lab-eco-icon"><i class="fa-solid fa-seedling"></i></div>
+
+        <div>
+          <h2>Apoyamos lo ecosostenible</h2>
+          <p>
+            Usamos principalmente <strong>PLA</strong>, un material muy usado en impresión 3D por su variedad
+            de colores y versatilidad. Puede estar elaborado a partir de recursos de origen vegetal como el maíz
+            o el trigo, lo que lo hace una alternativa más amigable frente a otros plásticos tradicionales.
+          </p>
         </div>
       </div>
     </div>
   </section>
-  <!-- Value Section End -->
 
-  <!-- Eco Section Start -->
-  <section class="ghlab-section ghlab-eco-section">
-    <div class="ghlab-eco-card">
-      <div class="ghlab-eco-icon">
-        <i class="fa-solid fa-seedling"></i>
+  <!-- RESEÑAS -->
+  <section class="lab-section">
+    <div class="lab-wrap">
+
+      <div class="lab-head lab-reveal">
+        <span class="lab-eyebrow">Reseñas</span>
+        <h2 class="lab-title">Lo que dicen nuestros clientes</h2>
       </div>
 
-      <div class="ghlab-eco-content">
-        <span class="ghlab-kicker">Materiales responsables</span>
-        <h2>Apoyamos lo ecosostenible</h2>
+      <div class="lab-reviews">
+
+        <article class="lab-review lab-reveal">
+          <div class="lab-stars" aria-label="5 estrellas">★★★★★</div>
+          <p>“Excelente calidad en el servicio y productos.”</p>
+          <cite>Daniel Coronado</cite>
+        </article>
+
+        <article class="lab-review lab-reveal">
+          <div class="lab-stars" aria-label="5 estrellas">★★★★★</div>
+          <p>“Comprometida con el encargo desde el minuto uno. Me mostró diferentes diseños, terminó la impresión en menos de un día y llegó en excelentes condiciones.”</p>
+          <cite>Miguel Herrera</cite>
+        </article>
+
+        <article class="lab-review lab-reveal">
+          <div class="lab-stars" aria-label="5 estrellas">★★★★★</div>
+          <p>“Muy buen servicio, entrega oportuna de piezas y web.”</p>
+          <cite>Juan Jube</cite>
+        </article>
+
+      </div>
+
+      <div class="lab-center">
+        <a href="https://g.page/r/CfqxOsfArykmEAE/review" target="_blank" rel="noopener" class="lab-btn lab-btn--ghost">
+          <i class="fa-brands fa-google"></i> Ver todas las reseñas en Google
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="lab-section">
+    <div class="lab-wrap">
+
+      <div class="lab-head lab-reveal">
+        <span class="lab-eyebrow">Preguntas frecuentes</span>
+        <h2 class="lab-title">Lo que más nos preguntan</h2>
+      </div>
+
+      <div class="lab-faq lab-reveal">
+
+        <details>
+          <summary>¿Necesito tener el archivo 3D?</summary>
+          <p>
+            No. Podemos modelar tu pieza desde cero a partir de tu idea, un boceto o
+            referencias. Si ya tienes tu archivo, también lo imprimimos.
+          </p>
+        </details>
+
+        <details>
+          <summary>¿Qué tecnologías y materiales manejan?</summary>
+          <p>
+            Imprimimos en FDM (filamento) y SLA (resina). Trabajamos con PLA, PETG y TPU,
+            y con resina estándar, flexible y calcinable. Te recomendamos el material según
+            el uso de tu pieza.
+          </p>
+        </details>
+
+        <details>
+          <summary>¿Cuánto cuesta y cuánto demora?</summary>
+          <p>
+            Depende del tamaño, el material, el nivel de detalle y la complejidad del diseño.
+            Escríbenos por WhatsApp o usa la página de <a href="quoteprice.html">cotización</a>
+            y te damos un valor y un tiempo estimado.
+          </p>
+        </details>
+
+        <details>
+          <summary>¿Hacen envíos?</summary>
+          <p>
+            Sí. Coordinamos envíos seguros a toda Colombia desde Medellín.
+          </p>
+        </details>
+
+        <details>
+          <summary>¿Puedo pedir piezas personalizadas para mi marca?</summary>
+          <p>
+            Claro. Hacemos letras, logos, avisos, souvenir y piezas a medida con tus colores,
+            tu nombre y el tamaño que necesites.
+          </p>
+        </details>
+
+        <details>
+          <summary>¿Qué métodos de pago aceptan?</summary>
+          <p>
+            Transferencias, Nequi, pagos en línea y PayPal para algunos pagos internacionales.
+            Mira todas las opciones en <a href="paymethods.html">Pagos y donaciones</a>.
+          </p>
+        </details>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section class="lab-section" style="padding-top:1rem;">
+    <div class="lab-wrap">
+      <div class="lab-cta lab-reveal">
+        <span class="lab-eyebrow">Hagámoslo realidad</span>
+        <h2>¿Listo para imprimir tu idea?</h2>
         <p>
-          En GHALI LAB usamos principalmente <strong>PLA</strong>, un material ampliamente utilizado en impresión 3D por su variedad de colores, versatilidad y origen vegetal.
+          Cuéntanos qué necesitas y te ayudamos a elegir la tecnología, el material y el
+          acabado ideal para tu proyecto.
         </p>
-        <p>
-          El PLA puede estar elaborado a partir de recursos como maíz o trigo, lo que lo convierte en una alternativa más amigable frente a otros plásticos tradicionales.
-        </p>
-      </div>
-    </div>
-  </section>
-  <!-- Eco Section End -->
 
-  <!-- Maker Section Start -->
-  <section class="maker-section">
-    <div class="maker-header">
-      <span class="maker-badge">🛠️ Mundo Maker</span>
-      <h2>¿Cómo funciona la impresión 3D?</h2>
-      <p>Convertimos un diseño digital en un objeto real, capa por capa. Tú imaginas la idea, nosotros la hacemos tangible.</p>
-    </div>
+        <div class="lab-actions">
+          <a
+            href="https://wa.me/573505136986?text=Hola%2C%20quiero%20cotizar%20una%20impresi%C3%B3n%203D%20en%20GHALI%20LAB"
+            target="_blank"
+            rel="noopener"
+            class="lab-btn lab-btn--primary"
+          >
+            <i class="fa-brands fa-whatsapp"></i> Cotizar por WhatsApp
+          </a>
 
-    <div class="maker-steps">
-      <div class="maker-step">
-        <div class="maker-step-num">1</div>
-        <i class="fa-solid fa-cube"></i>
-        <h4>Diseño 3D</h4>
-        <p>Creamos o adaptamos un modelo digital de tu idea.</p>
-      </div>
-
-      <div class="maker-step">
-        <div class="maker-step-num">2</div>
-        <i class="fa-solid fa-layer-group"></i>
-        <h4>Preparación</h4>
-        <p>Dividimos el modelo en capas y elegimos el material ideal.</p>
-      </div>
-
-      <div class="maker-step">
-        <div class="maker-step-num">3</div>
-        <i class="fa-solid fa-print"></i>
-        <h4>Impresión</h4>
-        <p>La impresora construye la pieza capa por capa.</p>
-      </div>
-
-      <div class="maker-step">
-        <div class="maker-step-num">4</div>
-        <i class="fa-solid fa-wand-magic-sparkles"></i>
-        <h4>Acabado</h4>
-        <p>Limpieza, curado y detalles finales para un mejor resultado.</p>
-      </div>
-    </div>
-
-    <h3 class="maker-subtitle">FDM vs SLA: ¿cuál elijo?</h3>
-    <p class="maker-subtext">Trabajamos con dos tecnologías. Aquí te explicamos cuál se adapta mejor a tu proyecto.</p>
-
-    <div class="maker-compare">
-      <article class="maker-card fdm">
-        <div class="maker-card-top">
-          <span class="maker-dot">🟢</span>
-          <h4>FDM <span>Filamento</span></h4>
+          <a href="quoteprice.html" class="lab-btn lab-btn--ghost">
+            Ir a cotización <i class="fa-solid fa-arrow-right"></i>
+          </a>
         </div>
-
-        <p class="maker-card-desc">
-          Funde filamento termoplástico y lo deposita capa por capa. Es una opción versátil, funcional y económica.
-        </p>
-
-        <ul class="maker-list">
-          <li><i class="fa-solid fa-check"></i> Piezas funcionales y resistentes</li>
-          <li><i class="fa-solid fa-check"></i> Gran variedad de colores</li>
-          <li><i class="fa-solid fa-check"></i> Ideal para tamaños medianos y grandes</li>
-          <li><i class="fa-solid fa-check"></i> Opción práctica y eco-friendly con PLA</li>
-        </ul>
-
-        <div class="maker-best">Mejor para: prototipos, piezas mecánicas, soportes, accesorios y objetos decorativos.</div>
-      </article>
-
-      <article class="maker-card sla">
-        <div class="maker-card-top">
-          <span class="maker-dot">🔵</span>
-          <h4>SLA <span>Resina</span></h4>
-        </div>
-
-        <p class="maker-card-desc">
-          Solidifica resina líquida con luz UV, logrando un nivel de detalle muy alto y superficies más lisas.
-        </p>
-
-        <ul class="maker-list">
-          <li><i class="fa-solid fa-check"></i> Alta precisión y detalle fino</li>
-          <li><i class="fa-solid fa-check"></i> Superficies lisas y acabado premium</li>
-          <li><i class="fa-solid fa-check"></i> Ideal para piezas pequeñas</li>
-          <li><i class="fa-solid fa-check"></i> Perfecta para miniaturas y joyería</li>
-        </ul>
-
-        <div class="maker-best">Mejor para: figuras detalladas, miniaturas, joyería, moldes y prototipos de alta precisión.</div>
-      </article>
-    </div>
-  </section>
-  <!-- Maker Section End -->
-
-  <!-- Materials Section Start -->
-  <section class="ghlab-section ghlab-materials-section">
-    <div class="ghlab-section-head">
-      <span class="ghlab-kicker">Materiales</span>
-      <h2>Elegimos el material según tu proyecto</h2>
-      <p>
-        No todas las piezas necesitan lo mismo. Algunas requieren resistencia, otras flexibilidad, detalle o un acabado más estético.
-      </p>
-    </div>
-
-    <div class="ghlab-material-grid">
-      <article class="ghlab-material-card recommended">
-        <span>FDM</span>
-        <h3>PLA</h3>
-        <p>Ideal para piezas decorativas, prototipos, productos personalizados y objetos de uso general.</p>
-        <small>Recomendado por GHALI LAB</small>
-      </article>
-
-      <article class="ghlab-material-card">
-        <span>FDM</span>
-        <h3>PETG</h3>
-        <p>Buena resistencia y durabilidad. Útil para piezas que necesitan mayor solidez.</p>
-      </article>
-
-      <article class="ghlab-material-card">
-        <span>FDM</span>
-        <h3>TPU</h3>
-        <p>Material flexible, ideal para piezas elásticas, protectores, grips o componentes blandos.</p>
-      </article>
-
-      <article class="ghlab-material-card">
-        <span>SLA</span>
-        <h3>Resina estándar</h3>
-        <p>Perfecta para piezas detalladas, figuras, prototipos visuales y acabados finos.</p>
-      </article>
-
-      <article class="ghlab-material-card">
-        <span>SLA</span>
-        <h3>Resina flexible</h3>
-        <p>Útil para piezas con cierta elasticidad o proyectos que requieren acabados especiales.</p>
-      </article>
-
-      <article class="ghlab-material-card">
-        <span>SLA</span>
-        <h3>Resina calcinable</h3>
-        <p>Usada en procesos específicos como joyería, moldes o piezas de alta precisión.</p>
-      </article>
-    </div>
-  </section>
-  <!-- Materials Section End -->
-
-  <!-- Final CTA Start -->
-  <section class="ghlab-section ghlab-final-cta">
-    <div class="ghlab-final-card">
-      <span class="ghlab-kicker">Asesoría personalizada</span>
-      <h2>¿No sabes qué tecnología o material elegir?</h2>
-      <p>
-        Te ayudamos a escoger la mejor opción según el uso, tamaño, resistencia, detalle y presupuesto de tu proyecto.
-      </p>
-
-      <div class="ghlab-final-actions">
-        <a href="quoteprice.html" class="ghlab-button ghlab-button-primary">Cotizar ahora</a>
-        <a href="services.html" class="ghlab-button ghlab-button-secondary">Ver más servicios</a>
       </div>
     </div>
   </section>
-  <!-- Final CTA End -->
 
 </main>
 
@@ -430,14 +1663,13 @@
 
           <nav class="footer-links">
             <a href="index.html">INICIO</a> |
-            <a href="stock.html">TIENDA</a> |   
+            <a href="stock.html">TIENDA</a> |
             <a href="ghalilab.html">GHALI LAB</a> |
             <a href="services.html">SERVICIOS</a> |
             <a href="quoteprice.html">COTIZACIÓN</a> |
-       
-            <a href="aboutme.html">SOBRE MÍ</a> |   
-            <a href="paymethods.html">MÉTODOS DE PAGO</a> |                                
-            <a href="mysocial.html">MIS REDES</a> 
+            <a href="aboutme.html">SOBRE MÍ</a> |
+            <a href="paymethods.html">MÉTODOS DE PAGO</a> |
+            <a href="mysocial.html">MIS REDES</a>
           </nav>
 
           <div class="social-icons">
@@ -461,7 +1693,7 @@
 
             <a href="https://www.tiktok.com/@ghaliensita" target="_blank" rel="noopener" aria-label="TikTok Ghaliensita">
               <i class="fab fa-tiktok"></i>
-            </a>             
+            </a>
 
             <a href="https://www.instagram.com/ghaliensita" target="_blank" rel="noopener" aria-label="Instagram Ghaliensita">
               <i class="fab fa-instagram"></i>
@@ -479,67 +1711,122 @@
 </section>
 <!--Footer End-->
 
-<a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+<a href="#" class="back-to-top" aria-label="Volver arriba"><i class="fa fa-chevron-up"></i></a>
 
-
-<!-- JavaScript Libraries -->
-<script src="lib/jquery/jquery.min.js"></script>
-
-
-
-
-<script src="lib/owlcarousel/owl.carousel.min.js"></script>
-<script src="lib/lightbox/js/lightbox.min.js"></script>
-
-
-<!-- Contact Form JavaScript File -->
-
-
-<!-- Template Main Javascript File -->
-<script src="js/main.js" defer></script>
-
+<!-- Scripts de la página (sin jQuery ni librerías externas) -->
 <script>
-  document.addEventListener('contextmenu', function(e) {
-    e.preventDefault();
-    return false;
-  });
+(function () {
+  "use strict";
 
-  document.addEventListener('keydown', function(e) {
-    if (e.key === 'F12') {
-      e.preventDefault();
-      return false;
-    }
+  /* ---------- Filtros del catálogo ---------- */
+  var chips = document.querySelectorAll(".lab-chip");
+  var cards = document.querySelectorAll(".lab-card[data-cat], .lab-card[data-always]");
 
-    if ((e.ctrlKey || e.metaKey) && e.shiftKey && (e.key === 'I' || e.key === 'i')) {
-      e.preventDefault();
-      return false;
-    }
+  chips.forEach(function (chip) {
+    chip.addEventListener("click", function () {
+      var filter = chip.getAttribute("data-filter");
 
-    if ((e.ctrlKey || e.metaKey) && e.shiftKey && (e.key === 'J' || e.key === 'j')) {
-      e.preventDefault();
-      return false;
-    }
+      chips.forEach(function (other) {
+        other.classList.remove("is-active");
+        other.setAttribute("aria-pressed", "false");
+      });
 
-    if ((e.ctrlKey || e.metaKey) && (e.key === 'U' || e.key === 'u')) {
-      e.preventDefault();
-      return false;
-    }
+      chip.classList.add("is-active");
+      chip.setAttribute("aria-pressed", "true");
 
-    if ((e.ctrlKey || e.metaKey) && e.shiftKey && (e.key === 'C' || e.key === 'c')) {
-      e.preventDefault();
-      return false;
-    }
-  });
+      cards.forEach(function (card) {
+        var categories = (card.getAttribute("data-cat") || "").split(" ");
+        var show =
+          filter === "all" ||
+          card.hasAttribute("data-always") ||
+          categories.indexOf(filter) !== -1;
 
-  document.querySelectorAll('img').forEach(img => {
-    img.addEventListener('dragstart', function(e) {
-      e.preventDefault();
-      return false;
+        card.classList.toggle("is-hidden", !show);
+      });
     });
   });
 
-  console.log('%c🔒 Contenido protegido', 'font-size: 20px; font-weight: bold; color: #F40C5A;');
-  console.log('%cSi tienes alguna pregunta o necesitas acceso, contáctame a través de mis redes oficiales.', 'font-size: 14px;');
+  /* ---------- Aparición suave al hacer scroll ---------- */
+  var revealItems = document.querySelectorAll(".lab-reveal");
+
+  if ("IntersectionObserver" in window) {
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("in");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { rootMargin: "0px 0px -8% 0px", threshold: 0.05 });
+
+    revealItems.forEach(function (item, index) {
+      item.style.transitionDelay = (index % 4) * 60 + "ms";
+      observer.observe(item);
+    });
+  } else {
+    revealItems.forEach(function (item) {
+      item.classList.add("in");
+    });
+  }
+
+  /* ---------- Botón "volver arriba" ---------- */
+  var backToTop = document.querySelector(".back-to-top");
+
+  if (backToTop) {
+    var ticking = false;
+
+    var update = function () {
+      var y = window.pageYOffset || document.documentElement.scrollTop;
+      backToTop.style.display = y > 100 ? "block" : "none";
+      ticking = false;
+    };
+
+    window.addEventListener("scroll", function () {
+      if (!ticking) {
+        ticking = true;
+        requestAnimationFrame(update);
+      }
+    }, { passive: true });
+
+    update();
+  }
+})();
+</script>
+
+<!-- Protección básica -->
+<script>
+  document.addEventListener("contextmenu", function (event) {
+    event.preventDefault();
+  });
+
+  document.addEventListener("keydown", function (event) {
+    var key = event.key.toUpperCase();
+
+    if (event.key === "F12") {
+      event.preventDefault();
+    }
+
+    if (
+      (event.ctrlKey || event.metaKey) &&
+      event.shiftKey &&
+      ["I", "J", "C"].indexOf(key) !== -1
+    ) {
+      event.preventDefault();
+    }
+
+    if ((event.ctrlKey || event.metaKey) && key === "U") {
+      event.preventDefault();
+    }
+  });
+
+  document.addEventListener("dragstart", function (event) {
+    if (event.target && event.target.tagName === "IMG") {
+      event.preventDefault();
+    }
+  });
+
+  console.log("%c🔒 Contenido protegido", "font-size: 20px; font-weight: bold; color: #F40C5A;");
+  console.log("%cSi tienes alguna pregunta o necesitas acceso, contáctame a través de mis redes oficiales.", "font-size: 14px;");
 </script>
 
 </body>
