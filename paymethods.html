@@ -1,9 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-   <meta charset="utf-8">
-  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
-  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <meta charset="utf-8">
 
   <title>Métodos de pago y donaciones | Ghalien</title>
 
@@ -12,6 +10,15 @@
   <meta name="keywords" content="ghalien, ghaliensita, Stephany Ghalien, métodos de pago, pagos Colombia, Nequi, Mercado Pago, DolarApp, PayPal, criptomonedas, donaciones, GHALI LAB">
 
   <meta name="description" content="Consulta los métodos de pago y donaciones disponibles para Ghalien y GHALI LAB: Nequi, Mercado Pago, DolarApp, PayPal y criptomonedas.">
+
+  <!-- Conexiones anticipadas -->
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+
+  <!-- Recursos críticos con prioridad alta -->
+  <link rel="preload" as="image" href="img/overlay-bg.jpg" fetchpriority="high">
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/webfonts/fa-brands-400.woff2">
 
   <!-- Favicons -->
   <link href="img/favicon.png" rel="icon">
@@ -28,20 +35,6 @@
     defer
   ></script>
 
-  <!-- Libraries CSS Files -->
-  <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-  <link href="lib/animate/animate.min.css" rel="stylesheet">
-  <link href="lib/ionicons/css/ionicons.min.css" rel="stylesheet">
-
-  <link
-    href="https://file.myfontastic.com/9uXaaj5vAm5wectHaxzyV9/icons.css"
-    rel="stylesheet"
-  >
-
-  <link href="lib/ghali-icons/styles.css" rel="stylesheet">
-  <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-  <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
-
   <!-- Font Awesome 6 -->
   <link
     rel="stylesheet"
@@ -50,6 +43,106 @@
 
   <!-- Main Stylesheet File -->
   <link href="css/style.css" rel="stylesheet">
+
+  <!-- Ajustes de esta página: celulares + visor del QR -->
+  <style>
+    /* Si algún día vuelve un preloader en el HTML, esto lo oculta */
+    #preloader { display: none !important; }
+
+    /* Celulares y tablets: menos efectos pesados para la GPU */
+    @media (max-width: 991px) {
+      .navbar {
+        -webkit-backdrop-filter: none;
+        backdrop-filter: none;
+        background-color: rgba(20, 20, 20, 0.92);
+      }
+    }
+
+    /* En pantallas táctiles no hay "hover": se quitan esas animaciones */
+    @media (hover: none) {
+      .payment-purpose-card,
+      .payment-method-card,
+      .payment-process-card,
+      .payment-qr-preview img {
+        transition: none;
+      }
+
+      .payment-purpose-card:hover,
+      .payment-method-card:hover,
+      .payment-process-card:hover {
+        transform: none;
+        box-shadow: none;
+      }
+
+      .payment-qr-preview a:hover img {
+        transform: none;
+      }
+    }
+
+    /* Visor de imagen (QR) */
+    .gl-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 5000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+      background: rgba(10, 10, 10, 0.94);
+    }
+
+    .gl-overlay[hidden] {
+      display: none;
+    }
+
+    .gl-fig {
+      max-width: min(92vw, 900px);
+      max-height: 92vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .gl-img {
+      max-width: 100%;
+      max-height: 80vh;
+      object-fit: contain;
+      border-radius: 12px;
+      background: #fff;
+    }
+
+    .gl-cap {
+      color: #ddd;
+      font-size: 0.9rem;
+      text-align: center;
+    }
+
+    .gl-btn {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      width: 46px;
+      height: 46px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 1.6rem;
+      line-height: 1;
+      cursor: pointer;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 50%;
+    }
+
+    .gl-btn:hover,
+    .gl-btn:focus-visible {
+      background: #F40C5A;
+      border-color: #F40C5A;
+      outline: none;
+    }
+  </style>
 </head>
 
 <body>
@@ -89,7 +182,7 @@
             Tienda
           </a>
         </li>
-        
+
         <li class="nav-item">
           <a class="nav-link js-scroll" href="ghalilab.html">
             GHALI LAB
@@ -387,7 +480,7 @@
 
           <a
             href="img/Donaciones-(2).jpg"
-            data-lightbox="nequi-payment"
+            data-zoom
             data-title="Código QR de Nequi"
             class="ghlab-button ghlab-button-primary"
           >
@@ -413,7 +506,7 @@
 
         <a
           href="img/Donaciones-(2).jpg"
-          data-lightbox="nequi-payment-preview"
+          data-zoom
           data-title="Código QR de Nequi"
           aria-label="Ampliar código QR de Nequi"
         >
@@ -421,6 +514,7 @@
             src="img/Donaciones-(2).jpg"
             alt="Código QR de Nequi para pagos y donaciones"
             loading="lazy"
+            decoding="async"
           >
         </a>
 
@@ -946,8 +1040,6 @@
 
             <a href="quoteprice.html">COTIZACIÓN</a> |
 
-
-
             <a href="aboutme.html">SOBRE MÍ</a> |
 
             <a href="paymethods.html">MÉTODOS DE PAGO</a> |
@@ -1046,20 +1138,86 @@
 </a>
 
 
+<!-- Visor del QR -->
+<div class="gl-overlay" id="gl" role="dialog" aria-modal="true" aria-label="Visor de imagen" hidden>
+  <button type="button" class="gl-btn" id="gl-close" aria-label="Cerrar">&times;</button>
+  <figure class="gl-fig">
+    <img class="gl-img" id="gl-img" alt="">
+    <figcaption class="gl-cap" id="gl-cap"></figcaption>
+  </figure>
+</div>
 
 
-<!-- JavaScript Libraries -->
-<script src="lib/jquery/jquery.min.js"></script>
+<!-- Scripts de la página (sin jQuery ni librerías externas) -->
+<script>
+(function () {
+  "use strict";
 
+  /* ---------- Visor del QR ---------- */
+  var overlay = document.getElementById("gl");
+  var image = document.getElementById("gl-img");
+  var caption = document.getElementById("gl-cap");
+  var closeBtn = document.getElementById("gl-close");
+  var lastFocus = null;
 
+  function openViewer(src, title) {
+    lastFocus = document.activeElement;
+    image.src = src;
+    image.alt = title;
+    caption.textContent = title;
+    overlay.hidden = false;
+    document.body.style.overflow = "hidden";
+    closeBtn.focus();
+  }
 
+  function closeViewer() {
+    overlay.hidden = true;
+    document.body.style.overflow = "";
+    image.removeAttribute("src");
 
-<script src="lib/owlcarousel/owl.carousel.min.js"></script>
-<script src="lib/lightbox/js/lightbox.min.js"></script>
+    if (lastFocus && lastFocus.focus) lastFocus.focus();
+  }
 
+  document.querySelectorAll("[data-zoom]").forEach(function (link) {
+    link.addEventListener("click", function (event) {
+      event.preventDefault();
+      openViewer(link.getAttribute("href"), link.getAttribute("data-title") || "");
+    });
+  });
 
-<!-- Template Main Javascript File -->
-<script src="js/main.js" defer></script>
+  closeBtn.addEventListener("click", closeViewer);
+
+  overlay.addEventListener("click", function (event) {
+    if (event.target === overlay) closeViewer();
+  });
+
+  document.addEventListener("keydown", function (event) {
+    if (!overlay.hidden && event.key === "Escape") closeViewer();
+  });
+
+  /* ---------- Botón "volver arriba" ---------- */
+  var backToTop = document.querySelector(".back-to-top");
+
+  if (backToTop) {
+    var ticking = false;
+
+    var update = function () {
+      var y = window.pageYOffset || document.documentElement.scrollTop;
+      backToTop.style.display = y > 100 ? "block" : "none";
+      ticking = false;
+    };
+
+    window.addEventListener("scroll", function () {
+      if (!ticking) {
+        ticking = true;
+        requestAnimationFrame(update);
+      }
+    }, { passive: true });
+
+    update();
+  }
+})();
+</script>
 
 
 <!-- Protección básica -->
@@ -1069,7 +1227,7 @@
   });
 
   document.addEventListener('keydown', function (event) {
-    const key = event.key.toUpperCase();
+    var key = event.key.toUpperCase();
 
     if (event.key === 'F12') {
       event.preventDefault();
@@ -1078,7 +1236,7 @@
     if (
       (event.ctrlKey || event.metaKey) &&
       event.shiftKey &&
-      ['I', 'J', 'C'].includes(key)
+      ['I', 'J', 'C'].indexOf(key) !== -1
     ) {
       event.preventDefault();
     }
@@ -1091,10 +1249,10 @@
     }
   });
 
-  document.querySelectorAll('img').forEach(function (image) {
-    image.addEventListener('dragstart', function (event) {
+  document.addEventListener('dragstart', function (event) {
+    if (event.target && event.target.tagName === 'IMG') {
       event.preventDefault();
-    });
+    }
   });
 
   console.log(
